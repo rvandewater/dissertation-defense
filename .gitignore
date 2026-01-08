@@ -1,0 +1,36 @@
+# Node modules
+node_modules/
+
+# Quarto output
+*.html
+*.pdf
+*.docx
+*.pptx
+*.ipynb
+*.md
+*.log
+*.aux
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.DS_Store
+_quarto/
+
+# Mac system files
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# R cache
+.Rhistory
+.RData
+.Rproj.user/
+
+# VS Code
+.vscode/
