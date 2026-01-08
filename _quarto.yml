@@ -1,6 +1,5 @@
 project:
   type: default
-  output-dir: _site
 
 render:
   on-save: true

@@ -1,15 +1,18 @@
 ---
 title: "Thesis Defense"
 subtitle: "Thesis Defense Robin P. van de Water"
+author: |
+  Robin P. van de Water  
 format:
   revealjs: 
     slide-number: true
     chalkboard: 
       buttons: false
     preview-links: auto
-    # logo: images/quarto.png
+    logo: images/logos/hpi_logo_cropped.svg
     css: styles.css
     footer: 'Thesis Defense Robin P. van de Water'
+    theme: serif
 bibliography: bibliography.bib
 resources:
   - demo.pdf
