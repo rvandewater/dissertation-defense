@@ -20,6 +20,10 @@ node_modules/
 *.DS_Store
 _quarto/
 
+# Quarto auto-generated files and folders
+index_files/
+*_files/
+
 # Mac system files
 .DS_Store
 
