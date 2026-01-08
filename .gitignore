@@ -23,7 +23,7 @@ _quarto/
 # Quarto auto-generated files and folders
 index_files/
 *_files/
-
+*_site/
 # Mac system files
 .DS_Store
 
@@ -38,3 +38,6 @@ __pycache__/
 
 # VS Code
 .vscode/
+
+/.quarto/
+**/*.quarto_ipynb

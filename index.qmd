@@ -1,28 +1,29 @@
 ---
-title: "Quarto Presentations"
-subtitle: "Create beautiful interactive slide decks with Reveal.js"
+title: "Thesis Defense"
+subtitle: "Thesis Defense Robin P. van de Water"
 format:
   revealjs: 
     slide-number: true
     chalkboard: 
       buttons: false
     preview-links: auto
-    logo: images/quarto.png
+    # logo: images/quarto.png
     css: styles.css
-    footer: '[https://{{< meta prerelease-subdomain >}}quarto.org](https://{{< meta prerelease-subdomain >}}quarto.org)'
+    footer: 'Thesis Defense Robin P. van de Water'
+bibliography: bibliography.bib
 resources:
   - demo.pdf
 ---
 
 ## Hello, There
 
-This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including:
+This presentation will show you examples of what you can do with Quarto and [Reveal.js](https://revealjs.com), including
 
--   Presenting code and LaTeX equations
--   Including computations in slide output
+-   Presenting code and LaTeX equations [@schadow1999units]
+-   Including computations in slide output render [@chishtieUseEpicElectronic2023]
 -   Image, video, and iframe backgrounds
 -   Fancy transitions and animations
--   Activating scroll view
+-   Activating scroll view.
 
 ...and much more
 
@@ -538,6 +539,12 @@ Learn more: [RStudio](https://{{< meta prerelease-subdomain >}}quarto.org/docs/t
 -   [Auto-Slide](https://{{< meta prerelease-subdomain >}}quarto.org/docs/presentations/revealjs/presenting.html#auto-slide) (step through slides automatically, without any user input)
 -   [Multiplex](https://{{< meta prerelease-subdomain >}}quarto.org/docs/presentations/revealjs/presenting.html#multiplex) (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).
 
+
 ::: footer
 Learn more: [Quarto Presentations](https://{{< meta prerelease-subdomain >}}quarto.org/docs/presentations/revealjs/)
+:::
+
+## References
+
+::: {#refs}
 :::
