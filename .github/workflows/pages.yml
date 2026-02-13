@@ -26,8 +26,19 @@ jobs:
 
       # If you need Python/R deps, add setup steps here (see below)
       - name: Render
-        run: quarto render defense.qmd
+        run: quarto render
 
+      - name: Disable Jekyll
+        run: |
+          if [ -d "_site" ]; then
+            touch _site/.nojekyll
+          elif [ -d "docs" ]; then
+            touch docs/.nojekyll
+          else
+            echo "Error: output directory not found"
+            ls -la
+            exit 1
+          fi
       # Prevent Jekyll from interfering with Quarto output
       - name: Disable Jekyll
         run: touch _site/.nojekyll
