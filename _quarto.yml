@@ -1,5 +1,14 @@
 project:
-  type: default
+  type: website
+  output-dir: docs
 
 render:
   on-save: true
+
+website:
+  title: "Dissertation Defense"
+  site-url: "https://rvandewater.github.io/dissertation-defense"
+  
+format:
+  html:
+    theme: default

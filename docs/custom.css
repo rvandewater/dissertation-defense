@@ -1,0 +1,6 @@
+img.no-dark, .no-dark img, .no-dark {
+  filter: none !important;
+  background: none !important;
+  color-scheme: light !important;
+}
+.reveal li span.fragment { position: absolute; left: 0; background: inherit; }
