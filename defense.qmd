@@ -1,6 +1,7 @@
 ---
 title: "Benchmark to Bedside"
-subtitle: "Building Modular Multimodal Machine Learning Infrastructure for Healthcare at Scale"
+subtitle: 'Building Modular Multimodal Machine Learning Infrastructure for Healthcare at Scale   <br>
+ <img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;">'
 author: "Robin P. van de Water"
 date: today
 date-format: "DD MMMM YYYY"
@@ -19,7 +20,7 @@ format:
     logo: ""
     css: custom.css
     footnotes-hover: true
-    footer: "PhD Defense | Robin P. van de Water"
+    footer: '<img src="figures/slides_link_trans.svg" style="height:2em;vertical-align:middle; "> PhD Defense | Robin P. van de Water'
     footnotes: true
    #  reference-location: block  # Keep footnotes on individual slides
 
