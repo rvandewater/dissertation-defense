@@ -24,15 +24,39 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      # FIX 1: Explicitly force output to '_site' folder
-      - name: Render
+      # 1. Install R (Required if you have R code, remove if not)
+      # - name: Setup R
+      #   uses: r-lib/actions/setup-r@v2
+      #   with:
+      #     r-version: '4.4.0'
+      # - name: Install R dependencies
+      #   uses: r-lib/actions/setup-r-dependencies@v2
+      #   with:
+      #     packages: |
+      #       any::knitr
+      #       any::rmarkdown
+
+      # 2. Render specifically to '_site'
+      - name: Render Defense Slides
+        # This forces the output to go to _site, ensuring the directory exists
         run: quarto render defense.qmd --to revealjs --output-dir _site
 
-      # FIX 2: Simplified rename (we now know _site exists)
-      - name: Rename defense to index
-        run: mv _site/defense.html _site/index.html
+      # 3. Overwrite index.html with your slides
+      - name: Make Defense the Homepage
+        run: |
+          echo "Files in _site before rename:"
+          ls -R _site
+          
+          # Remove existing index.html (the demo file) if it exists
+          rm -f _site/index.html
+          
+          # Rename your slides to index.html so they become the homepage
+          mv _site/defense.html _site/index.html
+          
+          echo "Files in _site after rename:"
+          ls -la _site
 
-      # FIX 3: Simplified .nojekyll creation
+      # 4. Standard deployment steps
       - name: Disable Jekyll
         run: touch _site/.nojekyll
 
@@ -43,3 +67,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
