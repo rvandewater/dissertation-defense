@@ -41,3 +41,5 @@ __pycache__/
 
 /.quarto/
 **/*.quarto_ipynb
+
+/.luarc.json

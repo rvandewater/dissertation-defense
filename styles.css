@@ -7,3 +7,16 @@
 .border-thick {
   border-width: 3px;
 }
+/* Change footnote markers to letters */
+.footnote-ref {
+  counter-reset: none;
+}
+
+a.footnote-ref::before {
+  counter-increment: footnote;
+  content: counter(footnote, lower-alpha);
+}
+
+.footnotes ol {
+  list-style-type: lower-alpha;
+}
