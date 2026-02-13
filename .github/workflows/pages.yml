@@ -26,11 +26,13 @@ jobs:
 
       # If you need Python/R deps, add setup steps here (see below)
       - name: Render
-        run: quarto render defense.qmd
-        
+        run: quarto render defense.qmd --to revealjs
+
       - name: Rename defense to index
-        run: mv docs/defense.html docs/index.html
-        # NOTE: If your output directory is '_site', change 'docs' to '_site' above
+        run: |
+          if [ -d "_site" ]; then
+            mv _site/defense.html _site/index.html
+          fi
 
       - name: Disable Jekyll
         run: |
@@ -50,7 +52,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: _site
 
   deploy:
     runs-on: ubuntu-latest
