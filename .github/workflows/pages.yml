@@ -27,6 +27,10 @@ jobs:
       # If you need Python/R deps, add setup steps here (see below)
       - name: Render
         run: quarto render defense.qmd
+        
+      - name: Rename defense to index
+        run: mv docs/defense.html docs/index.html
+        # NOTE: If your output directory is '_site', change 'docs' to '_site' above
 
       - name: Disable Jekyll
         run: |
