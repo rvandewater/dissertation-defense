@@ -26,7 +26,7 @@ jobs:
 
       # If you need Python/R deps, add setup steps here (see below)
       - name: Render
-        run: quarto render
+        run: quarto render defense.qmd
 
       # Prevent Jekyll from interfering with Quarto output
       - name: Disable Jekyll
