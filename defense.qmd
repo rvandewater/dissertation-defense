@@ -14,17 +14,17 @@ format:
     theme: serif
     transition: fade
     slide-number: true
-    fontsize: 2em
+    fontsize: 1.5em
     chalkboard: false
     preview-links: auto
     logo: ""
     css: custom.css
     footnotes-hover: true
-    footer: '<img src="figures/slides_link_trans.svg" style="height:2em;vertical-align:middle; "> PhD Defense | Robin P. van de Water'
+    footer: 'rpvandewater.com/dissertation-defense/ | PhD Defense | Robin P. van de Water'
     footnotes: true
    #  reference-location: block  # Keep footnotes on individual slides
-
 ---
+
 ## United Nations Digital Health Objectives
 
 ::: {.fragment .fade-in fragment-index=1}
@@ -66,27 +66,35 @@ How do we enable the entire community to build on each other's work?
 :::: -->
 ---
 
-![](figures/motivation/ehr_simplified.svg){fig-cap="My caption" width=80%}
+![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=80%}
 
----
-
-## Research Contribution Overview
-
-::: {.incremental}
-1. **Reproducible Prediction Experiments**
-2. **Development of Applied Multi-ward Multi-modal Early Warning Systems**
-3. **Packages and pipelines for Foundational Health AI**
-:::
-::: {.fragment .fade-in}
-**Thesis Statement:** *Healthcare ML requires rich data, reusable model components, and an extensive validation ecosystem.*
+::: {.notes}
+What does EHR data look like? 
+- It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes). 
+- This complexity is both a challenge and an opportunity for machine learning in healthcare. 
+- We should distinguish between in-patient and out-patient data, the latter is much more sparse and less frequently updated, which has implications for model design and deployment. 
+- The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
 :::
 ---
 
 ## The Translation Gap in Healthcare
+::: {.incremental}
+- The problem statement motivating this work^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]: **Despite the explosion of machine learning research and datasets, very few models have been successfully deployed in clinical practice.**
+- Why? The translation gap is due to a combination of factors:
+  - **Reproducibility** challenges: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.
+  - **Incomplete observations**: Retrospective data does not necessarily reflect the real-time data needed for clinical decision-making.
+  - **Lack of robust infrastructure**: Each institution builds custom pipelines, making it hard to share models and validate across sites.
+  - **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility is complex.
+:::
 
-The problem statement motivating this work^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
-
-> "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks."
+::: {.notes}
+- The translation gap is due to a combination of factors:
+  - Reproducibility: Addressed with the YAIB framework, which standardizes benchmarking across datasets and preprocessing choices.
+  - Incomplete observations: Addressed with the CASSANDRA study, which prospectively collects data and validates models in real clinical settings.
+  - Lack of infrastructure: Addressed with the MEDS framework, which provides a standardized data format and tools for scalable research across institutions.
+  - Ethical and regulatory hurdles: Depending on the context, these are addressed through careful study design, data governance, and transparency in reporting.
+:::
+<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
 
 <!-- :::: columns
 ::: {.column width="50%"}
@@ -104,114 +112,199 @@ The problem statement motivating this work^[[@mcdermottLackScienceMachine2025] [
 - Barriers to adoption
 :::
 :::: -->
+
 ---
 
-## Part 1: REPRODUCIBILITY IN ICU PREDICTION
-### YAIB Framework^[[@vandewaterAnotherICUBenchmark2024a]]
+## What do we need? 
 
-**Research question:** *Why do different papers report different performance for the same clinical task?*
+In *Data science at the singularity*, Donoho defines three characteristics that enable frictionless reproducibility^[[@donohoDataScienceSingularity2024]] : 
+
+::: {.incremental}
+- **Data**: Datafication of everything, with a culture of research data sharing. 
+- **Re-execution**: Research code sharing including the ability to exactly re-execute the same complete  workflow by different researchers.  
+- **Challenges**: Adopting challenge problems as a new paradigm powering methodological research.
+:::
+<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
+
+<!-- :::: columns
+::: {.column width="50%"}
+**Current State:**
+- Limited open-source tools
+- Dataset-specific implementations
+- Proprietary data formats
+- Few external validations
+:::
+::: {.column width="50%"}
+**Consequences:**
+- Non-reproducible results
+- Slow scientific progress
+- Inefficient use of clinical data
+- Barriers to adoption
+:::
+:::: -->
+
+::: {.notes}
+The translation gap in healthcare ML can be reframed as a failure to achieve the "data science singularity" as defined by Donoho. To reach this state, we need to ensure that data is widely available and standardized, that code is shared and can be re-executed by others, and that we adopt challenge problems to drive methodological research. My thesis addresses these needs through the development of tools and frameworks that promote reproducibility, clinical relevance, and scalable infrastructure for healthcare machine learning research.
+:::
+
+---
+
+## Research Contribution Overview
+
+::: {.incremental}
+1. **Enabling Reproducible Prediction Experiments**
+2. **Development and Validation of Applied Multi-ward Multi-modal Early Warning Systems**
+3. **Packages and pipelines for Foundational Health AI Research**
+:::
+::: {.fragment .fade-in}
+**Thesis Statement:** *Healthcare ML requires rich data, reusable model components, and an extensive validation ecosystem.*
+:::
+
+::: {.notes}
+My thesis is structured around three main contributions that address the key challenges in translating machine learning research into clinical practice.
+1. Reproducible Prediction Experiments: I developed the YAIB framework to enable reproducible benchmarking of ICU prediction models across different datasets and preprocessing choices. This helps us understand why different papers report different performance for the same clinical task.
+2. Development of Applied Multi-ward Multi-modal Early Warning Systems: I conducted the CASSANDRA study, which prospectively collects data from surgical patients in the general ward and integrates wearable device data to improve early warning systems for postoperative complications.
+3. Packages and pipelines for Foundational Health AI Research: I contributed to the development of the MEDS framework, which provides a standardized data format and tools for scalable machine learning research across healthcare institutions, enabling better reproducibility and collaboration.
+4. Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
+:::
 
 ---
 
 ## The Reproducibility Crisis in Clinical ML
 
-**Problem:** Comparing across papers is nearly impossible because:
+**Problem:** Comparing ML approaches across papers is nearly impossible because of different:
 
-- Different datasets (MIMIC-III vs MIMIC-IV vs eICU vs HiRID)
-- Different cohort definitions (patient inclusion/exclusion varies)
-- Different preprocessing (normalization, imputation, features)
-- Different evaluation metrics and splits
-- Code rarely published or is outdated
+-  Datasets (MIMIC-III vs MIMIC-IV vs eICU vs HiRID)
+-  Cohort definitions (patient inclusion/exclusion varies)
+-  Preprocessing (normalization, imputation, features)
+-  Evaluation metrics and splits
+But mostly:
+- Code not published, incomplete, or not reusable
 
-**Example:** ICU mortality prediction on MIMIC-IV
-- Published models range from AUROC 0.70 to 0.95
-- Is this variation due to models or experimental setup?
-
-**Hypothesis:** *Dataset, cohort definition, and preprocessing choices have **larger effects on performance** than the choice of model architecture.*
+Our conclusion:
+*Dataset, cohort definition, and preprocessing choices have **larger effects on performance** than the choice of model architecture.*
 
 ---
 
-## YAIB Solution: Modular Benchmarking Framework
+![](figures/yaib/YAIB_logo.svg){fig-cap="YAIB Logo" width=80%}
 
-**Design Philosophy:** Build a framework that enables reproducible comparisons while remaining flexible
+---
 
-Key Features:
+## Yet Another ICU Benchmark (YAIB)
 
+::: {.incremental}
+Problems:
+
+- Medical research is **inherently** complex
+- One size fits-all always **impossible**
+- Hardcoded ≠ **reproducible**
+
+
+Goals:
+
+- **Modular** setup maintaining reproducibility
+- **Extensibility** across experiment lifecycle
+- **Out-of-the-box** support: datasets, tasks, models
+
+Result: 
+
+- ReciPies: Modular ML preprocessing framework ^[[@van_de_Water2026]]
+- YAIB Framework^[[@vandewaterAnotherICUBenchmark2024a]]: enables reproducible comparisons while remaining flexible enough to accommodate real-world research needs.
+:::
+<!-- ::: {.incremental}
 1. **Data Harmonization** [@Ben23]
-   - Use clinical concept dictionaries (via `ricu`)
-   - Define consistent feature sets across datasets
-   - Transparent cohort extraction with attrition reporting
-
 2. **Modular Preprocessing** (ReciPies) [@vSR26]
-   - Configuration-as-code approach
-   - Reproducible transformation pipelines
-   - Versioned, shareable preprocessing recipes
-
-3. **Standardized Evaluation** [@DGS18]
-   - gin-config for experiment definition
-   - Multiple models × multiple tasks × multiple datasets
-   - Tracked hyperparameter optimization (Bayesian)
+3. **Standardized, explicit, configurable evaluation** [@DGS18]
+::: -->
 
 ---
 
 ## The Experimental Pipeline
 
-![](figures/yaib/yaib_flow_combined.svg){fig-cap="My caption" width=80%}
+
+
+<div style="text-align: center;">
+![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=100%}
+</div>
 
 ---
 
-## ReciPies
-![](figures/yaib/recipies_flow.svg){fig-cap="My caption" width=80% .no-dark}
+## ReciPies: A Simple Modular Preprocessing Framework for ML Research
+![](figures/yaib/recipies_flow.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
 
-<!-- 
+<div style="position: absolute; bottom: 0; right: 0; text-align: right;">
+![](figures/yaib/recipies_logo.svg){fig-cap="My caption" width=10% .no-dark}
+</div>
+---
+ 
 **Research Design:**
 
 Four publicly available ICU datasets:
-- MIMIC-IV [@Joh22]
-- eICU [@eICU17]
-- HiRID [@Hyl20]
-- AUMCdb [@AUMC19]
 
-Five prediction tasks:0
-- ICU mortality
-- Acute kidney injury (KDIGO Stage 1+)
-- Sepsis (Sepsis-3)
-- Kidney function (creatinine level)
-- Length of stay (remaining) -->
+<!-- - MIMIC-IV^[[@johnsonMIMICIVFreelyAccessible2023]]
+- eICU^[[@pollardEICUCollaborativeResearch2018]]
+- HiRID^[[@hylandEarlyPredictionCirculatory2020]]
+- AUMCdb^[[@thoralSharingICUPatient2021]] -->
+| **Dataset**                  | **MIMIC-III / IV** | **eICU** | **HiRID** | **AUMCdb** |
+|------------------------------|--------------------|----------|-----------|------------|
+| **Stays***                  | 40k (0.1k)** / 73k | 201k (2k) | 34k       | 23k        |
+| **Version**                 | v1.4 / v2.2        | v2.0     | v1.1.1    | v1.0.2     |
+| **Frequency (time-series)** | 1 hour             | 5 minutes| 2 / 5 minutes | up to 1 minute |
+| **Origin**                  | USA                | USA      | Switzerland | Netherlands |
+| **Originally published**    | 2015^[[@johnsonMIMICIIIFreelyAccessible2016]] / 2020^[[@johnsonMIMICIVFreelyAccessible2023]] | 2017^[[@pollardEICUCollaborativeResearch2018]] | 2020^[[@hylandEarlyPredictionCirculatory2020]] | 2019^[[@thoralSharingICUPatient2021]] |
+---
+
+## Prediction Task Overview {data-scale="0.1"}
+
+::: {.notes}
+**Note:** The related work is non-exhaustive.
+:::
+
+| **No** | **Task**         | **Frequency**       | **Type** | **Related Work**                                                                                                                                                                                                 |
+|--------|------------------|---------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1      | Mortality        | Once per stay*     | C        | ^[[@bakerContinuousAutomaticMortality2020; @luMachineLearningBased2022a; @medicEvidencebasedClinicalDecision2019; @sharmaMortalityPredictionICU2017; @syedApplicationMachineLearning2021a]]                        |
+| 2      | AKI              | Hourly             | C        | ^[[@huangInterpretableTemporalConvolutional2021; @nikkinenDevelopingSupervisedMachine2022; @panSelfCorrectingDeepLearning2019; @rankDeeplearningbasedRealtimePrediction2020; @shamoutMachineLearningClinical2021; @wangRealTimePredictionAKI2020; @koynerDevelopmentMachineLearning2018]] |
+| 3      | Sepsis           | Hourly             | C        | ^[[@kokAutomatedPredictionSepsis2020; @lauritsenEarlyDetectionSepsis2020; @merathUseMachineLearning2020; @fleurenMachineLearningIntensive2020; @moorPredictingSepsisMultisite2021; @moorEarlyRecognitionSepsis2019a; @muralitharanMachineLearningBased2021; @reynaEarlyPredictionSepsis2019; @shamoutMachineLearningClinical2021; @wangIntegratingPhysiologicalTime2022]] |
+| 4      | KF               | Once per stay*     | R        | ^[[@tomasevClinicallyApplicableApproach2019; @futomaPredictingDiseaseProgression2016; @perotteRiskPredictionChronic2015; @chengPredictingInpatientAcute2018]]                                                    |
+| 5      | LOS              | Hourly             | R        | ^[[@shillanUseMachineLearning2019; @guoEvaluationTimeSeries2020]]                                                                                                                                                |
+
+::: {.notes}
+- **C**: Classification task  
+- **R**: Regression task  
+- *Once per stay*: Indicates predictions are made once during the ICU stay.
+:::
 
 ---
 
-## Key Finding: The Effect Size Analysis
+## Different Definitions, Different Conclusions
 
-:::: columns
-::: {.column width="50%"}
-**Model Comparison (Vanilla Task):**
+- Sepsis definition can significantly alter the resulting AUROC/AUPRC
+- Large differences per cohort
 
-| Model | AUROC |
-|-------|-------|
-| Logistic Regression | 0.75 |
-| Random Forest | 0.76 |
-| Gradient Boosting | 0.78 |
-| RNN | 0.79 |
-| LSTM | 0.80 |
 
-*Effect: 0.05 AUROC range*
+
+| **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al. ^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al. ^[[@calvertComputationalApproachEarly2016]] |         |
+|---------------|-----------------|---------|-----------------|---------|-----------------|---------|
+|               | **AUROC**       | **AUPRC** | **AUROC**       | **AUPRC** | **AUROC**       | **AUPRC** |
+| **LGBM**      | 75.9±0.2        | 4.3±0.0  | 72.4±0.0        | 10.5±0.0 | 62.2±0.2        | 1.8±0.0  |
+| **GRU**       | **79.2±0.1**    | **6.1±0.0** | **80.9±0.0**    | **17.7±0.0** | **89.2±0.0**    | **9.3±0.2** |
+
+::: {.notes}
+**Note:** Our definition (marked with *), adapted to be more clinically actionable. See Appendix for details.
 :::
+---
+
+## External validation
+
 ::: {.column width="50%"}
-**Cohort Definition Impact (MIMIC-IV Sepsis):**
+![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
 
-| Definition | AUROC | N Cases |
-|-----------|-------|---------|
-| Sepsis-2 | 0.82 | 15,420 |
-| Sepsis-3 | 0.91 | 3,730 |
-| Local variant | 0.76 | 8,000 |
-
-*Effect: 0.15 AUROC range* [@Joh16]
 :::
-::::
 
-**Conclusion:** Preprocessing and cohort definition typically **dwarf** model architecture effects [@Van24a; Fig 3.6].
+::: {.column width="50%"}
+![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
 
+:::
 ---
 
 ## Transferability Lesson: Can We Reuse Models?
