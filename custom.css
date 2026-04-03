@@ -8,3 +8,58 @@ img.no-dark, .no-dark img, .no-dark {
 .reveal .slide-background {
   background-color: #ffffff !important; /* True white */
 }
+
+.bigger-text {
+  font-size: 1.5em !important;
+}
+
+.small-text {
+  font-size: 0.6em !important;
+}
+.tiny-text {
+  font-size: 0.4em !important;
+}
+.tiniest-text {
+  font-size: 0.3em !important;
+}
+.reveal .subtitle {
+  font-size: 2em !important;
+  font-style: italic !important;
+
+}
+
+.centered {
+  text-align: center !important;
+}
+
+.highlight-blue {
+  background-color: rgb(0, 120, 220) !important;
+  color: #fff !important;
+  transition: background 0.5s;
+}
+
+/*-- scss:rules --*/
+
+.reveal .fragment.highlight-green.visible {
+  color: #1e7d07 !important;
+}
+
+.reveal .fragment.highlight-current-green.current-fragment {
+  color: #1e7d07 !important;
+}
+
+  /* Stays normal weight, then goes bold when stepped through */
+  .fragment.bold-text {
+    font-weight: normal;
+  }
+  .fragment.bold-text.visible {
+    font-weight: bold;
+  }
+
+  /* "Current" variant: bold only while active, reverts on next step */
+  .fragment.bold-current-text {
+    font-weight: normal;
+  }
+  .fragment.bold-current-text.current-fragment {
+    font-weight: bold;
+  }

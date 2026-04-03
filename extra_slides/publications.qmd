@@ -1,0 +1,68 @@
+---
+
+---
+
+## All Publications 
+
+:::: columns
+
+::: {.column width="50%"}
+::: {.tiniest-text}
+
+**Published:**
+
+- **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML". in: *Journal of Open Source Software* 11.117 (2026), p. 9261. doi: 10.21105/joss.09261 [@van_de_Water2026]
+- Matthias Kirchler, Matteo Ferro, Veronica Lorenzini, **Robin P. van de Water**, Christoph Lippert, and Andrea Ganna. "Large Language Models Improve Transferability of Electronic Health Record-Based Predictions across Countries and Coding Systems". In: *Accepted to npj Digital Medicine (2026)* [@Kirchler2025GRASP]
+- Katharina Alefs, Susanne Ibing, Pia Francesca Rissom, Jan Carlo Schmid, Arkadiusz Kwasigroch, **Robin van de Water**, Bernhard Y. Renard, and Eugenia Alleva. "Towards Foundation Model-Based Propensity Score Matching from Electronic Health Records". In: Machine Learning for Health Symposium 2025. Sept. 2025. [@alefsFoundationModelBasedPropensity2025]
+- Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Faraj, Robert Ahlborn, Maximilian Schulze, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Bert Arnrich, Igor M. Sauer, and Max M. Maurer. "90-Day Mortality Prediction in Elective Visceral Surgery Using Machine Learning: A Retrospective Multicenter Development, Validation, and Comparison Study". In: *International Journal of Surgery* 111.6 (June 2025), p. 3742. doi: 10.1097/JS9.0000000000002372. [@riepe90dayMortalityPrediction2025a]
+- Bjarne Pfitzner, Max M. Maurer, Axel Winter, Christoph Riepe, Igor M. Sauer, **Robin van de Water**, Christian Denecke, Johann Pratschke, and Bert Arnrich. "Differentially-Private Federated Learning with Non-IID Data For Surgical Risk Prediction." In: *International Journal of Semantic Computing 19.3 (2025)*. [@pfitznerDifferentiallyPrivateFederatedLearning2025]
+- Axel Winter, Bjarne Pfitzner, **Robin P. van de Water**, Lara Faraj, Christoph Riepe, Wolf-Heinrich Hahn, Felix Krenzien, Christian Schineis, Thomas Malinka, and Wenzel Schöning. "Overcoming the Data Barrier: Transfer Learning for 90-Day Mortality Prediction in General Surgery–a Retrospective Multicenter Development and Comparison Study". In: *International Journal of Surgery* (2025), pp. 10–1097. [@winterOvercomingDataBarrier2025]
+- **Robin Philippus van de Water**, Ethan Steinberg, Michael Wornow, Patrick Rockenschaub, and Matthew McDermott. MIMIC-IV Demo Data in the Medical Event Data Standard (MEDS). 2025. doi: 10.13026/T2Y8-EA41. [@vandewaterMIMICIVDemoData2025]
+- **Robin P. Van de Water**. "Scaling Up Clinical ML from Datasets to Entire Health Systems through the MEDS Ecosystem". In: *SBHD 2025 International Conference on Systems Biology of Human Diseases*. Berlin, June 2025 [@vandewaterScalingClinicalML2025]
+- **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". in: *Proceedings of The Twelfth International Conference on Learning Representations.* May 2024. doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
+- **MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". In: *ICLR 2024 Workshop on Learning from Time Series for Health*. 2024. [@medsworkinggroupMedicalEventData2024]
+- Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. "MEDS Decentralized, Extensible Validation (MEDS-DEV) Benchmark: Establishing Reproducibility and Comparability in ML for Health". In: *Machine Learning for Health (ML4H)*, 15-16 December 2024, Vancouver, Canada (Nov. 2024). [@mcdermottMEDSDecentralizedExtensible2024]
+- Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. Lee, Nassim Oufattole, Patrick Rockenschaub, Kamilė Stankevičiūtė, Ethan Steinberg, Jimeng Sun, Robin P. Van De Water, Michael Wornow, John Wu, and Zhenbang Wu. "MEDS: Building Models and Tools in a Reproducible Health AI Ecosystem". In: *Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining* V.2. Toronto ON Canada: ACM, Aug. 2025, pp. 6243–6244. isbn: 979-8-4007-1454-2. doi: 10.1145/3711896.3737608. [@mcdermottMEDSBuildingModels2025a]
+- Max M. Maurer, Bjarne Pfitzner, **Robin P. van de Water**, Lara Faraj, Christoph Riepe, Daniela Zuluaga, Felix Krenzien, Nathanael Raschzok, Robert Siegel, Christian Schineis, Bert Arnrich, Katharina Beyer, Johann Pratschke, Igor M. Sauer, and Axel Winter. "Privacy Preserving Federated Learning for 90-Day Mortality Prediction in Colorectal Surgery: A Multicenter Retrospective Development and Comparison Study". In: *International Journal of Surgery* (London, England) (Aug. 2025). issn: 1743-9159. doi: 10.1097/JS9.0000000000003084 [@maurerPrivacyPreservingFederated2025]
+- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Daniela Zuluaga, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Hospital-grade Clinical Data and Wearable Vital Sign Monitoring to Predict Surgical Complications". In: *ICLR 2024 Workshop on Learning from Time Series For Health.* Mar. 2024. [@waterCombiningHospitalgradeClinical2024b]
+- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Time Series Modalities to Create Endpoint-driven Patient Records". In: *ICLR 2024 Workshop on Data-centric Machine Learning Research (DMLR): Harnessing Momentum for Science.* Mar. 2024. [@waterCombiningTimeSeries2024]
+
+
+:::
+:::
+
+::: {.column width="50%"}
+::: {.tiniest-text}
+- Axel Winter, **Robin P. van de Water**, Bjarne Pfitzner, Marius Ibach, Christoph Riepe, Robert Ahlborn, Lara Faraj, Felix Krenzien, Eva M. Dobrindt, and Jonas Raakow. "Enhancing Preoperative Outcome Prediction: A Comparative Retrospective Case–Control Study on Machine Learning versus the International Esodata Study Group Risk Model for Predicting 90-Day Mortality in Oncologic Esophagectomy". In: *Cancers 16.17* (2024), p. 3000. [@winterEnhancingPreoperativeOutcome2024]
+- Bjarne Pfitzner, Max M. Maurer, Axel Winter, Christoph Riepe, Igor M. Sauer, **Robin van de Water**, and Bert Arnrich. "Differentially-Private Federated Learning with Non-IID Data for Surgical Risk Prediction". In: 2024 *IEEE First International Conference on Artificial Intelligence for Medicine, Health and Care (AIMHC)*. IEEE, 2024, pp. 120–129. [@pfitznerDifferentiallyPrivateFederatedLearning2024]
+- Orhan Konak, **Robin van de Water**, Valentin Döring, Tobias Fiedler, Lucas Liebe, Leander Masopust, Kirill Postnov, Franz Sauerwald, Felix Treykorn, and Alexander Wischmann. "HARE: Unifying the Human Activity Recognition Engineering Workflow". In: *Sensors 23.23 (2023)*, p. 9571. [@konakHAREUnifyingHuman2023]
+- Orhan Konak, Alexander Wischmann, **Robin van de Water**, and Bert Arnrich. "A Real-time Human Pose Estimation Approach for Optimal Sensor Placement in Sensor-based Human Activity Recognition". In: *Proceedings of the 8th International Workshop on Sensor-Based Activity Recognition and Artificial Intelligence.* Lübeck Germany: ACM, Sept. 2023, pp. 1–6. isbn: 979-8-4007-0816-9. doi: 10.1145/3615834.3615848. [@konakRealtimeHumanPose2023a]
+- **Robin van de Water**, Francesco Ventura, Zoi Kaoudi, Jorge-Arnulfo Quiane-Ruiz, and Volker Markl. "Farming Your ML-based Query Optimizer's Food". In: 2022 IEEE 38th International Conference on Data Engineering (ICDE). Kuala Lumpur, Malaysia: IEEE, May 2022, pp. 3186–3189. isbn: 978-1-6654-0883-7. doi: 10.1109/ICDE53745.2022.00294. [@vandewaterFarmingYourMLbased2022a][**Best demonstration paper award**]
+
+- **Robin van de Water**, Francesco Ventura, Z Kaoudi, J Quiane-Ruiz, and Volker Markl. "Farm Your ML-based Query Optimizer's Food!–Human-Guided Training Data Generation–". In: *Conference on Innovative Data Systems Research (CIDR). 2022* [@vandewaterFarmYourMLbased2022]
+- Lientje Maas, Mathan Geurtsen, Florian Nouwt, Stefan F. Schouten, **Robin van de Water**, Sandra Van Dulmen, Fabiano Dalpiaz, Kees Van Deemter, and Sjaak Brinkkemper. "The Care2Report System: Automated Medical Reporting as an Integrated Solution to Reduce Administrative Burden in Healthcare." In: *Hawaii International Conference on System Sciences*. 2020, pp. 1–10. [@maasCare2ReportSystemAutomated2020]
+
+**Under submission:**
+
+- Matthew McDermott, Ethan Steinberg, Jason Fries, **Robin P. van de Water**, Chao Pang, Patrick Rockenschaub, Pawel Renc, Jungwoo Oh, Kamilė Stankevičiūtė, Justin Xu, Tom Joseph Pollard, Nassim Oufattole, Michael Wornow, Teya Bergamaschi, Hyewon Jeong, Simon Lee, Vincent Jeanselme, Kiril Klein, Mikkel Odgaard, Maria Elkjær Montgomery, Arkadiusz Sitek, Mads Nielsen, Jeffrey Chiang, Noa Dagan, Isaac Kohane, Shalmali Joshi, Edward Choi, and Nigam Shah. "MEDS: A Simple, Interoperable Data Standard and Ecosystem for Health AI Research". In: *Under review at New England Journal Of Medicine (NEJM) AI (2026)* [@McDermott2025MEDS]
+
+- Jan Carlo Schmid, Susanne Ibing, Stefan Kalabakov, Katharina Alefs, **Robin P. van de Water**, Arkadiusz Kwasigroch, Eugenia Alleva, Bert Arnrich, Bernhard Y. Renard, and Maia Kayal. "Expert-Defined, Chart-Reviewed Features Outperform EHR Foundation Models for Predicting Crohn's-like Disease of the Pouch". In: *Under review at The American Journal of Gastroenterology (2026)* [@Schmid2025CrohnsPouch]
+
+**Preprints (preparing for submission):**
+
+- **Robin P. van de Water**, Axel Winter, Daniela Zuluaga Lotero, Bjarne Pfitzner, Lara Faraj, Bert Arnrich, Patrick Rockenschaub, Wenzel Schoning, Thomas Malinka, Christian Denecke, Johann Pratschke, Igor M. Sauer, and Max M. Maurer. Continuous Multimodal AI with Wearable Vital Signs Predicts Postoperative Complications in the General Ward. Nov. 2025. doi: 10.1101/2025.11.25.25340950. [@vandewaterContinuousMultimodalAI2025]
+
+- Alisher Turubayev, Anna Shopova, Fabian Lange, Mahmut Kamalak, Paul Mattes, Victoria Ayvasky, Bert Arnrich, Bjarne Pfitzner, and **Robin P. van de Water**. Closing Gaps: An Imputation Analysis of ICU Vital Signs. Oct. 2025. doi: 10.48550/arXiv.2510.24217. arXiv: 2510.24217 [cs]. [@turubayevClosingGapsImputation2025]
+
+**Manuscripts in preparation:**
+
+- **Robin P. van de Water**, Katharina Marie Alefs, Susanne Ibing, Stefan Kalabakov, Aadil Rasheed, Pia Francesca Rissom, Jan Carlo Schmid, Arkadiusz Kwasigroch, Eugenia Alleva, and Christoph Lippert. "FLAMES: EHR Foundation Models as a Resource for Health Systems". 2025
+
+- **Robin P. van de Water**, Christoph Riepe, Bjarne Pfitzner, Lara Faraj, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Igor Sauer, Axel Winter, and Max Maurer. "Machine Learning for 30-Day Mortality Prediction for High-Risk General Emergency Surgery". In: In preparation (2025)
+
+- Wouter van Amsterdam, Michael Kamp, Rajesh Ranganath, **Robin P. van de Water**, Florian Markowetz, Evangelia Christodoulou, Yamuna Krishnamurthy, Christoph Lippert, Jeff Clark, Julia E. Vogt, Raul Santos-Rodriguez, Thomas Gärtner, Gilbert Koch, and Brett Beaulieu-Jones. "Missing Incentives, Missing Oversight: The Challenges of AI Monitoring in Clinical Practice". 2025
+
+:::
+:::
+
+---

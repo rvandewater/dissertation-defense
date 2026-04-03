@@ -1,0 +1,20 @@
+## Limitations and Challenges
+
+**Technical Limitations:**
+
+1. **Schema Rigidity:** MEDS works well for structured EHR data but struggles with:
+   - Freetext clinical notes (requires separate NLP pipeline)
+   - Unstructured imaging data
+   - Wearable device streams (different time resolution)
+
+2. **Adoption Barriers:**
+   - Requires institutional buy-in for ETL pipeline maintenance
+   - Data governance / privacy concerns in decentralized settings
+   - Different hospitals have different coding practices (harmonization still needed)
+
+3. **Model Generalization:**
+   - MEDS enables standardized evaluation but doesn't solve fundamental domain shift
+   - Model trained at Hospital A often performs poorly at Hospital B
+   - Site-specific fine-tuning often necessary
+
+---
