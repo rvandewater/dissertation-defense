@@ -28,10 +28,19 @@ revealjs-plugins:
   - editable
 #   - simplemenu
 ---
-<!-- 
-# Introduction {slide-type="section"}
 
---- -->
+<!-- ![](figures/motivation/ml_for_health.svg){fig-cap="World Health Organization" height=25em .no-dark} -->
+<div style="position: relative; display: inline-block;">
+  <img src="figures/motivation/ml_for_health.svg" style="height:25em; display:block;" class="no-dark">
+
+  <div class="fragment fade-out" data-fragment-index="1"
+       style="position:absolute; top:0; left:15%; width:100%; height:100%; background:white; z-index:2;"></div>
+
+  <div class="fragment fade-out" data-fragment-index="2"
+       style="position:absolute; top:0; left:55%; width:100%; height:100%; background:white; z-index:2;"></div>
+</div>
+
+---
 
 ## United Nations WHO Digital Health Objectives
 
