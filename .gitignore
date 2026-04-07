@@ -43,3 +43,4 @@ __pycache__/
 **/*.quarto_ipynb
 
 /.luarc.json
+figures/meds/harmonizehr/harmonizehr_code_concept_tsne.svg
