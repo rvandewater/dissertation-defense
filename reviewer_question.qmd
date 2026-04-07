@@ -1,0 +1,100 @@
+
+
+
+
+
+---
+
+## Anticipated Questions and Preparation
+
+
+*Answer:* 
+- Prospective design with pre-registered endpoints reduces bias
+- External validation planned with 3+ additional centers
+- Wearable early warning windows (2-3 days) leave margin for error
+- Conservative thresholds in implementation (yellow/red alerts)
+
+---
+
+**Q2: "MEDS requires ETL pipelines at every hospital. Isn't this a significant barrier?"**
+
+*Answer:*
+- True, but initial investment (~2-4 weeks per hospital) vs. continuous ~3-6 week overhead per project
+- MEDS working group has already built pipelines for 8+ major datasets
+- Open-source tools reduce burden (don't need to build from scratch)
+- ROI becomes positive after 3-4 projects per hospital
+
+---
+
+**Q3: "Foundation models require massive datasets. Can smaller hospitals participate?"**
+
+*Answer:*
+- Linear probing approach (freeze FM, train simple classifier) needs 100s of samples, not millions
+- Transfer learning from large public datasets (MIMIC, eICU) to small hospital domain
+- MEDS-DEV decentralized framework allows small hospitals to contribute validation data
+- Federated learning enables collaborative training without centralized data
+
+---
+
+**Q4: "How do you validate that wearable-derived warnings actually prevent complications?"**
+
+*Answer:*
+- Prospective study design (CASSANDRA Phase 2) with real interventions
+- Currently in expansion phase at 3 additional centers
+- Randomized controlled trial design under discussion
+- Interim analysis shows lead times of 2-3 days feasible for clinical intervention window
+
+---
+
+**Q5: "Reproducibility across datasets is hard. How do you know YAIB actually solves this?"**
+
+*Answer:*
+- YAIB enables apples-to-apples comparisons when used identically
+- Doesn't solve all generalization problems, but makes them transparent
+- Cohort definitions are explicitly versioned and reproducible
+- Transfer learning experiments show expected performance drops when data shifts (validates framework)
+
+---
+
+## Key Publications Incorporated
+
+**Main Contributions:**
+
+- YAIB Benchmarking [@Van24a] - ICLR 2024
+- ReciPies Framework [@vSR26] - In preparation
+- CASSANDRA Prospective Study [@van25d] - Under review
+- Retrospective Mortality Prediction [@Win24; @Rie25] - Published 2024-2025
+- MEDS Working Group [@Gro24; @McD24] - ICLR Workshop 2024, ML4H NeurIPS 2024
+- MEDS Tutorial [@McD25c] - KDD 2025
+
+**Building on Community Work:**
+- Temporal representations in EHR [@Ste23; @Pan24; @Pan25a]
+- Foundation models [@Bom21; @Dev19; @Khan25]
+- Challenges in healthcare ML [@Kelly19; @Adi25; @Sem25]
+
+---
+
+## Recommendations for the Field
+
+**For Researchers:**
+
+1. Publish code and data when possible (anonymized, HIPAA-compliant)
+2. Design prospective studies when making clinical claims
+3. Use MEDS format to enable reproducibility
+4. Report external validation results prominently
+
+**For Institutions:**
+
+1. Invest in data standardization infrastructure (MEDS ETL)
+2. Support decentralized validation (MEDS-DEV-like frameworks)
+3. Encourage cross-institutional collaboration
+4. Require reproducible benchmarks before clinical deployment
+
+**For Funding Bodies:**
+
+1. Prioritize infrastructure and tools (not just algorithms)
+2. Mandate code and data sharing for publicly funded research
+3. Support long-term prospective studies (5-10 years)
+4. Encourage consortia (OHDSI, MEDS working groups)
+
+---
