@@ -24,21 +24,95 @@ format:
    footer: rpvandewater.com/dissertation-defense/ | PhD Defense | Robin P. van de Water
    footnotes: true
    simplemenu:
+   code-overflow: wrap
 revealjs-plugins:
   - editable
 #   - simplemenu
----
 
+--- 
+
+## ML for Health in a Nutshell
 <!-- ![](figures/motivation/ml_for_health.svg){fig-cap="World Health Organization" height=25em .no-dark} -->
 <div style="position: relative; display: inline-block;">
   <img src="figures/motivation/ml_for_health.svg" style="height:25em; display:block;" class="no-dark">
 
   <div class="fragment fade-out" data-fragment-index="1"
-       style="position:absolute; top:0; left:15%; width:100%; height:100%; background:white; z-index:2;"></div>
+       style="position:absolute; top:0%; left:15%; width:100%; height:100%; background:white; z-index:2;"></div>
 
   <div class="fragment fade-out" data-fragment-index="2"
        style="position:absolute; top:0; left:55%; width:100%; height:100%; background:white; z-index:2;"></div>
 </div>
+
+::: {.notes}
+- Hospitals, clinics, and healthcare systems generate vast amounts of data, including electronic health records (EHRs), medical imaging, and physiological signals.
+- Machine learning can be used on parts of this data to predict patient outcomes, assist in diagnosis, and optimize treatment plans.
+- The essence is often predicting or diagnosing something about a patient at time T so that we can intervene at time T+1 to improve outcomes.
+:::
+
+---
+
+## Electronic Health Records (EHR): Footprints of the Patient Journey
+
+![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=80%}
+
+::: {.notes}
+What does EHR data look like? 
+- It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes). 
+- This complexity is both a challenge and an opportunity for machine learning in healthcare. 
+- We should distinguish between in-patient and out-patient data, the latter is much more sparse and less frequently updated, which has implications for model design and deployment. 
+- The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
+:::
+
+---
+
+## The Promise of Machine Learning in Healthcare
+
+![](figures/motivation/ml_health_trend.svg){fig-cap="EHR Data Structure" width=100%}
+
+``` python
+ML_PATTERN = r"(?ix)\b(machine[ _]?learning|deep[ _]?learning|neural[ _]?networks?|artificial[ _]?intelligence|\bAI\b|random[ _]?forest|support[ _]?vector[ _]?(machine|regression|classif\w+)?|\bSVM\b|gradient[ _]?boost\w*|\bXGBoost\b|\bLightGBM\b|\bCatBoost\b|\btransformer\b|\bBERT\b|\bGPT\b|\bLLM\b|\bVLM\b|large[ _]?language[ _]?models?|foundation[ _]?models?|(convolutional|recurrent|graph)[ _]?neural|\bLSTM\b|\bGRU\b|generative[ _]?adversarial|\bGAN\b|reinforcement[ _]?learning|(semi|self|un)[ _-]?supervised[ _]?learning|transfer[ _]?learning|federated[ _]?learning|natural[ _]?language[ _]?processing|\bNLP\b|computer[ _]?vision|(image|object|text)[ _]?(classification|detection|segmentation)|\bautoencoder\b|\bdiffusion[ _]?model\b)\b"
+HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|diseases?|disorders?|syndrome|diagnosis|diagnostics?|prognosis|prognostic|treatments?|therapy|therapeutic|\bEHR\b|\bEMR\b|epidemiol\w*|radiol\w*|pathol\w*|genomics?|proteomics?|transcriptomics?|biomarkers?|\bdrug\b|pharmaceutical|pharmacolog\w*|cancer|tumor|tumour|oncol\w*|cardiac|cardiovascular|coronary|diabetes|diabetic|\bCOVID\b|\bSARS\b|pandemic|epidemic|biomedical|mortality|morbidity|\bICU\b|intensive[ _]?care|surgical|surgery|symptoms?|comorbid\w*|screening|triage|mental[ _]?health|psychiatr\w*|neurolog\w*|\bMRI\b|\bCT[ _]?scan\b)\b"
+
+```
+---
+
+## The Translation Gap in Healthcare
+
+::: {.incremental}
+- The problem statement motivating this work: **Despite the promise and explosion of machine learning research, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
+- Why?
+  - **Reproducibility challenges**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
+  - **Incomplete observations**: Retrospective (administrative) data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
+  - **Lack of robust infrastructure**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
+  - **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility to authorities is non-trivial.^[[@vancalsterThereNoSuch2023]]
+:::
+
+::: {.notes}
+- The translation gap is due to a combination of factors:
+  - Reproducibility: Addressed with the YAIB framework, which standardizes benchmarking across datasets and preprocessing choices.
+  - Incomplete observations: Addressed with the CASSANDRA study, which prospectively collects data and validates models in real clinical settings.
+  - Lack of infrastructure: Addressed with the MEDS framework, which provides a standardized data format and tools for scalable research across institutions.
+  - Ethical and regulatory hurdles: Depending on the context, these are addressed through careful study design, data governance, and transparency in reporting.
+:::
+<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
+
+<!-- :::: columns
+::: {.column width="50%"}
+**Current State:**
+- Limited open-source tools
+- Dataset-specific implementations
+- Proprietary data formats
+- Few external validations
+:::
+::: {.column width="50%"}
+**Consequences:**
+- Non-reproducible results
+- Slow scientific progress
+- Inefficient use of clinical data
+- Barriers to adoption
+:::
+:::: -->
+
 
 ---
 
@@ -92,7 +166,6 @@ How do we enable the entire community to build on each other's work?
 :::: -->
 ---
 
-
 ## V's of Big Data in Health
 
 ::: {.incremental}
@@ -108,92 +181,6 @@ How do we enable the entire community to build on each other's work?
 
 ---
 
-## EHR Data Structure
-
-![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=80%}
-
-::: {.notes}
-What does EHR data look like? 
-- It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes). 
-- This complexity is both a challenge and an opportunity for machine learning in healthcare. 
-- We should distinguish between in-patient and out-patient data, the latter is much more sparse and less frequently updated, which has implications for model design and deployment. 
-- The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
-:::
-
----
-
-## The Translation Gap in Healthcare
-::: {.incremental}
-- The problem statement motivating this work^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]: **Despite the explosion of machine learning research and datasets, very few models have been successfully deployed in clinical practice.**
-- Why? The translation gap is due to a combination of factors:
-  - **Reproducibility** challenges: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.
-  - **Incomplete observations**: Retrospective data does not necessarily reflect the real-time data needed for clinical decision-making.
-  - **Lack of robust infrastructure**: Each institution builds custom pipelines, making it hard to share models and validate across sites.
-  - **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility is complex.
-:::
-
-::: {.notes}
-- The translation gap is due to a combination of factors:
-  - Reproducibility: Addressed with the YAIB framework, which standardizes benchmarking across datasets and preprocessing choices.
-  - Incomplete observations: Addressed with the CASSANDRA study, which prospectively collects data and validates models in real clinical settings.
-  - Lack of infrastructure: Addressed with the MEDS framework, which provides a standardized data format and tools for scalable research across institutions.
-  - Ethical and regulatory hurdles: Depending on the context, these are addressed through careful study design, data governance, and transparency in reporting.
-:::
-<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
-
-<!-- :::: columns
-::: {.column width="50%"}
-**Current State:**
-- Limited open-source tools
-- Dataset-specific implementations
-- Proprietary data formats
-- Few external validations
-:::
-::: {.column width="50%"}
-**Consequences:**
-- Non-reproducible results
-- Slow scientific progress
-- Inefficient use of clinical data
-- Barriers to adoption
-:::
-:::: -->
-
----
-
-## What do we need? 
-::: {.bigger-text}
-In *Data science at the singularity*, Donoho defines three characteristics that enable frictionless reproducibility^[[@donohoDataScienceSingularity2024]] : 
-
-::: {.incremental}
-- **Data**: Datafication of everything, with a culture of research data sharing. 
-- **Re-execution**: Research code sharing including the ability to exactly re-execute the same complete  workflow by different researchers.  
-- **Challenges**: Adopting challenge problems as a new paradigm powering methodological research.
-:::
-:::
-<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
-
-<!-- :::: columns
-::: {.column width="50%"}
-**Current State:**
-- Limited open-source tools
-- Dataset-specific implementations
-- Proprietary data formats
-- Few external validations
-:::
-::: {.column width="50%"}
-**Consequences:**
-- Non-reproducible results
-- Slow scientific progress
-- Inefficient use of clinical data
-- Barriers to adoption
-:::
-:::: -->
-
-::: {.notes}
-The translation gap in healthcare ML can be reframed as a failure to achieve the "data science singularity" as defined by Donoho. To reach this state, we need to ensure that data is widely available and standardized, that code is shared and can be re-executed by others, and that we adopt challenge problems to drive methodological research. My thesis addresses these needs through the development of tools and frameworks that promote reproducibility, clinical relevance, and scalable infrastructure for healthcare machine learning research.
-:::
-
----
 
 ## Research Contribution Overview
 
@@ -205,7 +192,7 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
 3. **Packages and pipelines for Foundational Health AI Research**
 :::
 ::: {.fragment .fade-in}
-**Thesis Statement:** *Healthcare ML requires rich data, reusable model components, and an extensive validation ecosystem.*
+**Thesis Statement:** *Healthcare ML requires rich data, reusable open-source model components, and an extensive validation ecosystem.*
 :::
 
 :::
@@ -807,6 +794,40 @@ Total: 1-2 weeks before publication-ready results
 ```
 
 --- -->
+---
+
+## How Do We Create Research that Translates to Clinical Practice? 
+::: {.bigger-text}
+In *Data science at the singularity*, Donoho defines three characteristics that enable frictionless reproducibility^[[@donohoDataScienceSingularity2024]] : 
+
+::: {.incremental}
+- **Data**: Datafication of everything, with a culture of research data sharing. 
+- **Re-execution**: Research code sharing including the ability to exactly re-execute the same complete  workflow by different researchers.  
+- **Challenges**: Adopting challenge problems as a new paradigm powering methodological research.
+:::
+:::
+<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
+
+<!-- :::: columns
+::: {.column width="50%"}
+**Current State:**
+- Limited open-source tools
+- Dataset-specific implementations
+- Proprietary data formats
+- Few external validations
+:::
+::: {.column width="50%"}
+**Consequences:**
+- Non-reproducible results
+- Slow scientific progress
+- Inefficient use of clinical data
+- Barriers to adoption
+:::
+:::: -->
+
+::: {.notes}
+The translation gap in healthcare ML can be reframed as a failure to achieve the "data science singularity" as defined by Donoho. To reach this state, we need to ensure that data is widely available and standardized, that code is shared and can be re-executed by others, and that we adopt challenge problems to drive methodological research. My thesis addresses these needs through the development of tools and frameworks that promote reproducibility, clinical relevance, and scalable infrastructure for healthcare machine learning research.
+:::
 
 ## Future Research Directions
 
@@ -853,7 +874,7 @@ The translation gap in ML4H cannot be solved by better algorithms. We require:
 
 **Looking Forward:**
 
-The field of machine learning for healthcare stands at an inflection point. We have:
+<!-- The field of machine learning for healthcare stands at an inflection point. We have:
 - ✓ Demonstrated predictive capability (models work in controlled settings)
 - ✓ Shown deployment is feasible (CASSANDRA, clinical partnerships)
 - ✓ Built reusable infrastructure (MEDS ecosystem)
@@ -861,7 +882,7 @@ The field of machine learning for healthcare stands at an inflection point. We h
 **What Remains:**
 - Translating research into routine clinical practice (workflow integration)
 - Ensuring equitable deployment across diverse healthcare systems
-- Maintaining humility about what ML can and cannot do in healthcare
+- Maintaining humility about what ML can and cannot do in healthcare -->
 
 ---
 
