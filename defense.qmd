@@ -1,7 +1,7 @@
 ---
 title: "Benchmark to Bedside"
 subtitle: 'Building Modular Multimodal Machine Learning Infrastructure for Healthcare at Scale   <br>
- <img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;"> <br> <img src="images/logos/logos_defense.svg" width="30%">'
+ <img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;"> <br> <span style="font-size:0.5em;">Scan for interactive slides</span> <br> <img src="images/logos/logos_defense.svg" width="30%">  '
 author: 'Robin P. van de Water'
 date: today
 date-format: "DD MMMM YYYY"
@@ -13,7 +13,7 @@ filters:
 format:
   revealjs:
    theme: serif
-   transition: fade
+  #  transition: fade
    slide-number: true
    fontsize: 1.5em
    chalkboard: false
@@ -66,7 +66,7 @@ What does EHR data look like?
 ---
 
 ## The Promise of Machine Learning in Healthcare
-
+Papers on ArXiv preprint server with ML and health keywords in the title or abstract have been growing over the last years:
 ![](figures/motivation/ml_health_trend.svg){fig-cap="EHR Data Structure" width=100%}
 
 ``` python
@@ -76,15 +76,15 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 ```
 ---
 
-## The Translation Gap in Healthcare
+## The Translation Gap in Healthcare {auto-animate="true"}
 
 ::: {.incremental}
 - The problem statement motivating this work: **Despite the promise and explosion of machine learning research, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
 - Why?
-  - **Reproducibility challenges**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
-  - **Incomplete observations**: Retrospective (administrative) data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
-  - **Lack of robust infrastructure**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
-  - **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility to authorities is non-trivial.^[[@vancalsterThereNoSuch2023]]
+  - ​⚡​ **Research reproducibility**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
+  - ​⚡​ **Incomplete observations**: Retrospective (administrative) data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
+  - ​⚡​ **Lack of robust infrastructure**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
+  - ​⚡​ **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility to authorities is non-trivial.^[[@vancalsterThereNoSuch2023]]
 :::
 
 ::: {.notes}
@@ -112,39 +112,73 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 - Barriers to adoption
 :::
 :::: -->
-
-
 ---
 
-## United Nations WHO Digital Health Objectives
-
-::: {.centered}
-![](figures/motivation/WHO_logo.svg){fig-cap="World Health Organization" height=5em .no-dark}
-:::
+## Research Contribution per Challenge {auto-animate=true}
 
 ::: {.bigger-text}
 
-::: {.fragment .fade-in fragment-index=1}
-
-::: {.fragment .highlight-green fragment-index=5}
-   - Promote global collaboration & advance the transfer of knowledge on digital health
+::: {.incremental}
+1. ​⚡​ Research reproducibility → <span data-id="repro-phrase">Enabling Reproducible Prediction Experiments 🧪</span>  ✓
+2. ​⚡​ Incomplete observations → <span data-id="incomplete-phrase">Development and Validation of Multi-ward Multi-modal Early Warning Systems 🛏️​</span> 
+3. ​⚡​ Lack of infrastructure → <span data-id="infrastructure-phrase">Packages and pipelines for Foundational Health AI Research 🏗️</span> 
 :::
-::: 
-::: {.fragment .fade-in fragment-index=2}
-   - Advance the implementation of national digital health strategies
-:::
-::: {.fragment .fade-in fragment-index=3}
-   - Strengthen governance for digital health at global, regional and national levels
-:::
-::: {.fragment .fade-in fragment-index=4}
-   - Advocate people-centered health systems that are enabled by digital health
+::: {.fragment .fade-in}
+**Thesis Statement:** *ML systems for health care require rich data, reusable open-source model components, and an extensive validation ecosystem.*
 :::
 
 :::
+
 ::: {.notes}
-In my thesis we focus on 1 in particularly while respecting and complementing the other objectives; of which the latter 3 and 4 are most important.
-- https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2024/0509/Documents/Carl%20LEITNER.pdf 
+Add icons here for each contribution, and maybe a visual overview of the contributions and how they relate to each other.
+
+My thesis is structured around three main contributions that address the key challenges in translating machine learning research into clinical practice.
+1. Reproducible Prediction Experiments: I developed the YAIB framework to enable reproducible benchmarking of ICU prediction models across different datasets and preprocessing choices. This helps us understand why different papers report different performance for the same clinical task.
+2. Development of Applied Multi-ward Multi-modal Early Warning Systems: I conducted the CASSANDRA study, which prospectively collects data from surgical patients in the general ward and integrates wearable device data to improve early warning systems for postoperative complications.
+3. Packages and pipelines for Foundational Health AI Research: I contributed to the development of the MEDS framework, which provides a standardized data format and tools for scalable machine learning research across healthcare institutions, enabling better reproducibility and collaboration.
+4. Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
 :::
+---
+
+## Research Pillars Contributions {auto-animate=true}
+
+:::: columns
+
+
+::: {.column width="33%"}
+<span data-id="repro-phrase">Enabling Reproducible Prediction Experiments 🧪</span> 
+
+::: {.tiny-text}
+- **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML". in: *Journal of Open Source Software* 11.117 (2026), p. 9261. doi: 10.21105/joss.09261 [@vandewaterReciPiesLightweightData2026]
+- **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". in: *Proceedings of The Twelfth International Conference on Learning Representations.* May 2024. doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
+:::
+:::
+
+::: {.column width="33%"}
+<span data-id="incomplete-phrase">Development and Validation of Multi-ward Multi-modal Early Warning Systems 🛏️​</span>
+
+::: {.tiny-text}
+- **Robin P. van de Water**, Axel Winter, Daniela Zuluaga Lotero, Bjarne Pfitzner, Lara Faraj, Bert Arnrich, Patrick Rockenschaub, Wenzel Schoning, Thomas Malinka, Christian Denecke, Johann Pratschke, Igor M. Sauer, and Max M. Maurer. Continuous Multimodal AI with Wearable Vital Signs Predicts Postoperative Complications in the General Ward. Nov. 2025. doi: 10.1101/2025.11.25.25340950. [@vandewaterContinuousMultimodalAI2025] (MedRxiv preprint)
+- Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Faraj, Robert Ahlborn, Maximilian Schulze, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Bert Arnrich, Igor M. Sauer, and Max M. Maurer. "90-Day Mortality Prediction in Elective Visceral Surgery Using Machine Learning: A Retrospective Multicenter Development, Validation, and Comparison Study". In: *International Journal of Surgery* 111.6 (June 2025), p. 3742. doi: 10.1097/JS9.0000000000002372. [@riepe90dayMortalityPrediction2025a]
+- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Daniela Zuluaga, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Hospital-grade Clinical Data and Wearable Vital Sign Monitoring to Predict Surgical Complications". In: *ICLR 2024 Workshop on Learning from Time Series For Health.* Mar. 2024. [@waterCombiningHospitalgradeClinical2024b]
+- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Time Series Modalities to Create Endpoint-driven Patient Records". In: *ICLR 2024 Workshop on Data-centric Machine Learning Research (DMLR): Harnessing Momentum for Science.* Mar. 2024. [@waterCombiningTimeSeries2024] 
+:::
+:::
+::: {.column width="33%"}
+<span data-id="infrastructure-phrase">Packages and pipelines for Foundational Health AI Research 🏗️</span>
+
+::: {.tiny-text}
+- **MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". In: *ICLR 2024 Workshop on Learning from Time Series for Health*. 2024. [@medsworkinggroupMedicalEventData2024]
+- Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. "MEDS Decentralized, Extensible Validation (MEDS-DEV) Benchmark: Establishing Reproducibility and Comparability in ML for Health". In: *Machine Learning for Health (ML4H)*, 15-16 December 2024, Vancouver, Canada (Nov. 2024). [@mcdermottMEDSDecentralizedExtensible2024]
+- Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. Lee, Nassim Oufattole, Patrick Rockenschaub, Kamilė Stankevičiūtė, Ethan Steinberg, Jimeng Sun, **Robin P. Van De Water**, Michael Wornow, John Wu, and Zhenbang Wu. "MEDS: Building Models and Tools in a Reproducible Health AI Ecosystem". In: *Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining* V.2. Toronto ON Canada: ACM, Aug. 2025, pp. 6243–6244. isbn: 979-8-4007-1454-2. doi: 10.1145/3711896.3737608. [@mcdermottMEDSBuildingModels2025a]
+- **Robin Philippus van de Water**, Ethan Steinberg, Michael Wornow, Patrick Rockenschaub, and Matthew McDermott. MIMIC-IV Demo Data in the Medical Event Data Standard (MEDS). 2025. doi: 10.13026/T2Y8-EA41. [@vandewaterMIMICIVDemoData2025]
+- **Robin P. Van de Water**. "Scaling Up Clinical ML from Datasets to Entire Health Systems through the MEDS Ecosystem". In: *SBHD 2025 International Conference on Systems Biology of Human Diseases*. Berlin, June 2025 [@vandewaterScalingClinicalML2025]
+:::
+:::
+
+::::
+
+{{< include extra_slides/publications.qmd >}}
 
 <!-- **PhD Research Focus:** -->
 
@@ -164,86 +198,11 @@ How do we build prediction systems that actually work in messy real-world clinic
 How do we enable the entire community to build on each other's work?
 :::
 :::: -->
----
-
-## V's of Big Data in Health
-
-::: {.incremental}
-| **V**           | **Description**                                                                 | **Health Data**                                                                                 |
-|-----------------|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| **Volume**          | Amount of data                                                                  | Millions of patient records, lab results, notes, and images                                     |
-| **Variety**         | Different types and sources of data                                             | Structured (labs, meds), unstructured (notes), time series (vitals), images, genomics           |
-| **Velocity**        | Speed at which data is generated and processed                                  | Real-time vital signs, continuous monitoring, frequent updates                                  |
-| **Veracity**        | Data quality, accuracy, and trustworthiness                                     | Missing values, errors in coding, inconsistent documentation                                    |
-| **Value**           | Usefulness of data for insights and decision-making                             | Predicting patient deterioration, supporting clinical decisions                                 |
-| **Variability**     | Changes in meaning/context, heterogeneity across sources                        | Different EHR systems, varying clinical workflows, evolving coding standards                    |
-:::
-
----
 
 
-## Research Contribution Overview
-
-::: {.bigger-text}
-
-::: {.incremental}
-1. **Enabling Reproducible Prediction Experiments**
-2. **Development and Validation of Applied Multi-ward Multi-modal Early Warning Systems**
-3. **Packages and pipelines for Foundational Health AI Research**
-:::
-::: {.fragment .fade-in}
-**Thesis Statement:** *Healthcare ML requires rich data, reusable open-source model components, and an extensive validation ecosystem.*
-:::
-
-:::
-
-::: {.notes}
-Add icons here for each contribution, and maybe a visual overview of the contributions and how they relate to each other.
-
-My thesis is structured around three main contributions that address the key challenges in translating machine learning research into clinical practice.
-1. Reproducible Prediction Experiments: I developed the YAIB framework to enable reproducible benchmarking of ICU prediction models across different datasets and preprocessing choices. This helps us understand why different papers report different performance for the same clinical task.
-2. Development of Applied Multi-ward Multi-modal Early Warning Systems: I conducted the CASSANDRA study, which prospectively collects data from surgical patients in the general ward and integrates wearable device data to improve early warning systems for postoperative complications.
-3. Packages and pipelines for Foundational Health AI Research: I contributed to the development of the MEDS framework, which provides a standardized data format and tools for scalable machine learning research across healthcare institutions, enabling better reproducibility and collaboration.
-4. Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
-:::
-
----
-
-## Research Pillars Contributions
-::: {.tiny-text}
-:::: columns
+# Establishing Reproducibility in Open-access EHR Prediction Modeling
 
 
-::: {.column width="33%"}
-
-### Establishing Reproducibility in Open-access EHR Prediction Modeling
-
-- **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML". in: *Journal of Open Source Software* 11.117 (2026), p. 9261. doi: 10.21105/joss.09261 [@van_de_Water2026]
-- **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". in: *Proceedings of The Twelfth International Conference on Learning Representations.* May 2024. doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
-:::
-
-::: {.column width="33%"}
-### Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study
-
-- **Robin P. van de Water**, Axel Winter, Daniela Zuluaga Lotero, Bjarne Pfitzner, Lara Faraj, Bert Arnrich, Patrick Rockenschaub, Wenzel Schoning, Thomas Malinka, Christian Denecke, Johann Pratschke, Igor M. Sauer, and Max M. Maurer. Continuous Multimodal AI with Wearable Vital Signs Predicts Postoperative Complications in the General Ward. Nov. 2025. doi: 10.1101/2025.11.25.25340950. [@vandewaterContinuousMultimodalAI2025] (MedRxiv preprint)
-- Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Faraj, Robert Ahlborn, Maximilian Schulze, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Bert Arnrich, Igor M. Sauer, and Max M. Maurer. "90-Day Mortality Prediction in Elective Visceral Surgery Using Machine Learning: A Retrospective Multicenter Development, Validation, and Comparison Study". In: *International Journal of Surgery* 111.6 (June 2025), p. 3742. doi: 10.1097/JS9.0000000000002372. [@riepe90dayMortalityPrediction2025a]
-- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Daniela Zuluaga, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Hospital-grade Clinical Data and Wearable Vital Sign Monitoring to Predict Surgical Complications". In: *ICLR 2024 Workshop on Learning from Time Series For Health.* Mar. 2024. [@waterCombiningHospitalgradeClinical2024b]
-- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Time Series Modalities to Create Endpoint-driven Patient Records". In: *ICLR 2024 Workshop on Data-centric Machine Learning Research (DMLR): Harnessing Momentum for Science.* Mar. 2024. [@waterCombiningTimeSeries2024] 
-:::
-
-::: {.column width="33%"}
-### Building a Modular Tooling Ecosystem for High-capacity Collaborative Clinical ML
-
-- **MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". In: *ICLR 2024 Workshop on Learning from Time Series for Health*. 2024. [@medsworkinggroupMedicalEventData2024]
-- Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. "MEDS Decentralized, Extensible Validation (MEDS-DEV) Benchmark: Establishing Reproducibility and Comparability in ML for Health". In: *Machine Learning for Health (ML4H)*, 15-16 December 2024, Vancouver, Canada (Nov. 2024). [@mcdermottMEDSDecentralizedExtensible2024]
-- Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. Lee, Nassim Oufattole, Patrick Rockenschaub, Kamilė Stankevičiūtė, Ethan Steinberg, Jimeng Sun, **Robin P. Van De Water**, Michael Wornow, John Wu, and Zhenbang Wu. "MEDS: Building Models and Tools in a Reproducible Health AI Ecosystem". In: *Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining* V.2. Toronto ON Canada: ACM, Aug. 2025, pp. 6243–6244. isbn: 979-8-4007-1454-2. doi: 10.1145/3711896.3737608. [@mcdermottMEDSBuildingModels2025a]
-- **Robin Philippus van de Water**, Ethan Steinberg, Michael Wornow, Patrick Rockenschaub, and Matthew McDermott. MIMIC-IV Demo Data in the Medical Event Data Standard (MEDS). 2025. doi: 10.13026/T2Y8-EA41. [@vandewaterMIMICIVDemoData2025]
-- **Robin P. Van de Water**. "Scaling Up Clinical ML from Datasets to Entire Health Systems through the MEDS Ecosystem". In: *SBHD 2025 International Conference on Systems Biology of Human Diseases*. Berlin, June 2025 [@vandewaterScalingClinicalML2025]
-:::
-
-:::
-:::
----
 
 ## The Reproducibility Crisis in Clinical ML
 
@@ -265,7 +224,6 @@ Our conclusion:
 
 ---
 
-# Establishing Reproducibility in Open-access EHR Prediction Modeling
 
 ## Yet Another ICU Benchmark (YAIB)
 
@@ -285,7 +243,7 @@ Goals:
 
 Result: 
 
-- ReciPies: Modular ML preprocessing framework ^[[@van_de_Water2026]]
+- ReciPies: Modular ML preprocessing framework ^[[@vandewaterReciPiesLightweightData2026]]
 - YAIB Framework^[[@vandewaterAnotherICUBenchmark2024a]]: enables reproducible comparisons while remaining flexible enough to accommodate real-world research needs.
 :::
 <!-- ::: {.incremental}
@@ -856,6 +814,37 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
 
 ---
 
+## United Nations WHO Digital Health Objectives
+
+::: {.centered}
+![](figures/motivation/WHO_logo.svg){fig-cap="World Health Organization" height=5em .no-dark}
+:::
+
+::: {.bigger-text}
+
+::: {.fragment .fade-in fragment-index=1}
+
+::: {.fragment .highlight-green fragment-index=5}
+   - Promote global collaboration & advance the transfer of knowledge on digital health
+:::
+::: 
+::: {.fragment .fade-in fragment-index=2}
+   - Advance the implementation of national digital health strategies
+:::
+::: {.fragment .fade-in fragment-index=3}
+   - Strengthen governance for digital health at global, regional and national levels
+:::
+::: {.fragment .fade-in fragment-index=4}
+   - Advocate people-centered health systems that are enabled by digital health
+:::
+
+:::
+::: {.notes}
+In my thesis we focus on 1 in particularly while respecting and complementing the other objectives; of which the latter 3 and 4 are most important.
+- https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2024/0509/Documents/Carl%20LEITNER.pdf 
+:::
+
+
 ## Central Argument
 
 The translation gap in ML4H cannot be solved by better algorithms. We require:
@@ -904,4 +893,4 @@ Healthcare ML can improve outcomes when built on solid infrastructure, rigorous 
 ::: {#refs}
 :::
 
-{{< include extra_slides/publications.qmd >}}
+<!-- {{< include extra_slides/publications.qmd >}} -->

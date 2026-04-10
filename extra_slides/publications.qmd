@@ -1,8 +1,7 @@
----
 
 ---
 
-## All Publications 
+## All Publications {auto-animate=true}
 
 :::: columns
 
@@ -64,5 +63,4 @@
 
 :::
 :::
-
----
+::::
