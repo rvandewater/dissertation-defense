@@ -403,7 +403,7 @@ Four publicly available ICU datasets:
 :::
 
 ::: {.column width="20%"}
-![](figures/cass/greenteg_core.png){fig-cap="" width=100% .no-dark}
+![](figures/cass/greenteg_core.jpg){fig-cap="" width=100% .no-dark}
 ![](figures/cass/corsano.png){fig-cap="" width=100% .no-dark}
 :::
 
