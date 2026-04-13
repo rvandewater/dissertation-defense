@@ -1,0 +1,20 @@
+## Prediction Task Overview {data-scale="0.1"}
+
+::: {.notes}
+**Note:** The related work is non-exhaustive.
+:::
+
+::: {.small-text}
+| **No** | **Task**         | **Frequency**       | **Type** | **Related Work**                                                                                                                                                                                                 |
+|--------|------------------|---------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1      | Mortality        | Once per stay*     | C        | [@bakerContinuousAutomaticMortality2020; @luMachineLearningBased2022a; @medicEvidencebasedClinicalDecision2019; @sharmaMortalityPredictionICU2017; @syedApplicationMachineLearning2021a]                        |
+| 2      | Acute Kidney Injury (AKI) | Hourly             | C        |   [@huangInterpretableTemporalConvolutional2021; @nikkinenDevelopingSupervisedMachine2022; @panSelfCorrectingDeepLearning2019; @rankDeeplearningbasedRealtimePrediction2020; @shamoutMachineLearningClinical2021; @wangRealTimePredictionAKI2020; @koynerDevelopmentMachineLearning2018] |
+| 3      | Sepsis           | Hourly             | C        | [@kokAutomatedPredictionSepsis2020; @lauritsenEarlyDetectionSepsis2020; @merathUseMachineLearning2020; @fleurenMachineLearningIntensive2020; @moorPredictingSepsisMultisite2021; @moorEarlyRecognitionSepsis2019a; @muralitharanMachineLearningBased2021; @reynaEarlyPredictionSepsis2019; @shamoutMachineLearningClinical2021; @wangIntegratingPhysiologicalTime2022] |
+| 4      | Kidney Function (KF)               | Once per stay*     | R        | [@tomasevClinicallyApplicableApproach2019; @futomaPredictingDiseaseProgression2016; @perotteRiskPredictionChronic2015; @chengPredictingInpatientAcute2018]                                                    |
+| 5      | Length of Stay (LoS)              | Hourly             | R        | [@shillanUseMachineLearning2019; @guoEvaluationTimeSeries2020]                                                                                                                                             |
+:::
+- **C**: Classification task  
+- **R**: Regression task  
+- *Once per stay*: Indicates predictions are made once during the ICU stay.
+
+---

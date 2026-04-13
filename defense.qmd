@@ -204,9 +204,9 @@ How do we enable the entire community to build on each other's work?
 
 
 
-## The Reproducibility Crisis in Clinical ML
+## ​⚡The Reproducibility Crisis in Clinical ML
 
-**Problem:** Comparing ML approaches across papers is nearly impossible because of different:
+**Problem:** ​⚡​ Comparing ML approaches across papers is nearly impossible because of different:
 
 -  Datasets (MIMIC-III vs MIMIC-IV vs eICU vs HiRID)
 -  Cohort definitions (patient inclusion/exclusion varies)
@@ -219,6 +219,8 @@ Our conclusion:
 *Dataset, cohort definition, and preprocessing choices have **larger effects on performance** than the choice of model architecture.*
 
 ---
+
+## Our answer
 
 ![](figures/yaib/YAIB_logo.svg){fig-cap="YAIB Logo" width=80%}
 
@@ -254,7 +256,7 @@ Result:
 
 ---
 
-## The Experimental Pipeline
+## The YAIB Experimental Pipeline
 
 
 
@@ -272,7 +274,7 @@ Result:
 </div>
 ---
  
-**Research Design:**
+## Datasets and Tasks
 
 Four publicly available ICU datasets:
 
@@ -282,36 +284,17 @@ Four publicly available ICU datasets:
 - AUMCdb^[[@thoralSharingICUPatient2021]] -->
 | **Dataset**                  | **MIMIC-III / IV** | **eICU** | **HiRID** | **AUMCdb** |
 |------------------------------|--------------------|----------|-----------|------------|
-| **Stays***                  | 40k (0.1k)** / 73k | 201k (2k) | 34k       | 23k        |
+| **Stays**                  | 40k (0.1k) / 73k | 201k (2k) | 34k       | 23k        |
 | **Version**                 | v1.4 / v2.2        | v2.0     | v1.1.1    | v1.0.2     |
 | **Frequency (time-series)** | 1 hour             | 5 minutes| 2 / 5 minutes | up to 1 minute |
 | **Origin**                  | USA                | USA      | Switzerland | Netherlands |
 | **Originally published**    | 2015^[[@johnsonMIMICIIIFreelyAccessible2016]] / 2020^[[@johnsonMIMICIVFreelyAccessible2023]] | 2017^[[@pollardEICUCollaborativeResearch2018]] | 2020^[[@hylandEarlyPredictionCirculatory2020]] | 2019^[[@thoralSharingICUPatient2021]] |
----
 
-## Prediction Task Overview {data-scale="0.1"}
-
-::: {.notes}
-**Note:** The related work is non-exhaustive.
-:::
-
-| **No** | **Task**         | **Frequency**       | **Type** | **Related Work**                                                                                                                                                                                                 |
-|--------|------------------|---------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1      | Mortality        | Once per stay*     | C        | ^[[@bakerContinuousAutomaticMortality2020; @luMachineLearningBased2022a; @medicEvidencebasedClinicalDecision2019; @sharmaMortalityPredictionICU2017; @syedApplicationMachineLearning2021a]]                        |
-| 2      | AKI              | Hourly             | C        | ^[[@huangInterpretableTemporalConvolutional2021; @nikkinenDevelopingSupervisedMachine2022; @panSelfCorrectingDeepLearning2019; @rankDeeplearningbasedRealtimePrediction2020; @shamoutMachineLearningClinical2021; @wangRealTimePredictionAKI2020; @koynerDevelopmentMachineLearning2018]] |
-| 3      | Sepsis           | Hourly             | C        | ^[[@kokAutomatedPredictionSepsis2020; @lauritsenEarlyDetectionSepsis2020; @merathUseMachineLearning2020; @fleurenMachineLearningIntensive2020; @moorPredictingSepsisMultisite2021; @moorEarlyRecognitionSepsis2019a; @muralitharanMachineLearningBased2021; @reynaEarlyPredictionSepsis2019; @shamoutMachineLearningClinical2021; @wangIntegratingPhysiologicalTime2022]] |
-| 4      | KF               | Once per stay*     | R        | ^[[@tomasevClinicallyApplicableApproach2019; @futomaPredictingDiseaseProgression2016; @perotteRiskPredictionChronic2015; @chengPredictingInpatientAcute2018]]                                                    |
-| 5      | LOS              | Hourly             | R        | ^[[@shillanUseMachineLearning2019; @guoEvaluationTimeSeries2020]]                                                                                                                                                |
-
-::: {.notes}
-- **C**: Classification task  
-- **R**: Regression task  
-- *Once per stay*: Indicates predictions are made once during the ICU stay.
-:::
+**Five common ICU prediction tasks**: Mortality, Acute Kidney Injury, Sepsis, Kidney Function, Length of Stay.
 
 ---
 
-## Different Definitions, Different Conclusions
+## Sepsis: Different Definitions, Different Conclusions
 ::: {.incremental}
 
 
@@ -323,8 +306,8 @@ Four publicly available ICU datasets:
 | **LGBM**      | 75.9±0.2        | 4.3±0.0  | 72.4±0.0        | 10.5±0.0 | 62.2±0.2        | 1.8±0.0  |
 | **GRU**       | **79.2±0.1**    | **6.1±0.0** | **80.9±0.0**    | **17.7±0.0** | **89.2±0.0**    | **9.3±0.2** |
 
-- Sepsis definition can significantly alter the resulting AUROC/AUPRC
-- Large differences per cohort
+- Sepsis definition can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC)
+- Large differences of inclusion in cohort
 :::
 
 ::: {.notes}
@@ -332,33 +315,38 @@ Four publicly available ICU datasets:
 :::
 ---
 
-## External validation
+## External Validation with Mortality
 
 ::: {.column width="50%"}
+AUROC:
 ![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
 
 :::
 
 ::: {.column width="50%"}
+AUPRC:
 ![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
 
 :::
----
-
+- **Column**: Model trained on dataset
+- **Row**: Model evaluated on dataset
+- **Diagonal**: Internal validation (same dataset)
 
 ---
 
 ## Transfer Learning
 
-- What if we train a generalized model on eICU?
-- Finetune on HiRID
+- What if we train a generalized model on "most generalizable" eICU?
+- Finetune on "difficult" HiRID
 
 ::: {.column width="50%"}
+AUROC:
 ![](figures/yaib/transfer_learning.svg){fig-cap="" width=100% .no-dark}
 
 :::
 
 ::: {.column width="50%"}
+AUPRC:
 ![](figures/yaib/transfer_learning_auprc.svg){fig-cap="" width=100% .no-dark}
 
 :::
@@ -396,7 +384,7 @@ Four publicly available ICU datasets:
 
 ---
 
-# Prospective data collection
+# A Prospective Cohort Study
 
 ::: {.column width="80%"}
 ![](figures/cass/wards.png){fig-cap="" width=100% .no-dark}
@@ -409,6 +397,8 @@ Four publicly available ICU datasets:
 
 ---
 
+## Introducing Clinical ASsist Heuristic Early Warning System (CASHEWS)
+
 ::: {.editable}
 <!-- <div style="text-align: center;">
   <img src="figures/cass/fig1.svg" width="75%" class="no-dark">
@@ -416,6 +406,9 @@ Four publicly available ICU datasets:
 
 ![](figures/cass/fig1.svg){fig-cap="" width=100% .no-dark}
 
+![](figures/cass/cashews_logo.svg){fig-cap="" width=100% .no-dark}
+
+---
 :::
 
 ::: {.notes}
@@ -472,70 +465,6 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 ::: {.notes}
 
 :::
----
-
-## The Clinical Deployment Gap
-
-|                        | **ICU**                                         | **General Ward (GW)**                                 |
-|------------------------|-------------------------------------------------|-------------------------------------------------------|
-| Monitoring Frequency   | High (vital signs every 1-5 minutes)            | Sporadic (every shift/8 hours)                    |
-| Intervention Capability| Immediate                                       | Delayed                                               |
-| Staffing & Resources   | High                                            | Lower, different patterns                             |
-| Anomaly Detection | Early, rapid response possible                  | Often delayed, higher advanced complication rates              |
-
-<!-- **Reality Check:** ICU prediction models assume:
-
-- ✓ High-frequency monitoring (vital signs every 1-5 minutes)
-- ✓ Immediate intervention capability
-- ✓ Homogeneous patient population
-
-**But in the general ward (GW):**
-
-- ✗ Sporadic vital sign measurements (every 4-8 hours or less)
-- ✗ Lower acuity → delayed detection → higher complication rates
-- ✗ Heterogeneous surgical/medical mix
-- ✗ Different staffing patterns and resources -->
-
----
-
-
-## The Wearable Integration Problem
-
-**Modalities Collected:**
-
-:::: columns
-::: {.column width="50%"}
-**Traditional:**
-- Demographic data
-- Preoperative labs
-- Operative details
-- ICU parameters
-
-**Clinical notes:**
-- Assessed via NLP embeddings 
-- Medications analyzed for patterns
-:::
-::: {.column width="50%"}
-**Wearable (Novel):**
-- ECG (electrocardiogram)
-- PPG (photoplethysmography)
-- Temperature
-- Respiration rate
-- Heart rate variability
-
-*Data Rate:*
-- ICU: ~1 measurement per patient per variable per hour
-- Wearables: ~100 measurements per variable per hour
-:::
-::::
-
-**Challenge:** Fusing extremely heterogeneous data at different frequencies and granularities.
-
----
-
-![](figures/cass/cashews_logo.svg){fig-cap="" width=100% .no-dark}
-
----
 
 
 ## Why This Matters: The Gap Between Research and Practice
@@ -554,10 +483,9 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ---
 
-
 ### Medical Event Data Standard (MEDS)
 
-**Open Question:** *How can we enable reproducible ML research across healthcare systems without requiring every institution to rebuild the entire pipeline?*
+**Open Question:** *How can we enable reproducible ML research across healthcare systems without requiring every institution to engineer their own ecosystem?*
 
 ---
 

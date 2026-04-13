@@ -1,0 +1,58 @@
+
+## The Wearable Integration Problem
+
+**Modalities Collected:**
+
+:::: columns
+::: {.column width="50%"}
+**Traditional:**
+- Demographic data
+- Preoperative labs
+- Operative details
+- ICU parameters
+
+**Clinical notes:**
+- Assessed via NLP embeddings 
+- Medications analyzed for patterns
+:::
+::: {.column width="50%"}
+**Wearable (Novel):**
+- ECG (electrocardiogram)
+- PPG (photoplethysmography)
+- Temperature
+- Respiration rate
+- Heart rate variability
+
+*Data Rate:*
+- ICU: ~1 measurement per patient per variable per hour
+- Wearables: ~100 measurements per variable per hour
+:::
+::::
+
+**Challenge:** Fusing extremely heterogeneous data at different frequencies and granularities.
+
+---
+
+## The Clinical Deployment Gap
+
+|                        | **ICU**                                         | **General Ward (GW)**                                 |
+|------------------------|-------------------------------------------------|-------------------------------------------------------|
+| Monitoring Frequency   | High (vital signs every 1-5 minutes)            | Sporadic (every shift/8 hours)                    |
+| Intervention Capability| Immediate                                       | Delayed                                               |
+| Staffing & Resources   | High                                            | Lower, different patterns                             |
+| Anomaly Detection | Early, rapid response possible                  | Often delayed, higher advanced complication rates              |
+
+<!-- **Reality Check:** ICU prediction models assume:
+
+- ✓ High-frequency monitoring (vital signs every 1-5 minutes)
+- ✓ Immediate intervention capability
+- ✓ Homogeneous patient population
+
+**But in the general ward (GW):**
+
+- ✗ Sporadic vital sign measurements (every 4-8 hours or less)
+- ✗ Lower acuity → delayed detection → higher complication rates
+- ✗ Heterogeneous surgical/medical mix
+- ✗ Different staffing patterns and resources -->
+
+
