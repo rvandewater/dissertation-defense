@@ -9,6 +9,10 @@ img.no-dark, .no-dark img, .no-dark {
   background-color: #ffffff !important; /* True white */
 }
 
+#title-slide .subtitle,
+div.reveal div.slides section.quarto-title-block .subtitle {
+  margin-bottom: 0.75rem !important; /* default is much larger */
+}
 .reveal .slides section:not(.quarto-title-block) h1 {
   font-size: var(--r-heading2-size) !important;
 }
@@ -83,3 +87,27 @@ img.no-dark, .no-dark img, .no-dark {
   .fragment.bold-current-text.current-fragment {
     font-weight: bold;
   }
+
+  /* Bottom-of-slide footnotes */
+.reveal .slide aside,
+.reveal .slide div.aside {
+  font-size: 0.55em !important;
+  line-height: 1.2 !important;
+}
+
+/* Optional: hover footnote popups */
+.tippy-box .tippy-content {
+  font-size: 0.75rem !important;
+}
+
+.reveal .footer,
+.reveal .footer-default {
+  font-size: 0.60em !important;
+}
+
+@media screen and (max-width: 800px) {
+  .reveal .footer,
+  .reveal .footer-default {
+    font-size: 0.40em !important;
+  }
+}

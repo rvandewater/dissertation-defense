@@ -1,7 +1,7 @@
 ---
 title: "Benchmark to Bedside"
 subtitle: 'Building Modular Multimodal Machine Learning Infrastructure for Healthcare at Scale   <br>
- <img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;"> <br> <span style="font-size:0.5em;">Scan for interactive slides</span> <br> <img src="images/logos/logos_defense.svg" width="30%">'
+ <img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;"> <br> <span style="font-size:0.5em;">Scan for interactive slides</span> <br> <img src="images/logos/logos_defense.svg" width="20%">'
 author: 'Robin P. van de Water'
 date: today
 date-format: "DD MMMM YYYY"
@@ -536,19 +536,24 @@ In observational health informatics:
 :::
 ::: {.column width="40%"}
 
-
-<div style="text-align: center;">
+::: {.fragment}
+<div style="text-align: center; position: absolute; top: 20%;">
   <img src="figures/meds/standards.png" width="100%" class="no-dark">
+Source: https://xkcd.com/927/
 </div>
+
+:::
 :::
 :::
 
 ## The Medical Event Data Standard (MEDS)
 
 <div style="text-align: center;">
-  <img src="figures/meds/meds_schema.png" width="80%" class="no-dark">
+  <img src="figures/meds/meds_schema.png" width="75%" class="no-dark">
 </div>
+::: {.tiny-text}
   Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Provisionally accepted to NEJM AI (2026)
+:::
 <!-- ```python
 # Core MEDS Schema (v0.4.0)
 from pyarrow.schema import Schema as PyArrowSchema
@@ -617,12 +622,16 @@ class DataSchema(PyArrowSchema):
 <div style="text-align: center;">
   <img src="figures/meds/meds_adoption.png" width="100%" class="no-dark">
 </div>
+::: {.tiny-text}
+  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Provisionally accepted to NEJM AI (2026)
+:::
+<!-- - Supported the development of SOTA models for EHR data ^[[@pangCEHRXGPTScalableMultiTask2025;@fallahpourEHRMambaGeneralizableScalable2024a; @rencFoundationModelElectronic2025]]. -->
 <!-- - 21 institutions
 - $>$ 27 academic papers and preprints
 - 17 datasets
 - 12 AI algorithms
 - Reduction of lines of code up to 70% -->
-- Supported the development of SOTA models for EHR data ^[[@pangCEHRXGPTScalableMultiTask2025;@fallahpourEHRMambaGeneralizableScalable2024a; @rencFoundationModelElectronic2025]].
+
 
 
 
