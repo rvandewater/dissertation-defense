@@ -8,8 +8,6 @@
 ::: {.column width="50%"}
 ::: {.tiniest-text}
 
-**Published:**
-
 - **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML". in: *Journal of Open Source Software* 11.117 (2026), p. 9261. doi: 10.21105/joss.09261 [@van_de_Water2026]
 - Matthias Kirchler, Matteo Ferro, Veronica Lorenzini, **Robin P. van de Water**, Christoph Lippert, and Andrea Ganna. "Large Language Models Improve Transferability of Electronic Health Record-Based Predictions across Countries and Coding Systems". In: *Accepted to npj Digital Medicine (2026)* [@Kirchler2025GRASP]
 - Katharina Alefs, Susanne Ibing, Pia Francesca Rissom, Jan Carlo Schmid, Arkadiusz Kwasigroch, **Robin van de Water**, Bernhard Y. Renard, and Eugenia Alleva. "Towards Foundation Model-Based Propensity Score Matching from Electronic Health Records". In: Machine Learning for Health Symposium 2025. Sept. 2025. [@alefsFoundationModelBasedPropensity2025]

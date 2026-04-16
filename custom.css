@@ -9,6 +9,26 @@ img.no-dark, .no-dark img, .no-dark {
   background-color: #ffffff !important; /* True white */
 }
 
+.reveal .slides section:not(.quarto-title-block) h1 {
+  font-size: var(--r-heading2-size) !important;
+}
+/* Keep non-title centered slides full-height so aside footnotes can sit at true bottom */
+.reveal .slides section.slide.center:not(.quarto-title-block) {
+  height: 100% !important;
+}
+
+/* Force footnotes to bottom on those slides */
+.reveal .slides section.slide.center:not(.quarto-title-block) aside {
+  position: absolute !important;
+  bottom: 20px !important;
+  left: 0;
+  right: 0;
+}
+
+.reveal .slides section.level1 > h1 {
+  margin-top: 0 !important;
+}
+
 .bigger-text {
   font-size: 1.5em !important;
 }

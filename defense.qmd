@@ -24,6 +24,7 @@ format:
    footnotes: true
    simplemenu:
    code-overflow: wrap
+   center: false
   #  transition: fade
 revealjs-plugins:
   - editable
@@ -31,7 +32,7 @@ revealjs-plugins:
 
 --- 
 
-## ML for Health in a Nutshell
+# ML for Health in a Nutshell
 <!-- ![](figures/motivation/ml_for_health.svg){fig-cap="World Health Organization" height=25em .no-dark} -->
 <div style="position: relative; display: inline-block;">
   <img src="figures/motivation/ml_for_health.svg" style="height:25em; display:block;" class="no-dark">
@@ -49,8 +50,6 @@ revealjs-plugins:
 - The essence is often predicting or diagnosing something about a patient at time T so that we can intervene at time T+1 to improve outcomes.
 :::
 
----
-
 ## Electronic Health Records (EHR): Footprints of the Patient Journey
 
 ![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=80%}
@@ -63,8 +62,6 @@ What does EHR data look like?
 - The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
 :::
 
----
-
 ## The Promise of Machine Learning in Healthcare
 Papers on ArXiv preprint server with ML and health keywords in the title or abstract have been growing over the last years:
 ![](figures/motivation/ml_health_trend.svg){fig-cap="EHR Data Structure" width=100%}
@@ -74,7 +71,6 @@ ML_PATTERN = r"(?ix)\b(machine[ _]?learning|deep[ _]?learning|neural[ _]?network
 HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|diseases?|disorders?|syndrome|diagnosis|diagnostics?|prognosis|prognostic|treatments?|therapy|therapeutic|\bEHR\b|\bEMR\b|epidemiol\w*|radiol\w*|pathol\w*|genomics?|proteomics?|transcriptomics?|biomarkers?|\bdrug\b|pharmaceutical|pharmacolog\w*|cancer|tumor|tumour|oncol\w*|cardiac|cardiovascular|coronary|diabetes|diabetic|\bCOVID\b|\bSARS\b|pandemic|epidemic|biomedical|mortality|morbidity|\bICU\b|intensive[ _]?care|surgical|surgery|symptoms?|comorbid\w*|screening|triage|mental[ _]?health|psychiatr\w*|neurolog\w*|\bMRI\b|\bCT[ _]?scan\b)\b"
 
 ```
----
 
 ## The Translation Gap in Healthcare {auto-animate="true"}
 
@@ -112,7 +108,6 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 - Barriers to adoption
 :::
 :::: -->
----
 
 ## Research Contribution per Challenge {auto-animate=true}
 
@@ -138,7 +133,6 @@ My thesis is structured around three main contributions that address the key cha
 3. Packages and pipelines for Foundational Health AI Research: I contributed to the development of the MEDS framework, which provides a standardized data format and tools for scalable machine learning research across healthcare institutions, enabling better reproducibility and collaboration.
 4. Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
 :::
----
 
 ## Research Pillars Contributions {auto-animate=true}
 
@@ -149,7 +143,7 @@ My thesis is structured around three main contributions that address the key cha
 <span data-id="repro-phrase">Enabling Reproducible Prediction Experiments 🧪</span> 
 
 ::: {.tiny-text}
-- **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML". in: *Journal of Open Source Software* 11.117 (2026), p. 9261. doi: 10.21105/joss.09261 [@vandewaterReciPiesLightweightData2026]
+- **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML". in: *Journal of Open Source Software* 11.117 (2026), p. 9261. doi: 10.21105/joss.09261 [@]
 - **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". in: *Proceedings of The Twelfth International Conference on Learning Representations.* May 2024. doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
 :::
 :::
@@ -200,54 +194,63 @@ How do we enable the entire community to build on each other's work?
 :::: -->
 
 
-# Establishing Reproducibility in Open-access EHR Prediction Modeling
+# Enabling Reproducible Prediction Experiments 🧪
 
+​⚡ The Reproducibility Crisis in Clinical ML:​ Comparing approaches across papers is nearly impossible because of different:
 
-
-## ​⚡The Reproducibility Crisis in Clinical ML
-
-**Problem:** ​⚡​ Comparing ML approaches across papers is nearly impossible because of different:
-
+::: {.fragment}
 -  Datasets (MIMIC-III vs MIMIC-IV vs eICU vs HiRID)
 -  Cohort definitions (patient inclusion/exclusion varies)
 -  Preprocessing (normalization, imputation, features)
 -  Evaluation metrics and splits
+
 But mostly:
+
 - Code not published, incomplete, or not reusable
+:::
 
-Our conclusion:
-*Dataset, cohort definition, and preprocessing choices have **larger effects on performance** than the choice of model architecture.*
-
----
-
-## Our answer
-
-![](figures/yaib/YAIB_logo.svg){fig-cap="YAIB Logo" width=80%}
+::: {.fragment}
+Why should we care?:
+*Dataset, cohort definition, and preprocessing choices can have **larger effects on performance** than the choice of model architecture.*
+:::
 
 ---
 
 
-## Yet Another ICU Benchmark (YAIB)
+## How do solve this in practice?
 
-::: {.incremental}
+::: columns
+::: {.column width="70%"}
+::: {.fragment data-fragment-index="1"}
 Problems:
 
 - Medical research is **inherently** complex
 - One size fits-all always **impossible**
 - Hardcoded ≠ **reproducible**
-
-
+:::
+::: {.fragment data-fragment-index="2"}
 Goals:
 
 - **Modular** setup maintaining reproducibility
 - **Extensibility** across experiment lifecycle
 - **Out-of-the-box** support: datasets, tasks, models
-
-Result: 
-
-- ReciPies: Modular ML preprocessing framework ^[[@vandewaterReciPiesLightweightData2026]]
-- YAIB Framework^[[@vandewaterAnotherICUBenchmark2024a]]: enables reproducible comparisons while remaining flexible enough to accommodate real-world research needs.
 :::
+::: {.fragment data-fragment-index="3"}
+- **ReciPies**^[[@van_de_Water2026]]: Modular ML preprocessing framework 
+- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]]: framework for reproducible ICU prediction experiments across datasets.
+:::
+:::
+::: {.column width="30%"}
+::: {.fragment data-fragment-index="3"}
+![](figures/yaib/recipies_logo.svg){fig-cap="ReciPies Logo" width=100%}
+![](figures/yaib/YAIB_logo.svg){fig-cap="YAIB Logo" width=100%}
+:::
+:::
+
+:::
+
+<!-- Modular ML preprocessing framework -->
+ <!-- enables reproducible comparisons while remaining flexible enough to accommodate real-world research needs.  -->
 <!-- ::: {.incremental}
 1. **Data Harmonization** [@Ben23]
 2. **Modular Preprocessing** (ReciPies) [@vSR26]
@@ -260,8 +263,8 @@ Result:
 
 
 
-<div style="text-align: center;">
-![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=100%}
+<div style="text-align: center; position: relative; top: 10%">
+![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=110%}
 </div>
 
 ---
@@ -295,16 +298,18 @@ Four publicly available ICU datasets:
 ---
 
 ## Sepsis: Different Definitions, Different Conclusions
+- Potentially life-threatening response to infection that causes injury to its own tissues and organs
+
 ::: {.incremental}
-
-
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
 
-| **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al. ^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al. ^[[@calvertComputationalApproachEarly2016]] |         |
-|---------------|-----------------|---------|-----------------|---------|-----------------|---------|
-|               | **AUROC**       | **AUPRC** | **AUROC**       | **AUPRC** | **AUROC**       | **AUPRC** |
-| **LGBM**      | 75.9±0.2        | 4.3±0.0  | 72.4±0.0        | 10.5±0.0 | 62.2±0.2        | 1.8±0.0  |
-| **GRU**       | **79.2±0.1**    | **6.1±0.0** | **80.9±0.0**    | **17.7±0.0** | **89.2±0.0**    | **9.3±0.2** |
+::: {.fragment data-fragment-index="3"}
+| **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al.^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al.^[[@calvertComputationalApproachEarly2016]] |         |
+|---|---|---|---|---|---|---|
+|   | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** |
+| **LGBM** | 75.9±0.2 | 4.3±0.0 | 72.4±0.0 | 10.5±0.0 | 62.2±0.2 | 1.8±0.0 |
+| **GRU** | **79.2±0.1** | **6.1±0.0** | **80.9±0.0** | **17.7±0.0** | **89.2±0.0** | **9.3±0.2** |
+:::
 
 - Sepsis definition can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC)
 - Large differences of inclusion in cohort
@@ -328,9 +333,14 @@ AUPRC:
 ![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
 
 :::
+
+::: {.fragment}
+
 - **Column**: Model trained on dataset
 - **Row**: Model evaluated on dataset
 - **Diagonal**: Internal validation (same dataset)
+
+:::
 
 ---
 
@@ -338,6 +348,8 @@ AUPRC:
 
 - What if we train a generalized model on "most generalizable" eICU?
 - Finetune on "difficult" HiRID
+
+::: {.fragment}
 
 ::: {.column width="50%"}
 AUROC:
@@ -350,25 +362,33 @@ AUPRC:
 ![](figures/yaib/transfer_learning_auprc.svg){fig-cap="" width=100% .no-dark}
 
 :::
----
+:::
+<!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study -->
+# Multi-ward Multi-modal Early Warning Systems 🛏️
 
-## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study
 ::: {.incremental}
-- More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
-- 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
-- Postoperative adverse events impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
 - ​⚡​ Retrospective (administrative) data does not necessarily reflect the information needed for clinical decision-making.
-- Reason: physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024]]
+- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024]]
 - This is currently hard to detect on the sparsely monitored general ward, where most postoperative patients rehabilitate.
 :::
-
 ::: {.notes}
 - Surgical patients are stabilized on the ICU, and then transferred to the general ward, where they are monitored less frequently.
 - Postoperative complications are common and often go undetected until they become severe, leading to worse outcomes and higher costs.
 :::
 
+## Surgery Rehabilitation
+::: {.incremental}
+- More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
+- 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
+- Postoperative adverse events impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
+- Why not just monitor patients in the ICU?
+  - ICU stays are expensive and can lead to complications like infections, delirium, and deconditioning.
+- Solution? Hybrid ward with minimally intrusive wearables
+:::
+
 ---
 
+<!-- 
 ## Why not just monitor patients in the ICU?
 
 ::: {.incremental}
@@ -384,7 +404,7 @@ AUPRC:
 - ICU stays are expensive and can lead to complications like infections, delirium, and deconditioning.
 :::
 
----
+--- -->
 
 ## Why This Matters: The Gap Between Research and Practice
 
@@ -461,14 +481,16 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 (a) ML predictions of complication and non-complication groups. (b) Comparison of REWS- and CASHEWS+ based alarm predictions using a single-patient example after extended left hemihepatectomy for Klatskin tumor with biliodigestive anastomotic insufficiency at postoperative day 10. Alarms are visualized by individual points and color-coded for both strategies. For CASHEWS+, we used the optimal alarm based on Decision Curve Analysis (A4; see Fig. 5e); for REWS, the alarm strategy in the same recall bin was applied. c, Alarm burden quantified as alarms per patient per day (y-axis) across all recall levels (x-axis) for REWS-based alerts, raw ML predictions using a static threshold, and the final alarm strategy with blackout periods and a dynamic threshold. d, Precision–recall curves comparing REWS, the raw machine learning model, and the dynamic alarm strategy for the prediction e, Decision curve analysis including harm-to-benefit ratios for optimal alarm strategies per recall bin using CASHEWS+. The top alarm reflecting the threshold probability interval is shown above the dashed red line.
 :::
 
+
 ## Performance Analysis
 
 - The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
 - The best setup combined manufacturer-derived features with raw PPG embeddings, suggesting that physiological deterioration is better captured through dynamic complexity than through simple threshold-based monitoring.
 - Important contributors included heart rate variability, temperature entropy, and respiratory rate, which are consistent with early autonomic stress, loss of physiological complexity, and impending decompensation.
 - Gradient Boosted Trees outperformed deep learning in this setting.
-::: {.notes}
 
+::: {.notes}
+- The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
 :::
 
 ## Clinical use, limitations, next steps
@@ -481,45 +503,54 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 :::
 
----
 
-### Medical Event Data Standard (MEDS)
+# Packages and pipelines for Foundational Health AI Research 🏗️
 
-**Open Question:** *How can we enable reproducible ML research across healthcare systems without requiring every institution to engineer their own ecosystem?*
-
----
-
-## The Infrastructure Crisis
-
-**Problem Statement:** 
-
-The ML4H community reinvents the wheel continuously:
+​⚡ Lack of robust infrastructure: the ML4H community reinvents the wheel continuously:
 
 - Different data extraction code for each hospital system
 - Incompatible feature engineering approaches
 - Non-standard task definitions
-- Proprietary data formats prevent collaboration
 
-**Example:** Mount Sinai Health System (MSHS) has 6.8 million patients
+Applying high-parameter artificial intelligence (AI) models to EHR data (health AI) lacks widely adopted data standards.
+
+<!-- **Example:** Mount Sinai Health System (MSHS) has 6.8 million patients
 - **Before MEDS:** Data in OMOP format; every research project wrote custom extraction code (~3-6 weeks per project)
-- **After MEDS:** Standardized ETL pipeline; research ready in days
+- **After MEDS:** Standardized ETL pipeline; research ready in days -->
 
-**Vision:** Build infrastructure so researchers focus on science, not data engineering.
+**Open Question:** *How can we enable reproducible ML research across healthcare systems without requiring every institution to engineer their own ecosystem or harmonize their data and lose granularlity?*
 
----
+## Data Standards in Healthcare
 
-## The MEDS Framework
+::: {.columns}
+::: { .incremental .column width="60%"}
+In observational health informatics:
 
-**Design Principles:**
+- OMOP Common Data Model (CDM) ^[[@hripcsakObservationalHealthData2015]], PCORnet ^[[@collinsPCORnetTurningDream2014]], and i2b2 CDM ^[[@murphyServingEnterpriseInformatics2010]]
+- Have enabled observational studies in diverse settings ^[[@callahan2021using; @suchardComprehensiveComparativeEffectiveness2019]]
+- But they are not designed for **high-parameter AI research**:
+  - Primary purpose is observational research 
+  - Disease-specific cohorts and specific manual featurization of engineered features 
+  - Unsuitable to train over a general-purpose representation of the entire EHR
 
-1. **ML-First** - Optimized for ML tasks, not observational research
-2. **Flexible** - Works with OMOP, proprietary EHRs, wearables
-3. **Event-Based** - Natural representation for longitudinal healthcare data
-4. **Interoperable** - Tools compose together without data duplication
+:::
+::: {.column width="40%"}
 
-**Core Schema (v0.4.0):**
 
-```python
+<div style="text-align: center;">
+  <img src="figures/meds/standards.png" width="100%" class="no-dark">
+</div>
+:::
+:::
+
+## The Medical Event Data Standard (MEDS)
+
+<div style="text-align: center;">
+  <img src="figures/meds/meds_schema.png" width="80%" class="no-dark">
+</div>
+  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Provisionally accepted to NEJM AI (2026)
+<!-- ```python
+# Core MEDS Schema (v0.4.0)
 from pyarrow.schema import Schema as PyArrowSchema
 import pyarrow as pa
 class DataSchema(PyArrowSchema):
@@ -528,160 +559,74 @@ class DataSchema(PyArrowSchema):
     code: Required(pa.string(), nullable=False)
     numeric_value: Optional(pa.float32())
     text_value: Optional(pa.large_string())
-```
+``` -->
 
-**Advantage:** Single standard enables tool reuse across institutions [^[@medsworkinggroupMedicalEventData2024]].
+## Design Principles
+::: {.incremental}
+1. **ML-First** - Optimized for ML tasks, not observational research
+2. **Flexible** - Works with OMOP, open-access datasets, proprietary (private) health systems, and is quickly adaptable to new data sources.
+3. **Event-Based** - Natural representation for longitudinal healthcare data
+4. **Interoperable** - Tools compose together across datasets and institutions
 
----
+:::
 
-## MEDS Adoption: Current Status
-
-
-
-**Ecosystem Tools:**
-
-
----
-
-## MEDS-Inspect: Bridging Data Understanding Gap
-
-**Problem:** Researchers don't understand the data they work with
-
-**Solution:** Interactive web-based data exploration tool
-
-Features:
-- Histogram of measurement frequencies
-- Unique code counts per patient
-- Subject timeline visualization
-- Code search and filtering
-- Vocabulary distribution analysis
-
-**Real-World Impact (MSHS dataset):**
-- Median patient has 1,240 unique codes
-- 1% of codes represent ~80% of events (heavy-tailed distribution)
-- Discovered data quality issues (e.g., erroneous dates) before modeling
-
----
-
-## MEDS-DEV: Decentralized External Validation Framework
-
-**Motivation:** Foundation models must generalize across institutions
-
-**Design:**
-- Define standardized tasks (disease onset prediction)
-- Each site independently trains and evaluates on their own MEDS data
-- Results aggregated without sharing raw data (privacy-preserving)
-
----
-
-## Foundation Models for EHR Data
-
----
-
-## MSHS Foundation Model Training
-
-**Proof of Concept: Training on MSHS Dataset** 
-
-**Dataset:**
-- 6.8 million patients
-- Tokenized to 39,000 most common medical codes
-- ~2 billion events total
-
----
-
-## Scaling Up Clinical ML from Datasets to Health Systems
+## Scaling Up Clinical ML from Cohorts to Health Systems
 
 ![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark}
 
----
+## MEDS-DEV: Decentralized External Validation Framework
+- Reproducible benchmarking is critical for scientific progress, but sharing raw patient data across institutions is often not possible due to privacy concerns.
+- Define standardized predicates for cohort definitions and task specifications ^[[@xuACESAutomaticCohort2024a]]
+- Each site independently trains and evaluates on their own MEDS data
 
-## The Standardization Impact: From Theory to Practice
-
-**Before MEDS:**
-```
-New Research Project
-         ↓
-    [Data Access Request]
-         ↓
-    [Custom ETL Code] (3-6 weeks)
-         ↓
-    [Feature Engineering] (2-4 weeks)
-         ↓
-    [Cohort Definition] (1-2 weeks)
-         ↓
-    [Actual ML Work] (weeks to months)
-    
-Total: 2-4 months before first model training
-```
-
-**After MEDS:**
-```
-New Research Project
-         ↓
-    [Use Existing ETL] (days)
-         ↓
-    [Task Definition] (1-2 days)
-         ↓
-    [Model Training + Evaluation] (days)
-    
-Total: 1-2 weeks before publication-ready results
-```
-
+{{< include cohort_table_small.html >}}
 
 ---
 
+::: {.columns}
+::: {.column width="50%"}
+<div style="text-align: right;  margin-top: -2em;">
+  <img src="figures/meds/meds_dev/model_comparison_auroc_task_grouped_samples.svg" width="70%" class="no-dark">
+</div>
+:::
+::: {.column width="50%"}
+<div style=" margin-top: -2em;">
+  <img src="figures/meds/meds_dev/model_comparison_auprc_task_grouped_samples.svg" width="70%" class="no-dark">
+</div>
+:::
+:::
 
-## Ethical Considerations Across All Work
+::: {.notes}
+- Each point represents a model trained and evaluated at a specific site, with the same task definition
+- The spread of points across sites for the same model and task highlights the variability in performance due to differences in data and implementation, underscoring the need for standardized benchmarking.
+- The overall performance trends across models and tasks can be compared, but the variability emphasizes that results from one site may not generalize to others without careful validation.
+:::
 
-**Privacy:** 
-- HIPAA, GDPR compliance in data collection
-- MEDS-DEV designed for decentralized evaluation (data stays local)
-- Wearable devices in CASSANDRA with explicit consent
+## Linear Probing
+- Train a linear classifier on top of frozen foundation model representations
+<div style="text-align: center;">
+<img src="figures/meds/linear_probing/tasks/linear_probing_legend.svg" width="50%" class="no-dark">
+  <img src="figures/meds/linear_probing/aggregated/aggregated_line_['roc_auc_score', 'average_precision_score']_macro.svg" width="100%" class="no-dark">
+</div>
 
-**Fairness:**
-- Demographic representation in training cohorts varies by institution
-- Retrospective observational data contains historical biases in treatment decisions 
-- Foundation models may amplify existing inequities if not carefully validated
 
-**Transparency:**
-- Published YAIB code enables reproducibility and scrutiny
-- CASSANDRA registered prospective study (reduces publication bias)
-- MEDS ecosystem enables open science practices
-- 
-<!--
 ---
 
- ## Synthesis: How Three Pillars Connect
+## Impact of the MEDS Ecosystem
 
-**The Virtuous Cycle:**
+<div style="text-align: center;">
+  <img src="figures/meds/meds_adoption.png" width="100%" class="no-dark">
+</div>
+<!-- - 21 institutions
+- $>$ 27 academic papers and preprints
+- 17 datasets
+- 12 AI algorithms
+- Reduction of lines of code up to 70% -->
+- Supported the development of SOTA models for EHR data ^[[@pangCEHRXGPTScalableMultiTask2025;@fallahpourEHRMambaGeneralizableScalable2024a; @rencFoundationModelElectronic2025]].
 
-```
-┌──────────────────────────────────────────────────────┐
-│                                                      │
-│  YAIB (Reproducible Benchmarks)                     │
-│  ├─ Demonstrates importance of cohort/preprocessing │
-│  ├─ Provides baselines for model comparison         │
-│  └─ → Feeds into MEDS standardization               │
-│                                                      │
-│  CASSANDRA (Clinical Reality Check)                │
-│  ├─ Shows ICU models fail in general ward          │
-│  ├─ Demonstrates value of multimodal data          │
-│  ├─ Validates prospective designs                  │
-│  └─ → Informs MEDS feature requirements            │
-│                                                      │
-│  MEDS (Scalable Infrastructure)                    │
-│  ├─ Enables YAIB-like benchmarks across sites      │
-│  ├─ Makes prospective studies easier to conduct    │
-│  ├─ Supports foundation model training at scale    │
-│  └─ → Allows broader reproducibility validation    │
-│                                                      │
-└──────────────────────────────────────────────────────┘
-```
 
---- -->
----
 
-## How Do We Create Research that Translates to Clinical Practice? 
+# How Do We Create Research that Translates to Clinical Practice? 
 ::: {.bigger-text}
 In *Data science at the singularity*, Donoho defines three characteristics that enable frictionless reproducibility^[[@donohoDataScienceSingularity2024]] : 
 
@@ -713,6 +658,28 @@ In *Data science at the singularity*, Donoho defines three characteristics that 
 ::: {.notes}
 The translation gap in healthcare ML can be reframed as a failure to achieve the "data science singularity" as defined by Donoho. To reach this state, we need to ensure that data is widely available and standardized, that code is shared and can be re-executed by others, and that we adopt challenge problems to drive methodological research. My thesis addresses these needs through the development of tools and frameworks that promote reproducibility, clinical relevance, and scalable infrastructure for healthcare machine learning research.
 :::
+
+## Ethical Considerations Across All Work
+
+**Privacy:** 
+
+- HIPAA, GDPR compliance in data collection
+- MEDS-DEV designed for decentralized evaluation (data stays local)
+- Wearable devices in CASSANDRA with explicit consent
+
+**Fairness:**
+
+- Demographic representation in training cohorts varies by institution
+- Retrospective observational data contains historical biases in treatment decisions 
+- Foundation models may amplify existing inequities if not carefully validated
+
+**Transparency:**
+
+- Published YAIB code enables reproducibility and scrutiny
+- CASSANDRA registered prospective study (reduces publication bias)
+- MEDS ecosystem enables open science practices
+
+---
 
 ## Future Research Directions
 
@@ -803,8 +770,6 @@ The translation gap in ML4H cannot be solved by better algorithms. We require:
 ---
 
 <!-- ## Thank You -->
-
-<!-- **Questions?** -->
 
 <!-- *Key Takeaways:*
 1. Reproducibility framework (YAIB) reveals that experimental setup often matters more than model choice

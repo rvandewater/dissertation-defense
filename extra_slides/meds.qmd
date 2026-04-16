@@ -18,3 +18,54 @@
    - Site-specific fine-tuning often necessary
 
 ---
+
+## MEDS-Inspect: Bridging Data Understanding Gap
+
+**Problem:** Researchers don't understand the data they work with
+
+**Solution:** Interactive web-based data exploration tool
+
+Features:
+- Histogram of measurement frequencies
+- Unique code counts per patient
+- Subject timeline visualization
+- Code search and filtering
+- Vocabulary distribution analysis
+
+**Real-World Impact (MSHS dataset):**
+- Median patient has 1,240 unique codes
+- 1% of codes represent ~80% of events (heavy-tailed distribution)
+- Discovered data quality issues (e.g., erroneous dates) before modeling
+
+---
+
+
+## The Standardization Impact: From Theory to Practice
+
+**Before MEDS:**
+```
+New Research Project
+         ↓
+    [Custom ETL Code] (3-6 weeks)
+         ↓
+    [Feature Engineering] (2-4 weeks)
+         ↓
+    [Cohort Definition] (1-2 weeks)
+         ↓
+    [Actual ML Work] (weeks to months)
+    
+Total: 2-4 months before first model training
+```
+
+**After MEDS:**
+```
+New Research Project
+         ↓
+    [Fork Existing ETL and Adjust] (days)
+         ↓
+    [Task Definition] (1 day)
+         ↓
+    [Model Training + Evaluation] (days)
+    
+Total: 1-2 weeks before publication-ready results
+```

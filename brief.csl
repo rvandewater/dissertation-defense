@@ -90,6 +90,33 @@
         <text macro="author"/>
         <text macro="year"/>
         <text macro="title"/>
+        <choose>
+          <if type="article-journal article-magazine article-newspaper" match="any">
+            <text macro="container"/>
+          </if>
+          <else-if variable="publisher">
+            <text variable="publisher"/>
+          </else-if>
+          <else-if type="paper-conference" match="any">
+            <choose>
+              <if variable="event">
+                <text variable="event"/>
+              </if>
+              <else-if variable="container-title">
+                <text macro="container"/>
+              </else-if>
+            </choose>
+          </else-if>
+          <else-if variable="container-title">
+            <text macro="container"/>
+          </else-if>
+          <else-if variable="genre">
+            <text variable="genre"/>
+          </else-if>
+          <else>
+            <text variable="URL"/>
+          </else>
+        </choose>
       </group>
     </layout>
   </citation>
