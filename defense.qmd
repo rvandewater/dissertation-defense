@@ -450,10 +450,12 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ---
 
-<div style="text-align: center; margin-top: -2em;">
-  <img src="figures/cass/fig2.svg" width="75%" class="no-dark">
+## Clinical ASsist Heuristic Early Warning System (CASHEWS)
+- The strongest gains came from continuous, high-resolution wearable data
+<div style="text-align: center; margin-top: -0em;">
+  <img src="figures/cass/fig2.svg" width="100%" class="no-dark">
 </div>
-
+<div style="position:absolute; top:83%; left:0%; width:100%; height:60%; background:white; z-index:2;"></div>
 ::: {.notes}
 (a) Boxplots of areas under the receiver operating characteristic curve (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) for progressively enriched models along the perioperative patient trajectory for the target event. Each model extends the previous stage by adding a new data modality, progressing from static preoperative data only (pre-op) to intraoperative (+intra) and intensive care unit (+ICU) data incorporation. Continuous general ward (GW) data are subsequently integrated into dynamic Clinical ASsist Heuristic Early Warning System (CASHEWS) models, including routine clinical data, and finally into CASHEWS+, which contains additional wearable-derived continuous vital sign signal analysis features. The prediction performance of the remote early warning score (REWS) is illustrated for comparison. The online prediction systems are calculated with snoozed episode-level precision-recall28. (c) Boxplots of AUROC and (d) boxplots of AUPRC of CASHEWS+ for varying lead times prior to clinical detection. The last hour was set to be positive, while all subsequent time windows were removed from training and evaluation. (e) AUROC and (f) AUPRC boxplots of model experiment variations, using both GW and ICU segments, using GW time segments for testing (GW only), and using ICU segments for testing (ICU only).
 - Static models using only preoperative and ICU data performed near chance, while longitudinal models with wearable telemetry identified deep surgical site infections and postoperative fistulas much earlier.
@@ -462,6 +464,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 :::
 <!-- 
 ---
+
 
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/fig3.svg" width="75%" class="no-dark">
@@ -473,8 +476,13 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 -->
 --- 
 
-<div style="text-align: center; margin-top: -3em;">
-  <img src="figures/cass/fig5.svg" width="75%" class="no-dark">
+<!-- <div style="position:absolute; top:0%; left:0%; width:100%; height:60%; background:white; z-index:0;"></div> -->
+
+## Alarm Strategy and Decision Curve Analysis
+- Alarms must balance early detection against alert burden. The optimized strategy outperformed the routine early warning score and achieved a practical workload of about 2 alarms per day on a 100-bed ward.
+- Decision curve analysis suggested the best operating point at about \(43\%\) event recall with a harm-to-benefit ratio near \(1:4\), indicating clinically meaningful surveillance without excessive alarm fatigue.
+<div style="text-align: center; margin-top: -0em;">
+  <img src="figures/cass/fig5.svg" width="100%" class="no-dark">
 </div>
 
 ::: {.notes}
@@ -485,27 +493,27 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 ## Performance Analysis
 
 ::: {.incremental}
-- The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
+
 - The best setup combined manufacturer-derived features with raw PPG embeddings, suggesting that physiological deterioration is better captured through dynamic complexity than through simple threshold-based monitoring.
 - Important contributors included heart rate variability, temperature entropy, and respiratory rate, which are consistent with early autonomic stress, loss of physiological complexity, and impending decompensation.
 - Gradient Boosted Trees outperformed deep learning in this setting.
+- Future semi-autonomous surgical ward with continuous telemonitoring and AI-assisted risk prioritization.
 :::
 
 ::: {.notes}
 - The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
 :::
 
-## Clinical use, limitations, next steps
+<!-- ## Clinical use, limitations, next steps
 
 ::: {.incremental}
-- Alarms must balance early detection against alert burden. The optimized strategy outperformed the routine early warning score and achieved a practical workload of about 2 alarms per day on a 100-bed ward.
-- Decision curve analysis suggested the best operating point at about \(43\%\) event recall with a harm-to-benefit ratio near \(1:4\), indicating clinically meaningful surveillance without excessive alarm fatigue.
+
 - Future semi-autonomous surgical ward with continuous telemonitoring and AI-assisted risk prioritization.
 :::
 
 ::: {.notes}
 
-:::
+::: -->
 
 
 # Packages and pipelines for Foundational Health AI Research 🏗️
@@ -571,7 +579,7 @@ class DataSchema(PyArrowSchema):
     text_value: Optional(pa.large_string())
 ``` -->
 
-## Design Principles
+## MEDS Design Principles
 ::: {.incremental}
 1. **ML-First** - Optimized for ML tasks, not observational research
 2. **Flexible** - Works with OMOP, open-access datasets, proprietary (private) health systems, and is quickly adaptable to new data sources.
@@ -579,9 +587,6 @@ class DataSchema(PyArrowSchema):
 4. **Interoperable** - Tools compose together across datasets and institutions
 :::
 
-## Scaling Up Clinical ML from Cohorts to Health Systems
-
-![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark}
 
 ## MEDS-DEV: Decentralized External Validation Framework
 - Reproducible benchmarking is critical for scientific progress, but sharing raw patient data across institutions is often not possible due to privacy concerns.
@@ -611,6 +616,10 @@ class DataSchema(PyArrowSchema):
 - The overall performance trends across models and tasks can be compared, but the variability emphasizes that results from one site may not generalize to others without careful validation.
 :::
 
+## Scaling Up Clinical ML from Cohorts to Health Systems
+
+![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark}
+
 ## Linear Probing
 - Train a linear classifier on top of frozen foundation model representations
 <div style="text-align: center;">
@@ -618,8 +627,24 @@ class DataSchema(PyArrowSchema):
   <img src="figures/meds/linear_probing/aggregated/aggregated_line_['roc_auc_score', 'average_precision_score']_macro.svg" width="100%" class="no-dark">
 </div>
 
+::: {.fragment}
 
----
+- CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]] Leukocytis embeddings colored by task labels (<span style="color:#BCAD76;">positive</span>/<span style="color:#4A556C;">negative</span>):
+
+::: {.columns}
+::: {.column width="50%"}
+<img src="figures/meds/dimensionality_reduction_plots/abnormal_lab_cbc_leukocytosis_first_24h_labels_cehr_tsne_2d_reduced.svg" width="100%" class="no-dark">
+:::
+
+::: {.column width="50%"}
+<img src="figures/meds/dimensionality_reduction_plots/abnormal_lab_cbc_leukocytosis_first_24h_labels_motor_tsne_2d_reduced.svg" width="100%" class="no-dark">
+:::
+:::
+:::
+
+
+:::
+
 
 ## Impact of the MEDS Ecosystem
 
