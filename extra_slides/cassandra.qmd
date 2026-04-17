@@ -1,3 +1,16 @@
+## Why This Matters: The Gap Between Research and Practice
+
+**Lesson Learned:** Prospective studies reveal what retrospective studies miss
+
+| Aspect | Retrospective | Prospective |
+|--------|---------------|-------------|
+| Data quality | Pre-existing, variable | Controlled, standardized |
+| Timing | Fixed (events already occurred) | Real-time (can intervene) |
+| Causal inference | Confounded | Can design for causality |
+| Clinical relevance | Varies by hospital | Context-specific |
+| Generalization | Hard to assess | Direct validation possible |
+
+**Result:** Our prospective CASSANDRA study found that hybrid monitoring (ICU + GW wearables) significantly improves early detection of postoperative complications, which retrospective analyses failed to capture.
 
 ## The Wearable Integration Problem
 

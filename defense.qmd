@@ -78,7 +78,7 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 - The problem statement motivating this work: **Despite the promise and explosion of machine learning research, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
 - Why?
   - ​⚡​ **Research reproducibility**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
-  - ​⚡​ **Incomplete observations**: Retrospective (administrative) data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
+  - ​⚡​ **Incomplete observations**: Retrospective data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
   - ​⚡​ **Lack of robust infrastructure**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
   - ​⚡​ **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility to authorities is non-trivial.^[[@vancalsterThereNoSuch2023]]
 :::
@@ -299,23 +299,35 @@ Four publicly available ICU datasets:
 
 ## Sepsis: Different Definitions, Different Conclusions
 - Potentially life-threatening response to infection that causes injury to its own tissues and organs
+- Sepsis prediction on MIMIC-IV using Gated Reccurrent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
 
 ::: {.incremental}
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
 
+
 ::: {.fragment data-fragment-index="3"}
-| **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al.^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al.^[[@calvertComputationalApproachEarly2016]] |         |
+::: {.columns}
+::: {.column width="50%"}
+![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=100% .no-dark}
+:::
+::: {.column width="50%"}
+![](figures/yaib/yaib_sepsis_AUPRC_grouped.svg){caption="Sepsis definition auprc" width=100% .no-dark}
+:::
+:::
+:::
+<!-- | **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al.^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al.^[[@calvertComputationalApproachEarly2016]] |         |
 |---|---|---|---|---|---|---|
 |   | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** |
 | **LGBM** | 75.9±0.2 | 4.3±0.0 | 72.4±0.0 | 10.5±0.0 | 62.2±0.2 | 1.8±0.0 |
-| **GRU** | **79.2±0.1** | **6.1±0.0** | **80.9±0.0** | **17.7±0.0** | **89.2±0.0** | **9.3±0.2** |
-:::
+| **GRU** | **79.2±0.1** | **6.1±0.0** | **80.9±0.0** | **17.7±0.0** | **89.2±0.0** | **9.3±0.2** | -->
 
-- Sepsis definition can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC)
-- Large differences of inclusion in cohort
+- Different sepsis definitions^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC)
+<!-- - Different definitions capture different patient populations, leading to varying model performance and clinical implications. -->
+
 :::
 
 ::: {.notes}
+Different definitions capture different patient populations, leading to varying model performance and clinical implications.
 **Note:** Our definition (marked with *), adapted to be more clinically actionable. See Appendix for details.
 :::
 ---
@@ -365,18 +377,22 @@ AUPRC:
 :::
 <!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study -->
 # Multi-ward Multi-modal Early Warning Systems 🛏️
+​⚡​ Retrospective data does not reflect the information needed for clinical decision-making.
 
 ::: {.incremental}
-- ​⚡​ Retrospective (administrative) data does not necessarily reflect the information needed for clinical decision-making.
-- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024]]
-- This is currently hard to detect on the sparsely monitored general ward, where most postoperative patients rehabilitate.
+- More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
+- 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
+- **Postoperative adverse events** impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
+- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024]] → hard to detect on sparsely monitored general ward, where most postoperative patients rehabilitate.
+- Why not just monitor patients in the ICU? → expensive and can lead to complications like infections, delirium, and deconditioning.
+- Solution? **Hybrid ward with minimally intrusive wearables**
 :::
 ::: {.notes}
 - Surgical patients are stabilized on the ICU, and then transferred to the general ward, where they are monitored less frequently.
 - Postoperative complications are common and often go undetected until they become severe, leading to worse outcomes and higher costs.
 :::
 
-## Surgery Rehabilitation
+<!-- ## Surgery Rehabilitation
 ::: {.incremental}
 - More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
 - 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
@@ -384,9 +400,7 @@ AUPRC:
 - Why not just monitor patients in the ICU?
   - ICU stays are expensive and can lead to complications like infections, delirium, and deconditioning.
 - Solution? Hybrid ward with minimally intrusive wearables
-:::
-
----
+::: -->
 
 <!-- 
 ## Why not just monitor patients in the ICU?
@@ -406,21 +420,7 @@ AUPRC:
 
 --- -->
 
-## Why This Matters: The Gap Between Research and Practice
-
-**Lesson Learned:** Prospective studies reveal what retrospective studies miss
-
-| Aspect | Retrospective | Prospective |
-|--------|---------------|-------------|
-| Data quality | Pre-existing, variable | Controlled, standardized |
-| Timing | Fixed (events already occurred) | Real-time (can intervene) |
-| Causal inference | Confounded | Can design for causality |
-| Clinical relevance | Varies by hospital | Context-specific |
-| Generalization | Hard to assess | Direct validation possible |
-
-**Result:** Our prospective CASSANDRA study found that hybrid monitoring (ICU + GW wearables) significantly improves early detection of postoperative complications, which retrospective analyses failed to capture.
-
-## A Prospective Cohort Study
+## A Prospective Cohort Study: "Hybrid Ward"
 
 ::: {.column width="80%"}
 ![](figures/cass/wards.png){fig-cap="" width=100% .no-dark}
@@ -430,12 +430,12 @@ AUPRC:
 ![](figures/cass/greenteg_core.jpg){fig-cap="" width=100% .no-dark}
 ![](figures/cass/corsano.png){fig-cap="" width=100% .no-dark}
 :::
-
+<div style="position:absolute; top:50%; left:45%; width:30%; height:35%; background:white; z-index:2;"></div>
 ---
 
 <!-- ## Introducing Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
-<div style="text-align: center; margin-top: -5em;">
-  <img src="figures/cass/fig1.svg" width="75%" class="no-dark">
+<div style="text-align: center; margin-top: -2em;">
+  <img src="figures/cass/cass_pipeline.svg" width="60%" class="no-dark">
 </div>
 
 
@@ -450,7 +450,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ---
 
-<div style="text-align: center; margin-top: -5em;">
+<div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/fig2.svg" width="75%" class="no-dark">
 </div>
 
@@ -460,20 +460,20 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 - Performance was strong, with AUROC up to \(0.89\), and remained robust at clinically relevant lead times: \(0.86\) at 12 hours and \(0.81\) at 24 hours.
 - The key implication is that predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.
 :::
-
+<!-- 
 ---
 
-<div style="text-align: center; margin-top: -5em;">
+<div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/fig3.svg" width="75%" class="no-dark">
 </div>
 
 ::: {.notes}
 (a) Boxplots of areas under the receiver operating characteristic curve (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) for prediction performance of models after ablation of individual modalities. (c) AUROC and (d) AUPRC boxplots after addition of wearable-derived signal features (e) Receiver operating curve and (f) precision-recall curves comparing CASHEWS, CASHEWS+, and the remote early warning score (REWS). 
 :::
+-->
+--- 
 
----
-
-<div style="text-align: center; margin-top: -5em;">
+<div style="text-align: center; margin-top: -3em;">
   <img src="figures/cass/fig5.svg" width="75%" class="no-dark">
 </div>
 
@@ -484,10 +484,12 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ## Performance Analysis
 
+::: {.incremental}
 - The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
 - The best setup combined manufacturer-derived features with raw PPG embeddings, suggesting that physiological deterioration is better captured through dynamic complexity than through simple threshold-based monitoring.
 - Important contributors included heart rate variability, temperature entropy, and respiratory rate, which are consistent with early autonomic stress, loss of physiological complexity, and impending decompensation.
 - Gradient Boosted Trees outperformed deep learning in this setting.
+:::
 
 ::: {.notes}
 - The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
@@ -495,9 +497,11 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ## Clinical use, limitations, next steps
 
+::: {.incremental}
 - Alarms must balance early detection against alert burden. The optimized strategy outperformed the routine early warning score and achieved a practical workload of about 2 alarms per day on a 100-bed ward.
 - Decision curve analysis suggested the best operating point at about \(43\%\) event recall with a harm-to-benefit ratio near \(1:4\), indicating clinically meaningful surveillance without excessive alarm fatigue.
 - Future semi-autonomous surgical ward with continuous telemonitoring and AI-assisted risk prioritization.
+:::
 
 ::: {.notes}
 
@@ -506,19 +510,20 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 # Packages and pipelines for Foundational Health AI Research 🏗️
 
+::: {.incremental}
 ​⚡ Lack of robust infrastructure: the ML4H community reinvents the wheel continuously:
 
 - Different data extraction code for each hospital system
 - Incompatible feature engineering approaches
 - Non-standard task definitions
-
-Applying high-parameter artificial intelligence (AI) models to EHR data (health AI) lacks widely adopted data standards.
+- Applying high-parameter artificial intelligence (AI) models to EHR data (health AI) lacks widely adopted data standards.
 
 <!-- **Example:** Mount Sinai Health System (MSHS) has 6.8 million patients
 - **Before MEDS:** Data in OMOP format; every research project wrote custom extraction code (~3-6 weeks per project)
 - **After MEDS:** Standardized ETL pipeline; research ready in days -->
 
 **Open Question:** *How can we enable reproducible ML research across healthcare systems without requiring every institution to engineer their own ecosystem or harmonize their data and lose granularlity?*
+:::
 
 ## Data Standards in Healthcare
 
@@ -572,7 +577,6 @@ class DataSchema(PyArrowSchema):
 2. **Flexible** - Works with OMOP, open-access datasets, proprietary (private) health systems, and is quickly adaptable to new data sources.
 3. **Event-Based** - Natural representation for longitudinal healthcare data
 4. **Interoperable** - Tools compose together across datasets and institutions
-
 :::
 
 ## Scaling Up Clinical ML from Cohorts to Health Systems
@@ -633,87 +637,41 @@ class DataSchema(PyArrowSchema):
 - Reduction of lines of code up to 70% -->
 
 
-
-
-# How Do We Create Research that Translates to Clinical Practice? 
-::: {.bigger-text}
-In *Data science at the singularity*, Donoho defines three characteristics that enable frictionless reproducibility^[[@donohoDataScienceSingularity2024]] : 
+## Limitations
 
 ::: {.incremental}
-- **Data**: Datafication of everything, with a culture of research data sharing. 
-- **Re-execution**: Research code sharing including the ability to exactly re-execute the same complete  workflow by different researchers.  
-- **Challenges**: Adopting challenge problems as a new paradigm powering methodological research.
-:::
-:::
-<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
-
-<!-- :::: columns
-::: {.column width="50%"}
-**Current State:**
-- Limited open-source tools
-- Dataset-specific implementations
-- Proprietary data formats
-- Few external validations
-:::
-::: {.column width="50%"}
-**Consequences:**
-- Non-reproducible results
-- Slow scientific progress
-- Inefficient use of clinical data
-- Barriers to adoption
-:::
-:::: -->
-
-::: {.notes}
-The translation gap in healthcare ML can be reframed as a failure to achieve the "data science singularity" as defined by Donoho. To reach this state, we need to ensure that data is widely available and standardized, that code is shared and can be re-executed by others, and that we adopt challenge problems to drive methodological research. My thesis addresses these needs through the development of tools and frameworks that promote reproducibility, clinical relevance, and scalable infrastructure for healthcare machine learning research.
+- Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated
+- Randomized controlled trials are needed to demonstrate clinical utility and safety before deployment
+- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.)
+- (Large) AI models can have sizeable environmental impact; simpler is better
 :::
 
-## Ethical Considerations Across All Work
+## My Thesis
 
-**Privacy:** 
+We require:
 
-- HIPAA, GDPR compliance in data collection
-- MEDS-DEV designed for decentralized evaluation (data stays local)
-- Wearable devices in CASSANDRA with explicit consent
+::: {.incremental}
+1. **Transparent benchmarking frameworks**: to understand what actually drives model performance
+2. **Prospective clinical studies**: to improve quality and validate assumptions from retrospective research
+3. **Standardized infrastructure**: to enable collaborative, reproducible research at scale
 
-**Fairness:**
 
-- Demographic representation in training cohorts varies by institution
-- Retrospective observational data contains historical biases in treatment decisions 
-- Foundation models may amplify existing inequities if not carefully validated
+**The Thesis Summarized:**
+*Healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility.*
+::: 
 
-**Transparency:**
-
-- Published YAIB code enables reproducibility and scrutiny
-- CASSANDRA registered prospective study (reduces publication bias)
-- MEDS ecosystem enables open science practices
-
----
 
 ## Future Research Directions
 
-**Immediate Priorities (1-2 years):**
-
-1. **Causal Inference in EHR Data**
-   - Move beyond pure prediction to understanding mechanism
-   - Identify which data collection changes would improve outcomes
-   - MEDS format enables efficient counterfactual analysis
-
-2. **Cross-Institutional Model Development** 
-   - Use MEDS-DEV to train models collaboratively
-   - Federated learning approaches for privacy-preserving collaboration 
-   - Benchmark against proprietary commercial systems
-
-3. **Interpretability and Trust** 
-   - Foundation models are black boxes—how do clinicians understand predictions?
-   - SHAP analysis for clinical decision support
-   - Prospective studies of clinician acceptance with interpretable models
-
-**Longer-Term Vision (3-5 years):**
-
-- **Multi-Modal Integration:** Seamless fusion of structured EHR + notes + imaging + wearables
-- **Real-Time Deployment:** Predictive models integrated into EHR workflows (not separate systems)
-- **Distributed Learning:** Hospitals train collaboratively without data sharing (privacy-preserving)
+::: {.incremental}
+- Multi-modal fusion for FMs; off-the-shelf FMs or health system specific^[[@burkhartFoundationModelsElectronic2025a]] ?
+  - Pathology, radiology, genomics, etc.
+  - Focus on generalizability justified?^[[@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
+- Scaling up health AI: how does performance improve with more data, compute, and model size?^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
+- Improving care by:
+  - Predictive surveillance (e.g., scheduling mammograms based on risk)
+  - Patient representations across disciplines (e.g., oncology, cardiology, etc.)^[[@kernCareFragmentationCare2024]]
+:::
 
 ---
 
@@ -748,23 +706,45 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 :::
 
 
-## Central Argument
-
-The translation gap in ML4H cannot be solved by better algorithms. We require:
-
-1. **Transparent benchmarking frameworks** (YAIB) to understand what actually drives model performance
-2. **Prospective clinical studies** (CASSANDRA) to improve quality and validate assumptions from retrospective research
-3. **Standardized infrastructure** (MEDS) to enable collaborative, reproducible research at scale
-
-
-**The Thesis Summarized:**
-*Healthcare ML requires not just better models, but better infrastructure, validation practices, and institutional commitment to reproducibility.*
 
 ---
 
-## Closing Remarks
+## Acknowledgements
 
-**Looking Forward:**
+::: {.columns}
+::: {.column width="25%"}
+HPI:
+
+- Christoph Lippert
+- Lothar Wieler
+- Felix Naumann
+- Gerard de Melo
+- Bert Arnrich
+- Hendrik Schmidt
+- Edit Tatar
+- Katharina Lorenz-Shroeder
+:::
+::: {.column width="25%"}
+Charité:
+
+- Max M. Maurer
+- Axel Winter
+- Daniela Zuluaga Lotero
+:::
+::: {.column width="25%"}
+Mentors and Collaborators:
+
+- Patrick Rockenschaub (Medical University of Vienna)
+- Matthew McDermott (Columbia University)
+- Eugenia Alleva (Mount Sinai)
+:::
+::: {.column width="25%"}
+Reviewers:
+
+- Padhraic Smyth (UC Irvine)
+- Mykola Pechenizkiy (TU Eindhoven)
+:::
+:::
 
 <!-- The field of machine learning for healthcare stands at an inflection point. We have:
 - ✓ Demonstrated predictive capability (models work in controlled settings)
@@ -775,8 +755,6 @@ The translation gap in ML4H cannot be solved by better algorithms. We require:
 - Translating research into routine clinical practice (workflow integration)
 - Ensuring equitable deployment across diverse healthcare systems
 - Maintaining humility about what ML can and cannot do in healthcare -->
-
----
 
 <!-- ## Thank You -->
 

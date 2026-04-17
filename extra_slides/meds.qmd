@@ -1,3 +1,38 @@
+# How Do We Create Research that Translates to Clinical Practice? 
+::: {.bigger-text}
+In *Data science at the singularity*, Donoho defines three characteristics that enable frictionless reproducibility^[[@donohoDataScienceSingularity2024]] : 
+
+::: {.incremental}
+- **Data**: Datafication of everything, with a culture of research data sharing. 
+- **Re-execution**: Research code sharing including the ability to exactly re-execute the same complete  workflow by different researchers.  
+- **Challenges**: Adopting challenge problems as a new paradigm powering methodological research.
+:::
+:::
+<!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
+
+<!-- :::: columns
+::: {.column width="50%"}
+**Current State:**
+- Limited open-source tools
+- Dataset-specific implementations
+- Proprietary data formats
+- Few external validations
+:::
+::: {.column width="50%"}
+**Consequences:**
+- Non-reproducible results
+- Slow scientific progress
+- Inefficient use of clinical data
+- Barriers to adoption
+:::
+:::: -->
+
+::: {.notes}
+The translation gap in healthcare ML can be reframed as a failure to achieve the "data science singularity" as defined by Donoho. To reach this state, we need to ensure that data is widely available and standardized, that code is shared and can be re-executed by others, and that we adopt challenge problems to drive methodological research. My thesis addresses these needs through the development of tools and frameworks that promote reproducibility, clinical relevance, and scalable infrastructure for healthcare machine learning research.
+:::
+
+
+
 ## Limitations and Challenges
 
 **Technical Limitations:**
