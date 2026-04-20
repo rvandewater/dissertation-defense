@@ -635,7 +635,7 @@ class DataSchema(PyArrowSchema):
 - Define standardized predicates for cohort definitions and task specifications ^[[@xuACESAutomaticCohort2024a]]
 - Each site independently trains and evaluates on their own MEDS data
 
-{{< include cohort_table_small.html >}}
+{{< include resources/cohort_table_small.html >}}
 
 ---
 
