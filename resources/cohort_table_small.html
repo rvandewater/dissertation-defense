@@ -1,0 +1,232 @@
+<style>
+.task-table {
+  font-size: 0.55em;
+  width: 100%;
+  border-collapse: collapse;
+  font-family: inherit;
+}
+.task-table th, .task-table td {
+  padding: 2px 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+.task-table th:first-child, .task-table td:first-child {
+  text-align: left;
+}
+.task-table .toprule {
+  border-top: 2px solid black;
+  border-bottom: 1px solid black;
+}
+.task-table .midrule td {
+  border-top: 1px solid black;
+}
+.task-table .bottomrule {
+  border-top: 2px solid black;
+}
+.task-table .red { color: red; }
+.task-table caption {
+  font-style: italic;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.table-note {
+  font-size: 0.5em;
+  margin-top: 4px;
+  text-align: left;
+}
+</style>
+
+<table class="task-table">
+  <thead>
+    <tr class="toprule">
+      <th>Task</th>
+      <th><strong>AUMCdb</strong></th>
+      <th><strong>EHRSHOT</strong></th>
+      <th><strong>HIRID</strong></th>
+      <th><strong>INSPIRE</strong></th>
+      <th><strong>MIMIC-IV</strong></th>
+      <th><strong>NWICU</strong></th>
+      <th><strong>SICdb</strong></th>
+      <th><strong>eICU</strong></th>
+      <th><strong>MSHS</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="midrule">
+      <td>30D Read.</td>
+      <td>11,278 (11%)</td>
+      <td>706,483 (89%)</td>
+      <td class="red">&minus;</td>
+      <td>13,005 (3%)</td>
+      <td>330,753 (23%)</td>
+      <td>30,854 (40%)</td>
+      <td>2,458 (4%)</td>
+      <td class="red">&minus;</td>
+      <td>17,784,788 (45%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>Anemia</td>
+      <td>150 (45%)</td>
+      <td>387 (32%)</td>
+      <td>1,206 (57%)</td>
+      <td class="red">152 (48%)</td>
+      <td>7,718 (66%)</td>
+      <td>4,374 (35%)</td>
+      <td>1,225 (47%)</td>
+      <td>24,471 (46%)</td>
+      <td>118,039 (27%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>Creatinine</td>
+      <td>621 (7%)</td>
+      <td>4,931 (2%)</td>
+      <td>5,460 (7%)</td>
+      <td>2,113 (4%)</td>
+      <td>114,946 (2%)</td>
+      <td>19,667 (3%)</td>
+      <td>8,897 (5%)</td>
+      <td>67,698 (6%)</td>
+      <td>378,295 (3%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>Hyperkal.</td>
+      <td>12,154 (0%)</td>
+      <td>167,807 (0%)</td>
+      <td>14,289 (2%)</td>
+      <td>5,784 (2%)</td>
+      <td>202,673 (2%)</td>
+      <td>37,291 (2%)</td>
+      <td class="red">&minus;</td>
+      <td>134,347 (2%)</td>
+      <td>420,268 (4%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>Hypoglyc.</td>
+      <td class="red">1 (100%)</td>
+      <td class="red">14,001 (0%)</td>
+      <td>13,317 (0%)</td>
+      <td class="red">&minus;</td>
+      <td>34,864 (2%)</td>
+      <td>36,990 (2%)</td>
+      <td class="red">&minus;</td>
+      <td>123,991 (2%)</td>
+      <td>561,100 (3%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>Hyponatr.</td>
+      <td>650 (3%)</td>
+      <td>2,144 (8%)</td>
+      <td>5,624 (9%)</td>
+      <td>998 (15%)</td>
+      <td>101,735 (5%)</td>
+      <td>19,551 (6%)</td>
+      <td>9,067 (8%)</td>
+      <td>77,878 (8%)</td>
+      <td class="red">43,948 (6%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>Hypotens.</td>
+      <td>197 (27%)</td>
+      <td>3,046 (5%)</td>
+      <td>1,271 (38%)</td>
+      <td class="red">72 (90%)</td>
+      <td>15,630 (37%)</td>
+      <td>382 (84%)</td>
+      <td class="red">&minus;</td>
+      <td>43,241 (33%)</td>
+      <td>287,242 (14%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>ICU Mort.</td>
+      <td>8,077 (16%)</td>
+      <td>232,601 (0%)</td>
+      <td>9,150 (10%)</td>
+      <td>3,936 (5%)</td>
+      <td>34,960 (9%)</td>
+      <td>12,866 (10%)</td>
+      <td>21,583 (18%)</td>
+      <td>77,805 (4%)</td>
+      <td class="red">&minus;</td>
+    </tr>
+    <tr class="midrule">
+      <td>Leukocyt.</td>
+      <td>217 (28%)</td>
+      <td>405 (31%)</td>
+      <td>4,266 (21%)</td>
+      <td>823 (28%)</td>
+      <td>16,805 (25%)</td>
+      <td class="red">&minus;</td>
+      <td>4,523 (17%)</td>
+      <td>49,105 (17%)</td>
+      <td>278,005 (11%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>MA</td>
+      <td class="red">&minus;</td>
+      <td class="red">&minus;</td>
+      <td>3,728 (6%)</td>
+      <td class="red">&minus;</td>
+      <td>88,069 (5%)</td>
+      <td class="red">&minus;</td>
+      <td class="red">&minus;</td>
+      <td class="red">&minus;</td>
+      <td>63,768 (1%)</td>
+    </tr>
+    <tr class="midrule">
+      <td>Thrombocyt.</td>
+      <td>538 (13%)</td>
+      <td>2,887 (6%)</td>
+      <td>4,690 (15%)</td>
+      <td>1,149 (20%)</td>
+      <td>114,133 (6%)</td>
+      <td>17,965 (7%)</td>
+      <td>8,613 (16%)</td>
+      <td>75,125 (12%)</td>
+      <td>431,881 (6%)</td>
+    </tr>
+    <!-- Totals -->
+    <tr class="midrule">
+      <td>Train</td>
+      <td>16,087</td>
+      <td>5,368</td>
+      <td>27,123</td>
+      <td>79,909</td>
+      <td>239,770</td>
+      <td>19,751</td>
+      <td>17,253</td>
+      <td>133,084</td>
+      <td>5,449,385</td>
+    </tr>
+    <tr>
+      <td>Held out</td>
+      <td>2,011</td>
+      <td>671</td>
+      <td>3,391</td>
+      <td>9,988</td>
+      <td>29,971</td>
+      <td>2,593</td>
+      <td>2,156</td>
+      <td>16,635</td>
+      <td>683,173</td>
+    </tr>
+    <tr class="bottomrule">
+      <td>Tuning</td>
+      <td>2,011</td>
+      <td>671</td>
+      <td>3,390</td>
+      <td>9,989</td>
+      <td>29,971</td>
+      <td>2,592</td>
+      <td>2,157</td>
+      <td>16,636</td>
+      <td>681,173</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="table-note">
+  Percentages (%) denote the positive case prevalence. 30D Read.: 30-day readmission; Hyperkal.: hyperkalemia; Hypoglyc.: hypoglycemia;
+  Hyponatr.: hyponatremia; Hypotens.: hypotension; ICU Mort.: ICU mortality;
+  Leukocyt.: leukocytosis; MA: metabolic acidosis; Thrombocyt.: thrombocytopenia.
+</div>
