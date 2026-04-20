@@ -450,18 +450,39 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ---
 
-## Clinical ASsist Heuristic Early Warning System (CASHEWS)
+## CASHEWS
+<!-- Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
+
+::: {.columns}
+::: {.column width="60%"}
+- Standard static pre-ward data is not sufficient
+- Remote Early Warning Score (REWS) threshold-based wearable score.
 - The strongest gains came from continuous, high-resolution wearable data
+- SHAP values demonstrate subtle contributions that indicate early autonomic stress
 <div style="text-align: center; margin-top: -0em;">
-  <img src="figures/cass/fig2.svg" width="100%" class="no-dark">
+  <img src="figures/cass/cass_performance.svg" width="100%" class="no-dark">
 </div>
-<div style="position:absolute; top:83%; left:0%; width:100%; height:60%; background:white; z-index:2;"></div>
+:::
+::: {.column width="40%"}
+<div style="text-align: center; margin-top: -5em;">
+  <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
+</div>
+<div style="text-align: center; margin-top: -2em;">
+  <img src="figures/cass/shap_contribution.svg" width="100%" class="no-dark">
+</div>
+
+
+:::
+:::
+<!-- <div style="position:absolute; top:83%; left:0%; width:100%; height:60%; background:white; z-index:2;"></div> -->
+
 ::: {.notes}
 (a) Boxplots of areas under the receiver operating characteristic curve (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) for progressively enriched models along the perioperative patient trajectory for the target event. Each model extends the previous stage by adding a new data modality, progressing from static preoperative data only (pre-op) to intraoperative (+intra) and intensive care unit (+ICU) data incorporation. Continuous general ward (GW) data are subsequently integrated into dynamic Clinical ASsist Heuristic Early Warning System (CASHEWS) models, including routine clinical data, and finally into CASHEWS+, which contains additional wearable-derived continuous vital sign signal analysis features. The prediction performance of the remote early warning score (REWS) is illustrated for comparison. The online prediction systems are calculated with snoozed episode-level precision-recall28. (c) Boxplots of AUROC and (d) boxplots of AUPRC of CASHEWS+ for varying lead times prior to clinical detection. The last hour was set to be positive, while all subsequent time windows were removed from training and evaluation. (e) AUROC and (f) AUPRC boxplots of model experiment variations, using both GW and ICU segments, using GW time segments for testing (GW only), and using ICU segments for testing (ICU only).
 - Static models using only preoperative and ICU data performed near chance, while longitudinal models with wearable telemetry identified deep surgical site infections and postoperative fistulas much earlier.
 - Performance was strong, with AUROC up to \(0.89\), and remained robust at clinically relevant lead times: \(0.86\) at 12 hours and \(0.81\) at 24 hours.
 - The key implication is that predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.
 :::
+
 <!-- 
 ---
 
@@ -474,23 +495,40 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 (a) Boxplots of areas under the receiver operating characteristic curve (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) for prediction performance of models after ablation of individual modalities. (c) AUROC and (d) AUPRC boxplots after addition of wearable-derived signal features (e) Receiver operating curve and (f) precision-recall curves comparing CASHEWS, CASHEWS+, and the remote early warning score (REWS). 
 :::
 -->
---- 
 
 <!-- <div style="position:absolute; top:0%; left:0%; width:100%; height:60%; background:white; z-index:0;"></div> -->
 
 ## Alarm Strategy and Decision Curve Analysis
-- Alarms must balance early detection against alert burden. The optimized strategy outperformed the routine early warning score and achieved a practical workload of about 2 alarms per day on a 100-bed ward.
-- Decision curve analysis suggested the best operating point at about \(43\%\) event recall with a harm-to-benefit ratio near \(1:4\), indicating clinically meaningful surveillance without excessive alarm fatigue.
+
+::: {.columns}
+::: {.column width="70%"}
+- Alarm strategy: when should we choose to inform clinicians?
+- Grace period, persistence, and silencing to balance early detection with alarm fatigue.
+<!-- -  2 alarms per day on a 100-bed ward. -->
+- Decision curve analysis ^[[@vancalsterReportingInterpretingDecision2018]]: how much harm (diagnostics/probes) am I willing to accept?
+<!-- <div style="text-align: center; margin-top: -0em;">
+  <img src="figures/cass/cass_ward_day.svg" width="100%" class="no-dark">
+</div> -->
 <div style="text-align: center; margin-top: -0em;">
   <img src="figures/cass/fig5.svg" width="100%" class="no-dark">
 </div>
+:::
+::: {.column width="30%"}
+<div style="text-align: center; margin-top: -0em;">
+  <img src="figures/cass/cass_burden_precision_recall.svg" width="80%" class="no-dark">
+</div>
+:::
+:::
+
 
 ::: {.notes}
+- Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
+- 
 (a) ML predictions of complication and non-complication groups. (b) Comparison of REWS- and CASHEWS+ based alarm predictions using a single-patient example after extended left hemihepatectomy for Klatskin tumor with biliodigestive anastomotic insufficiency at postoperative day 10. Alarms are visualized by individual points and color-coded for both strategies. For CASHEWS+, we used the optimal alarm based on Decision Curve Analysis (A4; see Fig. 5e); for REWS, the alarm strategy in the same recall bin was applied. c, Alarm burden quantified as alarms per patient per day (y-axis) across all recall levels (x-axis) for REWS-based alerts, raw ML predictions using a static threshold, and the final alarm strategy with blackout periods and a dynamic threshold. d, Precision–recall curves comparing REWS, the raw machine learning model, and the dynamic alarm strategy for the prediction e, Decision curve analysis including harm-to-benefit ratios for optimal alarm strategies per recall bin using CASHEWS+. The top alarm reflecting the threshold probability interval is shown above the dashed red line.
 :::
 
 
-## Performance Analysis
+<!-- ## Performance Analysis
 
 ::: {.incremental}
 
@@ -502,7 +540,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ::: {.notes}
 - The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
-:::
+::: -->
 
 <!-- ## Clinical use, limitations, next steps
 
@@ -561,12 +599,24 @@ Source: https://xkcd.com/927/
 
 ## The Medical Event Data Standard (MEDS)
 
+::: {.incremental}
+1. **ML-First** - Optimized for ML tasks, not observational research
+2. **Flexible** - Works with OMOP, open-access datasets, proprietary (private) health systems, and is quickly adaptable to new data sources.
+3. **Event-Based** - Natural representation for longitudinal healthcare data
+4. **Interoperable** - Tools compose together across datasets and institutions
+:::
+::: {.fragment}
 <div style="text-align: center;">
-  <img src="figures/meds/meds_schema.png" width="75%" class="no-dark">
+  <img src="figures/meds/meds_schema.png" width="60%" class="no-dark">
 </div>
 ::: {.tiny-text}
   Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Provisionally accepted to NEJM AI (2026)
 :::
+:::
+
+
+
+
 <!-- ```python
 # Core MEDS Schema (v0.4.0)
 from pyarrow.schema import Schema as PyArrowSchema
@@ -578,14 +628,6 @@ class DataSchema(PyArrowSchema):
     numeric_value: Optional(pa.float32())
     text_value: Optional(pa.large_string())
 ``` -->
-
-## MEDS Design Principles
-::: {.incremental}
-1. **ML-First** - Optimized for ML tasks, not observational research
-2. **Flexible** - Works with OMOP, open-access datasets, proprietary (private) health systems, and is quickly adaptable to new data sources.
-3. **Event-Based** - Natural representation for longitudinal healthcare data
-4. **Interoperable** - Tools compose together across datasets and institutions
-:::
 
 
 ## MEDS-DEV: Decentralized External Validation Framework
@@ -621,16 +663,21 @@ class DataSchema(PyArrowSchema):
 ![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark}
 
 ## Linear Probing
+- Embed patient representations until prediction time
 - Train a linear classifier on top of frozen foundation model representations
+::: {.fragment}
 <div style="text-align: center;">
 <img src="figures/meds/linear_probing/tasks/linear_probing_legend.svg" width="50%" class="no-dark">
   <img src="figures/meds/linear_probing/aggregated/aggregated_line_['roc_auc_score', 'average_precision_score']_macro.svg" width="100%" class="no-dark">
 </div>
+:::
 
-::: {.fragment}
-
+## Representations
+- Analyze the learned representations of foundation models to understand what they capture and how they differ across tasks and datasets
+- Use dimensionality reduction techniques (e.g., t-SNE, UMAP) to visualize the embeddings and identify clusters or patterns related to specific clinical conditions or outcomes
 - CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]] Leukocytis embeddings colored by task labels (<span style="color:#BCAD76;">positive</span>/<span style="color:#4A556C;">negative</span>):
 
+::: {.fragment}
 ::: {.columns}
 ::: {.column width="50%"}
 <img src="figures/meds/dimensionality_reduction_plots/abnormal_lab_cbc_leukocytosis_first_24h_labels_cehr_tsne_2d_reduced.svg" width="100%" class="no-dark">
