@@ -3,7 +3,6 @@ img.no-dark, .no-dark img, .no-dark {
   background: none !important;
   color-scheme: light !important;
 }
-.reveal li span.fragment { position: absolute; left: 0; background: inherit; }
 
 .reveal .slide-background {
   background-color: #ffffff !important; /* True white */
