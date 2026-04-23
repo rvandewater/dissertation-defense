@@ -20,7 +20,7 @@ format:
    logo: ""
    css: custom.css
    footnotes-hover: true
-   footer: rpvandewater.com/dissertation-defense/ | PhD Defense | Robin P. van de Water
+   footer: <a href="http://rpvandewater.com/dissertation-defense/"> rpvandewater.com/dissertation-defense/ </a> | PhD Defense | Robin P. van de Water
    footnotes: true
    simplemenu:
    code-overflow: wrap
@@ -32,6 +32,26 @@ revealjs-plugins:
 
 --- 
 
+## Electronic Health Records (EHR): Footprints of the Patient Journey
+<div text-align="center">
+![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=100%}
+</div>
+  <div class="fragment fade-out" data-fragment-index="1"
+       style="position:absolute; top:45%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
+<!-- 
+  <div class="fragment fade-out" data-fragment-index="2"
+       style="position:absolute; top:30%; left:55%; width:100%; height:100%; background:white; z-index:2;"></div> -->
+
+
+::: {.notes}
+What does EHR data look like? 
+- It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes). 
+- This complexity is both a challenge and an opportunity for machine learning in healthcare. 
+- We should distinguish between in-patient and out-patient data, the latter is much more sparse and less frequently updated, which has implications for model design and deployment. 
+- The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
+:::
+
+
 # ML for Health in a Nutshell
 <!-- ![](figures/motivation/ml_for_health.svg){fig-cap="World Health Organization" height=25em .no-dark} -->
 <div style="position: relative; display: inline-block;">
@@ -41,7 +61,7 @@ revealjs-plugins:
        style="position:absolute; top:0%; left:15%; width:100%; height:100%; background:white; z-index:2;"></div>
 
   <div class="fragment fade-out" data-fragment-index="2"
-       style="position:absolute; top:0; left:55%; width:100%; height:100%; background:white; z-index:2;"></div>
+       style="position:absolute; top:0; left:54%; width:100%; height:100%; background:white; z-index:2;"></div>
 </div>
 
 ::: {.notes}
@@ -50,17 +70,6 @@ revealjs-plugins:
 - The essence is often predicting or diagnosing something about a patient at time T so that we can intervene at time T+1 to improve outcomes.
 :::
 
-## Electronic Health Records (EHR): Footprints of the Patient Journey
-
-![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=80%}
-
-::: {.notes}
-What does EHR data look like? 
-- It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes). 
-- This complexity is both a challenge and an opportunity for machine learning in healthcare. 
-- We should distinguish between in-patient and out-patient data, the latter is much more sparse and less frequently updated, which has implications for model design and deployment. 
-- The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
-:::
 
 ## The Promise of Machine Learning in Healthcare
 Papers on ArXiv preprint server with ML and health keywords in the title or abstract have been growing over the last years:
@@ -74,13 +83,20 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 
 ## The Translation Gap in Healthcare {auto-animate="true"}
 
+
+  
+<!-- - <span style="color: #0095D1">Advance the implementation of national digital health strategies</span> -->
+
 ::: {.incremental}
-- The problem statement motivating this work: **Despite the promise and explosion of machine learning research, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
+-  **Despite the promise and explosion of AI and machine learning research, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
 - Why?
-  - ​⚡​ **Research reproducibility**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
-  - ​⚡​ **Incomplete observations**: Retrospective data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
-  - ​⚡​ **Lack of robust infrastructure**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
-  - ​⚡​ **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility to authorities is non-trivial.^[[@vancalsterThereNoSuch2023]]
+
+  ​⚡​ **Research reproducibility**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
+
+  ​⚡​ **Incomplete observations**: Retrospective data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
+
+  ⚡​ **Lack of robust infrastructure**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
+  <!-- - ​⚡​ **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility to authorities is non-trivial.^[[@vancalsterThereNoSuch2023]] -->
 :::
 
 ::: {.notes}
@@ -111,15 +127,31 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 
 ## Research Contribution per Challenge {auto-animate=true}
 
-::: {.bigger-text}
-
 ::: {.incremental}
-1. ​⚡​ Research reproducibility → <span data-id="repro-phrase">Enabling Reproducible Prediction Experiments 🧪</span>  ✓
+1. ​⚡​ Research reproducibility → <span data-id="repro-phrase">Enabling Reproducible Prediction Experiments 🧪</span>
 2. ​⚡​ Incomplete observations → <span data-id="incomplete-phrase">Development and Validation of Multi-ward Multi-modal Early Warning Systems 🛏️​</span> 
 3. ​⚡​ Lack of infrastructure → <span data-id="infrastructure-phrase">Packages and pipelines for Foundational Health AI Research 🏗️</span> 
 :::
+
 ::: {.fragment .fade-in}
 **Thesis Statement:** *ML systems for health care require rich data, reusable open-source model components, and an extensive validation ecosystem.*
+:::
+
+::: {.fragment .fade-in}
+
+::: {.columns}
+::: {.column width="80%"}
+UN WHO Global Strategy on Digital Health Objectives (1/4):
+
+<span style="color: #0095D1">
+*"To promote digital health collaborations and
+partnership models within and across organizations on the use of software global goods, open-standards, and common digital health
+architecture."* ^[[@marianoGlobalStrategyDigital2020]]</span>
+:::
+::: {.column width="20%"}
+
+![](figures/motivation/WHO_logo.svg){fig-cap="World Health Organization" height=5em .no-dark fig-align="right"}
+:::
 :::
 
 :::
@@ -143,8 +175,8 @@ My thesis is structured around three main contributions that address the key cha
 <span data-id="repro-phrase">Enabling Reproducible Prediction Experiments 🧪</span> 
 
 ::: {.tiny-text}
-- **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML". in: *Journal of Open Source Software* 11.117 (2026), p. 9261. doi: 10.21105/joss.09261 [@]
-- **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". in: *Proceedings of The Twelfth International Conference on Learning Representations.* May 2024. doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
+- **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML"., p. 9261. doi: 10.21105/joss.09261 [@van_de_Water2026]
+- **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
 :::
 :::
 
@@ -153,20 +185,20 @@ My thesis is structured around three main contributions that address the key cha
 
 ::: {.tiny-text}
 - **Robin P. van de Water**, Axel Winter, Daniela Zuluaga Lotero, Bjarne Pfitzner, Lara Faraj, Bert Arnrich, Patrick Rockenschaub, Wenzel Schoning, Thomas Malinka, Christian Denecke, Johann Pratschke, Igor M. Sauer, and Max M. Maurer. Continuous Multimodal AI with Wearable Vital Signs Predicts Postoperative Complications in the General Ward. Nov. 2025. doi: 10.1101/2025.11.25.25340950. [@vandewaterContinuousMultimodalAI2025] (MedRxiv preprint)
-- Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Faraj, Robert Ahlborn, Maximilian Schulze, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Bert Arnrich, Igor M. Sauer, and Max M. Maurer. "90-Day Mortality Prediction in Elective Visceral Surgery Using Machine Learning: A Retrospective Multicenter Development, Validation, and Comparison Study". In: *International Journal of Surgery* 111.6 (June 2025), p. 3742. doi: 10.1097/JS9.0000000000002372. [@riepe90dayMortalityPrediction2025a]
-- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Daniela Zuluaga, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Hospital-grade Clinical Data and Wearable Vital Sign Monitoring to Predict Surgical Complications". In: *ICLR 2024 Workshop on Learning from Time Series For Health.* Mar. 2024. [@waterCombiningHospitalgradeClinical2024b]
-- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Time Series Modalities to Create Endpoint-driven Patient Records". In: *ICLR 2024 Workshop on Data-centric Machine Learning Research (DMLR): Harnessing Momentum for Science.* Mar. 2024. [@waterCombiningTimeSeries2024] 
+- Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Faraj, Robert Ahlborn, Maximilian Schulze, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Bert Arnrich, Igor M. Sauer, and Max M. Maurer. "90-Day Mortality Prediction in Elective Visceral Surgery Using Machine Learning: A Retrospective Multicenter Development, Validation, and Comparison Study". doi: 10.1097/JS9.0000000000002372. [@riepe90dayMortalityPrediction2025a]
+- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Daniela Zuluaga, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Hospital-grade Clinical Data and Wearable Vital Sign Monitoring to Predict Surgical Complications". Mar. 2024. [@waterCombiningHospitalgradeClinical2024b]
+- **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Time Series Modalities to Create Endpoint-driven Patient Records". [@waterCombiningTimeSeries2024] 
 :::
 :::
 ::: {.column width="33%"}
 <span data-id="infrastructure-phrase">Packages and pipelines for Foundational Health AI Research 🏗️</span>
 
 ::: {.tiny-text}
-- **MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". In: *ICLR 2024 Workshop on Learning from Time Series for Health*. 2024. [@medsworkinggroupMedicalEventData2024]
-- Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. "MEDS Decentralized, Extensible Validation (MEDS-DEV) Benchmark: Establishing Reproducibility and Comparability in ML for Health". In: *Machine Learning for Health (ML4H)*, 15-16 December 2024, Vancouver, Canada (Nov. 2024). [@mcdermottMEDSDecentralizedExtensible2024]
-- Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. Lee, Nassim Oufattole, Patrick Rockenschaub, Kamilė Stankevičiūtė, Ethan Steinberg, Jimeng Sun, **Robin P. Van De Water**, Michael Wornow, John Wu, and Zhenbang Wu. "MEDS: Building Models and Tools in a Reproducible Health AI Ecosystem". In: *Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining* V.2. Toronto ON Canada: ACM, Aug. 2025, pp. 6243–6244. isbn: 979-8-4007-1454-2. doi: 10.1145/3711896.3737608. [@mcdermottMEDSBuildingModels2025a]
-- **Robin Philippus van de Water**, Ethan Steinberg, Michael Wornow, Patrick Rockenschaub, and Matthew McDermott. MIMIC-IV Demo Data in the Medical Event Data Standard (MEDS). 2025. doi: 10.13026/T2Y8-EA41. [@vandewaterMIMICIVDemoData2025]
-- **Robin P. Van de Water**. "Scaling Up Clinical ML from Datasets to Entire Health Systems through the MEDS Ecosystem". In: *SBHD 2025 International Conference on Systems Biology of Human Diseases*. Berlin, June 2025 [@vandewaterScalingClinicalML2025]
+- Matthew McDermott, Ethan Steinberg, Jason Fries, **Robin P. van de Water**, Chao Pang, Patrick Rockenschaub, Pawel Renc, Jungwoo Oh, Kamilė Stankevičiūtė, Justin Xu, Tom Joseph Pollard, Nassim Oufattole, Michael Wornow, Teya Bergamaschi, Hyewon Jeong, Simon Lee, Vincent Jeanselme, Kiril Klein, Mikkel Odgaard, Maria Elkjær Montgomery, Arkadiusz Sitek, Mads Nielsen, Jeffrey Chiang, Noa Dagan, Isaac Kohane, Shalmali Joshi, Edward Choi, and Nigam Shah. [@McDermott2025MEDS]
+- **MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". 2024. [@medsworkinggroupMedicalEventData2024]
+- Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. 15-16 December 2024, Vancouver, Canada (Nov. 2024). [@mcdermottMEDSDecentralizedExtensible2024]
+- Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. Lee, Nassim Oufattole, Patrick Rockenschaub, Kamilė Stankevičiūtė, Ethan Steinberg, Jimeng Sun, **Robin P. Van De Water**, Michael Wornow, John Wu, and Zhenbang Wu. "MEDS: Building Models and Tools in a Reproducible Health AI Ecosystem". SIGKDD Tutorial [@mcdermottMEDSBuildingModels2025a]
+- **Robin P. Van de Water**. "Scaling Up Clinical ML from Datasets to Entire Health Systems through the MEDS Ecosystem". In: Berlin, June 2025 [@vandewaterScalingClinicalML2025]
 :::
 :::
 
@@ -196,28 +228,32 @@ How do we enable the entire community to build on each other's work?
 
 # Enabling Reproducible Prediction Experiments 🧪
 
-​⚡ The Reproducibility Crisis in Clinical ML:​ Comparing approaches across papers is nearly impossible because of different:
+Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but → 
 
 ::: {.fragment}
--  Datasets (MIMIC-III vs MIMIC-IV vs eICU vs HiRID)
--  Cohort definitions (patient inclusion/exclusion varies)
--  Preprocessing (normalization, imputation, features)
--  Evaluation metrics and splits
-
-But mostly:
-
-- Code not published, incomplete, or not reusable
+​⚡ **The Reproducibility Crisis in Clinical ML**:​ Comparing approaches across papers is extremely hard because of differences in:
 :::
 
 ::: {.fragment}
-Why should we care?:
-*Dataset, cohort definition, and preprocessing choices can have **larger effects on performance** than the choice of model architecture.*
+-  **Datasets** (private datasets or different public datasets)
+-  **Cohort definitions** (patient inclusion/exclusion varies)
+-  **Preprocessing** (normalization, imputation, features)
+-  **Evaluation metrics and splits**
+- **Code not published, incomplete, not reusable or adaptable.** ^[[@shillanUseMachineLearning2019a]]
+
+:::
+
+::: {.fragment}
+::: {.callout-warning appearance="simple" style="font-size: 1.5em;"}
+Individual research results (models, techniques, ideas) do not generalize accross settings, hindering meaningful scientific progress and clinical translation. ^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]]
+:::
+<!-- *Dataset, cohort definition, and preprocessing choices can have **larger effects on performance** than the choice of model architecture.* -->
 :::
 
 ---
 
 
-## How do solve this in practice?
+## How to solve this in practice?
 
 ::: columns
 ::: {.column width="70%"}
@@ -299,7 +335,7 @@ Four publicly available ICU datasets:
 
 ## Sepsis: Different Definitions, Different Conclusions
 - Potentially life-threatening response to infection that causes injury to its own tissues and organs
-- Sepsis prediction on MIMIC-IV using Gated Reccurrent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
+- Sepsis prediction on MIMIC-IV using Gated Reccurent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
 
 ::: {.incremental}
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
@@ -375,15 +411,21 @@ AUPRC:
 
 :::
 :::
+
+## Conclusion
+- True reproducibility in clinical ML requires more than just code release; it demands modular, flexible, and standardized pipelines that can adapt to the complexities of real-world data and research needs.
+- YAIB: 96 GitHub stars; 44 citations; Adaption across community ^[[@shenDataAdditionDilemma2024a,@santosImprovingRepresentationLearning2025,@rockenschaubImpactMultiInstitutionDatasets2024,@fuentesPrivacyPreservingDatasetCombination2025]]
+
+
 <!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study -->
 # Multi-ward Multi-modal Early Warning Systems 🛏️
-​⚡​ Retrospective data does not reflect the information needed for clinical decision-making.
+**​⚡​ Retrospective, observational, data does not reflect the information needed for clinical decision-making.**
 
 ::: {.incremental}
 - More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
 - 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
 - **Postoperative adverse events** impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
-- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024]] → hard to detect on sparsely monitored general ward, where most postoperative patients rehabilitate.
+- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on sparsely monitored general ward, where most postoperative patients rehabilitate.
 - Why not just monitor patients in the ICU? → expensive and can lead to complications like infections, delirium, and deconditioning.
 - Solution? **Hybrid ward with minimally intrusive wearables**
 :::
@@ -434,14 +476,18 @@ AUPRC:
 ---
 
 <!-- ## Introducing Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
+<div class="fragment fade-out" data-fragment-index="1"
+style="position:absolute; top:10%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
+<div class="fragment fade-out" data-fragment-index="2"
+style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/cass_pipeline.svg" width="60%" class="no-dark">
 </div>
 
+<img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:80%; left:80%; width:15%; z-index:1;">
 
-<!-- ![](figures/cass/fig1.svg){fig-cap="" width=100% .no-dark}
 
-![](figures/cass/cashews_logo.svg){fig-cap="" width=100% .no-dark} -->
+
 
 ::: {.notes}
 Fig. 1: Data segmentation, aggregation, model training, and alarm framework.
@@ -454,26 +500,44 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 <!-- Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
 
 ::: {.columns}
-::: {.column width="60%"}
-- Standard static pre-ward data is not sufficient
-- Remote Early Warning Score (REWS) threshold-based wearable score.
-- The strongest gains came from continuous, high-resolution wearable data
-- SHAP values demonstrate subtle contributions that indicate early autonomic stress
+::: {.column width="65%"}
+<div style="position: relative; top: -1em;">
+
 <div style="text-align: center; margin-top: -0em;">
-  <img src="figures/cass/cass_performance.svg" width="100%" class="no-dark">
+  <img src="figures/cass/cass_performance.svg" width="90%" class="no-dark">
+</div>
+</div>
+::: {.fragment fragment-index="2"}
+<div style="position: relative; top: -2.5em;">
+
+- Remote Early Warning Score (REWS)^[[@vanderstamWearablePatchBased2023]] threshold-based wearable score.
+- Standard static pre-ward data is not sufficient; dynamic models needed.
+- Significant gains from continuous, high-resolution wearable data.
 </div>
 :::
-::: {.column width="40%"}
+
+
+
+
+:::
+::: {.column width="35%"}
+
+::: {.fragment fragment-index="3"}
 <div style="text-align: center; margin-top: -5em;">
   <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
 </div>
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/shap_contribution.svg" width="100%" class="no-dark">
 </div>
-
+:::
 
 :::
 :::
+::: {.fragment fragment-index="3"}
+<div style="position: relative; top: -3.5em;">
+- SHAP-values^[[@lundbergUnifiedApproachInterpreting2017a]]: subtle (wearable) physiological indicate early autonomic stress.
+</div>
+::: 
 <!-- <div style="position:absolute; top:83%; left:0%; width:100%; height:60%; background:white; z-index:2;"></div> -->
 
 ::: {.notes}
@@ -502,10 +566,12 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ::: {.columns}
 ::: {.column width="70%"}
-- Alarm strategy: when should we choose to inform clinicians?
+- **Alarm strategy**: when should we choose to inform clinicians?
 - Grace period, persistence, and silencing to balance early detection with alarm fatigue.
+
+::: {.fragment fragment-index="4"}
 <!-- -  2 alarms per day on a 100-bed ward. -->
-- Decision curve analysis ^[[@vancalsterReportingInterpretingDecision2018]]: how much harm (diagnostics/probes) am I willing to accept?
+- Decision curve analysis ^[[@vancalsterReportingInterpretingDecision2018]]: **how much harm (intervention/diagnostics/probes) am I willing to accept?**
 <!-- <div style="text-align: center; margin-top: -0em;">
   <img src="figures/cass/cass_ward_day.svg" width="100%" class="no-dark">
 </div> -->
@@ -513,7 +579,8 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
   <img src="figures/cass/fig5.svg" width="100%" class="no-dark">
 </div>
 :::
-::: {.column width="30%"}
+:::
+::: {.column width="30%" .fragment fragment-index="3"}
 <div style="text-align: center; margin-top: -0em;">
   <img src="figures/cass/cass_burden_precision_recall.svg" width="80%" class="no-dark">
 </div>
@@ -567,10 +634,11 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 <!-- **Example:** Mount Sinai Health System (MSHS) has 6.8 million patients
 - **Before MEDS:** Data in OMOP format; every research project wrote custom extraction code (~3-6 weeks per project)
 - **After MEDS:** Standardized ETL pipeline; research ready in days -->
-
-**Open Question:** *How can we enable reproducible ML research across healthcare systems without requiring every institution to engineer their own ecosystem or harmonize their data and lose granularlity?*
 :::
 
+::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
+How can we enable reproducible ML research across healthcare systems without requiring every institution to engineer their own ecosystem or harmonize their data and lose granularlity?
+:::
 ## Data Standards in Healthcare
 
 ::: {.columns}
@@ -589,28 +657,29 @@ In observational health informatics:
 
 ::: {.fragment}
 <div style="text-align: center; position: absolute; top: 20%;">
-  <img src="figures/meds/standards.png" width="100%" class="no-dark">
-Source: https://xkcd.com/927/
+  <img src="figures/meds/standards.png" width="100%" class="no-dark"> <a href="https://xkcd.com/927/" target="_blank" style="font-size: 0.5em;">Source: https://xkcd.com/927/</a>
 </div>
+
 
 :::
 :::
 :::
 
 ## The Medical Event Data Standard (MEDS)
-
+::: {.callout-tip title="Characteristics" style="font-size: 1.5em;"}
 ::: {.incremental}
 1. **ML-First** - Optimized for ML tasks, not observational research
 2. **Flexible** - Works with OMOP, open-access datasets, proprietary (private) health systems, and is quickly adaptable to new data sources.
 3. **Event-Based** - Natural representation for longitudinal healthcare data
 4. **Interoperable** - Tools compose together across datasets and institutions
 :::
+:::
 ::: {.fragment}
 <div style="text-align: center;">
-  <img src="figures/meds/meds_schema.png" width="60%" class="no-dark">
+  <img src="figures/meds/meds_schema.png" width="50%" class="no-dark">
 </div>
 ::: {.tiny-text}
-  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Provisionally accepted to NEJM AI (2026)
+  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).
 :::
 :::
 
@@ -632,22 +701,27 @@ class DataSchema(PyArrowSchema):
 
 ## MEDS-DEV: Decentralized External Validation Framework
 - Reproducible benchmarking is critical for scientific progress, but sharing raw patient data across institutions is often not possible due to privacy concerns.
-- Define standardized predicates for cohort definitions and task specifications ^[[@xuACESAutomaticCohort2024a]]
-- Each site independently trains and evaluates on their own MEDS data
+- Define standardized predicates for cohort definitions and task specifications ^[[@xuACESAutomaticCohort2024a]].
+- Each site/dataset independently trains and evaluates on their own MEDS data:
+
+::: {.fragment}
 
 {{< include resources/cohort_table_small.html >}}
 
+:::
 ---
+
+## Results depend heavily on dataset/task choice
 
 ::: {.columns}
 ::: {.column width="50%"}
-<div style="text-align: right;  margin-top: -2em;">
-  <img src="figures/meds/meds_dev/model_comparison_auroc_task_grouped_samples.svg" width="70%" class="no-dark">
+<div style="text-align: right;  margin-top: -1em;">
+  <img src="figures/meds/meds_dev/model_comparison_auroc_task_grouped_samples.svg" width="65%" class="no-dark">
 </div>
 :::
 ::: {.column width="50%"}
-<div style=" margin-top: -2em;">
-  <img src="figures/meds/meds_dev/model_comparison_auprc_task_grouped_samples.svg" width="70%" class="no-dark">
+<div style=" margin-top: -1em;">
+  <img src="figures/meds/meds_dev/model_comparison_auprc_task_grouped_samples.svg" width="65%" class="no-dark">
 </div>
 :::
 :::
@@ -659,23 +733,30 @@ class DataSchema(PyArrowSchema):
 :::
 
 ## Scaling Up Clinical ML from Cohorts to Health Systems
+  <div class="fragment fade-out" data-fragment-index="1"
+       style="position:absolute; top:27%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 
+  <div class="fragment fade-out" data-fragment-index="2"
+      style="position:absolute; top:27%; left:30%; width:100%; height:100%; background:white; z-index:2;"></div>
 ![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark}
 
 ## Linear Probing
-- Embed patient representations until prediction time
-- Train a linear classifier on top of frozen foundation model representations
+- Train SOTA FMs^[[@pangFoMoHClinicallyMeaningful2025]], CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]], on entire MSHS dataset.
+- Embed **patient representations** until prediction time.
+- Train a **linear classifier** on top of frozen foundation model representations.
+
 ::: {.fragment}
-<div style="text-align: center;">
+<div style="text-align: center; margin-top: -2em;">
 <img src="figures/meds/linear_probing/tasks/linear_probing_legend.svg" width="50%" class="no-dark">
   <img src="figures/meds/linear_probing/aggregated/aggregated_line_['roc_auc_score', 'average_precision_score']_macro.svg" width="100%" class="no-dark">
 </div>
+
 :::
 
 ## Representations
-- Analyze the learned representations of foundation models to understand what they capture and how they differ across tasks and datasets
-- Use dimensionality reduction techniques (e.g., t-SNE, UMAP) to visualize the embeddings and identify clusters or patterns related to specific clinical conditions or outcomes
-- CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]] Leukocytis embeddings colored by task labels (<span style="color:#BCAD76;">positive</span>/<span style="color:#4A556C;">negative</span>):
+- Analyze the **learned representations** of foundation models to understand what they capture and how they differ across tasks and datasets.
+- Use **dimensionality reduction** techniques (e.g., t-SNE ^[[@maatenVisualizingDataUsing2008]], UMAP) to visualize the embeddings and identify clusters or patterns related to specific clinical conditions or outcomes.
+- Leukocytis embeddings t-SNE colored by task labels (<span style="color:#BCAD76;">positive</span>/<span style="color:#4A556C;">negative</span>):
 
 ::: {.fragment}
 ::: {.columns}
@@ -690,8 +771,6 @@ class DataSchema(PyArrowSchema):
 :::
 
 
-:::
-
 
 ## Impact of the MEDS Ecosystem
 
@@ -699,7 +778,7 @@ class DataSchema(PyArrowSchema):
   <img src="figures/meds/meds_adoption.png" width="100%" class="no-dark">
 </div>
 ::: {.tiny-text}
-  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Provisionally accepted to NEJM AI (2026)
+  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).
 :::
 <!-- - Supported the development of SOTA models for EHR data ^[[@pangCEHRXGPTScalableMultiTask2025;@fallahpourEHRMambaGeneralizableScalable2024a; @rencFoundationModelElectronic2025]]. -->
 <!-- - 21 institutions
@@ -709,13 +788,13 @@ class DataSchema(PyArrowSchema):
 - Reduction of lines of code up to 70% -->
 
 
-## Limitations
+# Limitations
 
 ::: {.incremental}
-- Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated
-- Randomized controlled trials are needed to demonstrate clinical utility and safety before deployment
-- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.)
-- (Large) AI models can have sizeable environmental impact; simpler is better
+- Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated ^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
+- Validation strategies and randomized controlled trials are needed to demonstrate clinical utility and safety before deployment ^[[@wongExternalValidationWidely2021a]]
+- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.)^[[@gaffneyHealthCareUSA2025;@jangOopsInterdisciplinaryStories2025]]
+- (Large) AI models can have sizeable environmental impact; simpler is better ^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
 :::
 
 ## My Thesis
@@ -723,14 +802,15 @@ class DataSchema(PyArrowSchema):
 We require:
 
 ::: {.incremental}
-1. **Transparent benchmarking frameworks**: to understand what actually drives model performance
-2. **Prospective clinical studies**: to improve quality and validate assumptions from retrospective research
-3. **Standardized infrastructure**: to enable collaborative, reproducible research at scale
-
-
-**The Thesis Summarized:**
-*Healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility.*
+1. **Transparent benchmarking frameworks 🧪**: to understand what actually drives model performance
+2. **Prospective clinical studies 🛏️**: to improve quality and validate assumptions from retrospective research
+3. **Standardized infrastructure 🏗️**: to enable collaborative, reproducible research at scale
 ::: 
+::: {.fragment}
+*Healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility.*
+:::
+
+
 
 
 ## Future Research Directions
@@ -745,6 +825,7 @@ We require:
   - Patient representations across disciplines (e.g., oncology, cardiology, etc.)^[[@kernCareFragmentationCare2024]]
 :::
 
+<!-- 
 ---
 
 ## United Nations WHO Digital Health Objectives
@@ -775,14 +856,10 @@ We require:
 ::: {.notes}
 In my thesis we focus on 1 in particularly while respecting and complementing the other objectives; of which the latter 3 and 4 are most important.
 - https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2024/0509/Documents/Carl%20LEITNER.pdf 
-:::
-
-
-
----
+::: -->
 
 ## Acknowledgements
-
+::: {.small-text}
 ::: {.columns}
 ::: {.column width="25%"}
 HPI:
@@ -793,6 +870,7 @@ HPI:
 - Gerard de Melo
 - Bert Arnrich
 - Hendrik Schmidt
+- Cornelia Philippson
 - Edit Tatar
 - Katharina Lorenz-Shroeder
 :::
@@ -809,6 +887,7 @@ Mentors and Collaborators:
 - Patrick Rockenschaub (Medical University of Vienna)
 - Matthew McDermott (Columbia University)
 - Eugenia Alleva (Mount Sinai)
+- Jason Fries (Stanford)
 :::
 ::: {.column width="25%"}
 Reviewers:
@@ -817,7 +896,7 @@ Reviewers:
 - Mykola Pechenizkiy (TU Eindhoven)
 :::
 :::
-
+:::
 <!-- The field of machine learning for healthcare stands at an inflection point. We have:
 - ✓ Demonstrated predictive capability (models work in controlled settings)
 - ✓ Shown deployment is feasible (CASSANDRA, clinical partnerships)
@@ -843,5 +922,119 @@ Healthcare ML can improve outcomes when built on solid infrastructure, rigorous 
 
 ::: {#refs}
 :::
+<script>
+{{< include fade_in_footnotes.js >}}
+</script>
+<!-- <script>
+(function () {
+  const FADE_MS = 500;
 
+  function getFootnoteAside(slide) {
+    if (!slide) return null;
+    const asides = slide.querySelectorAll(':scope > aside');
+    for (const aside of asides) {
+      if (aside.querySelector(':scope > ol.aside-footnotes')) return aside;
+    }
+    return null;
+  }
+
+  function getVisibleFootnoteNumbers(slide) {
+    const nums = new Set();
+    const sups = slide.querySelectorAll('sup');
+
+    sups.forEach((sup) => {
+      const frag = sup.closest('.fragment');
+      const fragmentVisible =
+        !frag ||
+        frag.classList.contains('visible') ||
+        frag.classList.contains('current-fragment');
+
+      if (!fragmentVisible) return;
+
+      const n = Number.parseInt((sup.textContent || '').trim(), 10);
+      if (Number.isFinite(n)) nums.add(n);
+    });
+
+    return nums;
+  }
+
+  function ensureFadeInit(el) {
+    if (!el || el.dataset.fnInit === '1') return;
+    el.dataset.fnInit = '1';
+    el.style.transition = 'opacity ' + FADE_MS + 'ms ease';
+    el.style.opacity = '0';
+    el.style.display = 'none';
+  }
+
+  function setFadeState(el, show) {
+    if (!el) return;
+    ensureFadeInit(el);
+
+    const wasShown = el.dataset.fnShown === '1';
+    if (show === wasShown) return;
+    el.dataset.fnShown = show ? '1' : '0';
+
+    if (show) {
+      el.style.display = '';
+      el.style.opacity = '0';
+      requestAnimationFrame(() => {
+        if (el.dataset.fnShown === '1') {
+          el.style.opacity = '1';
+        }
+      });
+    } else {
+      el.style.opacity = '0';
+      window.setTimeout(() => {
+        if (el.dataset.fnShown !== '1') {
+          el.style.display = 'none';
+        }
+      }, FADE_MS);
+    }
+  }
+
+  function syncSlideFootnotes(slide) {
+    const footAside = getFootnoteAside(slide);
+    if (!footAside) return;
+
+    const list = footAside.querySelector(':scope > ol.aside-footnotes');
+    if (!list) return;
+
+    const visibleNums = getVisibleFootnoteNumbers(slide);
+    let anyShown = false;
+
+    Array.from(list.children).forEach((li, idx) => {
+      const liNum = idx + 1;
+      const show = visibleNums.has(liNum);
+
+      setFadeState(li, show);
+      if (show) anyShown = true;
+    });
+
+    setFadeState(footAside, anyShown);
+  }
+
+  function refresh(evt) {
+    const slide =
+      (evt && evt.currentSlide) ||
+      (window.Reveal && Reveal.getCurrentSlide && Reveal.getCurrentSlide());
+
+    if (slide) syncSlideFootnotes(slide);
+  }
+
+  function init() {
+    if (!window.Reveal) return;
+    Reveal.on('ready', refresh);
+    Reveal.on('slidechanged', refresh);
+    Reveal.on('fragmentshown', refresh);
+    Reveal.on('fragmenthidden', refresh);
+    refresh();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script> -->
 <!-- {{< include extra_slides/publications.qmd >}} -->

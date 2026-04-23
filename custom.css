@@ -22,13 +22,26 @@ div.reveal div.slides section.quarto-title-block .subtitle {
 }
 
 /* Force footnotes to bottom on those slides */
-.reveal .slides section.slide.center:not(.quarto-title-block) aside {
+.reveal .slide:not(.scrollable) > aside,
+.reveal .slide:not(.scrollable) > div.aside {
   position: absolute !important;
-  bottom: 20px !important;
   left: 0;
   right: 0;
+  bottom: 12px !important; /* default theme is 20px */
 }
 
+/* Remove list spacing inside footnotes */
+.reveal .slide > aside .aside-footnotes,
+.reveal .slide > aside .aside-footnotes li,
+.reveal .slide > aside .aside-footnotes li p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* Tighten gap between bottom footnotes and footer */
+.reveal .slide aside .aside-footnotes li p {
+  margin-block: 0 !important;
+  margin-inline: 0 !important;
+}
 .reveal .slides section.level1 > h1 {
   margin-top: 0 !important;
 }
