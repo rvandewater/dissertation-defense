@@ -18,3 +18,45 @@
 - *Once per stay*: Indicates predictions are made once during the ICU stay.
 
 ---
+
+## Transfer Learning
+
+- What if we train a generalized model on "most generalizable" eICU?
+- Finetune on "difficult" HiRID
+
+::: {.fragment}
+
+::: {.column width="50%"}
+AUROC:
+![](figures/yaib/transfer_learning.svg){fig-cap="" width=100% .no-dark}
+
+:::
+
+::: {.column width="50%"}
+AUPRC:
+![](figures/yaib/transfer_learning_auprc.svg){fig-cap="" width=100% .no-dark}
+
+:::
+:::
+
+## External Validation with Mortality
+
+::: {.column width="50%"}
+AUROC:
+![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
+
+:::
+
+::: {.column width="50%"}
+AUPRC:
+![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
+
+:::
+
+::: {.fragment}
+
+- **Column**: Model trained on dataset
+- **Row**: Model evaluated on dataset
+- **Diagonal**: Internal validation (same dataset)
+
+:::

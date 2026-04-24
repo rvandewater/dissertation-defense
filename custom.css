@@ -12,6 +12,19 @@ img.no-dark, .no-dark img, .no-dark {
 div.reveal div.slides section.quarto-title-block .subtitle {
   margin-bottom: 0.75rem !important; /* default is much larger */
 }
+
+#title-slide .subtitle .title-slide-bottom-block {
+  display: inline-block;
+  position: relative;
+  top: 0;
+}
+
+#title-slide .subtitle .title-slide-scan-text {
+  display: inline-block;
+  font-size: 0.5em;
+  margin-top: -0.6em;
+}
+
 .reveal .slides section:not(.quarto-title-block) h1 {
   font-size: var(--r-heading2-size) !important;
 }

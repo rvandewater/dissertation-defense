@@ -1,9 +1,14 @@
 ---
 title: "Benchmark to Bedside"
 subtitle: 'Building Modular Multimodal Machine Learning Infrastructure for Healthcare at Scale   <br>
- <img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;"> <br> <span style="font-size:0.5em;">Scan for interactive slides</span> <br> <img src="images/logos/logos_defense.svg" width="20%">'
+ <span class="title-slide-bottom-block"><img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;"> <br> <span class="title-slide-scan-text">Scan for responsive slides</span> <br> <img src="images/logos/logos_defense.svg" width="20%"></span>'
 author: 'Robin P. van de Water'
 date: today
+title-slide-attributes:
+  data-background-image: figures/backgrounds/cover_image_thesis_wide_multimodal.png
+  data-background-size: cover
+  data-background-position: center
+  data-background-opacity: "0.15"
 date-format: "DD MMMM YYYY"
 bibliography: bibliography.bib
 csl: brief.csl               # <-- Use a numeric CSL file
@@ -12,19 +17,22 @@ filters:
   - editable
 format:
   revealjs:
-   theme: serif
-   slide-number: true
-   fontsize: 1.5em
-   chalkboard: false
-   preview-links: auto
-   logo: ""
-   css: custom.css
-   footnotes-hover: true
-   footer: <a href="http://rpvandewater.com/dissertation-defense/"> rpvandewater.com/dissertation-defense/ </a> | PhD Defense | Robin P. van de Water
-   footnotes: true
-   simplemenu:
-   code-overflow: wrap
-   center: false
+    auto-animate-easing: ease-in-out
+    auto-animate-unmatched: false
+    auto-animate-duration: 0.8
+    theme: serif
+    slide-number: true
+    fontsize: 1.5em
+    chalkboard: false
+    preview-links: auto
+    logo: ""
+    css: custom.css
+    footnotes-hover: true
+    footer: <a href="http://rpvandewater.com/dissertation-defense/"> rpvandewater.com/dissertation-defense/ </a> | PhD Defense | Robin P. van de Water
+    footnotes: true
+    simplemenu:
+    code-overflow: wrap
+    center: false
   #  transition: fade
 revealjs-plugins:
   - editable
@@ -32,7 +40,7 @@ revealjs-plugins:
 
 --- 
 
-## Electronic Health Records (EHR): Footprints of the Patient Journey
+## Electronic Health Records (EHR): Digital Footprints of the Patient Journey
 <div text-align="center">
 ![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=100%}
 </div>
@@ -106,17 +114,23 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 
   
 <!-- - <span style="color: #0095D1">Advance the implementation of national digital health strategies</span> -->
+::: {.callout-warning appearance="simple" style="font-size: 1.5em;"}
+**Despite the promise and explosion of AI and machine learning research, more abundant data, and advances in methodology, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
+:::
 
-::: {.incremental}
--  **Despite the promise and explosion of AI and machine learning research, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
-- Why?
+Main barriers to translation:
 
-  ⚡ **<span data-id="problem-repro">Research reproducibility</span>**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
-
-  ⚡ **<span data-id="problem-incomplete">Incomplete observations</span>**: Retrospective data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
-
-  ⚡ **<span data-id="problem-infrastructure">Lack of robust infrastructure</span>**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
-  <!-- - ​⚡​ **Bonus: Ethical and regulatory hurdles**: Ensuring patient privacy, fairness, and clinical utility to authorities is non-trivial.^[[@vancalsterThereNoSuch2023]] -->
+::: {.fragment .fade-in}
+⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">Research reproducibility</span>: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.^[[@futomaMythGeneralisabilityClinical2020]]
+:::
+::: {.fragment .fade-in}
+⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">Incomplete observations</span>: Retrospective data does not necessarily reflect the information needed for clinical decision-making. ^[[@agnielBiasesElectronicHealth2018]]
+:::
+::: {.fragment .fade-in}
+⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">Lack of robust infrastructure</span>: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
+:::
+::: {.fragment .fade-in}
+*Out of scope: ​⚡​ ** Ethical and regulatory hurdles**: Proving patient safety and privacy, fairness, and clinical utility to governance bodies is challenging.^[[@vancalsterThereNoSuch2023]] *
 :::
 
 ::: {.notes}
@@ -129,9 +143,9 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 
 ## Research Contribution per Challenge {auto-animate=true}
 
-1. ⚡ **<span data-id="problem-repro">Research reproducibility</span>** <span class="fragment fade-in" data-fragment-index="1" data-id="repro-phrase">→ Enabling Reproducible Prediction Experiments 🧪</span>
-2. ⚡ **<span data-id="problem-incomplete">Incomplete observations</span>**  <span class="fragment fade-in" data-fragment-index="2" data-id="incomplete-phrase">→ Development of Multi-ward Multi-modal Warning Systems 🛏️​</span>
-3. ⚡ **<span data-id="problem-infrastructure">Lack of infrastructure</span>**  <span class="fragment fade-in" data-fragment-index="3" data-id="infrastructure-phrase">→ Packages and pipelines for Foundational Health AI Research 🏗️</span>
+1. ⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">Research reproducibility</span> <span class="fragment fade-in" data-fragment-index="1" data-id="repro-phrase">→ Enabling Reproducible Prediction Experiments 🧪</span>
+2. ⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">Incomplete observations</span>  <span class="fragment fade-in" data-fragment-index="2" data-id="incomplete-phrase">→ Development of Multi-ward Multi-modal Warning Systems 🛏️​</span>
+3. ⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">Lack of robust infrastructure</span>  <span class="fragment fade-in" data-fragment-index="3" data-id="infrastructure-phrase">→ Tools and Pipelines for Foundational Health AI Research 🏗️</span>
 
 ::: {.fragment .fade-in}
 {{< include includes/statement.qmd >}}
@@ -231,7 +245,7 @@ How do we enable the entire community to build on each other's work?
 Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but → 
 
 ::: {.fragment}
-​⚡ **The Reproducibility Crisis in Clinical ML**^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]]:​ Comparing approaches across papers is extremely hard because of differences in:
+​⚡ **The Reproducibility Crisis in Clinical ML**^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]]:​ Comparing approaches across papers is extremely hard because of:
 :::
 
 ::: {.fragment}
@@ -242,6 +256,8 @@ Open-access Intensive Care Unit (ICU) data has become popular for applications, 
 - **Code not published, incomplete, not reusable or adaptable.** ^[[@shillanUseMachineLearning2019a]]
 :::
 
+
+
 <!-- ::: 
 ::: {.callout-warning appearance="simple" style="font-size: 1.5em;"}
 Individual research results (models, techniques, ideas) do not generalize accross settings, hindering meaningful scientific progress and clinical translation. ^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]] - *Dataset, cohort definition, and preprocessing choices can have **larger effects on performance** than the choice of model architecture.* 
@@ -250,6 +266,13 @@ Individual research results (models, techniques, ideas) do not generalize accros
 Can we create a framework for reliably reproducing scientific results of clinical prediction models across datasets and preprocessing choices?
 :::
 
+::: {.notes}
+- The reproducibility crisis in clinical machine learning is a significant barrier to scientific progress and clinical translation.
+- Different papers report different performance for the same clinical task due to variations in datasets, cohort definitions, preprocessing steps, and evaluation metrics.
+- This makes it difficult to compare approaches across papers and to understand which models or techniques are truly effective.
+- The lack of published code, or code that is incomplete, not reusable, or not adaptable, further exacerbates the problem.
+- The key question is whether we can create a framework that allows researchers to reliably reproduce scientific results of clinical prediction models across different datasets and preprocessing choices, enabling more meaningful comparisons and accelerating progress in the field.
+:::
 
 ## Considerations for Reproducible Clinical ML Research
 
@@ -293,22 +316,44 @@ Goals:
 
 ---
 
-## The YAIB Experimental Pipeline
+## The YAIB Experimental Pipeline {auto-animate="true"}
 
 
 
-<div style="text-align: center; position: relative; top: 10%">
-![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=110%}
+![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=120%}
+  <div class="fragment fade-out" data-fragment-index="1"
+       style="position:absolute; top:10%; left:47.5%; width:50%; height:100%; background:white; z-index:2;"></div>
+
+::: {.columns}
+::: {.center .column width="50%" }
+<div style="text-align: center; margin-top: 0.4em;">*Creation of harmonized cohorts*</div>
+:::
+::: {.column width="50%"}
+<div style="text-align: center; margin-top: 0.4em;">*Benchmarking Framework*</div>
+:::
+:::
+<div data-id="recipies-logo-box" style="position:absolute; right:38%; top:30%; width:5%; text-align:left;">
+  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
 </div>
+::: {.notes}
+- Ideally, clinical experts inject their clinical domain knowledge of the respective dataset into the dataset and task definitions
+- ML researchers can then focus on the modeling and evaluation, while being able to easily reproduce results across datasets and preprocessing choices.
+:::
 
 ---
 
-## ReciPies: A Simple Modular Preprocessing Framework for ML Research
+## ReciPies: A Simple Modular Preprocessing Framework for ML Research {auto-animate="true"}
 ![](figures/yaib/recipies_flow.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
 
-<div style="position: absolute; bottom: 0; right: 0; text-align: right;">
-![](figures/yaib/recipies_logo.svg){fig-cap="My caption" width=10% .no-dark}
+<div data-id="recipies-logo-box" style="position:absolute; right:2%; top:86%; width:12%; text-align:right;">
+  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
 </div>
+
+::: {.notes}
+- ReciPies is a modular preprocessing framework that allows researchers to define and execute data transformation
+- UML type diagrams of the main components and their interactions.
+:::
+
 ---
  
 ## Datasets and Tasks
@@ -366,31 +411,43 @@ Different definitions capture different patient populations, leading to varying 
 :::
 ---
 
-## External Validation with Mortality
+## Generalization Across Datasets: Mortality Prediction 
 
 ::: {.column width="50%"}
-AUROC:
-![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
-
+- Training on row dataset, evaluation on column dataset using GRU:
+<div style="text-align: center; margin-top: -1em;">
+![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="ReciPies Flow" width=85% .no-dark}
+</div>
+<div style="text-align: center; margin-top: -2em;">
+![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="ReciPies Flow" width=85% .no-dark}
+</div>
 :::
 
-::: {.column width="50%"}
-AUPRC:
-![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
-
+::: {.column width="50%" .fragment }
+- Train a model on "generalizable" eICU and finetune on "difficult" HiRID:
+<div style="text-align: center; margin-top: -1em;">
+![](figures/yaib/transfer_learning.svg){fig-cap="" width=76% .no-dark}
+</div>
+<div style="text-align: center; margin-top: -2em;">
+![](figures/yaib/transfer_learning_auprc.svg){fig-cap="" width=76% .no-dark}
+</div>
 :::
 
-::: {.fragment}
+::: {.notes}
+- Some datasets are more similar to others. The European datasets are different from the US datasets. However, eICU, which consists of data from 208 US hospitals is more generalizable than the other datasets, which are from single hospitals.
+- Finetuning on the "difficult" HiRID dataset can improve performance with only a fraction of the data, suggesting that pretraining on a large, generalizable dataset can help overcome some of the challenges of dataset shift and improve generalization to new settings.
+:::
+
+<!-- ::: {.fragment}
 
 - **Column**: Model trained on dataset
 - **Row**: Model evaluated on dataset
 - **Diagonal**: Internal validation (same dataset)
 
-:::
+::: -->
 
----
 
-## Transfer Learning
+<!-- ## Transfer Learning
 
 - What if we train a generalized model on "most generalizable" eICU?
 - Finetune on "difficult" HiRID
@@ -408,7 +465,7 @@ AUPRC:
 ![](figures/yaib/transfer_learning_auprc.svg){fig-cap="" width=100% .no-dark}
 
 :::
-:::
+::: -->
 
 <!-- ## Conclusion
 - True reproducibility in clinical ML requires more than just code release; it demands modular, flexible, and standardized pipelines that can adapt to the complexities of real-world data and research needs.
@@ -463,11 +520,13 @@ AUPRC:
 
 ## A Prospective Cohort Study: "Hybrid Ward"
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;"}
-Can we leverage continuous, multimodal data from wearable devices to improve early warning systems for postoperative complications in the general ward?
+Can we leverage continuous, multimodal data from wearable devices to improve early warning systems for postoperative complications in the general ward? ^[[@vandewaterContinuousMultimodalAI2025]]
 :::
 ::: {.fragment .fade-in}
 ::: {.column width="80%"}
+<div style="position: relative; top: -1.5em;">
 ![](figures/cass/wards.png){fig-cap="" width=100% .no-dark}
+</div>
 :::
 
 ::: {.column width="20%"}
@@ -571,7 +630,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 ::: {.columns}
 ::: {.column width="70%"}
 - **Alarm strategy**: when should we choose to inform clinicians?
-- Grace period, persistence, and silencing to balance early detection with alarm fatigue.
+- Regulate alarm frequency with grace period, persistence, and silencing (preventing alarm fatigue).
 
 ::: {.fragment fragment-index="4"}
 <!-- -  2 alarms per day on a 100-bed ward. -->
@@ -802,16 +861,49 @@ class DataSchema(PyArrowSchema):
 - (Large) AI models can have sizeable environmental impact; simpler is better ^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
 :::
 
-## My Thesis
+<!-- ## My Thesis
 
-We require:
+We require: -->
 
-::: {.incremental}
+<!-- ::: {.incremental}
 1. **Transparent benchmarking frameworks 🧪**: to understand what actually drives model performance
 2. **Prospective clinical studies 🛏️**: to improve quality and validate assumptions from retrospective research
 3. **Standardized infrastructure 🏗️**: to enable collaborative, reproducible research at scale
-::: 
+:::  -->
+## Discussion and Impact {auto-animate=true}
 
+::: {.columns}
+::: {.column width="33%"}
+**Enabling Reproducible Prediction Experiments 🧪**
+
+::: {.fragment}
+- Experimental setup (cohort definitions, preprocessing, evaluation) often matters **more than model choice**
+- YAIB provides a flexible, multi-center framework for reproducible ICU benchmarking (44 citations, 96 GitHub stars)
+- ReciPies enables modular, reusable preprocessing pipelines for clinical ML
+:::
+:::
+
+::: {.column width="33%"}
+**Multi-ward Multi-modal Early Warning Systems 🛏️**
+
+::: {.fragment}
+- Continuous wearable data **nearly doubles AUPRC** versus models without sensor integration.
+- Predictive surveillance can be extended beyond the ICU into general wards with wearable devices.
+- Alarm strategies together with decision curve analysis to find the right trade-offs.
+:::
+:::
+
+::: {.column width="33%"}
+**Tools and Pipelines for Foundational Health AI 🏗 ️**
+
+::: {.fragment}
+
+- MEDS-DEV: easily benchmark tasks across different sites and tasks.
+- Mount Sinai FMs demonstrate MEDS-based infrastructure enables low-barrier health-system-scale foundation model support.
+- MEDS adoption across 27 papers, 17 datasets, and 12 models.
+:::
+:::
+:::
 <!-- ::: {.fragment}
 **Healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility.
 **::: -->
@@ -865,7 +957,7 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 - https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2024/0509/Documents/Carl%20LEITNER.pdf 
 ::: -->
 
-## Acknowledgements
+## Acknowledgements {data-background-image="figures/backgrounds/cover_image_thesis_wide.png" data-background-size="cover" data-background-position="center" data-background-opacity="0.15"}
 ::: {.small-text}
 ::: {.columns}
 ::: {.column width="25%"}
@@ -880,6 +972,7 @@ HPI:
 - Cornelia Philippson
 - Edit Tatar
 - Katharina Lorenz-Shroeder
+- All friends and colleagues
 :::
 ::: {.column width="25%"}
 Charité:
@@ -925,7 +1018,7 @@ Reviewers:
 Healthcare ML can improve outcomes when built on solid infrastructure, rigorous validation, and commitment to reproducibility. -->
 
 
-## References
+## References {data-background-image="figures/backgrounds/cover_image_thesis_wide.png" data-background-size="cover" data-background-position="center" data-background-opacity="0.15"}
 
 ::: {#refs}
 :::
