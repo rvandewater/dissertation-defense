@@ -40,8 +40,6 @@ revealjs-plugins:
 
 --- 
 
-{{ include _variables.yml}}
-
 ## Electronic Health Records (EHR): Digital Footprints of the Patient Journey
 <div text-align="center">
 ![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=100%}
@@ -245,25 +243,74 @@ How do we enable the entire community to build on each other's work?
 :::
 :::: -->
 
+<!-- ::: {.incremental}
+- More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
+- 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
+- **Postoperative adverse events** impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
+- Physiological patterns are often subtle, nonspecific, and time-varying^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on ward
+<!-- - Why not just monitor patients in the ICU? → expensive, infections, delirium, and deconditioning. -->
+![](icons/cass_timeline.svg){fig-cap="Global Surgical Volume" width=100%}
+<!-- - Solution? **Hybrid ward with minimally intrusive wearables** -->
+::: -->
 
 
 
 <!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study -->
-# Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t2 >}}"}
+# Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t1 >}}"}
 **​⚡​ Retrospective, observational, data does not reflect the information needed for clinical decision-making.**
 
-::: {.incremental}
-- More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
-- 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
-- **Postoperative adverse events** impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
-- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on sparsely monitored general ward, where most postoperative patients rehabilitate.
-- Why not just monitor patients in the ICU? → expensive and can lead to complications like infections, delirium, and deconditioning.
-- Solution? **Hybrid ward with minimally intrusive wearables**
+
+::: {.columns}
+::: {.column width="50%"}
+::: {.fragment .fade-in fragment-index="1"}
+<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa;">
+  <div style="display:flex; align-items:center; gap:0.6em;">
+![](icons/surgeon.svg){fig-cap="" height=3em .no-dark}
+    <strong>300M+ surgeries annually^[[@dobsonTraumaMajorSurgery2020]]</strong>
+  </div>
+</div>
 :::
 
+::: {.fragment .fade-in fragment-index="3"}
+<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa; margin-top:0.6em;">
+  <div style="display:flex; align-items:center; gap:0.3em;">
+![](icons/alert.svg){fig-cap="" height=3em .no-dark}
+    <strong>Adverse events impact quality of life and cost^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]</strong>
+  </div>
+</div>
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment .fade-in fragment-index="2"}
+<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa;">
+  <div style="display:flex; align-items:center; gap:0.6em;">
+![](icons/hospital.svg){fig-cap="" height=3em .no-dark}
+    <strong>~1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]</strong>
+  </div>
+</div>
+:::
+
+::: {.fragment .fade-in fragment-index="4"}
+<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa; margin-top:0.6em;">
+  <div style="display:flex; align-items:center; gap:0.6em;">
+![](icons/heartbeat.svg){fig-cap="" height=3em .no-dark}
+    <strong>Ward monitoring insufficient for subtle condition changes^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]]</strong>
+  </div>
+</div>
+:::
+:::
+:::
+
+::: {.fragment .fade-in fragment-index="5"}
+![](icons/cass_timeline.svg){fig-cap="From burden to monitoring gap" width=100%}
+:::
 ::: {.notes}
 - Surgical patients are stabilized on the ICU, and then transferred to the general ward, where they are monitored less frequently.
 - Postoperative complications are common and often go undetected until they become severe, leading to worse outcomes and higher costs.
+- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on ward, where most postoperative patients rehabilitate.
+- Why not just monitor patients in the ICU? → expensive and can lead to complications like infections, delirium, and deconditioning.
+- Solution? **Hybrid ward with minimally intrusive wearables**
 :::
 
 <!-- ## Surgery Rehabilitation
@@ -324,14 +371,17 @@ Temperature Sensor: body temperature
 ---
 
 <!-- ## Introducing Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
-<div class="fragment fade-out" data-fragment-index="1"
+<!-- <div class="fragment fade-out" data-fragment-index="1"
 style="position:absolute; top:10%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 <div class="fragment fade-out" data-fragment-index="2"
 style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/cass_pipeline.svg" width="60%" class="no-dark">
-</div>
+</div> -->
 
+<div style="position: relative; top: -1.5em;">
+![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=100% .no-dark}
+</div>
 <img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:80%; left:80%; width:15%; z-index:1;">
 
 
@@ -348,7 +398,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 <!-- Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
 
 ::: {.columns}
-::: {.column width="65%"}
+::: {.column width="100%"}
 <div style="position: relative; top: -1em;">
 
 <div style="text-align: center; margin-top: -0em;">
@@ -368,7 +418,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 
 :::
-::: {.column width="35%"}
+<!-- ::: {.column width="35%"}
 
 ::: {.fragment fragment-index="3"}
 <div style="text-align: center; margin-top: -5em;">
@@ -377,15 +427,11 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/shap_contribution.svg" width="100%" class="no-dark">
 </div>
-:::
+::: -->
 
 :::
 :::
-::: {.fragment fragment-index="3"}
-<div style="position: relative; top: -3.5em;">
-- SHAP-values^[[@lundbergUnifiedApproachInterpreting2017a]]: subtle (wearable) physiological indicate early autonomic stress.
-</div>
-::: 
+
 <!-- <div style="position:absolute; top:83%; left:0%; width:100%; height:60%; background:white; z-index:2;"></div> -->
 
 ::: {.notes}
@@ -395,6 +441,21 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 - The key implication is that predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.
 :::
 
+## Model Interpretation and Explainability
+
+<!-- <div style="text-align: center; margin-top: -5em;">
+  <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
+</div> -->
+<div style="text-align: center; ">
+  <img src="figures/cass/shap_contribution.svg" width="100%" class="no-dark">
+</div>
+<div style="position: relative;">
+- SHAP-values^[[@lundbergUnifiedApproachInterpreting2017a]]: subtle (wearable) physiological indicate early autonomic stress.
+</div>
+
+::: {.notes}
+
+:::
 <!-- 
 ---
 
@@ -469,7 +530,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 ::: -->
 
 
-# Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t1 >}}"}
+# Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t2 >}}"}
 
 Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but → 
 
@@ -599,8 +660,8 @@ Goals:
 
 
 ## Sepsis: Different Definitions, Different Conclusions
-- Potentially life-threatening response to infection that causes injury to its own tissues and organs
-- Sepsis prediction on MIMIC-IV using Gated Reccurent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
+- Potentially life-threatening **response to infection** that causes injury to its own tissues and organs
+- Sepsis prediction^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] on MIMIC-IV using Gated Reccurent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
 
 ::: {.incremental}
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
@@ -608,12 +669,14 @@ Goals:
 
 ::: {.fragment data-fragment-index="3"}
 ::: {.columns}
-::: {.column width="50%"}
-![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=100% .no-dark}
+::: {.column width="100%"}
+<div style="text-align: center;">
+![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=50% .no-dark}
+</div>
 :::
-::: {.column width="50%"}
+<!-- ::: {.column width="50%"}
 ![](figures/yaib/yaib_sepsis_AUPRC_grouped.svg){caption="Sepsis definition auprc" width=100% .no-dark}
-:::
+::: -->
 :::
 :::
 <!-- | **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al.^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al.^[[@calvertComputationalApproachEarly2016]] |         |
@@ -622,7 +685,7 @@ Goals:
 | **LGBM** | 75.9±0.2 | 4.3±0.0 | 72.4±0.0 | 10.5±0.0 | 62.2±0.2 | 1.8±0.0 |
 | **GRU** | **79.2±0.1** | **6.1±0.0** | **80.9±0.0** | **17.7±0.0** | **89.2±0.0** | **9.3±0.2** | -->
 
-- Different sepsis definitions^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC)
+<!-- - Different sepsis definitions^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC) -->
 <!-- - Different definitions capture different patient populations, leading to varying model performance and clinical implications. -->
 
 :::
@@ -640,9 +703,12 @@ Different definitions capture different patient populations, leading to varying 
 <div style="text-align: center; margin-top: -1em;">
 ![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="External Validation - Mortality AUROC" width=85% .no-dark}
 </div>
-<div style="text-align: center; margin-top: -2em;">
-![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="External Validation - Mortality AUPRC" width=85% .no-dark}
-</div>
+<details>
+  <summary></summary>
+  <div style="text-align: center; margin-top: -2em;">
+    <img src="figures/yaib/ext_val_mortality_pooled_auprc.svg" width="85%" class="no-dark">
+  </div>
+</details>
 :::
 
 ::: {.column width="50%" .fragment }
@@ -650,9 +716,13 @@ Different definitions capture different patient populations, leading to varying 
 <div style="text-align: center; margin-top: -1em;">
 ![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=76% .no-dark}
 </div>
+<details>
+  <summary></summary>
 <div style="text-align: center; margin-top: -2em;">
 ![](figures/yaib/transfer_learning_auprc.svg){fig-cap="Transfer Learning - Mortality AUPRC" width=76% .no-dark}
 </div>
+</details>
+
 :::
 
 ::: {.notes}
@@ -693,7 +763,7 @@ AUPRC:
 - True reproducibility in clinical ML requires more than just code release; it demands modular, flexible, and standardized pipelines that can adapt to the complexities of real-world data and research needs.
 - YAIB: 96 GitHub stars; 44 citations; Adaption across community ^[[@shenDataAdditionDilemma2024a,@santosImprovingRepresentationLearning2025,@rockenschaubImpactMultiInstitutionDatasets2024,@fuentesPrivacyPreservingDatasetCombination2025]] -->
 
-# Tools and Pipelines for Foundational Health AI Research 🏗️
+# Tools and Pipelines for Foundational Health AI Research 🏗️ {data-section-title="{{< var section_t3 >}}"}
 
 ::: {.incremental}
 ​⚡ Lack of robust infrastructure: the ML4H community reinvents the wheel continuously:
@@ -746,12 +816,19 @@ In observational health informatics:
 4. **Interoperable** - Tools compose together across datasets and institutions
 :::
 :::
-::: {.fragment}
+::: {.columns}
+::: {.column width="50%" .fragment}
 <div style="text-align: center;">
-  <img src="figures/meds/meds_schema.png" width="50%" class="no-dark">
+  <img src="figures/meds/meds_schema_a.png" width="100%" class="no-dark">
+</div>
+:::
+::: {.column width="50%" .fragment}
+<div style="text-align: center;">
+  <img src="figures/meds/meds_schema_b.png" width="100%" class="no-dark">
 </div>
 ::: {.tiny-text}
   Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).
+:::
 :::
 :::
 
@@ -826,22 +903,6 @@ class DataSchema(PyArrowSchema):
 
 :::
 
-## Representations
-- Analyze the **learned representations** of foundation models to understand what they capture and how they differ across tasks and datasets.
-- Use **dimensionality reduction** techniques (e.g., t-SNE ^[[@maatenVisualizingDataUsing2008]], UMAP) to visualize the embeddings and identify clusters or patterns related to specific clinical conditions or outcomes.
-- Leukocytis embeddings t-SNE colored by task labels (<span style="color:#BCAD76;">positive</span>/<span style="color:#4A556C;">negative</span>):
-
-::: {.fragment}
-::: {.columns}
-::: {.column width="50%"}
-<img src="figures/meds/dimensionality_reduction_plots/abnormal_lab_cbc_leukocytosis_first_24h_labels_cehr_tsne_2d_reduced.svg" width="100%" class="no-dark">
-:::
-
-::: {.column width="50%"}
-<img src="figures/meds/dimensionality_reduction_plots/abnormal_lab_cbc_leukocytosis_first_24h_labels_motor_tsne_2d_reduced.svg" width="100%" class="no-dark">
-:::
-:::
-:::
 
 
 

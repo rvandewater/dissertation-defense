@@ -1,3 +1,23 @@
+
+## Representations
+- Analyze the **learned representations** of foundation models to understand what they capture and how they differ across tasks and datasets.
+- Use **dimensionality reduction** techniques (e.g., t-SNE ^[[@maatenVisualizingDataUsing2008]], UMAP) to visualize the embeddings and identify clusters or patterns related to specific clinical conditions or outcomes.
+- Leukocytis embeddings t-SNE colored by task labels (<span style="color:#BCAD76;">positive</span>/<span style="color:#4A556C;">negative</span>):
+
+::: {.fragment}
+::: {.columns}
+::: {.column width="50%"}
+<img src="figures/meds/dimensionality_reduction_plots/abnormal_lab_cbc_leukocytosis_first_24h_labels_cehr_tsne_2d_reduced.svg" width="100%" class="no-dark">
+:::
+
+::: {.column width="50%"}
+<img src="figures/meds/dimensionality_reduction_plots/abnormal_lab_cbc_leukocytosis_first_24h_labels_motor_tsne_2d_reduced.svg" width="100%" class="no-dark">
+:::
+:::
+:::
+
+
+
 # How Do We Create Research that Translates to Clinical Practice? 
 ::: {.bigger-text}
 In *Data science at the singularity*, Donoho defines three characteristics that enable frictionless reproducibility^[[@donohoDataScienceSingularity2024]] : 
