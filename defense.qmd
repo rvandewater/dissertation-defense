@@ -302,9 +302,7 @@ How do we enable the entire community to build on each other's work?
 :::
 :::
 
-::: {.fragment .fade-in fragment-index="5"}
-![](icons/cass_timeline.svg){fig-cap="From burden to monitoring gap" width=100%}
-:::
+
 ::: {.notes}
 - Surgical patients are stabilized on the ICU, and then transferred to the general ward, where they are monitored less frequently.
 - Postoperative complications are common and often go undetected until they become severe, leading to worse outcomes and higher costs.
@@ -341,14 +339,17 @@ How do we enable the entire community to build on each other's work?
 
 --- -->
 
-## A Prospective Cohort Study: "Hybrid Ward"
+## A Prospective Cohort Study: "Hybrid Ward" {auto-animate="true"}
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;"}
 Can we leverage continuous, multimodal data from wearable devices to improve early warning systems for postoperative complications in the general ward? ^[[@vandewaterContinuousMultimodalAI2025]]
 :::
+::: {.fragment .fade-in }
+![](icons/cass_timeline.svg){fig-cap="From burden to monitoring gap" width=100%}
+:::
 ::: {.fragment .fade-in}
 ::: {.column width="80%"}
-<div style="position: relative; top: -1.5em;">
-![](figures/cass/wards.png){fig-cap="" width=100% .no-dark}
+<div style="position: relative; top: -2em;">
+![](figures/cass/wards.png){fig-cap="" width=80% .no-dark}
 </div>
 :::
 
@@ -368,8 +369,8 @@ Corsano band:
 Temperature Sensor: body temperature
 :::
 
----
 
+## {auto-animate="true"}
 <!-- ## Introducing Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
 <!-- <div class="fragment fade-out" data-fragment-index="1"
 style="position:absolute; top:10%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
@@ -378,7 +379,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/cass_pipeline.svg" width="60%" class="no-dark">
 </div> -->
-
+![](icons/cass_timeline.svg){fig-cap="From burden to monitoring gap" width=50%}
 <div style="position: relative; top: -1.5em;">
 ![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=100% .no-dark}
 </div>
@@ -402,7 +403,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 <div style="position: relative; top: -1em;">
 
 <div style="text-align: center; margin-top: -0em;">
-  <img src="figures/cass/cass_performance.svg" width="90%" class="no-dark">
+  <img src="figures/cass/cass_performance.svg" width="80%" class="no-dark">
 </div>
 </div>
 ::: {.fragment fragment-index="2"}
@@ -924,13 +925,49 @@ class DataSchema(PyArrowSchema):
 
 # Limitations
 
-::: {.incremental}
-- Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated ^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
-- Validation strategies and randomized controlled trials are needed to demonstrate clinical utility and safety before deployment ^[[@wongExternalValidationWidely2021a]]
-- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.)^[[@gaffneyHealthCareUSA2025;@jangOopsInterdisciplinaryStories2025]]
-- (Large) AI models can have sizeable environmental impact; simpler is better ^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
+```{=html}
+<style>
+.card-row p { margin: 0; line-height: 1.2; }
+</style>
+```
+
+::: {.fragment fragment-index=1}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em;"}
+![](icons/people_split.svg){height=2em .light-only}
+
+**Models may amplify existing racial, gender, and socioeconomic biases.**^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
+:::
 :::
 
+::: {.fragment fragment-index=2}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+![](icons/check.svg){height=2em .light-only}
+
+**Need validation strategies and randomized trials before deployment.**^[[@wongExternalValidationWidely2021a]]
+:::
+:::
+
+::: {.fragment fragment-index=3}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+![](icons/wrong.svg){height=2em .light-only}
+
+**Potential for harmful use (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
+:::
+:::
+
+::: {.fragment fragment-index=4}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+![](icons/thermometer.svg){height=2em .light-only}
+
+**(Large) AI models can have sizeable environmental impact**^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
+:::
+:::
+::: {.notes}
+- Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated 
+- Validation strategies and randomized controlled trials are needed to demonstrate clinical utility and safety before deployment 
+- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.)
+- (Large) AI models can have sizeable environmental impact; simpler is better 
+:::
 <!-- ## My Thesis
 
 We require: -->
@@ -984,19 +1021,39 @@ We require: -->
 
 ## Future Research Directions
 
-::: {.incremental}
-- Multi-modal fusion for FMs; off-the-shelf FMs or health system specific^[[@burkhartFoundationModelsElectronic2025a]] ?
-  - Pathology, radiology, genomics, etc.
-  - Focus on generalizability justified?^[[@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
-- Scaling up health AI: how does performance improve with more data, compute, and model size?^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
-- Improving care by:
-  - Predictive surveillance (e.g., scheduling mammograms based on risk)
-  - Patient representations across disciplines (e.g., oncology, cardiology, etc.)^[[@kernCareFragmentationCare2024]]
+```{=html}
+<style>
+.card-row p { margin: 0; line-height: 1.2; }
+.card-row p:first-child { flex-shrink: 0; }
+</style>
+```
+
+::: {.fragment fragment-index=1}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:flex-start; gap:0.4em;"}
+![](icons/cogs.svg){height=3em .light-only}
+
+**Multi-modal fusion for foundation models: off-the-shelf or health-system specific?**^[[@burkhartFoundationModelsElectronic2025a]] Pathology, radiology, genomics, and whether generalizability-focused optimization is justified.^[[@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
+:::
 :::
 
-<!-- 
----
+::: {.fragment fragment-index=2}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+![](icons/graph.svg){height=3em .light-only}
 
+**Scaling up health AI: how does performance improve with more data, compute, and model size?**^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
+:::
+:::
+
+::: {.fragment fragment-index=3}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:flex-start; gap:0.4em; margin-top:0.3em;"}
+![](icons/clinician.svg){height=3em .light-only}
+
+**Improving care through predictive surveillance and transferable patient representations.**^[[@kernCareFragmentationCare2024]] Examples: risk-based scheduling (e.g., mammograms) and cross-disciplinary patient representations (e.g., oncology, cardiology).
+:::
+:::
+
+
+<!--
 ## United Nations WHO Digital Health Objectives
 
 ::: {.centered}
