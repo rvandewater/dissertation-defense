@@ -28,7 +28,7 @@ format:
     logo: ""
     css: custom.css
     footnotes-hover: true
-    footer: <a href="http://rpvandewater.com/dissertation-defense/"> rpvandewater.com/dissertation-defense/ </a> | PhD Defense | Robin P. van de Water
+    footer: <a href="http://rpvandewater.com/dissertation-defense/"> rpvandewater.com/dissertation-defense/ </a> | PhD Defense | Robin P. van de Water<span id="section-indicator" style=""></span>
     footnotes: true
     simplemenu:
     code-overflow: wrap
@@ -1024,6 +1024,9 @@ Healthcare ML can improve outcomes when built on solid infrastructure, rigorous 
 :::
 <script>
 {{< include fade_in_footnotes.js >}}
+</script>
+<script>
+{{< include section_indicator.js >}}
 </script>
 <!-- <script>
 (function () {
