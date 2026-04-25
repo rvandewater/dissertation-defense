@@ -60,7 +60,7 @@ What does EHR data look like?
 :::
 
 
-# ML for Health in a Nutshell
+# ML for Health in a Nutshell {data-section-title="ML for Health in a Nutshell ⚕️" auto-animate=true}
 <!-- ![](figures/motivation/ml_for_health.svg){fig-cap="World Health Organization" height=25em .no-dark} -->
 <div style="position: relative; display: inline-block;">
   <img src="figures/motivation/ml_for_health.svg" style="height:25em; display:block;" class="no-dark">
@@ -109,7 +109,7 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 :::
 :::: -->
 
-## The Translation Gap in Healthcare {auto-animate="true"}
+# The Translation Gap in Healthcare {data-section-title="The Translation Gap in Healthcare 🏥" auto-animate="true"}
 
 
   
@@ -224,38 +224,8 @@ My thesis is structured around three main contributions that address the key cha
 
 {{< include extra_slides/publications.qmd >}}
 
-<!-- **PhD Research Focus:** -->
-
-<!-- The translation of machine learning from research to clinical practice remains fundamentally challenged by three interconnected problems: -->
-<!-- 
-:::: columns
-::: {.column width="33%"}
-**Reproducibility**
-How do we ensure models perform consistently across different datasets and institutions?
-:::
-::: {.column width="33%"}
-**Clinical Deployment**
-How do we build prediction systems that actually work in messy real-world clinical settings?
-:::
-::: {.column width="33%"}
-**Scalable Infrastructure**
-How do we enable the entire community to build on each other's work?
-:::
-:::: -->
-
-<!-- ::: {.incremental}
-- More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
-- 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
-- **Postoperative adverse events** impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
-- Physiological patterns are often subtle, nonspecific, and time-varying^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on ward
-<!-- - Why not just monitor patients in the ICU? → expensive, infections, delirium, and deconditioning. -->
-![](icons/cass_timeline.svg){fig-cap="Global Surgical Volume" width=100%}
-<!-- - Solution? **Hybrid ward with minimally intrusive wearables** -->
-::: -->
 
 
-
-<!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study -->
 # Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t1 >}}"}
 **​⚡​ Retrospective, observational, data does not reflect the information needed for clinical decision-making.**
 
