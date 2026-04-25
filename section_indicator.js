@@ -6,8 +6,8 @@
   function getOverrideFromElement(el) {
     if (!el || !el.getAttribute) return "";
     return cleanText(
-      el.getAttribute("data-section-title") ||
-        el.getAttribute("data-section-short") ||
+      el.getAttribute("data-section-short") ||
+        el.getAttribute("data-section-title") ||
         ""
     );
   }
@@ -19,8 +19,15 @@
   }
 
   function getTopLevelSectionLabel(slide) {
-    const h1 = slide ? slide.querySelector(":scope > h1") : null;
+    if (!slide) return "";
+
+    // Allow overrides on the slide/section container itself.
+    const slideOverride = getOverrideFromElement(slide);
+    if (slideOverride) return slideOverride;
+
+    const h1 = slide.querySelector(":scope > h1");
     if (!h1) return "";
+
     return getOverrideFromElement(h1) || cleanText(h1.textContent);
   }
 
