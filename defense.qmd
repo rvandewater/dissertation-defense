@@ -416,20 +416,20 @@ Different definitions capture different patient populations, leading to varying 
 ::: {.column width="50%"}
 - Training on row dataset, evaluation on column dataset using GRU:
 <div style="text-align: center; margin-top: -1em;">
-![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="ReciPies Flow" width=85% .no-dark}
+![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="External Validation - Mortality AUROC" width=85% .no-dark}
 </div>
 <div style="text-align: center; margin-top: -2em;">
-![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="ReciPies Flow" width=85% .no-dark}
+![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="External Validation - Mortality AUPRC" width=85% .no-dark}
 </div>
 :::
 
 ::: {.column width="50%" .fragment }
 - Train a model on "generalizable" eICU and finetune on "difficult" HiRID:
 <div style="text-align: center; margin-top: -1em;">
-![](figures/yaib/transfer_learning.svg){fig-cap="" width=76% .no-dark}
+![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=76% .no-dark}
 </div>
 <div style="text-align: center; margin-top: -2em;">
-![](figures/yaib/transfer_learning_auprc.svg){fig-cap="" width=76% .no-dark}
+![](figures/yaib/transfer_learning_auprc.svg){fig-cap="Transfer Learning - Mortality AUPRC" width=76% .no-dark}
 </div>
 :::
 
@@ -456,13 +456,13 @@ Different definitions capture different patient populations, leading to varying 
 
 ::: {.column width="50%"}
 AUROC:
-![](figures/yaib/transfer_learning.svg){fig-cap="" width=100% .no-dark}
+![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=100% .no-dark}
 
 :::
 
 ::: {.column width="50%"}
 AUPRC:
-![](figures/yaib/transfer_learning_auprc.svg){fig-cap="" width=100% .no-dark}
+![](figures/yaib/transfer_learning_auprc.svg){fig-cap="Transfer Learning - Mortality AUPRC" width=100% .no-dark}
 
 :::
 ::: -->
