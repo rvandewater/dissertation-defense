@@ -246,236 +246,6 @@ How do we enable the entire community to build on each other's work?
 :::: -->
 
 
-# Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t1 >}}"}
-
-Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but → 
-
-::: {.fragment}
-​⚡ **The Reproducibility Crisis in Clinical ML**^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]]:​ Comparing approaches across papers is extremely hard because of:
-:::
-
-::: {.fragment}
--  **Datasets** (private datasets or different public datasets)
--  **Cohort definitions** (patient inclusion/exclusion varies)
--  **Preprocessing** (normalization, imputation, features)
--  **Evaluation metrics and splits**
-- **Code not published, incomplete, not reusable or adaptable.** ^[[@shillanUseMachineLearning2019a]]
-:::
-
-
-
-<!-- ::: 
-::: {.callout-warning appearance="simple" style="font-size: 1.5em;"}
-Individual research results (models, techniques, ideas) do not generalize accross settings, hindering meaningful scientific progress and clinical translation. ^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]] - *Dataset, cohort definition, and preprocessing choices can have **larger effects on performance** than the choice of model architecture.* 
-::: -->
-::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
-Can we create a framework for reliably reproducing scientific results of clinical prediction models across datasets and preprocessing choices?
-:::
-
-::: {.notes}
-- The reproducibility crisis in clinical machine learning is a significant barrier to scientific progress and clinical translation.
-- Different papers report different performance for the same clinical task due to variations in datasets, cohort definitions, preprocessing steps, and evaluation metrics.
-- This makes it difficult to compare approaches across papers and to understand which models or techniques are truly effective.
-- The lack of published code, or code that is incomplete, not reusable, or not adaptable, further exacerbates the problem.
-- The key question is whether we can create a framework that allows researchers to reliably reproduce scientific results of clinical prediction models across different datasets and preprocessing choices, enabling more meaningful comparisons and accelerating progress in the field.
-:::
-
-## Considerations for Reproducible Clinical ML Research
-
-::: columns
-::: {.column width="70%"}
-::: {.fragment data-fragment-index="1"}
-Problems:
-
-- Medical research is **inherently** complex
-- One size fits-all always **impossible**
-- Hardcoded ≠ **reproducible**
-:::
-::: {.fragment data-fragment-index="2"}
-Goals:
-
-- **Modular** setup maintaining reproducibility
-- **Extensibility** across experiment lifecycle
-- **Out-of-the-box** support: datasets, tasks, models
-:::
-::: {.fragment data-fragment-index="3"}
-- **ReciPies**^[[@van_de_Water2026]]: Modular ML preprocessing framework 
-- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]]: framework for reproducible ICU prediction experiments across datasets.
-:::
-:::
-::: {.column width="30%"}
-::: {.fragment data-fragment-index="3"}
-![](figures/yaib/recipies_logo.svg){fig-cap="ReciPies Logo" width=100%}
-![](figures/yaib/YAIB_logo.svg){fig-cap="YAIB Logo" width=100%}
-:::
-:::
-
-:::
-
-<!-- Modular ML preprocessing framework -->
- <!-- enables reproducible comparisons while remaining flexible enough to accommodate real-world research needs.  -->
-<!-- ::: {.incremental}
-1. **Data Harmonization** [@Ben23]
-2. **Modular Preprocessing** (ReciPies) [@vSR26]
-3. **Standardized, explicit, configurable evaluation** [@DGS18]
-::: -->
-
----
-
-## The YAIB Experimental Pipeline {auto-animate="true"}
-
-
-
-![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=120%}
-  <div class="fragment fade-out" data-fragment-index="1"
-       style="position:absolute; top:10%; left:47.5%; width:50%; height:100%; background:white; z-index:2;"></div>
-
-::: {.columns}
-::: {.center .column width="50%" }
-<div style="text-align: center; margin-top: 0.4em;">*Creation of harmonized cohorts*</div>
-:::
-::: {.column width="50%"}
-<div style="text-align: center; margin-top: 0.4em;">*Benchmarking Framework*</div>
-:::
-:::
-<div data-id="recipies-logo-box" style="position:absolute; right:38%; top:30%; width:5%; text-align:left;">
-  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
-</div>
-::: {.notes}
-- Ideally, clinical experts inject their clinical domain knowledge of the respective dataset into the dataset and task definitions
-- ML researchers can then focus on the modeling and evaluation, while being able to easily reproduce results across datasets and preprocessing choices.
-:::
-
----
-
-## ReciPies: A Simple Modular Preprocessing Framework for ML Research {auto-animate="true"}
-![](figures/yaib/recipies_flow.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
-
-<div data-id="recipies-logo-box" style="position:absolute; right:2%; top:80%; width:12%; text-align:right;">
-  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
-</div>
-
-::: {.notes}
-- ReciPies is a modular preprocessing framework that allows researchers to define and execute data transformation
-- UML type diagrams of the main components and their interactions.
-:::
-
----
- 
-## Datasets and Tasks
-
-Four publicly available ICU datasets:
-
-<!-- - MIMIC-IV^[[@johnsonMIMICIVFreelyAccessible2023]]
-- eICU^[[@pollardEICUCollaborativeResearch2018]]
-- HiRID^[[@hylandEarlyPredictionCirculatory2020]]
-- AUMCdb^[[@thoralSharingICUPatient2021]] -->
-| **Dataset**                  | **MIMIC-III / IV** | **eICU** | **HiRID** | **AUMCdb** |
-|------------------------------|--------------------|----------|-----------|------------|
-| **Stays**                  | 40k (0.1k) / 73k | 201k (2k) | 34k       | 23k        |
-| **Version**                 | v1.4 / v2.2        | v2.0     | v1.1.1    | v1.0.2     |
-| **Frequency (time-series)** | 1 hour             | 5 minutes| 2 / 5 minutes | up to 1 minute |
-| **Origin**                  | USA                | USA      | Switzerland | Netherlands |
-| **Originally published**    | 2015^[[@johnsonMIMICIIIFreelyAccessible2016]] / 2020^[[@johnsonMIMICIVFreelyAccessible2023]] | 2017^[[@pollardEICUCollaborativeResearch2018]] | 2020^[[@hylandEarlyPredictionCirculatory2020]] | 2019^[[@thoralSharingICUPatient2021]] |
-
-**Five common ICU prediction tasks**: Mortality, Acute Kidney Injury, Sepsis, Kidney Function, Length of Stay.
-
----
-
-## Sepsis: Different Definitions, Different Conclusions
-- Potentially life-threatening response to infection that causes injury to its own tissues and organs
-- Sepsis prediction on MIMIC-IV using Gated Reccurent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
-
-::: {.incremental}
-<!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
-
-
-::: {.fragment data-fragment-index="3"}
-::: {.columns}
-::: {.column width="50%"}
-![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=100% .no-dark}
-:::
-::: {.column width="50%"}
-![](figures/yaib/yaib_sepsis_AUPRC_grouped.svg){caption="Sepsis definition auprc" width=100% .no-dark}
-:::
-:::
-:::
-<!-- | **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al.^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al.^[[@calvertComputationalApproachEarly2016]] |         |
-|---|---|---|---|---|---|---|
-|   | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** |
-| **LGBM** | 75.9±0.2 | 4.3±0.0 | 72.4±0.0 | 10.5±0.0 | 62.2±0.2 | 1.8±0.0 |
-| **GRU** | **79.2±0.1** | **6.1±0.0** | **80.9±0.0** | **17.7±0.0** | **89.2±0.0** | **9.3±0.2** | -->
-
-- Different sepsis definitions^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC)
-<!-- - Different definitions capture different patient populations, leading to varying model performance and clinical implications. -->
-
-:::
-
-::: {.notes}
-Different definitions capture different patient populations, leading to varying model performance and clinical implications.
-**Note:** Our definition (marked with *), adapted to be more clinically actionable. See Appendix for details.
-:::
----
-
-## Generalization Across Datasets: Mortality Prediction 
-
-::: {.column width="50%"}
-- Training on row dataset, evaluation on column dataset using GRU:
-<div style="text-align: center; margin-top: -1em;">
-![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="External Validation - Mortality AUROC" width=85% .no-dark}
-</div>
-<div style="text-align: center; margin-top: -2em;">
-![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="External Validation - Mortality AUPRC" width=85% .no-dark}
-</div>
-:::
-
-::: {.column width="50%" .fragment }
-- Train a model on "generalizable" eICU and finetune on "difficult" HiRID:
-<div style="text-align: center; margin-top: -1em;">
-![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=76% .no-dark}
-</div>
-<div style="text-align: center; margin-top: -2em;">
-![](figures/yaib/transfer_learning_auprc.svg){fig-cap="Transfer Learning - Mortality AUPRC" width=76% .no-dark}
-</div>
-:::
-
-::: {.notes}
-- Some datasets are more similar to others. The European datasets are different from the US datasets. However, eICU, which consists of data from 208 US hospitals is more generalizable than the other datasets, which are from single hospitals.
-- Finetuning on the "difficult" HiRID dataset can improve performance with only a fraction of the data, suggesting that pretraining on a large, generalizable dataset can help overcome some of the challenges of dataset shift and improve generalization to new settings.
-:::
-
-<!-- ::: {.fragment}
-
-- **Column**: Model trained on dataset
-- **Row**: Model evaluated on dataset
-- **Diagonal**: Internal validation (same dataset)
-
-::: -->
-
-
-<!-- ## Transfer Learning
-
-- What if we train a generalized model on "most generalizable" eICU?
-- Finetune on "difficult" HiRID
-
-::: {.fragment}
-
-::: {.column width="50%"}
-AUROC:
-![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=100% .no-dark}
-
-:::
-
-::: {.column width="50%"}
-AUPRC:
-![](figures/yaib/transfer_learning_auprc.svg){fig-cap="Transfer Learning - Mortality AUPRC" width=100% .no-dark}
-
-:::
-::: -->
-
-<!-- ## Conclusion
-- True reproducibility in clinical ML requires more than just code release; it demands modular, flexible, and standardized pipelines that can adapt to the complexities of real-world data and research needs.
-- YAIB: 96 GitHub stars; 44 citations; Adaption across community ^[[@shenDataAdditionDilemma2024a,@santosImprovingRepresentationLearning2025,@rockenschaubImpactMultiInstitutionDatasets2024,@fuentesPrivacyPreservingDatasetCombination2025]] -->
 
 
 <!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study -->
@@ -698,6 +468,230 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 
 ::: -->
 
+
+# Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t1 >}}"}
+
+Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but → 
+
+::: {.fragment}
+​⚡ **The Reproducibility Crisis in Clinical ML**^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]]:​ Comparing approaches across papers is extremely hard because of:
+:::
+
+::: {.fragment}
+
+:::
+::: {.columns}
+::: {.column width="20%" .fragment}
+![](icons/dataset.svg){fig-align="center"}
+:::
+::: {.column width="20%" .fragment}
+![](icons/people.svg){fig-align="center"}
+:::
+::: {.column width="20%" .fragment}
+![](icons/cogs.svg){fig-align="center"}
+:::
+::: {.column width="20%" .fragment}
+![](icons/measure.svg){fig-align="center"}
+:::
+::: {.column width="20%" .fragment}
+![](icons/code.svg){fig-align="center"}^[[@shillanUseMachineLearning2019a]]
+:::
+:::
+
+
+<!-- ::: 
+::: {.callout-warning appearance="simple" style="font-size: 1.5em;"}
+Individual research results (models, techniques, ideas) do not generalize accross settings, hindering meaningful scientific progress and clinical translation. ^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]] - *Dataset, cohort definition, and preprocessing choices can have **larger effects on performance** than the choice of model architecture.* 
+::: -->
+::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
+Can we create a framework for reliably reproducing scientific results of clinical prediction models across datasets and preprocessing choices?
+:::
+
+::: {.notes}
+- The reproducibility crisis in clinical machine learning is a significant barrier to scientific progress and clinical translation.
+-  **Datasets** (private datasets or different public datasets)
+-  **Cohort definitions** (patient inclusion/exclusion varies)
+-  **Preprocessing** (normalization, imputation, features)
+-  **Evaluation metrics and splits**
+- **Code not published, incomplete, not reusable or adaptable.** 
+:::
+
+## Considerations for Reproducible Clinical ML Research
+
+::: columns
+::: {.column width="70%"}
+::: {.fragment data-fragment-index="1"}
+Problems:
+
+- Medical research is **inherently** complex
+- One size fits-all always **impossible**
+- Hardcoded ≠ **reproducible**
+:::
+::: {.fragment data-fragment-index="2"}
+Goals:
+
+- **Modular** setup maintaining reproducibility
+- **Extensibility** across experiment lifecycle
+- **Out-of-the-box** support: datasets, tasks, models
+:::
+::: {.fragment data-fragment-index="3"}
+- **ReciPies**^[[@van_de_Water2026]]: Modular ML preprocessing framework 
+- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]]: framework for reproducible ICU prediction experiments across datasets.
+:::
+:::
+::: {.column width="30%"}
+::: {.fragment data-fragment-index="3"}
+![](figures/yaib/recipies_logo.svg){fig-cap="ReciPies Logo" width=100%}
+![](figures/yaib/YAIB_logo.svg){fig-cap="YAIB Logo" width=100%}
+:::
+:::
+
+:::
+
+<!-- Modular ML preprocessing framework -->
+ <!-- enables reproducible comparisons while remaining flexible enough to accommodate real-world research needs.  -->
+<!-- ::: {.incremental}
+1. **Data Harmonization** [@Ben23]
+2. **Modular Preprocessing** (ReciPies) [@vSR26]
+3. **Standardized, explicit, configurable evaluation** [@DGS18]
+::: -->
+
+---
+
+## The YAIB Experimental Pipeline {auto-animate="true"}
+
+
+
+![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=120%}
+  <div class="fragment fade-out" data-fragment-index="1"
+       style="position:absolute; top:10%; left:47.5%; width:50%; height:100%; background:white; z-index:2;"></div>
+
+::: {.columns}
+::: {.center .column width="50%" }
+<div style="text-align: center; margin-top: 0.4em;">*Creation of harmonized cohorts*</div>
+:::
+::: {.column width="50%"}
+<div style="text-align: center; margin-top: 0.4em;">*Benchmarking Framework*</div>
+:::
+:::
+<div data-id="recipies-logo-box" style="position:absolute; right:38%; top:30%; width:5%; text-align:left;">
+  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
+</div>
+::: {.notes}
+- Ideally, clinical experts inject their clinical domain knowledge of the respective dataset into the dataset and task definitions
+- ML researchers can then focus on the modeling and evaluation, while being able to easily reproduce results across datasets and preprocessing choices.
+:::
+
+<!-- ---
+
+## ReciPies: A Simple Modular Preprocessing Framework for ML Research {auto-animate="true"}
+![](figures/yaib/recipies_flow.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
+
+<div data-id="recipies-logo-box" style="position:absolute; right:2%; top:80%; width:12%; text-align:right;">
+  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
+</div>
+
+::: {.notes}
+- ReciPies is a modular preprocessing framework that allows researchers to define and execute data transformation
+- UML type diagrams of the main components and their interactions.
+::: -->
+
+
+
+## Sepsis: Different Definitions, Different Conclusions
+- Potentially life-threatening response to infection that causes injury to its own tissues and organs
+- Sepsis prediction on MIMIC-IV using Gated Reccurent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
+
+::: {.incremental}
+<!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
+
+
+::: {.fragment data-fragment-index="3"}
+::: {.columns}
+::: {.column width="50%"}
+![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=100% .no-dark}
+:::
+::: {.column width="50%"}
+![](figures/yaib/yaib_sepsis_AUPRC_grouped.svg){caption="Sepsis definition auprc" width=100% .no-dark}
+:::
+:::
+:::
+<!-- | **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al.^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al.^[[@calvertComputationalApproachEarly2016]] |         |
+|---|---|---|---|---|---|---|
+|   | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** | **AUROC** | **AUPRC** |
+| **LGBM** | 75.9±0.2 | 4.3±0.0 | 72.4±0.0 | 10.5±0.0 | 62.2±0.2 | 1.8±0.0 |
+| **GRU** | **79.2±0.1** | **6.1±0.0** | **80.9±0.0** | **17.7±0.0** | **89.2±0.0** | **9.3±0.2** | -->
+
+- Different sepsis definitions^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] can significantly alter the resulting Area Under the Receiver Operating Characteristic Curve (AUROC) and Area Under the Precision-Recall Curve (AUPRC)
+<!-- - Different definitions capture different patient populations, leading to varying model performance and clinical implications. -->
+
+:::
+
+::: {.notes}
+Different definitions capture different patient populations, leading to varying model performance and clinical implications.
+**Note:** Our definition (marked with *), adapted to be more clinically actionable. See Appendix for details.
+:::
+---
+
+## Generalization Across Datasets: Mortality Prediction 
+
+::: {.column width="50%"}
+- Training on row dataset, evaluation on column dataset using GRU:
+<div style="text-align: center; margin-top: -1em;">
+![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="External Validation - Mortality AUROC" width=85% .no-dark}
+</div>
+<div style="text-align: center; margin-top: -2em;">
+![](figures/yaib/ext_val_mortality_pooled_auprc.svg){fig-cap="External Validation - Mortality AUPRC" width=85% .no-dark}
+</div>
+:::
+
+::: {.column width="50%" .fragment }
+- Train a model on "generalizable" eICU and finetune on "difficult" HiRID:
+<div style="text-align: center; margin-top: -1em;">
+![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=76% .no-dark}
+</div>
+<div style="text-align: center; margin-top: -2em;">
+![](figures/yaib/transfer_learning_auprc.svg){fig-cap="Transfer Learning - Mortality AUPRC" width=76% .no-dark}
+</div>
+:::
+
+::: {.notes}
+- Some datasets are more similar to others. The European datasets are different from the US datasets. However, eICU, which consists of data from 208 US hospitals is more generalizable than the other datasets, which are from single hospitals.
+- Finetuning on the "difficult" HiRID dataset can improve performance with only a fraction of the data, suggesting that pretraining on a large, generalizable dataset can help overcome some of the challenges of dataset shift and improve generalization to new settings.
+:::
+
+<!-- ::: {.fragment}
+
+- **Column**: Model trained on dataset
+- **Row**: Model evaluated on dataset
+- **Diagonal**: Internal validation (same dataset)
+
+::: -->
+
+
+<!-- ## Transfer Learning
+
+- What if we train a generalized model on "most generalizable" eICU?
+- Finetune on "difficult" HiRID
+
+::: {.fragment}
+
+::: {.column width="50%"}
+AUROC:
+![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=100% .no-dark}
+
+:::
+
+::: {.column width="50%"}
+AUPRC:
+![](figures/yaib/transfer_learning_auprc.svg){fig-cap="Transfer Learning - Mortality AUPRC" width=100% .no-dark}
+
+:::
+::: -->
+
+<!-- ## Conclusion
+- True reproducibility in clinical ML requires more than just code release; it demands modular, flexible, and standardized pipelines that can adapt to the complexities of real-world data and research needs.
+- YAIB: 96 GitHub stars; 44 citations; Adaption across community ^[[@shenDataAdditionDilemma2024a,@santosImprovingRepresentationLearning2025,@rockenschaubImpactMultiInstitutionDatasets2024,@fuentesPrivacyPreservingDatasetCombination2025]] -->
 
 # Tools and Pipelines for Foundational Health AI Research 🏗️
 

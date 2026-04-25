@@ -1,3 +1,21 @@
+## Datasets and Tasks
+
+Four publicly available ICU datasets:
+
+<!-- - MIMIC-IV^[[@johnsonMIMICIVFreelyAccessible2023]]
+- eICU^[[@pollardEICUCollaborativeResearch2018]]
+- HiRID^[[@hylandEarlyPredictionCirculatory2020]]
+- AUMCdb^[[@thoralSharingICUPatient2021]] -->
+| **Dataset**                  | **MIMIC-III / IV** | **eICU** | **HiRID** | **AUMCdb** |
+|------------------------------|--------------------|----------|-----------|------------|
+| **Stays**                  | 40k (0.1k) / 73k | 201k (2k) | 34k       | 23k        |
+| **Version**                 | v1.4 / v2.2        | v2.0     | v1.1.1    | v1.0.2     |
+| **Frequency (time-series)** | 1 hour             | 5 minutes| 2 / 5 minutes | up to 1 minute |
+| **Origin**                  | USA                | USA      | Switzerland | Netherlands |
+| **Originally published**    | 2015^[[@johnsonMIMICIIIFreelyAccessible2016]] / 2020^[[@johnsonMIMICIVFreelyAccessible2023]] | 2017^[[@pollardEICUCollaborativeResearch2018]] | 2020^[[@hylandEarlyPredictionCirculatory2020]] | 2019^[[@thoralSharingICUPatient2021]] |
+
+**Five common ICU prediction tasks**: Mortality, Acute Kidney Injury, Sepsis, Kidney Function, Length of Stay.
+
 ## Prediction Task Overview {data-scale="0.1"}
 
 ::: {.notes}
