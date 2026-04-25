@@ -40,6 +40,8 @@ revealjs-plugins:
 
 --- 
 
+{{ include _variables.yml}}
+
 ## Electronic Health Records (EHR): Digital Footprints of the Patient Journey
 <div text-align="center">
 ![](figures/motivation/ehr_simplified.svg){fig-cap="EHR Data Structure" width=100%}
@@ -122,33 +124,33 @@ Main barriers to translation:
 
 
 ::: {.fragment .fade-in}
-⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">$P_1$: Incomplete observations</span> ^[[@agnielBiasesElectronicHealth2018]]
+⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">{{< var p1_label >}}</span> ^[[@agnielBiasesElectronicHealth2018]]
 :::
 ::: {.fragment .fade-in}
-⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">$P_2$: Research reproducibility</span>^[[@futomaMythGeneralisabilityClinical2020]]
+⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">{{< var p2_label >}}</span>^[[@futomaMythGeneralisabilityClinical2020]]
 :::
 ::: {.fragment .fade-in}
-⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">$P_3$: Lack of robust infrastructure</span>^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
+⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">{{< var p3_label >}}</span>^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
 :::
 ::: {.fragment .fade-in}
-*Out of scope: ​⚡​ ** $P_4$: Ethical and regulatory hurdles**^[[@vancalsterThereNoSuch2023]] *
+*Out of scope: ​⚡​ ** {{< var p4_label >}}**^[[@vancalsterThereNoSuch2023]] *
 :::
 
 ::: {.notes}
-- **$P_1$: Research reproducibility**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.
-- **$P_2$: Incomplete observations**: Retrospective data may not capture the real-time information clinicians use for decision-making, leading to models that perform well in silico but fail in practice.
-- **$P_3$: Lack of robust infrastructure**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.
-- **$P_4$: Ethical and regulatory hurdles**: Proving patient safety and privacy, fairness, and clinical utility to governance bodies is challenging
+- **{{< var p2_label >}}**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.
+- **{{< var p1_label >}}**: Retrospective data may not capture the real-time information clinicians use for decision-making, leading to models that perform well in silico but fail in practice.
+- **{{< var p3_label >}}**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.
+- **{{< var p4_label >}}**: Proving patient safety and privacy, fairness, and clinical utility to governance bodies is challenging
 :::
 
 ## Research Contribution per Challenge {auto-animate=true}
 
 
-⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">$P_1$: Incomplete observations</span>  <span class="fragment fade-in" data-fragment-index="1" data-id="incomplete-phrase">→ $R_1$: Development of Multi-ward Multi-modal Warning Systems 🛏️​</span>
+⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">{{< var p1_label >}}</span>  <span class="fragment fade-in" data-fragment-index="1" data-id="incomplete-phrase">→ {{< var r1_label >}}</span>
 
-⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">$P_2$: Research reproducibility</span> <span class="fragment fade-in" data-fragment-index="2" data-id="repro-phrase">→ $R_2$: Enabling Reproducible Prediction Experiments 🧪</span>
+⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">{{< var p2_label >}}</span> <span class="fragment fade-in" data-fragment-index="2" data-id="repro-phrase">→ {{< var r2_label >}}</span>
 
-⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">$P_3$: Lack of robust infrastructure</span>  <span class="fragment fade-in" data-fragment-index="3" data-id="infrastructure-phrase">→ $R_3$: Tools and Pipelines for Foundational Health AI Research 🏗️</span>
+⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">{{< var p3_label >}}</span>  <span class="fragment fade-in" data-fragment-index="3" data-id="infrastructure-phrase">→ {{< var r3_label >}}</span>
 
 ::: {.fragment .fade-in}
 {{< include includes/statement.qmd >}}
@@ -190,7 +192,7 @@ My thesis is structured around three main contributions that address the key cha
 
 
 ::: {.column width="33%"}
-<span data-id="incomplete-phrase">$R_1$: Development of Multi-ward Multi-modal Early Warning Systems 🛏️​</span>
+<span data-id="incomplete-phrase">{{< var r1_label >}}</span>
 
 ::: {.tiny-text}
 - **Robin P. van de Water**, Axel Winter, Daniela Zuluaga Lotero, Bjarne Pfitzner, Lara Faraj, Bert Arnrich, Patrick Rockenschaub, Wenzel Schoning, Thomas Malinka, Christian Denecke, Johann Pratschke, Igor M. Sauer, and Max M. Maurer. Continuous Multimodal AI with Wearable Vital Signs Predicts Postoperative Complications in the General Ward. Nov. 2025. doi: 10.1101/2025.11.25.25340950. [@vandewaterContinuousMultimodalAI2025] (MedRxiv preprint)
@@ -200,7 +202,7 @@ My thesis is structured around three main contributions that address the key cha
 :::
 :::
 ::: {.column width="33%"}
-<span data-id="repro-phrase">$R_2$: Enabling Reproducible Prediction Experiments 🧪</span> 
+<span data-id="repro-phrase">{{< var r2_label >}}</span> 
 
 ::: {.tiny-text}
 - **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML"., p. 9261. doi: 10.21105/joss.09261 [@van_de_Water2026]
@@ -209,7 +211,7 @@ My thesis is structured around three main contributions that address the key cha
 :::
 
 ::: {.column width="33%"}
-<span data-id="infrastructure-phrase">$R_3$: Packages and pipelines for Foundational Health AI Research 🏗️</span>
+<span data-id="infrastructure-phrase">{{< var r3_label >}}</span>
 
 ::: {.tiny-text}
 - Matthew McDermott, Ethan Steinberg, Jason Fries, **Robin P. van de Water**, Chao Pang, Patrick Rockenschaub, Pawel Renc, Jungwoo Oh, Kamilė Stankevičiūtė, Justin Xu, Tom Joseph Pollard, Nassim Oufattole, Michael Wornow, Teya Bergamaschi, Hyewon Jeong, Simon Lee, Vincent Jeanselme, Kiril Klein, Mikkel Odgaard, Maria Elkjær Montgomery, Arkadiusz Sitek, Mads Nielsen, Jeffrey Chiang, Noa Dagan, Isaac Kohane, Shalmali Joshi, Edward Choi, and Nigam Shah. [@McDermott2025MEDS]
@@ -244,7 +246,7 @@ How do we enable the entire community to build on each other's work?
 :::: -->
 
 
-# Enabling Reproducible Prediction Experiments 🧪 {data-section-title="T1: 🧪 Experiment Reproducibility"}
+# Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t1 >}}"}
 
 Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but → 
 
@@ -477,7 +479,7 @@ AUPRC:
 
 
 <!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study -->
-# Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="T2: 🛏️ Multi-ward Multi-modal Early Warning Systems"}
+# Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t2 >}}"}
 **​⚡​ Retrospective, observational, data does not reflect the information needed for clinical decision-making.**
 
 ::: {.incremental}
@@ -697,7 +699,7 @@ a, Timeline of the perioperative patient journey in surgical patients. b, Prospe
 ::: -->
 
 
-# Packages and pipelines for Foundational Health AI Research 🏗️
+# Tools and Pipelines for Foundational Health AI Research 🏗️
 
 ::: {.incremental}
 ​⚡ Lack of robust infrastructure: the ML4H community reinvents the wheel continuously:

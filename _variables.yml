@@ -1,0 +1,13 @@
+version: 1.2
+
+p1_label: "$P_1$: Incomplete observations"
+p2_label: "$P_2$: Research reproducibility"
+p3_label: "$P_3$: Lack of robust infrastructure"
+p4_label: "$P_4$: Ethical and regulatory hurdles"
+
+r1_label: "$R_1$: Development of Multi-ward Multi-modal Warning Systems 🛏️"
+r2_label: "$R_2$: Enabling Reproducible Prediction Experiments 🧪"
+r3_label: "$R_3$: Tools and Pipelines for Foundational Health AI Research 🏗️"
+
+section_t1: "T1: 🧪 Experiment Reproducibility"
+section_t2: "T2: 🛏️ Multi-ward Multi-modal Early Warning Systems"
