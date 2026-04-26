@@ -33,7 +33,7 @@ format:
     simplemenu:
     code-overflow: wrap
     center: false
-  #  transition: fade
+    transition: fade
 revealjs-plugins:
   - editable
 #   - simplemenu
@@ -184,7 +184,7 @@ My thesis is structured around three main contributions that address the key cha
 4. Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
 :::
 
-## Research Pillars Contributions {auto-animate=true}
+## Research Pillars Contributions {auto-animate=true auto-animate-id="pub-flow"}
 
 :::: columns
 
@@ -193,16 +193,16 @@ My thesis is structured around three main contributions that address the key cha
 <span data-id="incomplete-phrase">{{< var r1_label >}}</span>
 
 ::: {.tiny-text .pub-list .pub-list--pillar1}
-::: {.pub-box}
-**Robin P. van de Water**, Axel Winter, Daniela Zuluaga Lotero, Bjarne Pfitzner, Lara Faraj, Bert Arnrich, Patrick Rockenschaub, Wenzel Schoning, Thomas Malinka, Christian Denecke, Johann Pratschke, Igor M. Sauer, and Max M. Maurer. Continuous Multimodal AI with Wearable Vital Signs Predicts Postoperative Complications in the General Ward. Nov. 2025. doi: 10.1101/2025.11.25.25340950. [@vandewaterContinuousMultimodalAI2025] (MedRxiv preprint)
+::: {.pub-box data-id="pub-r1-cassandra-main"}
+**Robin P. van de Water**, Axel Winter, Daniela Zuluaga Lotero, Bjarne Pfitzner, Lara Faraj, Bert Arnrich, Patrick Rockenschaub, Wenzel Schoning, Thomas Malinka, Christian Denecke, Johann Pratschke, Igor M. Sauer, and Max M. Maurer. Continuous Multimodal AI with Wearable Vital Signs Predicts Postoperative Complications in the General Ward. Nov. 2025. doi: 10.1101/2025.11.25.25340950. [@vandewaterContinuousMultimodalAI2025] (Submitted to Lancet Digital Health)
 :::
-::: {.pub-box}
-Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Faraj, Robert Ahlborn, Maximilian Schulze, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Bert Arnrich, Igor M. Sauer, and Max M. Maurer. "90-Day Mortality Prediction in Elective Visceral Surgery Using Machine Learning: A Retrospective Multicenter Development, Validation, and Comparison Study". doi: 10.1097/JS9.0000000000002372. [@riepe90dayMortalityPrediction2025a]
+::: {.pub-box data-id="pub-r1-riepe-90d"}
+Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Faraj, Robert Ahlborn, Maximilian Schulze, Daniela Zuluaga, Christian Schineis, Katharina Beyer, Johann Pratschke, Bert Arnrich, Igor M. Sauer, and Max M. Maurer. [@riepe90dayMortalityPrediction2025a]
 :::
-::: {.pub-box}
+::: {.pub-box data-id="pub-r1-combining-hospital-grade"}
 **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Daniela Zuluaga, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Hospital-grade Clinical Data and Wearable Vital Sign Monitoring to Predict Surgical Complications". Mar. 2024. [@waterCombiningHospitalgradeClinical2024b]
 :::
-::: {.pub-box}
+::: {.pub-box data-id="pub-r1-combining-time-series"}
 **Robin van de Water**, Axel Winter, Max M. Maurer, Felix August Treykorn, Bjarne Pfitzner, Igor M. Sauer, and Bert Arnrich. "Combining Time Series Modalities to Create Endpoint-driven Patient Records". [@waterCombiningTimeSeries2024]
 :::
 :::
@@ -211,10 +211,10 @@ Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Fara
 <span data-id="repro-phrase">{{< var r2_label >}}</span> 
 
 ::: {.tiny-text .pub-list .pub-list--pillar2}
-::: {.pub-box}
+::: {.pub-box data-id="pub-r2-recipies"}
 **Robin P. van de Water**, Hendrik Schmidt, and Patrick Rockenschaub. "ReciPies: A Lightweight Data Transformation Pipeline for Reproducible ML"., p. 9261. doi: 10.21105/joss.09261 [@van_de_Water2026]
 :::
-::: {.pub-box}
+::: {.pub-box data-id="pub-r2-yaib"}
 **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
 :::
 :::
@@ -224,19 +224,19 @@ Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Fara
 <span data-id="infrastructure-phrase">{{< var r3_label >}}</span>
 
 ::: {.tiny-text .pub-list .pub-list--pillar3}
-::: {.pub-box}
+::: {.pub-box data-id="pub-r3-meds-ecosystem"}
 Matthew McDermott, Ethan Steinberg, Jason Fries, **Robin P. van de Water**, Chao Pang, Patrick Rockenschaub, Pawel Renc, Jungwoo Oh, Kamilė Stankevičiūtė, Justin Xu, Tom Joseph Pollard, Nassim Oufattole, Michael Wornow, Teya Bergamaschi, Hyewon Jeong, Simon Lee, Vincent Jeanselme, Kiril Klein, Mikkel Odgaard, Maria Elkjær Montgomery, Arkadiusz Sitek, Mads Nielsen, Jeffrey Chiang, Noa Dagan, Isaac Kohane, Shalmali Joshi, Edward Choi, and Nigam Shah. [@McDermott2025MEDS]
 :::
-::: {.pub-box .pub-box--neutral}
-**MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". 2024. [@medsworkinggroupMedicalEventData2024]
+::: {.pub-box .pub-box--neutral data-id="pub-r3-meds-working-group"}
+**MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. [@medsworkinggroupMedicalEventData2024]
 :::
-::: {.pub-box}
-Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. 15-16 December 2024, Vancouver, Canada (Nov. 2024). [@mcdermottMEDSDecentralizedExtensible2024]
+::: {.pub-box data-id="pub-r3-meds-dev"}
+Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. [@mcdermottMEDSDecentralizedExtensible2024]
 :::
-::: {.pub-box}
+::: {.pub-box data-id="pub-r3-meds-kdd"}
 Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. Lee, Nassim Oufattole, Patrick Rockenschaub, Kamilė Stankevičiūtė, Ethan Steinberg, Jimeng Sun, **Robin P. Van De Water**, Michael Wornow, John Wu, and Zhenbang Wu. "MEDS: Building Models and Tools in a Reproducible Health AI Ecosystem". SIGKDD Tutorial [@mcdermottMEDSBuildingModels2025a]
 :::
-::: {.pub-box}
+::: {.pub-box data-id="pub-r3-scaling-talk"}
 **Robin P. Van de Water**. "Scaling Up Clinical ML from Datasets to Entire Health Systems through the MEDS Ecosystem". In: Berlin, June 2025 [@vandewaterScalingClinicalML2025]
 :::
 :::
@@ -335,22 +335,34 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;"}
 Can we leverage continuous, multimodal data from wearable devices to improve early warning systems for postoperative complications in the general ward? ^[[@vandewaterContinuousMultimodalAI2025]]
 :::
-::: {.fragment .fade-in }
-![](icons/cass_timeline.svg){fig-cap="From burden to monitoring gap" width=100%}
-:::
+<div style="position: relative; top: -1em;">
 ::: {.fragment .fade-in}
-::: {.column width="80%"}
-<div style="position: relative; top: -2em;">
-![](figures/cass/wards.png){fig-cap="" width=80% .no-dark}
+::: {.column width="55%"}
+![](figures/cass/wards.png){fig-cap="" width=100% .no-dark}
+:::
+
+::: {.column width="45%"}
+<div style="display:flex; gap:0.35em; align-items:flex-start;">
+  <div style="flex:1;">
+![](figures/cass/corsano.png){fig-cap="" width=100% .no-dark}
+  </div>
+  <div style="flex:1;">
+![](figures/cass/greenteg_core.jpg){fig-cap="" width=75% .no-dark}
+  </div>
+</div>
+<div style="position:relative; top:-2em; text-align:center;">
+![](icons/bluetooth_mesh.svg){fig-cap="" width=50% .no-dark}
+</div>
+:::
+<!-- <div style="position:absolute; top:50%; left:45%; width:30%; height:35%; background:white; z-index:2;"></div> -->
+:::
+</div>
+::: {.fragment .fade-in }
+<div style="position: relative; top: -4.5em;">
+![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100%}
 </div>
 :::
 
-::: {.column width="20%"}
-![](figures/cass/greenteg_core.jpg){fig-cap="" width=100% .no-dark}
-![](figures/cass/corsano.png){fig-cap="" width=100% .no-dark}
-:::
-<div style="position:absolute; top:50%; left:45%; width:30%; height:35%; background:white; z-index:2;"></div>
-:::
 ::: {.notes}
 - With the experiment surgery group at Charite, we conducted a prospective cohort study in a hybrid ward setting, where regular care was provided and continuous, data from wearable devices was collected through informed consent.
 Corsano band:
@@ -359,6 +371,8 @@ Corsano band:
 - SPO2
 - Respiration Rate
 Temperature Sensor: body temperature
+- Left: Timeline of the perioperative patient journey in surgical patients. 
+- Right: Prospective data curation by endpoint labeling and data extraction from hospital data information systems.
 :::
 
 
@@ -371,23 +385,37 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/cass_pipeline.svg" width="60%" class="no-dark">
 </div> -->
-![](icons/cass_timeline.svg){fig-cap="From burden to monitoring gap" width=50%}
-<div style="position: relative; top: -1.5em;">
-![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=100% .no-dark}
+<!-- <div style="position: relative; top: -2em;">
+![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100%}
+</div> -->
+<div style="position: relative; text-align: center; margin-top: -0em;">
+![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=90% .no-dark}
 </div>
-<img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:80%; left:80%; width:15%; z-index:1;">
+
 
 
 
 
 ::: {.notes}
-Fig. 1: Data segmentation, aggregation, model training, and alarm framework.
-a, Timeline of the perioperative patient journey in surgical patients. b, Prospective data curation by endpoint labeling and data extraction from hospital data information systems. c, Schematic overview of data extraction, domain-specific preprocessing, and temporal aggregation. Structured clinical data comprising static, categorical, and binary variables (e.g., demographic data, comorbidities, preoperative laboratory values) and dynamic time-varying measurements (e.g., repeated laboratory examinations, intensive care unit (ICU) vital signs) were processed using domain-specific preprocessing pipelines. Unstructured clinical text data, including clinical notes, medication orders, and fluid administration records, were embedded using a pre-trained multilingual JinAI model²⁷, from which standard natural language processing (NLP) features were derived. High-resolution physiological signals derived from patient wearables on the general ward, specifically photoplethysmography (PPG) and continuous body temperature measurement, were processed using the MINIROCKET embedding model. Heart rate variability (HRV) features were extracted from both time- and frequency-domain representations. Missing values were imputed, and statistical descriptors—including skewness, entropy, standard deviation, minimum, and maximum—were computed. To capture temporal dependencies, features from preceding time steps were incorporated. All data streams were aggregated into 30-minute time segments, each containing 7,280 distinct model features. Multi-modal feature fusion and endpoint alignment resulted in segmented clinical trajectories evaluated at a 9-hour prediction horizon. d, Multiple model architectures, encompassing classical machine learning (ML) and Deep Learning (DL), were trained and evaluated using cross-validation and hyperparameter optimization. Model selection was based on predictive performance and computational efficiency, with LightGBM identified as the most favorable trade-off. e, The optimal model was evaluated by performing domain ablation and feature importance analysis with Shapley explanations. f, Based upon continuous model outputs, an actional alarm system including specific alarming frameworks was evaluated. The slope coefficient and persistence quantify the increase in the probability of sounding an alarm. An 8-hour silencing period is implemented to prevent alarm fatigue.
+ - Schematic overview of data extraction, domain-specific preprocessing, and temporal aggregation. Structured clinical data comprising static, categorical, and binary variables (e.g., demographic data, comorbidities, preoperative laboratory values) and dynamic time-varying measurements (e.g., repeated laboratory examinations, intensive care unit (ICU) vital signs) were processed using domain-specific preprocessing pipelines. 
+ - Unstructured clinical text data, including clinical notes, medication orders, and fluid administration records, were embedded using a pre-trained multilingual JinAI model²⁷, from which standard natural language processing (NLP) features were derived. High-resolution physiological signals derived from patient wearables on the general ward, specifically photoplethysmography (PPG) and continuous body temperature measurement, were processed using the MINIROCKET embedding model. 
+ - Heart rate variability (HRV) features were extracted from both time- and frequency-domain representations. Missing values were imputed, and statistical descriptors—including skewness, entropy, standard deviation, minimum, and maximum—were computed. To capture temporal dependencies, features from preceding time steps were incorporated. 
+ - All data streams were aggregated into 30-minute time segments, each containing 7,280 distinct model features. Multi-modal feature fusion and endpoint alignment resulted in segmented clinical trajectories evaluated at a 9-hour prediction horizon. 
 :::
 
 ---
 
-## CASHEWS
+## Clinical ASsist Heuristic Early Warning System (CASHEWS)******
+<div style="position: relative; text-align: center; margin-top: 5em;">
+![](figures/cass/cass_model_training.svg){fig-cap="" width=100% .no-dark}
+</div>
+<img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:70%; left:80%; width:15%; z-index:1;">
+
+::: {.notes}
+d, Multiple model architectures, encompassing classical machine learning (ML) and Deep Learning (DL), were trained and evaluated using cross-validation and hyperparameter optimization. Model selection was based on predictive performance and computational efficiency, with LightGBM identified as the most favorable trade-off. e, The optimal model was evaluated by performing domain ablation and feature importance analysis with Shapley explanations. f, Based upon continuous model outputs, an actional alarm system including specific alarming frameworks was evaluated. The slope coefficient and persistence quantify the increase in the probability of sounding an alarm. An 8-hour silencing period is implemented to prevent alarm fatigue.
+:::
+
+## How well does it work?
 <!-- Clinical ASsist Heuristic Early Warning System (CASHEWS) -->
 
 ::: {.columns}
@@ -609,48 +637,6 @@ Goals:
 2. **Modular Preprocessing** (ReciPies) [@vSR26]
 3. **Standardized, explicit, configurable evaluation** [@DGS18]
 ::: -->
-
----
-
-## The YAIB Experimental Pipeline {auto-animate="true"}
-
-
-
-![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=120%}
-  <div class="fragment fade-out" data-fragment-index="1"
-       style="position:absolute; top:10%; left:47.5%; width:50%; height:100%; background:white; z-index:2;"></div>
-
-::: {.columns}
-::: {.center .column width="50%" }
-<div style="text-align: center; margin-top: 0.4em;">*Creation of harmonized cohorts*</div>
-:::
-::: {.column width="50%"}
-<div style="text-align: center; margin-top: 0.4em;">*Benchmarking Framework*</div>
-:::
-:::
-<div data-id="recipies-logo-box" style="position:absolute; right:38%; top:30%; width:5%; text-align:left;">
-  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
-</div>
-::: {.notes}
-- Ideally, clinical experts inject their clinical domain knowledge of the respective dataset into the dataset and task definitions
-- ML researchers can then focus on the modeling and evaluation, while being able to easily reproduce results across datasets and preprocessing choices.
-:::
-
-<!-- ---
-
-## ReciPies: A Simple Modular Preprocessing Framework for ML Research {auto-animate="true"}
-![](figures/yaib/recipies_flow.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
-
-<div data-id="recipies-logo-box" style="position:absolute; right:2%; top:80%; width:12%; text-align:right;">
-  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
-</div>
-
-::: {.notes}
-- ReciPies is a modular preprocessing framework that allows researchers to define and execute data transformation
-- UML type diagrams of the main components and their interactions.
-::: -->
-
-
 
 ## Sepsis: Different Definitions, Different Conclusions
 - Potentially life-threatening **response to infection** that causes injury to its own tissues and organs
@@ -914,52 +900,8 @@ class DataSchema(PyArrowSchema):
 - 12 AI algorithms
 - Reduction of lines of code up to 70% -->
 
+TODO: add my own impact (tools, datasets)
 
-# Limitations
-
-```{=html}
-<style>
-.card-row p { margin: 0; line-height: 1.2; }
-</style>
-```
-
-::: {.fragment fragment-index=1}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em;"}
-![](icons/people_split.svg){height=2em .light-only}
-
-**Models may amplify existing racial, gender, and socioeconomic biases.**^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
-:::
-:::
-
-::: {.fragment fragment-index=2}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
-![](icons/check.svg){height=2em .light-only}
-
-**Need validation strategies and randomized trials before deployment.**^[[@wongExternalValidationWidely2021a]]
-:::
-:::
-
-::: {.fragment fragment-index=3}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
-![](icons/wrong.svg){height=2em .light-only}
-
-**Potential for harmful use (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
-:::
-:::
-
-::: {.fragment fragment-index=4}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
-![](icons/thermometer.svg){height=2em .light-only}
-
-**(Large) AI models can have sizeable environmental impact**^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
-:::
-:::
-::: {.notes}
-- Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated 
-- Validation strategies and randomized controlled trials are needed to demonstrate clinical utility and safety before deployment 
-- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.)
-- (Large) AI models can have sizeable environmental impact; simpler is better 
-:::
 <!-- ## My Thesis
 
 We require: -->
@@ -1008,6 +950,53 @@ We require: -->
 **::: -->
 ::: {.fragment .fade-in}
 {{< include includes/statement.qmd >}}
+:::
+
+
+# Limitations
+
+```{=html}
+<style>
+.card-row p { margin: 0; line-height: 1.2; }
+</style>
+```
+
+::: {.fragment fragment-index=1}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em;"}
+![](icons/people_split.svg){height=2em .light-only}
+
+**Models may amplify existing racial, gender, and socioeconomic biases.**^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
+:::
+:::
+
+::: {.fragment fragment-index=2}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+![](icons/check.svg){height=2em .light-only}
+
+**Need validation strategies and randomized trials before deployment.**^[[@wongExternalValidationWidely2021a]]
+:::
+:::
+
+::: {.fragment fragment-index=3}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+![](icons/danger.svg){height=2em .light-only}
+
+**Potential for harmful use (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
+:::
+:::
+
+::: {.fragment fragment-index=4}
+::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+![](icons/neural_net_monochrome.svg){height=2em .light-only}
+
+**(Large) AI models have sizeable environmental impact**^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
+:::
+:::
+::: {.notes}
+- Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated 
+- Validation strategies and randomized controlled trials are needed to demonstrate clinical utility and safety before deployment 
+- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.)
+- (Large) AI models can have sizeable environmental impact; simpler is better 
 :::
 
 

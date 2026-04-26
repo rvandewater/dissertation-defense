@@ -1,3 +1,41 @@
+# Extra slides: var r2_label
+
+## The YAIB Experimental Pipeline {auto-animate="true"}
+
+
+
+![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=120%}
+  <div class="fragment fade-out" data-fragment-index="1"
+       style="position:absolute; top:10%; left:47.5%; width:50%; height:100%; background:white; z-index:2;"></div>
+
+::: {.columns}
+::: {.center .column width="50%" }
+<div style="text-align: center; margin-top: 0.4em;">*Creation of harmonized cohorts*</div>
+:::
+::: {.column width="50%"}
+<div style="text-align: center; margin-top: 0.4em;">*Benchmarking Framework*</div>
+:::
+:::
+<div data-id="recipies-logo-box" style="position:absolute; right:38%; top:30%; width:5%; text-align:left;">
+  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
+</div>
+::: {.notes}
+- Ideally, clinical experts inject their clinical domain knowledge of the respective dataset into the dataset and task definitions
+- ML researchers can then focus on the modeling and evaluation, while being able to easily reproduce results across datasets and preprocessing choices.
+:::
+
+## ReciPies: A Simple Modular Preprocessing Framework for ML Research {auto-animate="true"}
+![](figures/yaib/recipies_flow.svg){fig-cap="ReciPies Flow" width=100% .no-dark}
+
+<div data-id="recipies-logo-box" style="position:absolute; right:2%; top:80%; width:12%; text-align:right;">
+  <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
+</div>
+
+::: {.notes}
+- ReciPies is a modular preprocessing framework that allows researchers to define and execute data transformation
+- UML type diagrams of the main components and their interactions.
+::: 
+
 ## Datasets and Tasks
 
 Four publicly available ICU datasets:
