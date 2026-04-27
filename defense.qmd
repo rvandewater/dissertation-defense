@@ -37,6 +37,7 @@ format:
 revealjs-plugins:
   - editable
 #   - simplemenu
+# jupyter: quarto
 
 --- 
 
@@ -135,7 +136,7 @@ Main barriers to translation:
 ⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">{{< var p2_label >}}</span>^[[@futomaMythGeneralisabilityClinical2020]]
 :::
 ::: {.fragment .fade-in}
-⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">{{< var p3_label >}}</span>^[[@mcdermottLackScienceMachine2025] [@donohoDataScienceSingularity2024]]
+⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">{{< var p3_label >}}</span>^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
 :::
 ::: {.fragment .fade-in}
 *Out of scope: ​⚡​ ** {{< var p4_label >}}**^[[@vancalsterThereNoSuch2023]] *
@@ -264,7 +265,7 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 
 
 # Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t1 >}}"}
-**​⚡​ Retrospective, observational, data does not reflect the information needed for clinical decision-making.**
+**​⚡​ {{< var p1_label >}}**: Retrospective, observational, data does not reflect the information needed for clinical decision-making.
 
 
 ::: {.columns}
@@ -428,11 +429,14 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 ---
 
-## Clinical ASsist Heuristic Early Warning System (CASHEWS)
+## Clinical ASsist Heuristic Early Warning System+
 <div style="position: relative; text-align: center; margin-top: 5em;">
 ![](figures/cass/cass_model_training.svg){fig-cap="" width=100% .no-dark}
 </div>
-<img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:70%; left:80%; width:15%; z-index:1;">
+<img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:53%; left:80%; width:13%; z-index:1;">
+<img src="figures/yaib/yaib_logo.svg" width=100% class="no-dark" style="position:absolute; top:57%; left:35%; width:15%; z-index:1;">
+
+ <div class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:20%; left:50%; width:100%; height:60%; background:white; z-index:1;"></div> 
 
 ::: {.notes}
 - Multiple model architectures, encompassing classical machine learning (ML) and Deep Learning (DL), were trained and evaluated using cross-validation and hyperparameter optimization. 
@@ -460,8 +464,6 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 - Standard static pre-ward data is not sufficient; dynamic models needed.
 - Significant gains from continuous, high-resolution wearable data.
 </div>
-:::
-
 
 
 
@@ -490,31 +492,25 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 - The key implication is that predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.
 :::
 
-## Model Interpretation and Explainability
+## Model Interpretation Grouped by Modality
 
 <!-- <div style="text-align: center; margin-top: -5em;">
   <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
 </div> -->
-::: {.columns}
-::: {.column width="70%"}
-<div style="text-align: center; ">
-  <img src="figures/cass/shap_contribution.svg" width="100%" class="no-dark">
-</div>
-:::
-::: {.column width="30%"}
-![](figures/cass/shap_contribution.svg){fig-cap="" width=100% .no-dark}
-<div style="position: relative;">
-- SHAP-values^[[@lundbergUnifiedApproachInterpreting2017a]]: subtle (wearable) physiological indicate early autonomic stress.
-</div>
-:::
-:::
-::: {.notes}
-- Add either tsne or violin plot shap values here
-- 
-:::
-<!-- 
----
 
+<div style="text-align: center; ">
+  <img src="figures/cass/shap_contribution.svg" width="80%" class="no-dark">
+</div>
+
+- SHAP-values^[[@lundbergUnifiedApproachInterpreting2017a]]: subtle (wearable) physiological indicate early autonomic stress.
+
+::: {.notes}
+- Importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance
+- However, wearable modalities are a close second with core temperature, HRV features, and RR interval features being the top single contributors and the PPG embeddings accounting for a large portion of the overall contribution.
+
+:::
+
+<!--
 
 <div style="text-align: center; margin-top: -2em;">
   <img src="figures/cass/fig3.svg" width="75%" class="no-dark">
@@ -530,9 +526,15 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 ## Alarm Strategy and Decision Curve Analysis
 
 ::: {.columns}
+::: {.column width="30%"}
+<div style="text-align: center; margin-top: -0em;">
+Alarm burden and precision-recall
+  <img src="figures/cass/cass_burden_precision_recall.svg" width="80%" class="no-dark">
+</div>
+:::
 ::: {.column width="70%"}
-- **Alarm strategy**: when should we choose to inform clinicians?
-- Regulate alarm frequency with grace period, persistence, and silencing (preventing alarm fatigue).
+- **Alarm strategy**: CASHEWS+ balances sensitivity and alarm burden
+<!-- - Regulate alarm frequency with grace period, persistence, and silencing (preventing alarm fatigue). -->
 
 ::: {.fragment fragment-index="4"}
 <!-- -  2 alarms per day on a 100-bed ward. -->
@@ -545,18 +547,14 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 </div>
 :::
 :::
-::: {.column width="30%" .fragment fragment-index="3"}
-<div style="text-align: center; margin-top: -0em;">
-  <img src="figures/cass/cass_burden_precision_recall.svg" width="80%" class="no-dark">
-</div>
-:::
+
 :::
 
 
 ::: {.notes}
+-Alarm burden quantified as alarms per patient per day (y-axis) across all recall levels (x-axis) for REWS-based alerts, raw ML predictions using a static threshold, and the final alarm strategy with blackout periods and a dynamic threshold. d, Precision–recall curves comparing REWS, the raw machine learning model, and the dynamic alarm strategy for the prediction
 - Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
-- 
-(a) ML predictions of complication and non-complication groups. (b) Comparison of REWS- and CASHEWS+ based alarm predictions using a single-patient example after extended left hemihepatectomy for Klatskin tumor with biliodigestive anastomotic insufficiency at postoperative day 10. Alarms are visualized by individual points and color-coded for both strategies. For CASHEWS+, we used the optimal alarm based on Decision Curve Analysis (A4; see Fig. 5e); for REWS, the alarm strategy in the same recall bin was applied. c, Alarm burden quantified as alarms per patient per day (y-axis) across all recall levels (x-axis) for REWS-based alerts, raw ML predictions using a static threshold, and the final alarm strategy with blackout periods and a dynamic threshold. d, Precision–recall curves comparing REWS, the raw machine learning model, and the dynamic alarm strategy for the prediction e, Decision curve analysis including harm-to-benefit ratios for optimal alarm strategies per recall bin using CASHEWS+. The top alarm reflecting the threshold probability interval is shown above the dashed red line.
+-  Decision curve analysis including harm-to-benefit ratios for optimal alarm strategies per recall bin using CASHEWS+. This hinges on how much harm (intervention/diagnostics/probes) am I willing to accept. The top alarm reflecting the threshold probability interval is shown above the dashed red line.
 :::
 
 
@@ -588,10 +586,8 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 # Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t2 >}}"}
 
-Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but → 
-
 ::: {.fragment}
-​⚡ **The Reproducibility Crisis in Clinical ML**^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]]:​ Comparing approaches across papers is extremely hard because of:
+​⚡ **{{< var p2_label >}}**^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]]:​ Comparing approaches across papers is difficult because of:
 :::
 
 ::: {.fragment}
@@ -625,6 +621,7 @@ Can we create a framework for reliably reproducing scientific results of clinica
 :::
 
 ::: {.notes}
+- Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but comparing approaches often remains difficult:
 - The reproducibility crisis in clinical machine learning is a significant barrier to scientific progress and clinical translation.
 -  **Datasets** (private datasets or different public datasets)
 -  **Cohort definitions** (patient inclusion/exclusion varies)
@@ -673,17 +670,18 @@ Goals:
 3. **Standardized, explicit, configurable evaluation** [@DGS18]
 ::: -->
 
-## Sepsis: Different Definitions, Different Conclusions
-- Potentially life-threatening **response to infection** that causes injury to its own tissues and organs
-- Sepsis prediction^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] on MIMIC-IV using Gated Recurrent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models with **different cohort definitions**:
+## Different Definitions, Different Conclusions
+- Sepsis: Potentially life-threatening **response to infection** that causes injury to its own tissues and organs.
 
-::: {.incremental}
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
 
 
 ::: {.fragment data-fragment-index="3"}
+
 ::: {.columns}
 ::: {.column width="100%"}
+- Prediction on MIMIC-IV^[[@johnsonMIMICIVFreelyAccessible2023]] using Gated Recurrent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models with **different cohort definitions**^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]]:
+
 <div style="text-align: center;">
 ![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=50% .no-dark}
 </div>
@@ -691,7 +689,6 @@ Goals:
 <!-- ::: {.column width="50%"}
 ![](figures/yaib/yaib_sepsis_AUPRC_grouped.svg){caption="Sepsis definition auprc" width=100% .no-dark}
 ::: -->
-:::
 :::
 <!-- | **Algorithm** | Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]* |         | Moor et al.^[[@moorPredictingSepsisMultisite2021]] |         | Calvert et al.^[[@calvertComputationalApproachEarly2016]] |         |
 |---|---|---|---|---|---|---|
@@ -780,15 +777,26 @@ AUPRC:
 - True reproducibility in clinical ML requires more than just code release; it demands modular, flexible, and standardized pipelines that can adapt to the complexities of real-world data and research needs.
 - YAIB: 96 GitHub stars; 44 citations; Adaption across community ^[[@shenDataAdditionDilemma2024a,@santosImprovingRepresentationLearning2025,@rockenschaubImpactMultiInstitutionDatasets2024,@fuentesPrivacyPreservingDatasetCombination2025]] -->
 
-# Tools and Pipelines for Foundational Health AI Research 🏗️ {data-section-title="{{< var section_t3 >}}"}
+# Framework for Foundational Health AI 🏗️ {data-section-title="{{< var section_t3 >}}"}
 
 ::: {.incremental}
-​⚡ Lack of robust infrastructure: the ML4H community reinvents the wheel continuously:
+​⚡ **{{< var p3_label >}}**:
 
-- Different data extraction code for each hospital system
-- Incompatible feature engineering approaches
-- Non-standard task definitions
-- Applying high-parameter artificial intelligence (AI) models to EHR data (health AI) lacks widely adopted data standards.
+::: {.fragment}
+::: {.card-row .card-row--stack}
+![](icons/neural_net_monochrome.svg){height=3em .light-only}
+
+**Event-based Foundation Models (FMs) are now central to clinical ML research.**^[[@bommasaniOpportunitiesRisksFoundation2021;@steinbergLanguageModelsAre2021]]
+:::
+:::
+
+::: {.fragment}
+::: {.card-row .card-row--stack}
+![](icons/infrastructure.svg){height=3em .light-only}
+
+**Applying high-parameter AI to health data still lacks robust, standardized infrastructure.** ^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
+:::
+:::
 
 <!-- **Example:** Mount Sinai Health System (MSHS) has 6.8 million patients
 - **Before MEDS:** Data in OMOP format; every research project wrote custom extraction code (~3-6 weeks per project)
@@ -798,30 +806,32 @@ AUPRC:
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
 How can we enable reproducible AI research across healthcare systems?
 :::
-## Data Standards in Healthcare
 
-::: {.columns}
-::: { .incremental .column width="60%"}
-In observational health informatics:
-
-- OMOP Common Data Model (CDM) ^[[@hripcsakObservationalHealthData2015]], PCORnet ^[[@collinsPCORnetTurningDream2014]], and i2b2 CDM ^[[@murphyServingEnterpriseInformatics2010]]
-- Have enabled observational studies in diverse settings ^[[@callahan2021using; @suchardComprehensiveComparativeEffectiveness2019]]
-- But they are not designed for **high-parameter AI research**:
-  - Primary purpose is observational research 
-  - Disease-specific cohorts and specific manual featurization of engineered features 
-  - Unsuitable to train over a general-purpose representation of the entire EHR
+::: {.notes}
+- With the advent of Large Language Models, we now have high-parameter AI "foundation models", that are trained on large-scale EHR data with the objective to predict the next token.
+- Donoho highlights the term of frictionless reproducibility for data science which highlights the growing need for robust infrastructure to support reproducible research across healthcare systems.
+- Currently, the ML4H community often reinvents the wheel, and with the increasing complexity of models and data, this is becoming unsustainable.
 
 :::
-::: {.column width="40%"}
-
-::: {.fragment}
-<div style="text-align: center; position: absolute; top: 20%;">
-  <img src="figures/meds/standards.png" width="100%" class="no-dark"> <a href="https://xkcd.com/927/" target="_blank" style="font-size: 0.5em;">Source: https://xkcd.com/927/</a>
+## Data Standards in Healthcare
+<div style="text-align: center;">
+  <img src="figures/meds/standards.png" width="40%" class="no-dark"> 
+</div>
+<div style="text-align: center; margin-top: -1.5em;">
+  <a href="https://xkcd.com/927/" target="_blank" style="font-size: 0.5em; text-align: center;">Source: https://xkcd.com/927/</a>
 </div>
 
+::: { .incremental}
+- OMOP ^[[@hripcsakObservationalHealthData2015]], PCORnet ^[[@collinsPCORnetTurningDream2014]], FHIR^[[@benderHL7FHIRAgile2013]], and i2b2^[[@murphyServingEnterpriseInformatics2010]].
+- Have enabled **observational studies** and **health data exchange** ^[[@callahan2021using; @suchardComprehensiveComparativeEffectiveness2019]].
+- But they are not designed for **high-parameter AI research**.
+
 
 :::
-:::
+
+::: {.notes}
+  - Disease-specific cohorts and specific manual featurization of engineered features 
+  - Unsuitable to train over a general-purpose representation of the entire EHR
 :::
 
 ## The Medical Event Data Standard (MEDS)
@@ -868,41 +878,91 @@ class DataSchema(PyArrowSchema):
 ``` -->
 
 
-## MEDS-DEV: Decentralized External Validation Framework
+## MEDS-DEV: Decentralized External Validation
 ::: {.incremental}
 - Reproducible benchmarking is critical for scientific progress, but sharing raw patient data across institutions is often not possible due to privacy concerns.
-- Define standardized predicates for cohort definitions and task specifications ^[[@xuACESAutomaticCohort2024a]].
-- Tasks and prevalences differ widely across sites → performance comparisons must be contextualized. Each site/dataset independently trains with the same definitions:
+- Define standardized *predicates* for tasks and have drop-in definitions for each dataset^[[@mcdermottMEDSDecentralizedExtensible2024;@xuACESAutomaticCohort2024a]].
 :::
+
 ::: {.fragment}
 
-{{< include resources/cohort_table_small.html >}}
+
+::: {.columns}
+:::
+::: {.column width="50%"}
+![](figures/meds/map_meds_dev.svg){width=100% fig-align="center"}
 
 :::
+::: {.column width="25%" .fragment}
+![](icons/icu.svg){width=50% fig-align="center"}
+
+<div style="text-align: center;">
+11 Tasks
+</div>
+:::
+::: {.column width="25%" .fragment}
+![](icons/neural_net_monochrome.svg){width=40% fig-align="center"}
+
+MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangCEHRBERTIncorporatingTemporal2021; @hurGenHPFGeneralHealthcare2024a]
+:::
+
+:::
+
+<!-- {{< include resources/cohort_table_small.html >}} -->
+
+
+::: {.notes}
+- MEDS-DEV is a collective effort that I expanded to 8 other datasets, including health systems open-access datasets
+- Each site independently trains and evaluates models using the same standardized definitions, allowing for meaningful comparisons while respecting data privacy. 
+- The configurations can be shared across sites, enabling researchers to identify factors that contribute to performance variability.
+- 3 Complete Blood Count, 5 blood chemistry, 2 Vital Sign, Mortality, Readmission
+
+
+:::
+
 ---
 
 ## Results depend heavily on dataset/task choice
 
 ::: {.columns}
-::: {.column width="50%"}
-<div style="text-align: right;  margin-top: -1em;">
-  <img src="figures/meds/meds_dev/model_comparison_auroc_task_grouped_samples.svg" width="65%" class="no-dark">
+::: {.column width="40%"}
+<div style="position:relative; width:80%; margin:-1em auto 0; isolation:isolate;">
+  <img src="figures/meds/meds_dev/model_legend.svg" width="25%" class="no-dark"     style="position:absolute; z-index:4; left:67%;"
+>
+
+  <img
+    src="figures/meds/meds_dev/model_comparison_auroc_task_grouped_samples.svg"
+    width="100%"
+    class="no-dark"
+    style="position:relative; z-index:3; display:block;"
+  >
+  <img
+    src="figures/meds/meds_dev/model_comparison_auprc_task_grouped_samples.svg"
+    width="100%"
+    class="no-dark"
+    style="position:absolute; top:0; left:5%; z-index:1;"
+  >
 </div>
 :::
+
 ::: {.column width="50%"}
-<div style=" margin-top: -1em;">
-  <img src="figures/meds/meds_dev/model_comparison_auprc_task_grouped_samples.svg" width="65%" class="no-dark">
+<div style="text-align: right;  margin-top: -1em;">
+  <img src="figures/meds/meds_dev/aggregated/auroc_by_dataset_samples.svg" width="100%" class="no-dark">
 </div>
+- There is no single "best" model.
+- Some models incompatible with some datasets/tasks.
 :::
 :::
 
 ::: {.notes}
 - Each point represents a model trained and evaluated at a specific site, with the same task definition
 - The spread of points across sites for the same model and task highlights the variability in performance due to differences in data and implementation, underscoring the need for standardized benchmarking.
+- Tasks and prevalences differ widely across sites → performance comparisons must be contextualized. 
 - The overall performance trends across models and tasks can be compared, but the variability emphasizes that results from one site may not generalize to others without careful validation.
 :::
 
-## Scaling Up Clinical ML from Cohorts to Health Systems
+
+## Foundation Models for Health Systems
   <div class="fragment fade-out" data-fragment-index="1"
        style="position:absolute; top:27%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 
@@ -918,7 +978,7 @@ class DataSchema(PyArrowSchema):
 ::: {.fragment}
 <div style="text-align: center; margin-top: -2em;">
 <img src="figures/meds/linear_probing/tasks/linear_probing_legend.svg" width="50%" class="no-dark">
-  <img src="figures/meds/linear_probing/aggregated/aggregated_line_['roc_auc_score', 'average_precision_score']_macro.svg" width="100%" class="no-dark">
+  <img src="figures/meds/linear_probing/aggregated/aggregated_line_roc_only.svg" width="50%" class="no-dark">
 </div>
 
 :::
@@ -962,8 +1022,8 @@ We require: -->
 **{{< var section_t1 >}}**
 
 - Continuous wearable data **nearly doubles AUPRC**
-- Predictive surveillance can be extended into general wards with wearables
-- Alarm strategies key to clinical utility
+- **Predictive surveillance** can be used beyond ICU into the ward
+- Alarm strategies key to **clinical utility**
 :::
 :::
 
@@ -973,7 +1033,6 @@ We require: -->
 
 - Experimental setup often matters **more than model choice**
 - Multi-center framework for reproducible ML4H benchmarking (44 citations, 96 GitHub stars)
-- Reusable preprocessing pipelines for clinical ML
 :::
 :::
 
@@ -981,9 +1040,10 @@ We require: -->
 ::: {.fragment .pub-box .pub-box--pillar3}
 **{{< var section_t3 >}}**
 
-- MEDS-DEV: easily benchmark tasks across different sites and tasks.
-- FMs can be used across datasets and health systems
-- MEDS adoption across 27 papers, 17 datasets, and 12 models.
+<!-- - MEDS-DEV: easily benchmark tasks across different sites and tasks. -->
+- MEDS enables reproducible AI research across health systems with wide adoption
+- Created 4 Dataset, OMOP, FHIR ETLs and 2 tools
+- Benchmarked 9 datasets across 11 tasks
 :::
 :::
 :::
@@ -1036,34 +1096,49 @@ We require: -->
 :::
 
 
+
+
 ## Future Research Directions
 
-::: {.fragment fragment-index=1}
-::: {.card-row .card-row--top}
-![](icons/cogs.svg){height=3em .light-only}
+::: {.fragment }
+::: {.card-row .card-row--stack}
+![](icons/multi_modality.svg){height=3em .light-only}
 
-**Multi-modal fusion for foundation models: off-the-shelf or health-system specific?**^[[@burkhartFoundationModelsElectronic2025a]] Pathology, radiology, genomics, and whether generalizability-focused optimization is justified.^[[@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
+**Advances in Multi-Modal Health Foundation Models**
+:::
+:::
+::: {.fragment }
+::: {.card-row .card-row--stack}
+![](icons/multiple_hospital.svg){height=3em .light-only} 
+
+**Generalizability versus Specificity**^[[@burkhartFoundationModelsElectronic2025a;@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
+
 :::
 :::
 
-::: {.fragment fragment-index=2}
+::: {.fragment }
 ::: {.card-row .card-row--stack}
 ![](icons/graph.svg){height=3em .light-only}
 
-**Scaling up health AI: how does performance improve with more data, compute, and model size?**^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
+**Scaling up: datasets, model size, benchmarking**^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
 :::
 :::
 
-::: {.fragment fragment-index=3}
-::: {.card-row .card-row--top .card-row--stack}
+::: {.fragment }
+::: {.card-row .card-row--stack}
 ![](icons/clinician.svg){height=3em .light-only}
 
-**Improving care through predictive surveillance and transferable patient representations.**^[[@kernCareFragmentationCare2024]] Examples: risk-based scheduling (e.g., mammograms) and cross-disciplinary patient representations (e.g., oncology, cardiology).
+**Predictive surveillance and transferable patient representations.**^[[@kernCareFragmentationCare2024]] 
 :::
 :::
 
 ::: {.notes}
-- Different health systems have different data generating processes
+- Multi-modal: Clinical Notes, Pathology, Radiology, Genomics, Wearables, etc.
+- Generalizability versus Specificity: Different health systems have different data generating processes and different patient populations. Should we optimize for generalizability or for performance on specific settings?
+- Scaling up: how does performance improve with more data, compute, and model size? Understanding scaling laws in health AI can inform the development of more efficient and effective models.
+- Predictive surveillance: scheduling mammograms in advance if a patient is at high risk of developing breast cancer.
+- Transferable patient representations: Developing models that can effectively transfer knowledge across different healthcare providers (GP and specialists), reducing fragmentation.
+
 :::
 
 <!--
