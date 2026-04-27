@@ -991,6 +991,10 @@ MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangC
 <div style="text-align: center;">
   <img src="figures/meds/meds_adoption.png" width="100%" class="no-dark">
 </div>
+<div class="fragment fade-out" data-fragment-index="1"
+      style="position:absolute; top:10%; left:63%; width:100%; height:100%; background:white; z-index:2;"></div>
+<div class="fragment fade-out" data-fragment-index="2"
+      style="position:absolute; top:48%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 ::: {.tiny-text}
   Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).
 :::
@@ -1000,8 +1004,6 @@ MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangC
 - 17 datasets
 - 12 AI algorithms
 - Reduction of lines of code up to 70% -->
-
-TODO: add my own impact (tools, datasets)
 
 <!-- ## My Thesis
 
