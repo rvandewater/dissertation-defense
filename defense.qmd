@@ -53,9 +53,11 @@ revealjs-plugins:
 
 ::: {.notes}
 What does EHR data look like? 
-- It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes). 
+
+- It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes).
+   
 - This complexity is both a challenge and an opportunity for machine learning in healthcare. 
-- We should distinguish between in-patient and out-patient data, the latter is much more sparse and less frequently updated, which has implications for model design and deployment. 
+
 - The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
 :::
 
@@ -90,6 +92,11 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 ```
 </div>
 
+::: {.notes}
+
+- The number of papers on machine learning in health has been growing rapidly, reflecting the increasing interest and potential of this field as shown here from the ArXiv preprint server with ML and health keywords in the title or abstract.
+- However, despite this growth in research, the translation of machine learning models into clinical practice has been slow and fraught with challenges.
+:::
 <!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
 
 <!-- :::: columns
@@ -115,7 +122,7 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
   
 <!-- - <span style="color: #0095D1">Advance the implementation of national digital health strategies</span> -->
 ::: {.callout-warning appearance="simple" style="font-size: 1.5em;"}
-**Central problem: Despite the promise and increase of AI and machine learning research, more abundant data, and advances in methodology, few models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
+**Central problem: Few AI/ML models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
 :::
 
 Main barriers to translation:
@@ -135,9 +142,10 @@ Main barriers to translation:
 :::
 
 ::: {.notes}
-- **{{< var p2_label >}}**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.
+- The translation gap in healthcare: despite the promise and increase of AI and machine learning research, new datasets, and advances in methodology that address practical challenges, few models have been successfully deployed in clinical practice.
 - **{{< var p1_label >}}**: Retrospective data may not capture the real-time information clinicians use for decision-making, leading to models that perform well in silico but fail in practice.
-- **{{< var p3_label >}}**: Each institution builds their own custom solutions, making it hard to share research results and validate across sites.
+- **{{< var p2_label >}}**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.
+- **{{< var p3_label >}}**: Each institution builds their own custom solutions, making it hard to share research results and build on each other's work.
 - **{{< var p4_label >}}**: Proving patient safety and privacy, fairness, and clinical utility to governance bodies is challenging
 :::
 
@@ -156,7 +164,7 @@ Main barriers to translation:
 
 ::: {.fragment .fade-in}
 
-::: {style="border:1px solid #d9d9d9; border-radius:8px; padding:0.7em 0.9em; background:#f7f7f7;"}
+::: {.slide-card .slide-card--muted}
 ::: {.columns}
 ::: {.column width="80%"}
 UN WHO Global Strategy on Digital Health Objectives (1/4):
@@ -175,13 +183,13 @@ architecture."* ^[[@marianoGlobalStrategyDigital2020]]
 :::
 
 ::: {.notes}
-Add icons here for each contribution, and maybe a visual overview of the contributions and how they relate to each other.
+My thesis is structured around three main contributions:
 
-My thesis is structured around three main contributions that address the key challenges in translating machine learning research into clinical practice.
-1. Reproducible Prediction Experiments: I developed the YAIB framework to enable reproducible benchmarking of ICU prediction models across different datasets and preprocessing choices. This helps us understand why different papers report different performance for the same clinical task.
-2. Development of Applied Multi-ward Multi-modal Early Warning Systems: I conducted the CASSANDRA study, which prospectively collects data from surgical patients in the general ward and integrates wearable device data to improve early warning systems for postoperative complications.
-3. Packages and pipelines for Foundational Health AI Research: I contributed to the development of the MEDS framework, which provides a standardized data format and tools for scalable machine learning research across healthcare institutions, enabling better reproducibility and collaboration.
-4. Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
+- Development of Applied Multi-ward Multi-modal Early Warning Systems: I conducted the CASSANDRA study, which prospectively collects data from surgical patients in the general ward and integrates wearable device data to improve early warning systems for postoperative complications.
+- We developed the YAIB and Recipies framework to enable reproducible benchmarking of ICU prediction models across different datasets and preprocessing choices. We lower the barrier for reproducible research and enable better comparison of models across studies.
+- I contributed to the development of the MEDS framework, which provides a standardized data format and tools for scalable machine learning research across healthcare institutions, creating a scalable foundation for open science.
+- Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
+- This aligns well with the WHO's global strategy on digital health, which emphasizes the importance of open standards and collaboration in this field.
 :::
 
 ## Research Pillars Contributions {auto-animate=true auto-animate-id="pub-flow"}
@@ -241,11 +249,18 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 :::
 :::
 :::
+:::
 
-::::
+::: {.notes}
+- Here you can find the publications that correspond to each of the three main contributions I will talk about today organized by research pillar.
+:::
+
 
 {{< include extra_slides/publications.qmd >}}
 
+::: {.notes}
+- These are all the publications that I have contributed to until now. You can find them on the slides in the footer and they should link to the corresponding work.
+:::
 
 
 # Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t1 >}}"}
@@ -255,8 +270,8 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 ::: {.columns}
 ::: {.column width="50%"}
 ::: {.fragment .fade-in fragment-index="1"}
-<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa;">
-  <div style="display:flex; align-items:center; gap:0.6em;">
+<div class="slide-card">
+  <div class="slide-card__row">
 ![](icons/surgeon.svg){fig-cap="" height=3em .no-dark}
     <strong>300M+ surgeries annually^[[@dobsonTraumaMajorSurgery2020]]</strong>
   </div>
@@ -264,8 +279,8 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 :::
 
 ::: {.fragment .fade-in fragment-index="3"}
-<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa; margin-top:0.6em;">
-  <div style="display:flex; align-items:center; gap:0.3em;">
+<div class="slide-card slide-card--stack-md">
+  <div class="slide-card__row slide-card__row--tight">
 ![](icons/alert.svg){fig-cap="" height=3em .no-dark}
     <strong>Adverse events impact quality of life and cost^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]</strong>
   </div>
@@ -275,8 +290,8 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 
 ::: {.column width="50%"}
 ::: {.fragment .fade-in fragment-index="2"}
-<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa;">
-  <div style="display:flex; align-items:center; gap:0.6em;">
+<div class="slide-card">
+  <div class="slide-card__row">
 ![](icons/hospital.svg){fig-cap="" height=3em .no-dark}
     <strong>~1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]</strong>
   </div>
@@ -284,8 +299,8 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 :::
 
 ::: {.fragment .fade-in fragment-index="4"}
-<div style="border:1px solid #d9d9d9; border-radius:10px; padding:0.7em; min-height:3em; background:#fafafa; margin-top:0.6em;">
-  <div style="display:flex; align-items:center; gap:0.6em;">
+<div class="slide-card slide-card--stack-md">
+  <div class="slide-card__row">
 ![](icons/heartbeat.svg){fig-cap="" height=3em .no-dark}
     <strong>Ward monitoring insufficient for subtle condition changes^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]]</strong>
   </div>
@@ -296,9 +311,11 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 
 
 ::: {.notes}
-- Surgical patients are stabilized on the ICU, and then transferred to the general ward, where they are monitored less frequently.
+- Retrospective data may not capture the real-time information clinicians use for decision-making, leading to models that don't capture the full complexity of the patient journey. This is reflected in the case of surgery rehabilition.
+- Surgery is a major part of healthcare, with more than 300 million surgical procedures performed annually worldwide
+- Surgery is also a major driver of healthcare costs, with approximately one-third of hospital costs being surgery-related.
 - Postoperative complications are common and often go undetected until they become severe, leading to worse outcomes and higher costs.
-- Physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on ward, where most postoperative patients rehabilitate.
+- But, preceding physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on ward, where most postoperative patients rehabilitate.
 - Why not just monitor patients in the ICU? → expensive and can lead to complications like infections, delirium, and deconditioning.
 - Solution? **Hybrid ward with minimally intrusive wearables**
 :::
@@ -364,13 +381,11 @@ Can we leverage continuous, multimodal data from wearable devices to improve ear
 :::
 
 ::: {.notes}
+- That leads us the the question of whether we can leverage wearable devices to improve early warning systems for postoperative complications in the ward.
 - With the experiment surgery group at Charite, we conducted a prospective cohort study in a hybrid ward setting, where regular care was provided and continuous, data from wearable devices was collected through informed consent.
-Corsano band:
-- Photoplethysmogram (PPG) Sensor (HR/BP)
-- Acceleration
-- SPO2
-- Respiration Rate
-Temperature Sensor: body temperature
+- Corsano band: Photoplethysmogram (PPG) Sensor (HR/BP), Acceleration, oxygen saturation,Respiration Rate
+- Temperature sensor patch for core body temperature
+- Feed data into a Bluetooth mesh network, which allows for real-time monitoring and data collection without the need for constant manual intervention.
 - Left: Timeline of the perioperative patient journey in surgical patients. 
 - Right: Prospective data curation by endpoint labeling and data extraction from hospital data information systems.
 :::
@@ -397,22 +412,34 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 
 ::: {.notes}
- - Schematic overview of data extraction, domain-specific preprocessing, and temporal aggregation. Structured clinical data comprising static, categorical, and binary variables (e.g., demographic data, comorbidities, preoperative laboratory values) and dynamic time-varying measurements (e.g., repeated laboratory examinations, intensive care unit (ICU) vital signs) were processed using domain-specific preprocessing pipelines. 
+- This figure shows our end-to-end multimodal prediction pipeline, from raw data to dynamic risk predictions.
+- We start with multiple data sources: wearable and physiologic signals, body temperature, medications, clinical notes, labs, ICU vitals and observations, plus baseline patient characteristics.
+- Each modality is preprocessed with methods matched to its type, including MiniRocket embeddings, HRV feature extraction, multilingual text embeddings, and clinical harmonization and aggregation.
+- Next, we apply temporal processing: imputation, statistical feature extraction, and retrospective windows from 24 hours down to 1 hour before the prediction time.
+- These modality-specific representations are fused into one multimodal model input.
+- The model then predicts endpoint risk over multiple horizons, from 12 hours to 0 hours, updating dynamically every 30 minutes. In total, this produces 7,280 features over 371,813 segmented trajectories.
+
+
+ <!-- - Schematic overview of data extraction, domain-specific preprocessing, and temporal aggregation. Structured clinical data comprising static, categorical, and binary variables (e.g., demographic data, comorbidities, preoperative laboratory values) and dynamic time-varying measurements (e.g., repeated laboratory examinations, intensive care unit (ICU) vital signs) were processed using domain-specific preprocessing pipelines. 
  - Unstructured clinical text data, including clinical notes, medication orders, and fluid administration records, were embedded using a pre-trained multilingual JinAI model²⁷, from which standard natural language processing (NLP) features were derived. High-resolution physiological signals derived from patient wearables on the general ward, specifically photoplethysmography (PPG) and continuous body temperature measurement, were processed using the MINIROCKET embedding model. 
  - Heart rate variability (HRV) features were extracted from both time- and frequency-domain representations. Missing values were imputed, and statistical descriptors—including skewness, entropy, standard deviation, minimum, and maximum—were computed. To capture temporal dependencies, features from preceding time steps were incorporated. 
- - All data streams were aggregated into 30-minute time segments, each containing 7,280 distinct model features. Multi-modal feature fusion and endpoint alignment resulted in segmented clinical trajectories evaluated at a 9-hour prediction horizon. 
+ - All data streams were aggregated into 30-minute time segments, each containing 7,280 distinct model features. Multi-modal feature fusion and endpoint alignment resulted in segmented clinical trajectories evaluated at a 9-hour prediction horizon.  -->
 :::
 
 ---
 
-## Clinical ASsist Heuristic Early Warning System (CASHEWS)******
+## Clinical ASsist Heuristic Early Warning System (CASHEWS)
 <div style="position: relative; text-align: center; margin-top: 5em;">
 ![](figures/cass/cass_model_training.svg){fig-cap="" width=100% .no-dark}
 </div>
 <img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:70%; left:80%; width:15%; z-index:1;">
 
 ::: {.notes}
-d, Multiple model architectures, encompassing classical machine learning (ML) and Deep Learning (DL), were trained and evaluated using cross-validation and hyperparameter optimization. Model selection was based on predictive performance and computational efficiency, with LightGBM identified as the most favorable trade-off. e, The optimal model was evaluated by performing domain ablation and feature importance analysis with Shapley explanations. f, Based upon continuous model outputs, an actional alarm system including specific alarming frameworks was evaluated. The slope coefficient and persistence quantify the increase in the probability of sounding an alarm. An 8-hour silencing period is implemented to prevent alarm fatigue.
+- Multiple model architectures, encompassing classical machine learning (ML) and Deep Learning (DL), were trained and evaluated using cross-validation and hyperparameter optimization. 
+- Model selection was based on predictive performance and computational efficiency, with LightGBM identified as the most favorable trade-off. 
+- The optimal model was evaluated by performing domain ablation and feature importance analysis with Shapley explanations. 
+- Based upon continuous model outputs, an actional alarm system including specific alarming frameworks was evaluated. The slope coefficient and persistence quantify the increase in the probability of sounding an alarm. 
+- An 8-hour silencing period is implemented to prevent alarm fatigue.
 :::
 
 ## How well does it work?
@@ -456,7 +483,8 @@ d, Multiple model architectures, encompassing classical machine learning (ML) an
 <!-- <div style="position:absolute; top:83%; left:0%; width:100%; height:60%; background:white; z-index:2;"></div> -->
 
 ::: {.notes}
-(a) Boxplots of areas under the receiver operating characteristic curve (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) for progressively enriched models along the perioperative patient trajectory for the target event. Each model extends the previous stage by adding a new data modality, progressing from static preoperative data only (pre-op) to intraoperative (+intra) and intensive care unit (+ICU) data incorporation. Continuous general ward (GW) data are subsequently integrated into dynamic Clinical ASsist Heuristic Early Warning System (CASHEWS) models, including routine clinical data, and finally into CASHEWS+, which contains additional wearable-derived continuous vital sign signal analysis features. The prediction performance of the remote early warning score (REWS) is illustrated for comparison. The online prediction systems are calculated with snoozed episode-level precision-recall28. (c) Boxplots of AUROC and (d) boxplots of AUPRC of CASHEWS+ for varying lead times prior to clinical detection. The last hour was set to be positive, while all subsequent time windows were removed from training and evaluation. (e) AUROC and (f) AUPRC boxplots of model experiment variations, using both GW and ICU segments, using GW time segments for testing (GW only), and using ICU segments for testing (ICU only).
+- Boxplots of areas under the receiver operating characteristic curve (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) for progressively enriched models along the perioperative patient trajectory for the target event. Each model extends the previous stage by adding a new data modality, progressing from static preoperative data only (pre-op) to intraoperative (+intra) and intensive care unit (+ICU) data incorporation. Continuous general ward (GW) data are subsequently integrated into dynamic Clinical ASsist Heuristic Early Warning System (CASHEWS) models, including routine clinical data, and finally into CASHEWS+, which contains additional wearable-derived continuous vital sign signal analysis features. The prediction performance of the remote early warning score (REWS) is illustrated for comparison. The online prediction systems are calculated with snoozed episode-level precision-recall28.
+- Boxplots of AUROC and (d) boxplots of AUPRC of CASHEWS+ for varying lead times prior to clinical detection. The last hour was set to be positive, while all subsequent time windows were removed from training and evaluation. (e) AUROC and (f) AUPRC boxplots of model experiment variations, using both GW and ICU segments, using GW time segments for testing (GW only), and using ICU segments for testing (ICU only).
 - Static models using only preoperative and ICU data performed near chance, while longitudinal models with wearable telemetry identified deep surgical site infections and postoperative fistulas much earlier.
 - Performance was strong, with AUROC up to \(0.89\), and remained robust at clinically relevant lead times: \(0.86\) at 12 hours and \(0.81\) at 24 hours.
 - The key implication is that predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.
@@ -467,15 +495,22 @@ d, Multiple model architectures, encompassing classical machine learning (ML) an
 <!-- <div style="text-align: center; margin-top: -5em;">
   <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
 </div> -->
+::: {.columns}
+::: {.column width="70%"}
 <div style="text-align: center; ">
   <img src="figures/cass/shap_contribution.svg" width="100%" class="no-dark">
 </div>
+:::
+::: {.column width="30%"}
+![](figures/cass/shap_contribution.svg){fig-cap="" width=100% .no-dark}
 <div style="position: relative;">
 - SHAP-values^[[@lundbergUnifiedApproachInterpreting2017a]]: subtle (wearable) physiological indicate early autonomic stress.
 </div>
-
+:::
+:::
 ::: {.notes}
-
+- Add either tsne or violin plot shap values here
+- 
 :::
 <!-- 
 ---
@@ -640,7 +675,7 @@ Goals:
 
 ## Sepsis: Different Definitions, Different Conclusions
 - Potentially life-threatening **response to infection** that causes injury to its own tissues and organs
-- Sepsis prediction^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] on MIMIC-IV using Gated Reccurent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models:
+- Sepsis prediction^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]] on MIMIC-IV using Gated Recurrent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models with **different cohort definitions**:
 
 ::: {.incremental}
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
@@ -675,10 +710,10 @@ Different definitions capture different patient populations, leading to varying 
 :::
 ---
 
-## Generalization Across Datasets: Mortality Prediction 
+## YAIB: Mortality Prediction Across Datasets
 
-::: {.column width="50%"}
-- Training on row dataset, evaluation on column dataset using GRU:
+::: {.column width="50%" }
+- Training row dataset, evaluation on column dataset using GRU:
 <div style="text-align: center; margin-top: -1em;">
 ![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="External Validation - Mortality AUROC" width=85% .no-dark}
 </div>
@@ -703,8 +738,11 @@ Different definitions capture different patient populations, leading to varying 
 </details>
 
 :::
-
+<div data-id="recipies-logo-box" style="position:absolute; right:2%; top:80%; width:12%; text-align:right;">
+  <img src="figures/yaib/yaib_logo.svg" style="width:100%;" class="no-dark">
+</div>
 ::: {.notes}
+- Using YAIB, we can easily compare generalization across datasets and transfer learning approaches for mortality prediction:
 - Some datasets are more similar to others. The European datasets are different from the US datasets. However, eICU, which consists of data from 208 US hospitals is more generalizable than the other datasets, which are from single hospitals.
 - Finetuning on the "difficult" HiRID dataset can improve performance with only a fraction of the data, suggesting that pretraining on a large, generalizable dataset can help overcome some of the challenges of dataset shift and improve generalization to new settings.
 :::
@@ -758,7 +796,7 @@ AUPRC:
 :::
 
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
-How can we enable reproducible ML research across healthcare systems without requiring every institution to engineer their own ecosystem or harmonize their data and lose granularlity?
+How can we enable reproducible AI research across healthcare systems?
 :::
 ## Data Standards in Healthcare
 
@@ -811,7 +849,10 @@ In observational health informatics:
 :::
 :::
 
+::: {.notes}
+- We created the Medical Event Data Standard (MEDS), a flexible, event-based data standard optimized for machine learning research in healthcare.
 
+:::
 
 
 <!-- ```python
@@ -913,34 +954,35 @@ We require: -->
 :::  -->
 ## Discussion and Impact {auto-animate=true}
 
-::: {.columns}
-::: {.column width="33%"}
-**Enabling Reproducible Prediction Experiments 🧪**
+::: {.columns .discussion-pillars}
 
-::: {.fragment}
-- Experimental setup (cohort definitions, preprocessing, evaluation) often matters **more than model choice**
-- YAIB provides a flexible, multi-center framework for reproducible ICU benchmarking (44 citations, 96 GitHub stars)
-- ReciPies enables modular, reusable preprocessing pipelines for clinical ML
-:::
-:::
 
 ::: {.column width="33%"}
-**Multi-ward Multi-modal Early Warning Systems 🛏️**
+::: {.fragment .pub-box .pub-box--pillar1}
+**{{< var section_t1 >}}**
 
-::: {.fragment}
-- Continuous wearable data **nearly doubles AUPRC** versus models without sensor integration.
-- Predictive surveillance can be extended beyond the ICU into general wards with wearable devices.
-- Alarm strategies together with decision curve analysis to find the right trade-offs.
+- Continuous wearable data **nearly doubles AUPRC**
+- Predictive surveillance can be extended into general wards with wearables
+- Alarm strategies key to clinical utility
 :::
 :::
 
 ::: {.column width="33%"}
-**Tools and Pipelines for Foundational Health AI 🏗 ️**
+::: {.fragment .pub-box .pub-box--pillar2}
+**{{< var section_t2 >}}**
 
-::: {.fragment}
+- Experimental setup often matters **more than model choice**
+- Multi-center framework for reproducible ML4H benchmarking (44 citations, 96 GitHub stars)
+- Reusable preprocessing pipelines for clinical ML
+:::
+:::
+
+::: {.column width="33%"}
+::: {.fragment .pub-box .pub-box--pillar3}
+**{{< var section_t3 >}}**
 
 - MEDS-DEV: easily benchmark tasks across different sites and tasks.
-- Mount Sinai FMs demonstrate MEDS-based infrastructure enables low-barrier health-system-scale foundation model support.
+- FMs can be used across datasets and health systems
 - MEDS adoption across 27 papers, 17 datasets, and 12 models.
 :::
 :::
@@ -955,41 +997,35 @@ We require: -->
 
 # Limitations
 
-```{=html}
-<style>
-.card-row p { margin: 0; line-height: 1.2; }
-</style>
-```
-
 ::: {.fragment fragment-index=1}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em;"}
-![](icons/people_split.svg){height=2em .light-only}
+::: {.card-row}
+![](icons/people_split.svg){height=3em .light-only}
 
 **Models may amplify existing racial, gender, and socioeconomic biases.**^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
 :::
 :::
 
 ::: {.fragment fragment-index=2}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
-![](icons/check.svg){height=2em .light-only}
+::: {.card-row .card-row--stack}
+![](icons/check.svg){height=3em .light-only}
 
 **Need validation strategies and randomized trials before deployment.**^[[@wongExternalValidationWidely2021a]]
 :::
 :::
 
 ::: {.fragment fragment-index=3}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
-![](icons/danger.svg){height=2em .light-only}
+::: {.card-row .card-row--stack}
+![](icons/danger.svg){height=3em .light-only}
 
 **Potential for harmful use (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
 :::
 :::
 
 ::: {.fragment fragment-index=4}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
-![](icons/neural_net_monochrome.svg){height=2em .light-only}
+::: {.card-row .card-row--stack}
+![](icons/neural_net_monochrome.svg){height=3em .light-only}
 
-**(Large) AI models have sizeable environmental impact**^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
+**(Large) AI models have sizeable environmental impact.**^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
 :::
 :::
 ::: {.notes}
@@ -1002,15 +1038,8 @@ We require: -->
 
 ## Future Research Directions
 
-```{=html}
-<style>
-.card-row p { margin: 0; line-height: 1.2; }
-.card-row p:first-child { flex-shrink: 0; }
-</style>
-```
-
 ::: {.fragment fragment-index=1}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:flex-start; gap:0.4em;"}
+::: {.card-row .card-row--top}
 ![](icons/cogs.svg){height=3em .light-only}
 
 **Multi-modal fusion for foundation models: off-the-shelf or health-system specific?**^[[@burkhartFoundationModelsElectronic2025a]] Pathology, radiology, genomics, and whether generalizability-focused optimization is justified.^[[@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
@@ -1018,7 +1047,7 @@ We require: -->
 :::
 
 ::: {.fragment fragment-index=2}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:center; gap:0.4em; margin-top:0.3em;"}
+::: {.card-row .card-row--stack}
 ![](icons/graph.svg){height=3em .light-only}
 
 **Scaling up health AI: how does performance improve with more data, compute, and model size?**^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
@@ -1026,13 +1055,16 @@ We require: -->
 :::
 
 ::: {.fragment fragment-index=3}
-::: {.card-row style="border:1px solid #d9d9d9; border-radius:8px; background:#fafafa; display:flex; align-items:flex-start; gap:0.4em; margin-top:0.3em;"}
+::: {.card-row .card-row--top .card-row--stack}
 ![](icons/clinician.svg){height=3em .light-only}
 
 **Improving care through predictive surveillance and transferable patient representations.**^[[@kernCareFragmentationCare2024]] Examples: risk-based scheduling (e.g., mammograms) and cross-disciplinary patient representations (e.g., oncology, cardiology).
 :::
 :::
 
+::: {.notes}
+- Different health systems have different data generating processes
+:::
 
 <!--
 ## United Nations WHO Digital Health Objectives
