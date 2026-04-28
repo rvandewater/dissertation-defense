@@ -265,6 +265,56 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   --pub-box-border: var(--pub-p3-border);
 }
 
+.reveal .pub-legend {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.15em;
+  margin: 0.15em 0 0.25em;
+}
+
+.reveal .pub-legend__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.2em;
+  border: 1px solid var(--pub-neutral-border);
+  border-radius: var(--pub-box-radius);
+  padding: 0.1em 0.18em;
+  font-size: 1em;
+  line-height: 1.05;
+  min-width: 0;
+}
+
+.reveal .pub-legend__swatch {
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  border: 1px solid transparent;
+  margin-top: 0.05em;
+}
+
+.reveal .pub-legend__label {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.reveal .pub-legend__item--pillar1 {
+  background: var(--pub-p1-bg);
+  border-color: var(--pub-p1-border);
+}
+
+.reveal .pub-legend__item--pillar2 {
+  background: var(--pub-p2-bg);
+  border-color: var(--pub-p2-border);
+}
+
+.reveal .pub-legend__item--pillar3 {
+  background: var(--pub-p3-bg);
+  border-color: var(--pub-p3-border);
+}
+
 .reveal .discussion-pillars {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -291,4 +341,21 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   .reveal .footer-default {
     font-size: 0.40em !important;
   }
+}
+
+/* MEDS logo label styling: center, match logo color and height */
+.meds-logo {
+  height: 3em;
+  width: auto;
+  vertical-align: middle;
+}
+
+.meds-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.45em;
+  font-weight: 700;
+  color: #1B303D; /* match MEDS logo color from figures/meds/meds_logo.svg */
+  font-size: 2em; /* tuned to visually match the logo height */
+  line-height: 3em; /* align text vertically with the logo */
 }

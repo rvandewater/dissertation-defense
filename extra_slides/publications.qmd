@@ -6,6 +6,7 @@
 :::: columns
 
 ::: {.column width="50%"}
+
 ::: {.tiniest-text .pub-list}
 ::: {.pub-box .pub-box--pillar3 data-id="pub-r3-meds-ecosystem"}
 Matthew McDermott, Ethan Steinberg, Jason Fries, **Robin P. van de Water**, Chao Pang, Patrick Rockenschaub, Pawel Renc, Jungwoo Oh, Kamilė Stankevičiūtė, Justin Xu, Tom Joseph Pollard, Nassim Oufattole, Michael Wornow, Teya Bergamaschi, Hyewon Jeong, Simon Lee, Vincent Jeanselme, Kiril Klein, Mikkel Odgaard, Maria Elkjær Montgomery, Arkadiusz Sitek, Mads Nielsen, Jeffrey Chiang, Noa Dagan, Isaac Kohane, Shalmali Joshi, Edward Choi, and Nigam Shah. [@McDermott2025MEDS]
@@ -49,7 +50,20 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 ::: {.pub-box}
 Max M. Maurer, Bjarne Pfitzner, **Robin P. van de Water**, Lara Faraj, Christoph Riepe, Daniela Zuluaga, Felix Krenzien, Nathanael Raschzok, Robert Siegel, Christian Schineis, Bert Arnrich, Katharina Beyer, Johann Pratschke, Igor M. Sauer, and Axel Winter. [@maurerPrivacyPreservingFederated2025]
 :::
-
+::: {.pub-legend .bigger-text}
+::: {.pub-legend__item .pub-legend__item--pillar1}
+<span class="pub-legend__swatch"></span>
+<span class="pub-legend__label">{{< var r1_label >}}</span>
+:::
+::: {.pub-legend__item .pub-legend__item--pillar2}
+<span class="pub-legend__swatch"></span>
+<span class="pub-legend__label">{{< var r2_label >}}</span>
+:::
+::: {.pub-legend__item .pub-legend__item--pillar3}
+<span class="pub-legend__swatch"></span>
+<span class="pub-legend__label">{{< var r3_label >}}</span>
+:::
+:::
 
 :::
 :::
