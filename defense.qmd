@@ -42,8 +42,10 @@ revealjs-plugins:
 
 {{< include "resources/people_slide.qmd" >}}
 ::: {.fragment}
-<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700;">
-Real-time surveillance system for patient deterioration: a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillanceSystem2025]]
+<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700; font-family: 'Optima';">
+Real-time surveillance system for patient deterioration: 
+
+a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillanceSystem2025]]
 </div>
 :::
 
@@ -306,7 +308,7 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 <div class="slide-card">
   <div class="slide-card__row">
 ![](icons/alert.svg){fig-cap="" height=2em .no-dark}
-    <strong>Adverse events impact quality of life and cost^[[@downeyImpactInhospitalPostoperative2023; @muallaImpactPostoperativeComplications2021]]</strong>
+    <strong>Up to 25% experience life-threatening adverse events^[[@downeyImpactInhospitalPostoperative2023; @muallaImpactPostoperativeComplications2021; @baumMortalityComplicationsFollowing2019a]]</strong>
   </div>
 </div>
 :::
@@ -325,10 +327,10 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 - The first contribution is related to the limitation of retrospective data in capturing real-time state information. This leads to models that don't capture the full complexity of the patient journey. This is reflected in the case of surgery rehabilitation.
 - Surgery is a major part of healthcare, with more than 300 million surgical procedures performed annually worldwide
 - Surgery is also a major driver of healthcare costs, with approximately one-third of hospital costs being surgery-related.
-- Postoperative complications are common and often go undetected until they become severe, leading to worse outcomes and higher costs.
+- Postoperative complications are common, with up to 25% of patients experiencing adverse events after surgery which can lead to death and significantly impact quality of life.
 - But, preceding physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients → hard to detect on ward, where most postoperative patients rehabilitate.
 - Why not just monitor patients in the ICU? → expensive and can lead to complications like infections, delirium, and deconditioning.
-- Solution? **Hybrid ward with minimally intrusive wearables**
+
 :::
 
 <!-- ## Surgery Rehabilitation
@@ -392,12 +394,13 @@ Can we leverage continuous, multimodal data from wearable devices to improve ear
 :::
 
 ::: {.notes}
-- That leads us the the question of whether we can leverage wearable devices to improve early warning systems for postoperative complications in the ward.
-- With the experiment surgery group at Charite, we conducted a prospective cohort study in a hybrid ward setting, where regular care was provided and continuous, data from wearable devices was collected through informed consent.
-- Corsano band: Photoplethysmogram (PPG) Sensor (HR/BP), Acceleration, oxygen saturation,Respiration Rate
+- What could be a solution? **Hybrid ward with minimally intrusive wearables**
+- With the experimental surgery group at Charite, we conducted a prospective cohort study in a hybrid ward setting, where regular care was provided and continuous, data from wearable devices was collected through informed consent.
+- Corsano band: Photoplethysmogram (PPG) Sensor (HR/BP), Acceleration, oxygen saturation, Respiration Rate
 - Temperature sensor patch for core body temperature
 - Feed data into a Bluetooth mesh network, which allows for real-time monitoring and data collection without the need for constant manual intervention.
 - Left: Timeline of the perioperative patient journey in surgical patients. 
+- This is largest reported cohort to investigate continuous, telemetric vital sign analysis in the field of surgical care.
 - Right: Prospective data curation by endpoint labeling and data extraction from hospital data information systems.
 :::
 
@@ -501,26 +504,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 - The key implication is that predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.
 :::
 
-## Model Interpretation Grouped by Modality
 
-<!-- <div style="text-align: center; margin-top: -5em;">
-
-  <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
-</div> -->
-Fold-averaged, normalized, grouped model attributions according to Shapley values^[[@lundbergUnifiedApproachInterpreting2017a]]:
-<div style="text-align: center; ">
-  <img src="figures/cass/shap_contribution.svg" width="80%" class="no-dark">
-</div>
-
-- Clinician: subtle physiological indicate early autonomic stress.
-
-::: {.notes}
-- Taking the common Shapley value approach for model interpretation, we can look at the importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance.
-- Importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance
-- A clinical interpretation of this is that subtle physiological changes are indicators of early autonomic stress, loss of physiological complexity, and impending decompensation or precursors to the surgical site infection.
-- However, wearable modalities are a close second with core temperature, HRV features, and RR interval features being the top single contributors and the PPG embeddings accounting for a large portion of the overall contribution.
-
-:::
 
 <!--
 
@@ -537,37 +521,18 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 
 ## Alarm Strategy and Decision Curve Analysis
 
-::: {.columns}
-::: {.column width="30%"}
-<div style="text-align: center; margin-top: -0em;">
-*Alarm burden and precision-recall*
-
-  <img src="figures/cass/cass_burden_precision_recall.svg" width="80%" class="no-dark">
-</div>
-:::
-::: {.column width="70%"}
-- **Alarm strategy**^[Work with master student Daniela Zuluaga Lotero]: CASHEWS+ balances sensitivity and alarm burden
+- CASHEWS+ reduces alarm burden maintaining precision using **alarm strategies**^[Work with master student Daniela Zuluaga Lotero].
 <!-- - Regulate alarm frequency with grace period, persistence, and silencing (preventing alarm fatigue). -->
 
-::: {.fragment fragment-index="4"}
-<!-- -  2 alarms per day on a 100-bed ward. -->
-- Decision curve analysis ^[[@vancalsterReportingInterpretingDecision2018]]: **how much harm  am I willing to accept?**
-<!-- <div style="text-align: center; margin-top: -0em;">
-  <img src="figures/cass/cass_ward_day.svg" width="100%" class="no-dark">
-</div> -->
-<div style="text-align: center; margin-top: -0em;">
+::: {.fragment }
+- Decision curve analysis^[[@vancalsterReportingInterpretingDecision2018]]: **how much harm  am I willing to accept?**
   <img src="figures/cass/fig5.svg" width="100%" class="no-dark">
-</div>
-:::
-:::
-
 :::
 
 
 ::: {.notes}
 - So how can we integrate this model into the clinical routine? We have to look at alarm systems.
-- On the left we can see the Alarm burden quantified as alarms per patient per day (y-axis) across all recall levels (x-axis) for REWS-based alerts, raw ML predictions using a static threshold 
-- Here we can see that with a significant decrease in alarm burden, the CASHEWS+ strategy maintains the high precision of the raw ML predictions.
+- We can regulate the alarm frequency with a combination of a grace period, persistence, and silencing to prevent alarm fatigue. With this approach, we can achieve around 2 alarms per day on a 100-bed ward.
 -  But which recall do we want? 
 - Decision curve analysis including harm-to-benefit ratios  for optimal alarm strategies per recall bin using CASHEWS+. This hinges on how much harm (intervention/diagnostics/probes) am I willing to accept. The top alarm reflecting the threshold probability interval is shown above the dashed red line. 
 - This is a way in which clinicians can make informed decisions about the optimal alarm strategy based on their willingness to accept false positives and available resources.
@@ -900,21 +865,23 @@ How can we enable reproducible AI research across healthcare systems?
 4. **Interoperable** - tools composable across settings
 :::
 :::
-::: {.columns}
+<!-- ::: {.columns}
 ::: {.column width="50%" .fragment}
 <div style="text-align: center;">
   <img src="figures/meds/meds_schema_a.png" width="100%" class="no-dark">
 </div>
 :::
-::: {.column width="50%" .fragment}
+::: {.column width="50%" .fragment} -->
+::: {.fragment}
 <div style="text-align: center;">
-  <img src="figures/meds/meds_schema_b.png" width="100%" class="no-dark">
+  <img src="figures/meds/meds_schema_b.png" width="70%" class="no-dark">
 </div>
+:::
 ::: {.tiny-text}
   Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).
 :::
-:::
-:::
+<!-- :::
+::: -->
 
 ::: {.notes}
 We wanted to create a framework that is
@@ -1061,11 +1028,11 @@ MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangC
 
 ## Linear Probing
 - Train SOTA FMs^[[@pangFoMoHClinicallyMeaningful2025]], CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]], on entire MSHS dataset (5.5M patients).
-- Embed **patient representations** until prediction time.
+- Embed a variety of **patient representations** until prediction time.
 - Train a **linear classifier** on top of frozen foundation model representations.
 
 ::: {.fragment}
-Results across sample input sizes:
+Results across different sample sizes:
 
 <div style="text-align: center; margin-top: -0.5em;">
 ![](figures/meds/linear_probing/tasks/linear_probing_legend.svg){width="50%" class="no-dark" }
@@ -1125,14 +1092,18 @@ We require: -->
 
 :::
 
-# Overall Discussion and Impact {auto-animate=true}
+# Overall Discussion and Impact
 
+
+
+::: {.centered}
+<img src="figures/connecting_topics.svg" width="100%" class="no-dark">
+:::
 ::: {.columns .discussion-pillars}
 
-
 ::: {.column width="33%"}
-::: {.fragment .pub-box .pub-box--pillar1}
-**{{< var section_t1 >}}**
+::: {.fragment .pub-box .pub-box--pillar1 data-fragment-index="1"}
+<!-- **{{< var section_t1 >}}** -->
 
 - Continuous wearable data **nearly doubles AUPRC**
 - **Predictive surveillance** can be used beyond ICU into the ward
@@ -1141,8 +1112,8 @@ We require: -->
 :::
 
 ::: {.column width="33%"}
-::: {.fragment .pub-box .pub-box--pillar2}
-**{{< var section_t2 >}}**
+::: {.fragment .pub-box .pub-box--pillar2 data-fragment-index="2"}
+<!-- **{{< var section_t2 >}}** -->
 
 - Experimental setup often matters **more than model choice**
 - Multi-center framework for reproducible ML4H benchmarking (44 citations, 96 GitHub stars)
@@ -1150,29 +1121,32 @@ We require: -->
 :::
 
 ::: {.column width="33%"}
-::: {.fragment .pub-box .pub-box--pillar3}
-**{{< var section_t3 >}}**
+::: {.fragment .pub-box .pub-box--pillar3 data-fragment-index="3"}
+<!-- **{{< var section_t3 >}}** -->
 
 <!-- - MEDS-DEV: easily benchmark tasks across different sites and tasks. -->
-- MEDS enables reproducible AI research across health systems with wide adoption
+- MEDS enables AI research across health systems with wide adoption
 - Created 4 Dataset, OMOP, FHIR ETLs and 2 tools
 - Benchmarked 9 datasets across 11 tasks
 :::
 :::
 :::
+<div class="fragment fade-out" data-fragment-index="2" style="position:absolute; top:10%; left:23%; width:100%; height:50%; background:white;"></div>
+<div class="fragment fade-out" data-fragment-index="3" style="position:absolute; top:10%; left:48%; width:100%; height:50 %; background:white;"></div>
+
 <!-- ::: {.fragment}
 **Healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility.
 **::: -->
-::: {.fragment .fade-in}
+<!-- ::: {.fragment .fade-in}
 {{< include includes/statement.qmd >}}
-:::
+::: -->
 
 ::: {.notes}
 - Let's summarize the key takeaways from this thesis:
 - For the first pillar, we found that continuous wearable data can nearly double the AUPRC for surgical site infection prediction, and that predictive surveillance can be used beyond the ICU into the ward. We also found that alarm strategies are key to clinical utility.
 - For the second pillar, we found that the experimental setup often matters more than the choice of model, and we developed a multi-center framework for reproducible ML4H benchmarking that has been widely adopted in the community.
 - For the third pillar, we developed the MEDS ecosystem, which enables reproducible AI research across health systems, and I, personally, created 4 dataset, OMOP, and FHIR ETLs and 3 tools, and benchmarked 9 datasets across 11 tasks.
-- Overall, our findings suggest that healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility to drive meaningful scientific progress and clinical translation.
+- Overall, we see different scales of impact here, and we need to recognize that these scales all influence each other. For example, improvements in foundation modelling can inform the development of better early warning systems. And, simultaneously, collecting prospective data can inform the development of better multi-modal foundation models. 
 :::
 
 
@@ -1389,6 +1363,13 @@ Healthcare ML can improve outcomes when built on solid infrastructure, rigorous 
 
 ::: {#refs}
 :::
+
+
+{{< include extra_slides/cassandra.qmd >}}
+{{< include extra_slides/yaib.qmd >}}
+{{< include extra_slides/meds.qmd >}}
+
+
 <script>
 {{< include fade_in_footnotes.js >}}
 </script>

@@ -1,4 +1,68 @@
-## Why This Matters: The Gap Between Research and Practice
+# Extra slides for {{<var r1_label>}}
+
+## Model Interpretation Grouped by Modality
+
+<!-- <div style="text-align: center; margin-top: -5em;">
+
+  <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
+</div> -->
+Fold-averaged, normalized, grouped model attributions according to Shapley values^[[@lundbergUnifiedApproachInterpreting2017a]]:
+<div style="text-align: center; ">
+  <img src="figures/cass/shap_contribution.svg" width="80%" class="no-dark">
+</div>
+
+- Clinician: subtle physiological indicate early autonomic stress.
+
+::: {.notes}
+- Taking the common Shapley value approach for model interpretation, we can look at the importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance.
+- Importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance
+- A clinical interpretation of this is that subtle physiological changes are indicators of early autonomic stress, loss of physiological complexity, and impending decompensation or precursors to the surgical site infection.
+- However, wearable modalities are a close second with core temperature, HRV features, and RR interval features being the top single contributors and the PPG embeddings accounting for a large portion of the overall contribution.
+
+:::
+
+## Alarm Strategy and Decision Curve Analysis
+
+::: {.columns}
+::: {.column width="30%"}
+<div style="text-align: center; margin-top: -0em;">
+*Alarm burden and precision-recall*
+
+  <img src="figures/cass/cass_burden_precision_recall.svg" width="80%" class="no-dark">
+</div>
+:::
+::: {.column width="70%"}
+- **Alarm strategy**^[Work with master student Daniela Zuluaga Lotero]: CASHEWS+ balances sensitivity and alarm burden
+<!-- - Regulate alarm frequency with grace period, persistence, and silencing (preventing alarm fatigue). -->
+
+::: {.fragment fragment-index="4"}
+<!-- -  2 alarms per day on a 100-bed ward. -->
+- Decision curve analysis ^[[@vancalsterReportingInterpretingDecision2018]]: **how much harm  am I willing to accept?**
+<!-- <div style="text-align: center; margin-top: -0em;">
+  <img src="figures/cass/cass_ward_day.svg" width="100%" class="no-dark">
+</div> -->
+<div style="text-align: center; margin-top: -0em;">
+  <img src="figures/cass/fig5.svg" width="100%" class="no-dark">
+</div>
+:::
+:::
+
+:::
+
+
+::: {.notes}
+- So how can we integrate this model into the clinical routine? We have to look at alarm systems.
+- On the left we can see the Alarm burden quantified as alarms per patient per day (y-axis) across all recall levels (x-axis) for REWS-based alerts, raw ML predictions using a static threshold 
+- Here we can see that with a significant decrease in alarm burden, the CASHEWS+ strategy maintains the high precision of the raw ML predictions.
+-  But which recall do we want? 
+- Decision curve analysis including harm-to-benefit ratios  for optimal alarm strategies per recall bin using CASHEWS+. This hinges on how much harm (intervention/diagnostics/probes) am I willing to accept. The top alarm reflecting the threshold probability interval is shown above the dashed red line. 
+- This is a way in which clinicians can make informed decisions about the optimal alarm strategy based on their willingness to accept false positives and available resources.
+- **Now that we've discussed a specific clinical use case of ML lets see if others can reproduce these results and build on them.**
+- Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
+:::
+
+
+## Why This Matters: The Gap Between Research and Practice 
 
 **Lesson Learned:** Prospective studies reveal what retrospective studies miss
 
@@ -44,8 +108,6 @@
 
 **Challenge:** Fusing extremely heterogeneous data at different frequencies and granularities.
 
----
-
 ## The Clinical Deployment Gap
 
 |                        | **ICU**                                         | **General Ward (GW)**                                 |
@@ -55,55 +117,3 @@
 | Staffing & Resources   | High                                            | Lower, different patterns                             |
 | Anomaly Detection | Early, rapid response possible                  | Often delayed, higher advanced complication rates              |
 
-<!-- **Reality Check:** ICU prediction models assume:
-
-- ✓ High-frequency monitoring (vital signs every 1-5 minutes)
-- ✓ Immediate intervention capability
-- ✓ Homogeneous patient population
-
-**But in the general ward (GW):**
-
-- ✗ Sporadic vital sign measurements (every 4-8 hours or less)
-- ✗ Lower acuity → delayed detection → higher complication rates
-- ✗ Heterogeneous surgical/medical mix
-- ✗ Different staffing patterns and resources -->
-
-
-
-
-
-**PhD Research Focus:** -->
-
-<!-- The translation of machine learning from research to clinical practice remains fundamentally challenged by three interconnected problems: -->
-<!-- 
-:::: columns
-::: {.column width="33%"}
-**Reproducibility**
-How do we ensure models perform consistently across different datasets and institutions?
-:::
-::: {.column width="33%"}
-**Clinical Deployment**
-How do we build prediction systems that actually work in messy real-world clinical settings?
-:::
-::: {.column width="33%"}
-**Scalable Infrastructure**
-How do we enable the entire community to build on each other's work?
-:::
-::::
-
-
-:::: -->
-
-<!-- ::: {.incremental}
-- More than 300 million surgical procedures performed annually worldwide^[[@dobsonTraumaMajorSurgery2020]]
-- 1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]
-- **Postoperative adverse events** impact consequent quality of life, healthcare costs, and mortality^[[@brownImpactPostoperativeComplications2014; @downeyImpactInhospitalPostoperative2023; @kongASOVisualAbstract2021; @muallaImpactPostoperativeComplications2021; @sartelliComplicatedIntraabdominalInfections2014; @vonlanthenImpactComplicationsCosts2011; @wangPostoperativeComplicationsPrognosis2019]]
-- Physiological patterns are often subtle, nonspecific, and time-varying^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]] → hard to detect on ward
-<!-- - Why not just monitor patients in the ICU? → expensive, infections, delirium, and deconditioning. -->
-<!-- ![](icons/cass_timeline.svg){fig-cap="Global Surgical Volume" width=100%} -->
-<!-- - Solution? **Hybrid ward with minimally intrusive wearables** -->
-::: -->
-
-
-
-<!-- ## Continuous AI-Assisted Wearable Monitoring for Early Detection of Postoperative Complications: A Prospective Cohort Study

@@ -1,8 +1,6 @@
-# Extra slides: var r2_label
+# Extra slides for {{<var r2_label>}}
 
 ## The YAIB Experimental Pipeline {auto-animate="true"}
-
-
 
 ![](figures/yaib/yaib_flow_combined.svg){fig-cap="YAIB Experimental Pipeline" width=120%}
   <div class="fragment fade-out" data-fragment-index="1"
@@ -114,5 +112,6 @@ AUPRC:
 - **Column**: Model trained on dataset
 - **Row**: Model evaluated on dataset
 - **Diagonal**: Internal validation (same dataset)
+:::
 
 :::
