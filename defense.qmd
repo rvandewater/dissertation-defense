@@ -40,6 +40,21 @@ revealjs-plugins:
 # jupyter: quarto
 --- 
 
+{{< include "resources/people_slide.qmd" >}}
+::: {.fragment}
+<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700;">
+Real-time surveillance system for patient deterioration: a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillanceSystem2025]]
+</div>
+:::
+
+::: {.notes}
+- I’d like you to take a quick look at this slide and estimate how many people you think are represented here. Just get a number in mind.
+- You probably didn’t have enough time to count—so I’ll tell you. There are 84 people on this slide.
+- In a recent multicenter trial of an AI early warning system in New York City estimated that in one year, 84 people who might have died, didn’t.
+- This is the promise of machine learning in healthcare: to use data to predict and prevent adverse outcomes, and ultimately save lives.
+:::
+
+<!-- 
 ## Digital Footprints of the Patient Journey
 
 <div text-align="center">
@@ -60,7 +75,7 @@ revealjs-plugins:
 - This complexity is both a challenge and an opportunity for machine learning in healthcare. 
 
 - The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
-:::
+::: 
 
 
 # ML for Health in a Nutshell {data-section-title="ML for Health in a Nutshell ⚕️" auto-animate=true}
@@ -83,8 +98,8 @@ revealjs-plugins:
 
 
 ## The Promise of Machine Learning in Healthcare
-Papers on ArXiv preprint server with ML and health keywords in the title or abstract have been growing over the last years:
-![](figures/motivation/ml_health_trend.svg){fig-cap="EHR Data Structure" width=100%}
+Papers on ArXiv with AI and health keywords in the title or abstract and FDA-approved AI medical devices ^[[@healthArtificialIntelligenceEnabledMedicalTue03/10/2026-09:05]] over time:
+![](figures/motivation/ml_health_trend_fda.svg){fig-cap="EHR Data Structure" width=100%}
 <div style="position: relative; top: -1em;">
 ``` python
 ML_PATTERN = r"(?ix)\b(machine[ _]?learning|deep[ _]?learning|neural[ _]?networks?|artificial[ _]?intelligence|\bAI\b|random[ _]?forest|support[ _]?vector[ _]?(machine|regression|classif\w+)?|\bSVM\b|gradient[ _]?boost\w*|\bXGBoost\b|\bLightGBM\b|\bCatBoost\b|\btransformer\b|\bBERT\b|\bGPT\b|\bLLM\b|\bVLM\b|large[ _]?language[ _]?models?|foundation[ _]?models?|(convolutional|recurrent|graph)[ _]?neural|\bLSTM\b|\bGRU\b|generative[ _]?adversarial|\bGAN\b|reinforcement[ _]?learning|(semi|self|un)[ _-]?supervised[ _]?learning|transfer[ _]?learning|federated[ _]?learning|natural[ _]?language[ _]?processing|\bNLP\b|computer[ _]?vision|(image|object|text)[ _]?(classification|detection|segmentation)|\bautoencoder\b|\bdiffusion[ _]?model\b)\b"
@@ -95,8 +110,9 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 
 ::: {.notes}
 
-- The amount of research on machine learning in health has been growing rapidly, reflecting the increasing interest and potential of this field as shown here from the ArXiv preprint server with ML and health keywords in the title or abstract.
-- However, despite this growth in research, the translation of machine learning models into clinical practice has been slow and challenging.
+- The amount of research on machine learning in health has been growing rapidly, reflecting the increasing interest and potential of this field as shown here from the ArXiv preprint server with ML and health keywords in the title or abstract. Total amount of papers: 3,008,410.
+- However, despite this growth in research, the translation of ML4H research into clinical practice is limited as can be seen from the relatively small number of FDA-approved AI/ML-enabled medical devices. 
+- 76% of the 331 FDA devices approved in 2025 is in radiology, which is has a long history of using machine learning for image analysis, but other areas of healthcare are still underrepresented in terms of AI-enabled devices.
 :::
 <!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
 
@@ -1330,7 +1346,7 @@ Reviewers:
   <a href="https://xkcd.com/1403/" target="_blank" style="font-size: 0.5em; text-align: center;">Source: https://xkcd.com/1403/</a>
 </div>
 <div style="text-align: center; margin-top: -1em;">
-![](images/logos/logos_defense.svg){width=50% .no-dark}
+![](images/logos/logos_defense.svg){width=100% .no-dark}
 </div>
 :::
 
