@@ -960,13 +960,15 @@ MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangC
 
 ---
 
-## Results depend heavily on dataset/task choice
-
+<!-- ## Results depend heavily on dataset/task choice -->
+<div style="margin-top: -0.5em;">
 ::: {.columns}
 ::: {.column width="40%"}
-<div style="position:relative; width:80%; margin:-1em auto 0; isolation:isolate;">
-  <img src="figures/meds/meds_dev/model_legend.svg" width="25%" class="no-dark"     style="position:absolute; z-index:4; left:67%;"
+<div style="text-align: center; margin-top: -1em;">
+  <img src="figures/meds/meds_dev/model_legend.svg" width="35%" class="no-dark"     style="z-index:4; left:67%;"
 >
+</div>
+<div style="position:relative; width:80%; margin:-1.5em auto 0; isolation:isolate;">
 
   <img
     src="figures/meds/meds_dev/model_comparison_auroc_task_grouped_samples.svg"
@@ -985,23 +987,29 @@ MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangC
 
 ::: {.column width="50%"}
 ::: {.fragment}
-<div style="text-align: right;  margin-top: -1em;">
+<div  style="text-align: center;  margin-top: -0.75em;">
+Grouping by dataset and model:
+
   <img src="figures/meds/meds_dev/aggregated/auroc_by_dataset_samples.svg" width="100%" class="no-dark">
 </div>
 
-- Some models incompatible with some datasets/tasks.
-
+<div  style="text-align: center;  margin-top: -1.5em;">
+Grouping by task:
+  <img src="figures/meds/meds_dev/aggregated/auroc_by_task_samples.svg" width="100%" class="no-dark">
+</div>
 :::
-::: {.fragment}
-- There is no absolute ordering in performance.
-- **Easy reproducibility is crucial for research.**
+<div style="text-align: center; margin-top: -1.5em;">
+::: {.callout-warning appearance="simple" style="font-size: 1.5em;" .fragment}
+**No domination of one model** across datasets and tasks.
+:::
+</div>
 :::
 :::
-:::
-
+</div>
 ::: {.notes}
 - If we then benchmark each task across sites and models, we get an enormous amount of results.
 - Each point on the left represents a model trained and evaluated at a specific site, with the same task definition
+- Some models incompatible with some datasets/tasks.
 - The spread of points across sites for the same model and task highlights the variability in performance due to differences in data and implementation, underscoring the need for standardized benchmarking.
 - The overall performance trends across models and tasks can be compared, but the variability emphasizes that results from one site may not generalize to others without careful validation.
 - This highlights once again the importance of easy reproducibility and standardized benchmarking frameworks to understand what actually drives model performance across different settings.
@@ -1014,7 +1022,7 @@ MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangC
 
   <div class="fragment fade-out" data-fragment-index="2"
       style="position:absolute; top:27%; left:30%; width:100%; height:100%; background:white; z-index:2;"></div>
-![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark}
+![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark} ^[[@vandewaterScalingClinicalML2025; @vandewater2025flames]]
 
 
 ::: {.notes}
