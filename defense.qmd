@@ -837,7 +837,7 @@ How can we enable reproducible AI research across healthcare systems?
 :::
 ## Data Standards in Healthcare
 <div style="text-align: center;">
-  <img src="figures/meds/standards.png" width="40%" class="no-dark"> 
+  <img src="figures/meds/standards.png" width="50%" class="no-dark"> 
 </div>
 <div style="text-align: center; margin-top: -1.5em;">
   <a href="https://xkcd.com/927/" target="_blank" style="font-size: 0.5em; text-align: center;">Source: https://xkcd.com/927/</a>
@@ -1092,22 +1092,24 @@ We require: -->
 
 :::
 
-# Overall Discussion and Impact
+# Discussion and Impact
 
 
 
 ::: {.centered}
+<div style="text-align: center; margin-top: -1em;">
 <img src="figures/connecting_topics.svg" width="100%" class="no-dark">
+</div>
 :::
 ::: {.columns .discussion-pillars}
 
 ::: {.column width="33%"}
-::: {.fragment .pub-box .pub-box--pillar1 data-fragment-index="1"}
+::: { .pub-box .pub-box--pillar1 }
 <!-- **{{< var section_t1 >}}** -->
 
-- Continuous wearable data **nearly doubles AUPRC**
-- **Predictive surveillance** can be used beyond ICU into the ward
-- Alarm strategies key to **clinical utility**
+→ Continuous wearable data **nearly doubles AUPRC**
+→ **Predictive surveillance** can be extended to the ward
+→ Alarm strategies key to **clinical utility**
 :::
 :::
 
@@ -1115,8 +1117,10 @@ We require: -->
 ::: {.fragment .pub-box .pub-box--pillar2 data-fragment-index="2"}
 <!-- **{{< var section_t2 >}}** -->
 
-- Experimental setup often matters **more than model choice**
-- Multi-center framework for reproducible ML4H benchmarking (44 citations, 96 GitHub stars)
+→ Experimental setup often matters **more than model choice**
+
+→ Multi-center framework for reproducible ML4H (44 cit., GH 96 ⭐)
+
 :::
 :::
 
@@ -1125,14 +1129,16 @@ We require: -->
 <!-- **{{< var section_t3 >}}** -->
 
 <!-- - MEDS-DEV: easily benchmark tasks across different sites and tasks. -->
-- MEDS enables AI research across health systems with wide adoption
-- Created 4 Dataset, OMOP, FHIR ETLs and 2 tools
-- Benchmarked 9 datasets across 11 tasks
+→ MEDS enables **AI research across health systems** with wide adoption
+
+→ Created 4 Dataset, OMOP, FHIR ETLs and 2 tools
+
+→ Benchmarking 9 datasets across 11 tasks
 :::
 :::
 :::
-<div class="fragment fade-out" data-fragment-index="2" style="position:absolute; top:10%; left:23%; width:100%; height:50%; background:white;"></div>
-<div class="fragment fade-out" data-fragment-index="3" style="position:absolute; top:10%; left:48%; width:100%; height:50 %; background:white;"></div>
+<div class="fragment fade-out" data-fragment-index="2" style="position:absolute; top:7%; left:23%; width:100%; height:45%; background:white;"></div>
+<div class="fragment fade-out" data-fragment-index="3" style="position:absolute; top:7%; left:60%; width:100%; height:45%; background:white;"></div>
 
 <!-- ::: {.fragment}
 **Healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility.
