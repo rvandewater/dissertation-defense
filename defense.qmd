@@ -40,19 +40,21 @@ revealjs-plugins:
 # jupyter: quarto
 --- 
 
+
+# Counting Exercise 
 {{< include "resources/people_slide.qmd" >}}
 ::: {.fragment}
-<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700; font-family: 'Optima';">
-Real-time surveillance system for patient deterioration: 
-
-a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillanceSystem2025]]
+<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700;">
+Eighty-four (84) lives were saved in one year by "AI".^[[@rossettiRealtimeSurveillanceSystem2025]]
+<!-- font-family: 'Optima'; Real-time surveillance system for patient deterioration: a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillanceSystem2025]] -->
 </div>
 :::
 
 ::: {.notes}
-- I’d like you to take a quick look at this slide and estimate how many people you think are represented here. Just get a number in mind.
+- I’d like you to take a look and estimate how many people you think are on this slide. Just get a number in mind.
 - You probably didn’t have enough time to count—so I’ll tell you. There are 84 people on this slide.
-- In a recent multicenter trial of an AI early warning system in New York City estimated that in one year, 84 people who might have died, didn’t.
+- In a recent trial of an AI early warning system in New York City estimated that in one year, 84 people who might have died, didn’t.
+- This is how important AI in healthcare can be: it has the potential to save lives by predicting and preventing adverse outcomes.
 - This is the promise of machine learning in healthcare: to use data to predict and prevent adverse outcomes, and ultimately save lives.
 :::
 
@@ -93,6 +95,7 @@ a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillance
 </div>
 
 ::: {.notes}
+- So let's first look at the basics of machine learning in healthcare.
 - Hospitals, clinics, and healthcare systems generate vast amounts of data, including electronic health records (EHRs), medical imaging, and physiological signals.
 - Machine learning can be used on parts of this data to predict patient outcomes, assist in diagnosis, and optimize treatment plans.
 - The essence is often predicting or diagnosing something about a patient at time T so that we can intervene at time T+1 to improve outcomes.
@@ -140,21 +143,33 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 
   
 <!-- - <span style="color: #0095D1">Advance the implementation of national digital health strategies</span> -->
-::: {.callout-warning appearance="simple" style="font-size: 1.5em;"}
-**Central problem: Few AI/ML models have been successfully deployed in clinical practice.** ^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
+::: {.callout-warning title="Central Challenge" style="font-size: 1.5em;"}
+**Few AI/ML models have been successfully deployed in clinical practice.**^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
 :::
 
 Main barriers to translation:
 
 
 ::: {.fragment .fade-in}
+::: {.card-row .card-row--stack}
+![](icons/eye.svg){height=2em .light-only}
+
 ⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">{{< var p1_label >}}</span> ^[[@agnielBiasesElectronicHealth2018]]
 :::
-::: {.fragment .fade-in}
-⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">{{< var p2_label >}}</span>^[[@futomaMythGeneralisabilityClinical2020]]
 :::
 ::: {.fragment .fade-in}
+::: {.card-row .card-row--stack}
+![](icons/repeat.svg){height=2em .light-only}
+
+⚡ <span data-id="problem-repro-shared" style="display:inline-block; font-weight:700;">{{< var p2_label >}}</span>^[[@futomaMythGeneralisabilityClinical2020]]
+:::
+:::
+::: {.fragment .fade-in}
+::: {.card-row .card-row--stack}
+![](icons/infrastructure.svg){height=2em .light-only}
+
 ⚡ <span data-id="problem-infrastructure-shared" style="display:inline-block; font-weight:700;">{{< var p3_label >}}</span>^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
+:::
 :::
 ::: {.fragment .fade-in}
 *Out of scope: ​⚡​ ** {{< var p4_label >}}**^[[@vancalsterThereNoSuch2023]] *
@@ -363,7 +378,7 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 
 ## A Prospective Cohort Study: "Hybrid Ward" {auto-animate="true"}
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;"}
-Can we leverage continuous, multimodal data from wearable devices to improve early warning systems for postoperative complications in the general ward? ^[[@vandewaterContinuousMultimodalAI2025]]
+Can we leverage **continuous data from wearable devices** to improve warning systems for postoperative complications (surgical site infections) in the general ward? ^[[@vandewaterContinuousMultimodalAI2025]]
 :::
 <div style="position: relative; top: -1em;">
 ::: {.fragment .fade-in}
@@ -389,7 +404,7 @@ Can we leverage continuous, multimodal data from wearable devices to improve ear
 </div>
 ::: {.fragment .fade-in }
 <div style="position: relative; top: -4.5em;">
-![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100%}
+![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100% .no-dark}
 </div>
 :::
 
@@ -646,6 +661,8 @@ Goals:
 - **Out-of-the-box** support: datasets, tasks, models
 :::
 ::: {.fragment data-fragment-index="3"}
+Outcome:
+
 - **ReciPies**^[[@van_de_Water2026]]: Modular ML preprocessing framework 
 - **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]]: framework for reproducible ICU prediction experiments across datasets.
 :::
@@ -677,8 +694,9 @@ Goals:
 ::: -->
 
 ## Different Definitions, Different Conclusions
-- Sepsis: Potentially life-threatening **response to infection** that causes injury to its own tissues and organs.
+**Sepsis**: Life-threatening **response to infection** that causes injury to its own tissues and organs.
 
+⚡ Problem: no single, universally accepted **definition**.
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
 
 
@@ -686,10 +704,13 @@ Goals:
 
 ::: {.columns}
 ::: {.column width="100%"}
-- Prediction on MIMIC-IV^[[@johnsonMIMICIVFreelyAccessible2023]] using Gated Recurrent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models with **different cohort definitions**^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]]:
+**Prediction** on MIMIC-IV^[[@johnsonMIMICIVFreelyAccessible2023]] using Gated Recurrent Unit (GRU) and Light Gradient Boosting Machine (LGBM) models with **different cohort definitions** from literature^[[@seymourAssessmentClinicalCriteria2016; @moorPredictingSepsisMultisite2021; @calvertComputationalApproachEarly2016]]:
 
 <div style="text-align: center;">
 ![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=50% .no-dark}
+</div>
+<div data-id="recipies-logo-box" style="position:absolute; right:2%; top:80%; width:12%; text-align:right;">
+  <img src="figures/yaib/yaib_logo.svg" style="width:100%;" class="no-dark">
 </div>
 :::
 <!-- ::: {.column width="50%"}
@@ -721,7 +742,7 @@ Goals:
 ## YAIB: Mortality Prediction Across Datasets
 
 ::: {.column width="50%" }
-- Training row dataset, evaluation on column dataset using GRU:
+**External validation:** training on row dataset, evaluation on column dataset using GRU:
 <div style="text-align: center; margin-top: -1em;">
 ![](figures/yaib/ext_val_mortality_pooled_auroc.svg){fig-cap="External Validation - Mortality AUROC" width=85% .no-dark}
 </div>
@@ -734,7 +755,7 @@ Goals:
 :::
 
 ::: {.column width="50%" .fragment }
-- Train a model on "generalizable" eICU and finetune on "difficult" HiRID:
+**Transfer learning:** Train a model on "generalizable" eICU and **finetune** on HiRID:
 <div style="text-align: center; margin-top: -1em;">
 ![](figures/yaib/transfer_learning.svg){fig-cap="Transfer Learning - Mortality AUROC" width=76% .no-dark}
 </div>
@@ -791,13 +812,13 @@ AUPRC:
 # Framework for Foundational Health AI 🏗️ {data-section-title="{{< var section_t3 >}}"}
 
 ::: {.incremental}
-​⚡ **{{< var p3_label >}}**:
+​⚡ **{{< var p3_label >}}**: Training high-parameter AI models for heterogeneous data is difficult. 
 
 ::: {.fragment}
 ::: {.card-row .card-row--stack}
 ![](icons/neural_net_monochrome.svg){height=3em .light-only}
 
-**Event-based Foundation Models (FMs) are now central to clinical ML research.**^[[@bommasaniOpportunitiesRisksFoundation2021;@steinbergLanguageModelsAre2021]]
+**Event-based Foundation Models (FMs) show promise in Health AI.**^[[@bommasaniOpportunitiesRisksFoundation2021;@steinbergLanguageModelsAre2021]]
 :::
 :::
 
@@ -805,7 +826,7 @@ AUPRC:
 ::: {.card-row .card-row--stack}
 ![](icons/infrastructure.svg){height=3em .light-only}
 
-**Applying high-parameter AI to health data still lacks robust, standardized infrastructure.** ^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
+**Progress is hindered by lack of reusable, scalable tooling.** ^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
 :::
 :::
 
@@ -826,14 +847,13 @@ How can we enable reproducible AI research across healthcare systems?
 :::
 
 ::: {.notes}
-- Given that, of course, health data is not always like the structured, clean, and well-labeled open-access ICU datasets.
-- With the advent of Large Language Models, we now have high-parameter AI "foundation models", that are trained on large-scale EHR data with the objective to predict the next token.
-- Unfortunately, applying these high-parameter AI models to health data still lacks robust, standardized infrastructure, which is a significant barrier to reproducible research and scientific progress in this field.
-- Donoho highlights the term of frictionless reproducibility for data science which highlights the growing need for robust infrastructure to support reproducible research across healthcare systems.
-- Currently, the ML4H community often reinvents the wheel, and with the increasing complexity of models and data, comparing results across settings becomes increasingly difficult.
+- Unfortunately,health data is not always like the structured, clean, and well-labeled open-access ICU datasets that we just discussed. 
+- Luckily, with the advent of Large Language Models, we now have high-parameter AI "foundation models", that are trained on partially structured large-scale EHR data, such as entire health systems, with the objective to predict the next token.
+- However, with the increasing complexity of models and data, comparing results across settings becomes increasingly important, but more difficult. 
+- Applying these high-parameter AI models to health data still lacks robust, standardized infrastructure, which is a significant barrier to reproducible research.
 - This leads us to the question of how can we enable reproducible AI research across healthcare systems?
 - Well, with a new data standard and ecosystem for health AI research, which we call the Medical Event Data Standard (MEDS).
-
+- Donoho highlights the term of frictionless reproducibility for data science which highlights the growing need for robust infrastructure to support reproducible research across healthcare systems.
 :::
 ## Data Standards in Healthcare
 <div style="text-align: center;">
@@ -857,12 +877,12 @@ How can we enable reproducible AI research across healthcare systems?
 :::
 
 ## The Medical Event Data Standard (MEDS)
-::: {.callout-tip title="Characteristics" style="font-size: 1.5em;"}
+::: {.callout-tip  appearance="simple" style="font-size: 1.5em;"}
 ::: {.incremental}
-1. **ML-First** - not observational research
-2. **Flexible** - adapts to data source and research needs
-3. **Event-Based** - longitudinal healthcare data
-4. **Interoperable** - tools composable across settings
+- **ML-First**: not observational research.
+- **Flexible**: adapts to data source and research needs.
+- **Event-Based**: longitudinal healthcare data.
+- **Interoperable**: tools composable across settings.
 :::
 :::
 <!-- ::: {.columns}
@@ -910,10 +930,8 @@ class DataSchema(PyArrowSchema):
 
 
 ## MEDS-DEV: Decentralized External Validation
-::: {.incremental}
-- Reproducible benchmarking is critical for scientific progress
-- Sharing raw patient data across institutions is often not possible due to privacy concerns.
-:::
+- Reproducible benchmarking is **critical** for scientific progress.
+- Sharing raw patient data across institutions is often not possible due to **privacy** concerns.
 
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
 Define standardized *predicates* for tasks and have drop-in definitions for each dataset^[[@mcdermottMEDSDecentralizedExtensible2024;@xuACESAutomaticCohort2024a]].
@@ -925,20 +943,23 @@ Define standardized *predicates* for tasks and have drop-in definitions for each
 ::: {.columns}
 :::
 ::: {.column width="50%"}
-![](figures/meds/map_meds_dev.svg){width=100% fig-align="center"}
-
-:::
-::: {.column width="25%" .fragment}
-![](icons/icu.svg){width=50% fig-align="center"}
-
 <div style="text-align: center;">
-11 Tasks
+9 Datasets (1 private, 8 open-access)
+![](figures/meds/map_meds_dev.svg){width=100% fig-align="center"}
 </div>
 :::
 ::: {.column width="25%" .fragment}
-![](icons/neural_net_monochrome.svg){width=40% fig-align="center"}
+<div style="text-align: center;">
+11 Tasks
+![](icons/icu.svg){width=70% fig-align="center" .no-dark}
+</div>
+:::
+::: {.column width="25%" .fragment}
+<div style="text-align: center;">
+3 Models^[@oufattoleMEDSTabAutomatedTabularization2024;@pangCEHRBERTIncorporatingTemporal2021; @hurGenHPFGeneralHealthcare2024a]
 
-MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangCEHRBERTIncorporatingTemporal2021; @hurGenHPFGeneralHealthcare2024a]
+![](icons/neural_net_monochrome.svg){width=60% fig-align="center"}
+</div>
 :::
 
 :::
@@ -948,12 +969,13 @@ MEDS-Tab, CEHR-BERT, GenHPF^[@oufattoleMEDSTabAutomatedTabularization2024;@pangC
 
 ::: {.notes}
 - We can use MEDS to enable decentralized external validation across datasets and institutions.
-- Reproducible benchmarking is critical for scientific progress, but sharing raw patient data across institutions is often not possible due to privacy concerns.
+- Reproducible benchmarking is **critical** for scientific progress, but sharing raw patient data across institutions is often not possible due to privacy concerns.
 - The solution is to define standardized predicates for tasks and have drop-in definitions for each dataset, which allows for benchmarking across datasets without sharing raw patient data.
 - MEDS-DEV is a collective effort that I expanded to 8 other datasets, including health systems open-access datasets
 - Each site independently trains and evaluates models using the same standardized definitions, allowing for meaningful comparisons while respecting data privacy. 
 - The configurations can be shared across sites, enabling researchers to identify factors that contribute to performance variability.
 - 3 Complete Blood Count, 5 blood chemistry, 2 Vital Sign, Mortality, Readmission
+- 3 models: MEDS-Tab, CEHR-BERT, GenHPF: a tabular transformer, a BERT-based model for EHR data, and a general healthcare foundation model.
 
 
 :::
@@ -1035,23 +1057,32 @@ Grouping by task:
 :::
 
 ## Linear Probing
-- Train SOTA FMs^[[@pangFoMoHClinicallyMeaningful2025]], CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]], on entire MSHS dataset (5.5M patients).
+- Train **FMs**^[[@pangFoMoHClinicallyMeaningful2025]], CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]], on entire MSHS (5.5M patients).
 - Embed a variety of **patient representations** until prediction time.
 - Train a **linear classifier** on top of frozen foundation model representations.
+- Effect of **sample size** on performance:
 
-::: {.fragment}
-Results across different sample sizes:
-
+::: {.columns}
+::: {.column width="50%" .fragment}
 <div style="text-align: center; margin-top: -0.5em;">
-![](figures/meds/linear_probing/tasks/linear_probing_legend.svg){width="50%" class="no-dark" }
+
+![](figures/meds/linear_probing/tasks/linear_probing_legend.svg){width="100%" class="no-dark" }
 <div style="text-align: center; margin-top: -1.5em;">
-![](figures/meds/linear_probing/aggregated/aggregated_line_roc_only.svg){width="50%" class="no-dark"}
+![](figures/meds/linear_probing/aggregated/aggregated_line_roc_only.svg){width="100%" class="no-dark"}
 </div>
 </div>
 <!-- <div style="text-align: center; margin-top: -2em;">
   <img src="figures/meds/linear_probing/aggregated/aggregated_line_roc_only.svg" width="50%" class="no-dark">
 </div> -->
+:::
+::: {.column width="50%" .fragment}
+→ For **small sample sizes**, FM representations can outperform existing machine learning models.
 
+→ Cheaper than finetuning, and proxy for **quality of the foundation model representations** for downstream tasks.
+
+→ FM-generated representations can provide a useful **starting point** for specialty AI-applications.
+
+:::
 :::
 
 ::: {.notes}
@@ -1060,6 +1091,7 @@ Results across different sample sizes:
 - Cheaper than finetuning, and can be used as a quick benchmark for the quality of the foundation model representations for downstream tasks.
 - For lower sample set sizes, we see that the linear classifier on top of the foundation model representations can outperform traditional machine learning models, suggesting that the foundation model representations capture useful information for downstream tasks even with limited data.
 - The performance gap decreases as we get more samples as can be expected, but there is still a slight boost compared to the baselines
+- This suggests that the foundation model representations can provide a useful starting point for downstream tasks, even when finetuning is not feasible due to computational constraints or limited data.
 :::
 
 ## Impact of the MEDS Ecosystem
@@ -1139,7 +1171,7 @@ We require: -->
 <!-- - MEDS-DEV: easily benchmark tasks across different sites and tasks. -->
 → MEDS enables **AI research across health systems** with wide adoption
 
-→ Created 4 Dataset, OMOP, FHIR ETLs and 2 tools
+→ Created 4 Dataset, OMOP, FHIR ETLs and 3 tools
 
 → Benchmarking 9 datasets across 11 tasks
 :::
@@ -1213,14 +1245,14 @@ We require: -->
 ::: {.card-row .card-row--stack}
 ![](icons/multi_modality.svg){height=3em .light-only}
 
-**Advances in Multi-Modal Health Foundation Models**
+**Advances in multi-modal health Foundation Models.**
 :::
 :::
 ::: {.fragment }
 ::: {.card-row .card-row--stack}
 ![](icons/multiple_hospital.svg){height=3em .light-only} 
 
-**Generalizability versus Specificity**^[[@burkhartFoundationModelsElectronic2025a;@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
+**Generalizability of Foundation Models in health.**^[[@burkhartFoundationModelsElectronic2025a;@futomaMythGeneralisabilityClinical2020a; @vancalsterThereNoSuch2023]]
 
 :::
 :::
@@ -1229,7 +1261,7 @@ We require: -->
 ::: {.card-row .card-row--stack}
 ![](icons/graph.svg){height=3em .light-only}
 
-**Scaling up: datasets, model size, benchmarking**^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
+**Scaling up: datasets, model size, benchmarking.**^[[@waxlerGenerativeMedicalEvent2025; @zhangExploringScalingLaws2025; @huangOverTokenizedTransformerVocabulary2025]]
 :::
 :::
 
@@ -1243,10 +1275,10 @@ We require: -->
 
 ::: {.notes}
 - Multi-modal: Clinical Notes, Pathology, Radiology, Genomics, Wearables, etc. I am currently working on expanding my FMs to pathology as this is widely available in MSHS.
-- Generalizability versus Specificity: Different health systems have different data generating processes and different patient populations. Should we optimize for generalizability or for performance on specific settings?
+- Health data is different from text used in LLMs, because different health systems have different data generating processes and different patient populations. So, understanding the generalizability of foundation models in health is an important area of research.
 - Scaling up: how does performance improve with more data, compute, and model size? Understanding scaling laws in health AI can inform the development of more efficient and effective models.
-- Predictive surveillance: scheduling mammograms in advance if a patient is at high risk of developing breast cancer.
-- Transferable patient representations: Developing models that can effectively transfer knowledge across different healthcare providers (GP and specialists), reducing fragmentation.
+- Predictive surveillance: We can schedule mammograms in advance if a patient is at high risk of developing breast cancer.
+- Finally, we can develop representations that combat fragmentation across different healthcare providers (GP and specialists), which can lead to better continuity of care and better patient outcomes.
 
 :::
 
@@ -1350,6 +1382,9 @@ Read the thesis</a>
 :::
 :::
 
+::: {.notes}
+- With that, I want to thank all the people who supported me during journey and open the floor for discussion.
+:::
 <!-- The field of machine learning for healthcare stands at an inflection point. We have:
 - ✓ Demonstrated predictive capability (models work in controlled settings)
 - ✓ Shown deployment is feasible (CASSANDRA, clinical partnerships)

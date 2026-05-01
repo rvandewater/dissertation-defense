@@ -1,3 +1,3 @@
 ::: {.callout-important appearance="simple" style="font-size: 1.5em;"}
-**Thesis Statement:** Efficient clinical translation of ML requires prospectively collected multimodal data, reproducibility, and an ecosystem for foundational research.
+**Thesis Statement:** *Efficient clinical translation of ML* requires prospectively collected multimodal data, reproducibility, and an ecosystem for foundational research.
 :::
