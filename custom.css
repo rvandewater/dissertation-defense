@@ -152,6 +152,9 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   --slide-card-border: #d9d9d9;
   --slide-card-bg: #fafafa;
   --slide-card-bg-muted: #f7f7f7;
+
+  /* People slide tint: tweak this filter to change the red color globally */
+  --people-slide-red-filter: sepia(1) saturate(6) hue-rotate(-10deg) brightness(0.95) drop-shadow(1px 2px 3px rgba(0,0,0,0.22));
 }
 
 .reveal .slide-card {
@@ -358,4 +361,45 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   color: #1B303D; /* match MEDS logo color from figures/meds/meds_logo.svg */
   font-size: 2em; /* tuned to visually match the logo height */
   line-height: 3em; /* align text vertically with the logo */
+}
+
+/* Red-tinted overlay variant of the people slide */
+.people-slide--red-overlay img {
+  filter: var(--people-slide-red-filter) !important;
+}
+
+/* Footnotes & reference links: use neutral grey instead of default blue */
+/* Targets aside footnotes, in-slide superscript links, and the references list */
+.reveal aside ol.aside-footnotes li a,
+.reveal aside .aside-footnotes a,
+.reveal .slide > aside .aside-footnotes li a,
+.reveal .footnote-ref,
+.reveal sup a,
+.reveal a[href^="#fn"],
+.reveal #refs a,
+.reveal .references a,
+.reveal .citation,
+.reveal .citation a {
+  color: #6b6b6b !important;
+  text-decoration-color: rgba(107,107,107,0.6) !important;
+}
+
+/* Targeted bold footnote without affecting other footnotes */
+.reveal .my-work,
+.reveal .my-work a {
+  font-weight: 700 !important;
+}
+
+/* Slightly dim the hover color so links don't go bright blue */
+.reveal aside ol.aside-footnotes li a:hover,
+.reveal .references a:hover,
+.reveal #refs a:hover,
+.reveal sup a:hover {
+  color: #525252 !important;
+}
+
+/* Ensure small footnote link markers remain readable */
+.reveal .slide aside,
+.reveal .slide div.aside {
+  color: #6b6b6b !important;
 }

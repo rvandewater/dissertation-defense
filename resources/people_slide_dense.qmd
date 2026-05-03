@@ -1,0 +1,185 @@
+```{=html}
+<div style="position:absolute;inset:0;width:100%;height:100%;overflow:hidden;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:14.579%;top:23.686%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:20.772%;top:22.458%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:25.574%;top:22.631%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.009%;top:22.422%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:39.176%;top:23.753%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:44.17%;top:23.311%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:50.347%;top:23.829%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.494%;top:22.53%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:62.182%;top:23.123%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.25%;top:23.169%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:75.351%;top:22.799%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:80.261%;top:23.995%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:14.287%;top:30.039%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:19.558%;top:30.076%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.567%;top:31.441%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.266%;top:29.984%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:38.24%;top:31.849%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:44.528%;top:31.799%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:51.122%;top:29.88%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.93%;top:31.221%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:62.666%;top:30.391%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.881%;top:30.08%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:74.579%;top:30.765%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:81.486%;top:31.609%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:13.876%;top:38.715%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:19.777%;top:39.54%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.972%;top:38.311%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.627%;top:38.932%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:37.859%;top:39.239%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:44.545%;top:39.272%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.571%;top:37.715%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.269%;top:37.753%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:63.319%;top:39.472%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:69.199%;top:38.329%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:73.951%;top:39.47%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:81.474%;top:37.886%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:14.247%;top:45.71%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:20.747%;top:47.103%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:25.735%;top:46.522%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.479%;top:46.102%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.058%;top:46.418%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:43.999%;top:46.65%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.904%;top:45.974%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:56.249%;top:47.562%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:62.854%;top:46.448%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.675%;top:45.813%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:74.229%;top:46.248%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:80.876%;top:46.032%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:13.805%;top:53.571%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:20.531%;top:53.886%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:27.03%;top:55.148%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:31.681%;top:53.905%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:38.719%;top:53.857%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:43.866%;top:55.3%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.639%;top:54.374%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:57.037%;top:55.044%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:62.088%;top:53.622%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.531%;top:54.276%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:74.633%;top:54.887%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:81.018%;top:55.397%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:13.602%;top:62.091%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:20.045%;top:63.009%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:25.935%;top:61.666%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:32.31%;top:62.129%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:38.068%;top:61.785%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:45.185%;top:62.172%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:51.123%;top:62.386%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:55.813%;top:63.284%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:63.164%;top:63.224%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:69.356%;top:62.983%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:74.131%;top:62.257%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:80.252%;top:62.088%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:13.535%;top:69.901%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:21.121%;top:69.673%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.828%;top:70.053%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:32.268%;top:71.057%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.263%;top:70.254%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:44.843%;top:69.452%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.182%;top:71.08%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.694%;top:70.227%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:63.017%;top:69.257%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.786%;top:70.149%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:75.275%;top:69.458%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:81.497%;top:69.303%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+</div>
+```
+
+```{=html}
+<div class="fragment fade-in" data-fragment-index="1" style="position:absolute; inset:0; width:100%; height:100%; z-index:2; pointer-events:none; overflow:visible;">
+  <div class="people-overflow" data-people-count="216" data-seed="42" style="position:absolute; inset:0; width:100%; height:100%; overflow:visible;"></div>
+</div>
+<script>
+(function () {
+  function mulberry32(a) {
+    return function () {
+      var t = (a += 0x6d2b79f5);
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function shuffleInPlace(arr, rand) {
+    for (var i = arr.length - 1; i > 0; i -= 1) {
+      var j = Math.floor(rand() * (i + 1));
+      var tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+  }
+
+  function renderAll() {
+    var containers = document.querySelectorAll(".people-overflow[data-people-count]");
+    containers.forEach(function (container) {
+      if (container.dataset.rendered === "1") return;
+
+      var count = parseInt(container.dataset.peopleCount || "0", 10);
+      var seed = parseInt(container.dataset.seed || "1", 10);
+      var rand = mulberry32(seed);
+      var icons = ["icons/man_icon.svg", "icons/woman_icon.svg"];
+      var section = container.closest("section") || document.body;
+      var cRect = container.getBoundingClientRect();
+      if (cRect.width < 10 || cRect.height < 10) return;
+      container.dataset.rendered = "1";
+
+      var widthPct = 5.0;
+      var widthPx = (widthPct / 100) * cRect.width;
+      var heightPx = widthPx * 1.6;
+      var xStep = widthPx * 0.9;
+      var yStep = heightPx * 0.9;
+      var jitterX = xStep * 0.45;
+      var jitterY = yStep * 0.45;
+
+      var positions = [];
+      for (var y = -jitterY; y <= cRect.height - heightPx + jitterY; y += yStep) {
+        for (var x = -jitterX; x <= cRect.width - widthPx + jitterX; x += xStep) {
+          var jx = (rand() * 2 - 1) * jitterX;
+          var jy = (rand() * 2 - 1) * jitterY;
+          var left = Math.min(Math.max(x + jx, -jitterX), cRect.width - widthPx + jitterX);
+          var top = Math.min(Math.max(y + jy, -jitterY), cRect.height - heightPx + jitterY);
+          positions.push({
+            left: left,
+            top: top,
+          });
+        }
+      }
+
+      shuffleInPlace(positions, rand);
+
+      for (var i = 0; i < count; i += 1) {
+        var slot = positions[i % positions.length];
+        var img = document.createElement("img");
+        img.src = icons[Math.floor(rand() * icons.length)];
+        img.className = "people-dense-icon";
+        img.style.position = "absolute";
+        img.style.left = (slot.left / cRect.width * 100).toFixed(3) + "%";
+        img.style.top = (slot.top / cRect.height * 100).toFixed(3) + "%";
+        img.style.width = widthPct.toFixed(2) + "%";
+        img.style.opacity = "0.95";
+        img.style.filter = "var(--people-dense-filter, drop-shadow(1px 2px 3px rgba(0,0,0,0.22)))";
+        container.appendChild(img);
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderAll);
+  } else {
+    renderAll();
+  }
+
+  if (window.Reveal && window.Reveal.on) {
+    window.Reveal.on("ready", renderAll);
+    window.Reveal.on("slidechanged", function () {
+      window.requestAnimationFrame(renderAll);
+    });
+    window.Reveal.on("fragmentshown", function () {
+      window.requestAnimationFrame(renderAll);
+    });
+  }
+})();
+</script>
+```

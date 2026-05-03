@@ -45,7 +45,7 @@ revealjs-plugins:
 {{< include "resources/people_slide.qmd" >}}
 ::: {.fragment}
 <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700;">
-Eighty-four (84) lives were saved in one year by "AI".^[[@rossettiRealtimeSurveillanceSystem2025]]
+Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.^[[@rossettiRealtimeSurveillanceSystem2025]]
 <!-- font-family: 'Optima'; Real-time surveillance system for patient deterioration: a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillanceSystem2025]] -->
 </div>
 :::
@@ -53,9 +53,10 @@ Eighty-four (84) lives were saved in one year by "AI".^[[@rossettiRealtimeSurvei
 ::: {.notes}
 - I’d like you to take a look and estimate how many people you think are on this slide. Just get a number in mind.
 - You probably didn’t have enough time to count—so I’ll tell you. There are 84 people on this slide.
-- In a recent trial of an AI early warning system in New York City estimated that in one year, 84 people who might have died, didn’t.
+- In a recent trial of an AI early warning system in New York City in two health systems, it was estimated that in one year, an estimated 84 people who might have died, didn’t.
 - This is how important AI in healthcare can be: it has the potential to save lives by predicting and preventing adverse outcomes.
 - This is the promise of machine learning in healthcare: to use data to predict and prevent adverse outcomes, and ultimately save lives.
+- Across 60,893 hospital encounters, the intervention group experienced a 35.6% reduction in instantaneous in-hospital mortality risk (AHR  0.64; 95%CI 0.53–0.78; P < 0.0001) and an 11.2% shorter length of stay (IRR  0.91; 95%CI 0.90–0.93; P < 0.0001) compared to usual care.
 :::
 
 <!-- 
@@ -106,7 +107,7 @@ Eighty-four (84) lives were saved in one year by "AI".^[[@rossettiRealtimeSurvei
 Papers on ArXiv with AI and health keywords in the title or abstract and FDA-approved AI medical devices ^[[@healthArtificialIntelligenceEnabledMedicalTue03/10/2026-09:05]] over time:
 ![](figures/motivation/ml_health_trend_fda.svg){fig-cap="EHR Data Structure" width=100%}
 <div style="position: relative; top: -1em;">
-``` python
+``` code
 ML_PATTERN = r"(?ix)\b(machine[ _]?learning|deep[ _]?learning|neural[ _]?networks?|artificial[ _]?intelligence|\bAI\b|random[ _]?forest|support[ _]?vector[ _]?(machine|regression|classif\w+)?|\bSVM\b|gradient[ _]?boost\w*|\bXGBoost\b|\bLightGBM\b|\bCatBoost\b|\btransformer\b|\bBERT\b|\bGPT\b|\bLLM\b|\bVLM\b|large[ _]?language[ _]?models?|foundation[ _]?models?|(convolutional|recurrent|graph)[ _]?neural|\bLSTM\b|\bGRU\b|generative[ _]?adversarial|\bGAN\b|reinforcement[ _]?learning|(semi|self|un)[ _-]?supervised[ _]?learning|transfer[ _]?learning|federated[ _]?learning|natural[ _]?language[ _]?processing|\bNLP\b|computer[ _]?vision|(image|object|text)[ _]?(classification|detection|segmentation)|\bautoencoder\b|\bdiffusion[ _]?model\b)\b"
 HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|diseases?|disorders?|syndrome|diagnosis|diagnostics?|prognosis|prognostic|treatments?|therapy|therapeutic|\bEHR\b|\bEMR\b|epidemiol\w*|radiol\w*|pathol\w*|genomics?|proteomics?|transcriptomics?|biomarkers?|\bdrug\b|pharmaceutical|pharmacolog\w*|cancer|tumor|tumour|oncol\w*|cardiac|cardiovascular|coronary|diabetes|diabetic|\bCOVID\b|\bSARS\b|pandemic|epidemic|biomedical|mortality|morbidity|\bICU\b|intensive[ _]?care|surgical|surgery|symptoms?|comorbid\w*|screening|triage|mental[ _]?health|psychiatr\w*|neurolog\w*|\bMRI\b|\bCT[ _]?scan\b)\b"
 
@@ -298,43 +299,31 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 
 
 # Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t1 >}}"}
-**​⚡​ {{< var p1_label >}}**: Retrospective, observational, data does not reflect the information needed for clinical decision-making.
+**​⚡​ {{< var p1_label >}}**: Retrospective, observational, data does not accurately capture the state of the patient.
 
 
-::: {.fragment .fade-in fragment-index="1"}
-<div class="slide-card">
-  <div class="slide-card__row">
+::: {.fragment .fade-in .card-row .card-row--stack fragment-index="1"}
 ![](icons/surgeon.svg){fig-cap="" height=2em .no-dark}
-    <strong>300M+ surgeries annually^[[@dobsonTraumaMajorSurgery2020]]</strong>
-  </div>
-</div>
+
+**300M+** surgeries annually^[[@dobsonTraumaMajorSurgery2020]]
 :::
 
-::: {.fragment .fade-in fragment-index="2"}
-<div class="slide-card">
-  <div class="slide-card__row">
+::: {.fragment .fade-in .card-row .card-row--stack fragment-index="2" }
 ![](icons/hospital.svg){fig-cap="" height=2em .no-dark}
-    <strong>~1/3 of hospital costs are surgery-related^[[@shrimeGlobalBurdenSurgical2015]]</strong>
-  </div>
-</div>
+    
+**~1/3 of hospital costs** are surgery-related^[[@shrimeGlobalBurdenSurgical2015]].
 :::
 
-::: {.fragment .fade-in fragment-index="3"}
-<div class="slide-card">
-  <div class="slide-card__row">
+::: {.fragment .card-row .card-row--stack .fade-in fragment-index="3"}
 ![](icons/alert.svg){fig-cap="" height=2em .no-dark}
-    <strong>Up to 25% experience life-threatening adverse events^[[@downeyImpactInhospitalPostoperative2023; @muallaImpactPostoperativeComplications2021; @baumMortalityComplicationsFollowing2019a]]</strong>
-  </div>
-</div>
+
+**Up to 25%** experience life-threatening adverse events^[[@downeyImpactInhospitalPostoperative2023; @muallaImpactPostoperativeComplications2021; @baumMortalityComplicationsFollowing2019a]].
 :::
 
-::: {.fragment .fade-in fragment-index="4"}
-<div class="slide-card">
-  <div class="slide-card__row">
+::: {.fragment .card-row .card-row--stack .fade-in fragment-index="4"}
 ![](icons/heartbeat.svg){fig-cap="" height=2em .no-dark}
-    <strong>Ward monitoring insufficient for subtle condition changes^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]]</strong>
-  </div>
-</div>
+    
+Ward monitoring insufficient for **subtle condition changes**^[[@roppeltArtificialIntelligenceHealthcare2024;@stamPredictionSurgicalComplications2022]].
 :::
 
 
@@ -378,12 +367,16 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 
 ## A Prospective Cohort Study: "Hybrid Ward" {auto-animate="true"}
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;"}
-Can we leverage **continuous data from wearable devices** to improve warning systems for postoperative complications (surgical site infections) in the general ward? ^[[@vandewaterContinuousMultimodalAI2025]]
+Can we leverage **continuous data from wearable devices** to improve warning systems for postoperative complications (surgical site infections) in the general ward? ^[[@vandewaterCombiningHospitalgradeClinical2024; @waterCombiningHospitalgradeClinical2024b]{.my-work}]
 :::
-<div style="position: relative; top: -1em;">
+<div style="position: relative; top: -1.1em;">
 ::: {.fragment .fade-in}
 ::: {.column width="55%"}
 ![](figures/cass/wards.png){fig-cap="" width=100% .no-dark}
+<div data-id="recipies-logo-box" style="position:absolute; right:85%; top:30%; width:12%; text-align:right;">
+  <img src="images/logos/logo_experimental_surgery.png" style="width:100%;" class="no-dark">
+  <img src="images/logos/Logo_Charite.svg" style="width:100%;" class="no-dark">
+</div>
 :::
 
 ::: {.column width="45%"}
@@ -403,7 +396,7 @@ Can we leverage **continuous data from wearable devices** to improve warning sys
 :::
 </div>
 ::: {.fragment .fade-in }
-<div style="position: relative; top: -4.5em;">
+<div style="position: relative; top: -5em;">
 ![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100% .no-dark}
 </div>
 :::
@@ -426,15 +419,16 @@ Can we leverage **continuous data from wearable devices** to improve warning sys
 style="position:absolute; top:10%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 <div class="fragment fade-out" data-fragment-index="2"
 style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
-<div style="text-align: center; margin-top: -2em;">
+<div style="text-align: center; margin-top: -2.2em;">
   <img src="figures/cass/cass_pipeline.svg" width="60%" class="no-dark">
 </div> -->
 <!-- <div style="position: relative; top: -2em;">
 ![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100%}
 </div> -->
-<div style="position: relative; text-align: center; margin-top: -0em;">
-![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=90% .no-dark}
+<div style="position: relative; text-align: center; margin-top: -1.5em;">
+![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=90% .no-dark}^[[@vandewaterContinuousMultimodalAI2025] {my-work}]
 </div>
+
 
 
 
@@ -461,7 +455,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 <div style="position: relative; text-align: center; margin-top: 5em;">
 ![](figures/cass/cass_model_training.svg){fig-cap="" width=100% .no-dark}
 </div>
-<img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:53%; left:80%; width:13%; z-index:1;">
+<img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:53%; left:85%; width:13%; z-index:1;">
 <img src="figures/yaib/yaib_logo.svg" width=100% class="no-dark" style="position:absolute; top:57%; left:35%; width:15%; z-index:1;">
 
  <div class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:20%; left:50%; width:100%; height:60%; background:white; z-index:1;"></div> 
@@ -611,7 +605,7 @@ Preprocessing
 :::
 ::: {.column width="20%" .fragment}
 ![](icons/measure.svg){fig-align="center"}
-<div style="text-align: center;">
+<div style="text-align: center; width:100%;">
 Evaluation
 </div>
 :::
@@ -663,8 +657,8 @@ Goals:
 ::: {.fragment data-fragment-index="3"}
 Outcome:
 
-- **ReciPies**^[[@van_de_Water2026]]: Modular ML preprocessing framework 
-- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]]: framework for reproducible ICU prediction experiments across datasets.
+- **ReciPies**^[[@van_de_Water2026]{.my-work}]: Modular ML preprocessing framework 
+- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]{.my-work}]: framework for reproducible ICU prediction experiments across datasets.
 :::
 :::
 ::: {.column width="30%"}
@@ -826,7 +820,7 @@ AUPRC:
 ::: {.card-row .card-row--stack}
 ![](icons/infrastructure.svg){height=3em .light-only}
 
-**Progress is hindered by lack of reusable, scalable tooling.** ^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
+**Progress is hindered by lack of reusable, scalable tooling.**^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
 :::
 :::
 
@@ -842,7 +836,7 @@ How can we enable reproducible AI research across healthcare systems?
 ::: {.fragment}
 <div style="text-align: center; margin-top: -0em; display:flex; align-items:center; justify-content:center; gap:0.6em;">
   <img src="figures/meds/meds_logo.svg" class="no-dark meds-logo" style="height:3em; vertical-align:middle;">
-  <span class="meds-label">MEDS: Medical Event Data Standard</span>
+  <span class="meds-label">MEDS: Medical Event Data Standard ^[[[@vandewaterMedicalEventData2024] (Founding MEDS working Group)]{.my-work}]</span>
 </div>
 :::
 
@@ -898,7 +892,7 @@ How can we enable reproducible AI research across healthcare systems?
 </div>
 :::
 ::: {.tiny-text}
-  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).
+**  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).**
 :::
 <!-- :::
 ::: -->
@@ -934,7 +928,7 @@ class DataSchema(PyArrowSchema):
 - Sharing raw patient data across institutions is often not possible due to **privacy** concerns.
 
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
-Define standardized *predicates* for tasks and have drop-in definitions for each dataset^[[@mcdermottMEDSDecentralizedExtensible2024;@xuACESAutomaticCohort2024a]].
+Define standardized **predicates** for tasks and have drop-in definitions for each dataset^[[[@mcdermottMEDSDecentralizedExtensible2024]{.my-work}][@xuACESAutomaticCohort2024a]].
 :::
 
 ::: {.fragment}
@@ -1040,12 +1034,14 @@ Grouping by task:
 
 ## Foundation Models for Health Systems
   <div class="fragment fade-out" data-fragment-index="1"
-       style="position:absolute; top:27%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
+       style="position:absolute; top:28%; left:0%; width:100%; height:65%; background:white; z-index:2;"></div>
 
   <div class="fragment fade-out" data-fragment-index="2"
-      style="position:absolute; top:27%; left:30%; width:100%; height:100%; background:white; z-index:2;"></div>
-![](figures/meds/mount_sinai/benchmarking_mshs.svg){fig-cap="" width=100% .no-dark} ^[[@vandewaterScalingClinicalML2025; @vandewater2025flames]]
-
+      style="position:absolute; top:28%; left:22%; width:100%; height:65%; background:white; z-index:2;"></div>
+![](figures/meds/mount_sinai/benchmarking_mshs_new.svg){fig-cap="" width=100% .no-dark} ^[[@vandewaterScalingClinicalML2025; @vandewater2025flames]{.my-work}]
+<div data-id="ms-logo-box" style="position:absolute; right:-3%; top:77%; width:12%; text-align:right;">
+  <img src="images/logos/MS_logo.svg" style="width:50%;" class="no-dark">
+</div>
 
 ::: {.notes}
 - So let's look at doing this on a health system level, where we use the entire Mount Sinai Health System dataset of 12 million patients across different medical centers around New York City. 
@@ -1062,6 +1058,9 @@ Grouping by task:
 - Train a **linear classifier** on top of frozen foundation model representations.
 - Effect of **sample size** on performance:
 
+<div data-id="ms-logo-box" style="position:absolute; right:-3%; top:77%; width:12%; text-align:right;">
+  <img src="images/logos/MS_logo.svg" style="width:50%;" class="no-dark">
+</div>
 ::: {.columns}
 ::: {.column width="50%" .fragment}
 <div style="text-align: center; margin-top: -0.5em;">
@@ -1104,7 +1103,7 @@ Grouping by task:
 <div class="fragment fade-out" data-fragment-index="2"
       style="position:absolute; top:48%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 ::: {.tiny-text}
-  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).
+**  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).**
 :::
 <!-- - Supported the development of SOTA models for EHR data ^[[@pangCEHRXGPTScalableMultiTask2025;@fallahpourEHRMambaGeneralizableScalable2024a; @rencFoundationModelElectronic2025]]. -->
 <!-- - 21 institutions
@@ -1147,9 +1146,11 @@ We require: -->
 ::: { .pub-box .pub-box--pillar1 }
 <!-- **{{< var section_t1 >}}** -->
 
-→ Continuous wearable data **nearly doubles AUPRC**
-→ **Predictive surveillance** can be extended to the ward
-→ Alarm strategies key to **clinical utility**
+→ Continuous wearable data **nearly doubles AUPRC**.
+
+→ **Predictive surveillance** can be extended to the ward.
+
+→ Alarm strategies key to **clinical utility**.
 :::
 :::
 
@@ -1159,7 +1160,7 @@ We require: -->
 
 → Experimental setup often matters **more than model choice**
 
-→ Multi-center framework for reproducible ML4H (44 cit., GH 96 ⭐)
+→ Multi-center framework for reproducible ML4H (44 cit., GH 96 ⭐).
 
 :::
 :::
@@ -1169,7 +1170,7 @@ We require: -->
 <!-- **{{< var section_t3 >}}** -->
 
 <!-- - MEDS-DEV: easily benchmark tasks across different sites and tasks. -->
-→ MEDS enables **AI research across health systems** with wide adoption
+→ Co-founder of MEDS: enables **AI research across health systems**.
 
 → Created 4 Dataset, OMOP, FHIR ETLs and 3 tools
 
@@ -1282,6 +1283,11 @@ We require: -->
 
 :::
 
+---
+
+{{< include "resources/people_slide_green.qmd" >}}
+
+
 <!--
 ## United Nations WHO Digital Health Objectives
 
@@ -1314,22 +1320,22 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 ::: -->
 
 # Acknowledgements {data-background-image="figures/backgrounds/cover_image_thesis_wide.png" data-background-size="cover" data-background-position="center" data-background-opacity="0.15"}
-All friends, colleagues, mentors, collaborators, reviewers, and family who supported me.
+**All friends, colleagues, mentors, collaborators, reviewers, and family who supported me.**
 
 ::: {.small-text}
 ::: {.columns}
 ::: {.column width="25%"}
 HPI:
 
-- Christoph Lippert
-- Lothar Wieler
-- Felix Naumann
-- Gerard de Melo
-- Bert Arnrich
-- Hendrik Schmidt
-- Edit Tatar, Cornelia Philippson, Katharina Lorenz-Shroeder, Lena Kaese
+- Comittee: Christoph Lippert, Lothar Wieler, Felix Naumann, Gerard de Melo
+- Executive assistents: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Shroeder, Lena Kaese.
+- Students: Hendrik Schmidt, Daniela Zuluaga Lotero, Youssef Mecky
 :::
 ::: {.column width="25%"}
+HPI:
+
+- All people in the Digital Health - Connected Healthcare/Machine Learning groups
+
 Charité:
 
 - Max M. Maurer
@@ -1354,10 +1360,17 @@ Reviewers:
 :::
 
 ::: {.columns}
-<div style="text-align: center; margin-top: -1.5em;">
-</div>
+<!-- <div style="text-align: center; margin-top: -1.5em;">
+</div> -->
 ::: {.column width="33%"}
+<div style="text-align: center; margin-top: -1.5em;">
+![](figures/slides_link_trans.svg){width=80% .no-dark .center}
+</div>
+<div style="text-align: center; margin-top: -1.0em;">
 
+<a href="https://www.rpvandewater.com/dissertation-defense/" target="_blank">
+View the slides.</a>
+</div>
 :::
 
 ::: {.column width="33%"}
@@ -1377,7 +1390,7 @@ Reviewers:
 <div style="text-align: center; margin-top: -1.0em;">
 
 <a href="https://www.rpvandewater.com/assets/documents/van_de_Water_dissertation_thesis_22_jan.pdf" target="_blank">
-Read the thesis</a>
+Read the thesis.</a>
 </div>
 :::
 :::

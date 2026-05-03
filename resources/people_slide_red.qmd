@@ -1,0 +1,274 @@
+
+<!-- ```{=html}
+<!-- Full-slide container; all icon positions are % of slide dimensions -->
+<div style="position:absolute;inset:0;width:100%;height:100%;overflow:hidden;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:26.417%;top:31.339%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:30.329%;top:30.988%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:33.718%;top:31.037%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:37.719%;top:30.978%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:41.996%;top:31.358%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.457%;top:31.232%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:49.362%;top:31.38%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:53.256%;top:31.009%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:56.977%;top:31.178%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:60.841%;top:31.191%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:65.092%;top:31.085%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:68.522%;top:31.427%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.308%;top:36.052%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:29.873%;top:36.063%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:34.09%;top:36.453%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:37.816%;top:36.036%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:41.645%;top:36.569%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.591%;top:36.555%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.653%;top:36.007%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:53.419%;top:36.39%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:57.159%;top:36.152%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:61.078%;top:36.064%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.803%;top:36.259%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:68.982%;top:36.5%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:26.154%;top:41.429%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:29.955%;top:41.664%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:34.242%;top:41.313%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:37.951%;top:41.491%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:41.502%;top:41.579%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.598%;top:41.588%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.446%;top:41.143%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:53.171%;top:41.154%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:57.404%;top:41.645%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:61.197%;top:41.319%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.567%;top:41.645%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.977%;top:41.192%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.293%;top:46.325%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:30.319%;top:46.723%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:33.778%;top:46.557%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:37.896%;top:46.437%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:41.952%;top:46.528%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.393%;top:46.594%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.571%;top:46.401%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:53.164%;top:46.854%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:57.229%;top:46.536%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:61.001%;top:46.355%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:64.672%;top:46.479%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:68.753%;top:46.417%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:26.127%;top:51.469%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:30.238%;top:51.559%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:34.264%;top:51.92%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:37.596%;top:51.565%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:41.824%;top:51.551%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.343%;top:51.963%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.471%;top:51.699%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:53.459%;top:51.89%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:56.942%;top:51.484%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:60.946%;top:51.671%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.823%;top:51.845%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:68.806%;top:51.991%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:26.051%;top:56.801%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:30.056%;top:57.064%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:33.853%;top:56.68%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:37.832%;top:56.813%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:41.58%;top:56.714%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:45.837%;top:56.825%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:49.653%;top:56.886%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:53.0%;top:57.142%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:57.345%;top:57.125%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:61.256%;top:57.056%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.635%;top:56.849%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:68.519%;top:56.801%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.026%;top:61.931%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:30.46%;top:61.866%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:34.188%;top:61.974%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:37.816%;top:62.261%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:42.028%;top:62.032%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:45.709%;top:61.803%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.3%;top:62.268%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:53.331%;top:62.024%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:57.29%;top:61.747%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:61.042%;top:62.002%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:65.064%;top:61.804%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:68.986%;top:61.76%;width:5.0%;">
+</div>
+
+```{=html}
+<div class="people-slide people-slide--red-overlay" style="position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:14.579%;top:23.686%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:20.772%;top:22.458%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:25.574%;top:22.631%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.009%;top:22.422%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:39.176%;top:23.753%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:44.17%;top:23.311%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:50.347%;top:23.829%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.494%;top:22.53%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:62.182%;top:23.123%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.25%;top:23.169%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:75.351%;top:22.799%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:80.261%;top:23.995%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:14.287%;top:30.039%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:19.558%;top:30.076%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.567%;top:31.441%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.266%;top:29.984%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:38.24%;top:31.849%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:44.528%;top:31.799%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:51.122%;top:29.88%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.93%;top:31.221%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:62.666%;top:30.391%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.881%;top:30.08%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:74.579%;top:30.765%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:81.486%;top:31.609%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:13.876%;top:38.715%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:19.777%;top:39.54%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.972%;top:38.311%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.627%;top:38.932%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:37.859%;top:39.239%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:44.545%;top:39.272%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.571%;top:37.715%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.269%;top:37.753%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:63.319%;top:39.472%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:69.199%;top:38.329%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:73.951%;top:39.47%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:81.474%;top:37.886%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:14.247%;top:45.71%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:20.747%;top:47.103%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:25.735%;top:46.522%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:32.479%;top:46.102%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.058%;top:46.418%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:43.999%;top:46.65%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.904%;top:45.974%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:56.249%;top:47.562%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:62.854%;top:46.448%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.675%;top:45.813%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:74.229%;top:46.248%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:80.876%;top:46.032%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:13.805%;top:53.571%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:20.531%;top:53.886%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:27.03%;top:55.148%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:31.681%;top:53.905%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:38.719%;top:53.857%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:43.866%;top:55.3%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.639%;top:54.374%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:57.037%;top:55.044%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:62.088%;top:53.622%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.531%;top:54.276%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:74.633%;top:54.887%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:81.018%;top:55.397%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:13.602%;top:62.091%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:20.045%;top:63.009%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:25.935%;top:61.666%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:32.31%;top:62.129%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:38.068%;top:61.785%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:45.185%;top:62.172%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:51.123%;top:62.386%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:55.813%;top:63.284%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:63.164%;top:63.224%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:69.356%;top:62.983%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:74.131%;top:62.257%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:80.252%;top:62.088%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:13.535%;top:69.901%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:21.121%;top:69.673%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:26.828%;top:70.053%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:32.268%;top:71.057%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.263%;top:70.254%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:44.843%;top:69.452%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:50.182%;top:71.08%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:56.694%;top:70.227%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:63.017%;top:69.257%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:68.786%;top:70.149%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/man_icon.svg" style="position:absolute;left:75.275%;top:69.458%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:81.497%;top:69.303%;width:5.0%;filter:drop-shadow(1px 2px 3px rgba(0,0,0,0.22));">
+</div>
+``` -->
+
+Blob size:    38.9% × 27.6% of slide
+Blob origin:  left 30.5%  top 36.2%
+
+
+## {background-color="white"}
+
+```{=html}
+<!-- Full-slide container; all icon positions are % of slide dimensions -->
+<div style="position:absolute;inset:0;width:100%;height:100%;overflow:hidden;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:30.634%;top:36.337%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:33.763%;top:36.092%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:36.474%;top:36.126%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.676%;top:36.084%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:43.096%;top:36.351%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.866%;top:36.262%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:48.989%;top:36.366%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:52.104%;top:36.106%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:55.082%;top:36.225%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:58.173%;top:36.234%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:61.574%;top:36.16%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.318%;top:36.399%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:30.546%;top:39.636%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:33.399%;top:39.644%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:36.772%;top:39.917%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.753%;top:39.625%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:42.816%;top:39.998%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.973%;top:39.988%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.222%;top:39.605%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:52.235%;top:39.873%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:55.227%;top:39.707%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:58.362%;top:39.645%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:61.342%;top:39.781%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.685%;top:39.95%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:30.423%;top:43.4%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:33.464%;top:43.565%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:36.894%;top:43.319%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.861%;top:43.444%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:42.701%;top:43.505%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.978%;top:43.511%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.057%;top:43.2%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:52.037%;top:43.208%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:55.423%;top:43.551%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:58.457%;top:43.323%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:61.154%;top:43.551%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:64.682%;top:43.234%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:30.535%;top:46.828%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:33.755%;top:47.106%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:36.523%;top:46.99%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.817%;top:46.906%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:43.061%;top:46.969%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.814%;top:47.016%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.157%;top:46.88%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:52.031%;top:47.198%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:55.283%;top:46.975%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:58.3%;top:46.848%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:61.237%;top:46.935%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.502%;top:46.892%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:30.402%;top:50.428%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:33.691%;top:50.492%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:36.911%;top:50.744%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:39.577%;top:50.495%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:42.959%;top:50.486%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:45.774%;top:50.774%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:49.077%;top:50.589%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:52.267%;top:50.723%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:55.054%;top:50.439%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:58.257%;top:50.569%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:61.359%;top:50.692%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.545%;top:50.794%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:30.341%;top:54.161%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:33.545%;top:54.345%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:36.583%;top:54.076%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:39.766%;top:54.169%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:42.764%;top:54.1%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:46.17%;top:54.177%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:49.222%;top:54.22%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:51.9%;top:54.4%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:55.376%;top:54.388%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:58.505%;top:54.339%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:61.208%;top:54.194%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.315%;top:54.16%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:30.321%;top:57.752%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:33.868%;top:57.706%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:36.85%;top:57.782%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:39.753%;top:57.983%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:43.123%;top:57.822%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:46.068%;top:57.662%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:48.94%;top:57.987%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:52.165%;top:57.817%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:55.332%;top:57.623%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:58.334%;top:57.801%;width:5.0%;">
+  <img src="icons/man_icon.svg" style="position:absolute;left:61.551%;top:57.663%;width:5.0%;">
+  <img src="icons/woman_icon.svg" style="position:absolute;left:64.689%;top:57.632%;width:5.0%;">
+</div>
+```

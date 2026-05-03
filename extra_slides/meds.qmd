@@ -54,7 +54,7 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
 
 
 
-## Limitations and Challenges
+<!-- ## Limitations and Challenges
 
 **Technical Limitations:**
 
@@ -71,7 +71,7 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
 3. **Model Generalization:**
    - MEDS enables standardized evaluation but doesn't solve fundamental domain shift
    - Model trained at Hospital A often performs poorly at Hospital B
-   - Site-specific fine-tuning often necessary
+   - Site-specific fine-tuning often necessary -->
 
 
 
