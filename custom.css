@@ -58,6 +58,24 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   margin-top: 0 !important;
 }
 
+.reveal .pillar-icon {
+  height: 7em !important;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.reveal .pillar-row .column {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reveal .pillar-row .column > div {
+  width: 100%;
+}
+
 .bigger-text {
   font-size: 1.5em !important;
 }

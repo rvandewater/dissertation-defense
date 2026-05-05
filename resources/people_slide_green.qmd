@@ -1,4 +1,4 @@
-{{< include "resources/people_slide.qmd" >}}
+{{< include "/resources/people_slide.qmd" >}}
 
 ```{=html}
 <!-- Full-slide container; all icon positions are % of slide dimensions -->

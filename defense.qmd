@@ -28,7 +28,7 @@ format:
     logo: ""
     css: custom.css
     footnotes-hover: true
-    footer: <a href="http://rpvandewater.com/dissertation-defense/"> rpvandewater.com/dissertation-defense/ </a> | PhD Defense | Robin P. van de Water<span id="section-indicator" style=""></span>
+    footer: <a href="http://rpvandewater.com/dissertation-defense/" style="color:#6b6b6b;"> rpvandewater.com/dissertation-defense/ </a> | PhD Defense | Robin P. van de Water<span id="section-indicator" style=""></span>
     footnotes: true
     simplemenu:
     code-overflow: wrap
@@ -200,7 +200,6 @@ Main barriers to translation:
 ::: {.fragment .fade-in}
 
 ::: {.slide-card .slide-card--muted}
-::: {.columns}
 ::: {.column width="80%"}
 UN WHO Global Strategy on Digital Health Objectives (1/4):
 
@@ -215,7 +214,6 @@ architecture."* ^[[@marianoGlobalStrategyDigital2020]]
 :::
 :::
 
-:::
 
 ::: {.notes}
 My thesis is structured around three main contributions:
@@ -426,7 +424,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 ![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100%}
 </div> -->
 <div style="position: relative; text-align: center; margin-top: -1.5em;">
-![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=90% .no-dark}^[[@vandewaterContinuousMultimodalAI2025] {my-work}]
+![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=90% .no-dark}^[[@vandewaterContinuousMultimodalAI2025] {.my-work}]
 </div>
 
 
@@ -586,31 +584,36 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 ::: {.columns}
 ::: {.column width="20%" .fragment .centering}
-![](icons/dataset.svg){fig-align="center"}
+![](icons/dataset.svg){fig-align="center" .pillar-icon}
+
 <div style="text-align: center;">
 Data/Splits
 </div>
 :::
 ::: {.column width="20%" .fragment}
-![](icons/people.svg){fig-align="center"}
+![](icons/people.svg){fig-align="center" .pillar-icon}
+
 <div style="text-align: center;">
 Cohort
 </div>
 :::
 ::: {.column width="20%" .fragment}
-![](icons/cogs.svg){fig-align="center"}
+![](icons/cogs.svg){fig-align="center" .pillar-icon}
+
 <div style="text-align: center;">
 Preprocessing
 </div>
 :::
 ::: {.column width="20%" .fragment}
-![](icons/measure.svg){fig-align="center"}
+![](icons/measure.svg){fig-align="center" .pillar-icon}
+
 <div style="text-align: center; width:100%;">
 Evaluation
 </div>
 :::
 ::: {.column width="20%" .fragment}
-![](icons/code.svg){fig-align="center"}
+![](icons/code.svg){fig-align="center" .pillar-icon}
+
 <div style="text-align: center;">
 Code/Models^[[@shillanUseMachineLearning2019a]]
 </div>
@@ -623,7 +626,7 @@ Code/Models^[[@shillanUseMachineLearning2019a]]
 Individual research results (models, techniques, ideas) do not generalize accross settings, hindering meaningful scientific progress and clinical translation. ^[[@moorEarlyPredictionSepsis2021;@fleurenMachineLearningPrediction2020a]] - *Dataset, cohort definition, and preprocessing choices can have **larger effects on performance** than the choice of model architecture.* 
 ::: -->
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
-Can we create a framework for reliably reproducing scientific results of clinical prediction models across datasets and preprocessing choices?
+Can we create a framework for **reliably reproducing scientific results** of clinical prediction models across datasets and preprocessing choices?
 :::
 
 ::: {.notes}
@@ -690,7 +693,7 @@ Outcome:
 ## Different Definitions, Different Conclusions
 **Sepsis**: Life-threatening **response to infection** that causes injury to its own tissues and organs.
 
-⚡ Problem: no single, universally accepted **definition**.
+→ ⚡ Problem: no single, universally accepted **definition**.
 <!-- | **Algorithm** | \multicolumn{2}{c}{Seymour et al.^[[@seymourAssessmentClinicalCriteria2016]]*} | \multicolumn{2}{c}{Moor et al. ^[[@moorPredictingSepsisMultisite2021]]} | \multicolumn{2}{c}{Calvert et al. ^[[@calvertComputationalApproachEarly2016]]} -->
 
 
@@ -765,7 +768,7 @@ Outcome:
   <img src="figures/yaib/yaib_logo.svg" style="width:100%;" class="no-dark">
 </div>
 ::: {.notes}
-- Using YAIB, we can easily compare generalization across datasets and transfer learning approaches for mortality prediction:
+- Using YAIB, we can easily compare generalization across datasets and transfer learning approaches for mortality prediction. Each row corresponds to a model trained on a dataset, and the columns correspond to the evaluation performance.
 - Some datasets are more similar to others. The European datasets are different from the US datasets. However, eICU, which consists of data from 208 US hospitals is more generalizable than the other datasets, which are from single hospitals.
 - Finetuning on the "difficult" HiRID dataset can improve performance with only a fraction of the data, suggesting that pretraining on a large, generalizable dataset can help overcome some of the challenges of dataset shift and improve generalization to new settings.
 :::
@@ -812,7 +815,7 @@ AUPRC:
 ::: {.card-row .card-row--stack}
 ![](icons/neural_net_monochrome.svg){height=3em .light-only}
 
-**Event-based Foundation Models (FMs) show promise in Health AI.**^[[@bommasaniOpportunitiesRisksFoundation2021;@steinbergLanguageModelsAre2021]]
+Event-based **Foundation Models (FMs)** show promise in Health AI.^[[@bommasaniOpportunitiesRisksFoundation2021;@steinbergLanguageModelsAre2021]]
 :::
 :::
 
@@ -820,7 +823,7 @@ AUPRC:
 ::: {.card-row .card-row--stack}
 ![](icons/infrastructure.svg){height=3em .light-only}
 
-**Progress is hindered by lack of reusable, scalable tooling.**^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
+Progress is hindered by **lack of reusable, scalable tooling.**^[[@mcdermottLackScienceMachine2025; @donohoDataScienceSingularity2024]]
 :::
 :::
 
@@ -830,7 +833,7 @@ AUPRC:
 :::
 
 ::: {.callout-tip appearance="simple" style="font-size: 1.5em;" .fragment}
-How can we enable reproducible AI research across healthcare systems?
+How can we **enable reproducible AI** research across healthcare systems?
 :::
 
 ::: {.fragment}
@@ -854,7 +857,7 @@ How can we enable reproducible AI research across healthcare systems?
   <img src="figures/meds/standards.png" width="50%" class="no-dark"> 
 </div>
 <div style="text-align: center; margin-top: -1.5em;">
-  <a href="https://xkcd.com/927/" target="_blank" style="font-size: 0.5em; text-align: center;">Source: https://xkcd.com/927/</a>
+  <a href="https://xkcd.com/927/" target="_blank" style="font-size: 0.5em; color:#6b6b6b; text-align: center;">Source: https://xkcd.com/927/</a>
 </div>
 
 ::: { .incremental}
@@ -892,7 +895,7 @@ How can we enable reproducible AI research across healthcare systems?
 </div>
 :::
 ::: {.tiny-text}
-**  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).**
+**Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).**
 :::
 <!-- :::
 ::: -->
@@ -1158,7 +1161,7 @@ We require: -->
 ::: {.fragment .pub-box .pub-box--pillar2 data-fragment-index="2"}
 <!-- **{{< var section_t2 >}}** -->
 
-→ Experimental setup often matters **more than model choice**
+→ Experimental setup often matters **more than model choice**.
 
 → Multi-center framework for reproducible ML4H (44 cit., GH 96 ⭐).
 
@@ -1172,9 +1175,9 @@ We require: -->
 <!-- - MEDS-DEV: easily benchmark tasks across different sites and tasks. -->
 → Co-founder of MEDS: enables **AI research across health systems**.
 
-→ Created 4 Dataset, OMOP, FHIR ETLs and 3 tools
+→ Created 4 Dataset, OMOP, FHIR ETLs and 3 tools.
 
-→ Benchmarking 9 datasets across 11 tasks
+→ Benchmarking 9 datasets across 11 tasks.
 :::
 :::
 :::
@@ -1288,6 +1291,11 @@ We require: -->
 {{< include "resources/people_slide_green.qmd" >}}
 
 
+::: {.notes}
+- I hope together, we can continue to create more reproducible research and build better tools to enable the development of better AI models for healthcare, which can ultimately lead to better patient outcomes and more saved lives.
+
+
+:::
 <!--
 ## United Nations WHO Digital Health Objectives
 
