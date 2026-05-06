@@ -1,7 +1,7 @@
 
 ---
 
-## All Publications {auto-animate=true auto-animate-id="pub-flow"}
+## All Publications Chronologically {auto-animate=true auto-animate-id="pub-flow"}
 
 :::: columns
 
@@ -50,20 +50,7 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 ::: {.pub-box}
 Max M. Maurer, Bjarne Pfitzner, **Robin P. van de Water**, Lara Faraj, Christoph Riepe, Daniela Zuluaga, Felix Krenzien, Nathanael Raschzok, Robert Siegel, Christian Schineis, Bert Arnrich, Katharina Beyer, Johann Pratschke, Igor M. Sauer, and Axel Winter. [@maurerPrivacyPreservingFederated2025]
 :::
-::: {.pub-legend .bigger-text}
-::: {.pub-legend__item .pub-legend__item--pillar1}
-<span class="pub-legend__swatch"></span>
-<span class="pub-legend__label">{{< var r1_label >}}</span>
-:::
-::: {.pub-legend__item .pub-legend__item--pillar2}
-<span class="pub-legend__swatch"></span>
-<span class="pub-legend__label">{{< var r2_label >}}</span>
-:::
-::: {.pub-legend__item .pub-legend__item--pillar3}
-<span class="pub-legend__swatch"></span>
-<span class="pub-legend__label">{{< var r3_label >}}</span>
-:::
-:::
+
 
 :::
 :::
@@ -125,6 +112,20 @@ Alisher Turubayev, Anna Shopova, Fabian Lange, Mahmut Kamalak, Paul Mattes, Vict
 Wouter van Amsterdam, Michael Kamp, Rajesh Ranganath, **Robin P. van de Water**, Florian Markowetz, Evangelia Christodoulou, Yamuna Krishnamurthy, Christoph Lippert, Jeff Clark, Julia E. Vogt, Raul Santos-Rodriguez, Thomas Gartner, Gilbert Koch, and Brett Beaulieu-Jones. *"Missing Incentives, Missing Oversight: The Challenges of AI Monitoring in Clinical Practice"*. 2025
 :::
 
+::: {.pub-legend .bigger-text}
+::: {.pub-legend__item .pub-legend__item--pillar1}
+<span class="pub-legend__swatch"></span>
+<span class="pub-legend__label">{{< var r1_label >}}</span>
+:::
+::: {.pub-legend__item .pub-legend__item--pillar2}
+<span class="pub-legend__swatch"></span>
+<span class="pub-legend__label">{{< var r2_label >}}</span>
+:::
+::: {.pub-legend__item .pub-legend__item--pillar3}
+<span class="pub-legend__swatch"></span>
+<span class="pub-legend__label">{{< var r3_label >}}</span>
+:::
+:::
 :::
 :::
 ::::

@@ -17,6 +17,7 @@ filters:
   - editable
 format:
   revealjs:
+    margin: 0.05
     auto-animate-easing: ease-in-out
     auto-animate-unmatched: false
     auto-animate-duration: 0.8
@@ -104,7 +105,7 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 
 
 ## The Promise of Machine Learning in Healthcare
-Papers on ArXiv with AI and health keywords in the title or abstract and FDA-approved AI medical devices ^[[@healthArtificialIntelligenceEnabledMedicalTue03/10/2026-09:05]] over time:
+Papers on ArXiv with **AI and health keywords** in the title or abstract and FDA-approved **AI medical devices** ^[[@healthArtificialIntelligenceEnabledMedicalTue03/10/2026-09:05]] over time:
 ![](figures/motivation/ml_health_trend_fda.svg){fig-cap="EHR Data Structure" width=100%}
 <div style="position: relative; top: -1em;">
 ``` code
@@ -458,6 +459,13 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
  <div class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:20%; left:50%; width:100%; height:60%; background:white; z-index:1;"></div> 
 
+<div style="position: relative; top: 3em;">
+- Use open-source framework for **training and model selection**.
+
+::: {.fragment .fade-in fragment-index="1"}
+- Use optimal model outputs with **alarm mechanics** to reduce **alarm burden (alarms/patient/day)** while maintaining precision.
+:::
+</div>
 ::: {.notes}
 - Multiple model architectures, encompassing classical machine learning (ML) and Deep Learning (DL), were trained and evaluated using cross-validation and hyperparameter optimization. 
 - Model selection was based on predictive performance and computational efficiency, with LightGBM identified as the most favorable trade-off. 
@@ -492,8 +500,8 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 <div style="position: relative; top: -2.5em;">
 ::: {.fragment .fade-in fragment-index="2"}
-- Remote Early Warning Score (REWS)^[[@vanderstamWearablePatchBased2023]] threshold-based wearable score.
-- Dynamic models and wearable data improve performance.
+- Dynamic baseline: REWS^[[@vanderstamWearablePatchBased2023]] threshold-based wearable score.
+-  CASHEWS and wearable data improve performance.
 :::
 ::: {.fragment .fade-in fragment-index="3"}
 - Lead time performance has little drop-off.
@@ -545,6 +553,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 - This is a way in which clinicians can make informed decisions about the optimal alarm strategy based on their willingness to accept false positives and available resources.
 - **Now that we've discussed a specific clinical use case of ML lets see if others can reproduce these results and build on them.**
 - Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
+- Net benefit is calculated as a weighted combination of true and false positives
 :::
 
 
@@ -1336,7 +1345,7 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 HPI:
 
 - Comittee: Christoph Lippert, Lothar Wieler, Felix Naumann, Gerard de Melo
-- Executive assistents: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Shroeder, Lena Kaese.
+- Executive assistents: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Schroeder, Lena Kaese.
 - Students: Hendrik Schmidt, Daniela Zuluaga Lotero, Youssef Mecky
 :::
 ::: {.column width="25%"}

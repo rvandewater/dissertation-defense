@@ -152,8 +152,9 @@ div.reveal div.slides section.quarto-title-block .subtitle {
 :root {
   --pub-box-radius: 8px;
   --pub-box-padding: 0.35em 0.5em;
-  --pub-box-gap: 0.35em;
-  --pub-box-border-width: 1px;
+  --pub-box-gap: 0.1em;
+  --pub-box-border-width: 2px;
+  --pub-section-gap: 0.3em;
 
   --pub-neutral-bg: #fafafa;
   --pub-neutral-border: #d9d9d9;
@@ -176,7 +177,7 @@ div.reveal div.slides section.quarto-title-block .subtitle {
 }
 
 .reveal .slide-card {
-  border: 1px solid var(--slide-card-border);
+  border: 2px solid var(--slide-card-border);
   border-radius: 10px;
   padding: 0.7em;
   min-height: 3em;
@@ -238,6 +239,19 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   margin-top: 0.35em;
 }
 
+.reveal .pub-list > p {
+  margin: var(--pub-section-gap) 0 !important;
+  line-height: 1.05;
+}
+
+.reveal .pub-list > p:first-child {
+  margin-top: 0 !important;
+}
+
+.reveal .pub-list > p:last-child {
+  margin-bottom: 0 !important;
+}
+
 .reveal .pub-box {
   --pub-box-bg: var(--pub-neutral-bg);
   --pub-box-border: var(--pub-neutral-border);
@@ -297,7 +311,7 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   display: flex;
   align-items: flex-start;
   gap: 0.2em;
-  border: 1px solid var(--pub-neutral-border);
+  border: 2px solid var(--pub-neutral-border);
   border-radius: var(--pub-box-radius);
   padding: 0.1em 0.18em;
   font-size: 1em;
