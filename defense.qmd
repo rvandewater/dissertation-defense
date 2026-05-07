@@ -282,7 +282,7 @@ Christoph Riepe, **Robin van de Water**, Axel Winter, Bjarne Pfitzner, Lara Fara
 Matthew McDermott, Ethan Steinberg, Jason Fries, **Robin P. van de Water**, Chao Pang, Patrick Rockenschaub, Pawel Renc, Jungwoo Oh, Kamilė Stankevičiūtė, Justin Xu, Tom Joseph Pollard, Nassim Oufattole, Michael Wornow, Teya Bergamaschi, Hyewon Jeong, Simon Lee, Vincent Jeanselme, Kiril Klein, Mikkel Odgaard, Maria Elkjær Montgomery, Arkadiusz Sitek, Mads Nielsen, Jeffrey Chiang, Noa Dagan, Isaac Kohane, Shalmali Joshi, Edward Choi, and Nigam Shah. [@McDermott2025MEDS]
 :::
 ::: {.pub-box .pub-box--neutral data-id="pub-r3-meds-working-group"}
-**MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. [@medsworkinggroupMedicalEventData2024]
+**MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. [@vandewaterMedicalEventData2024]
 :::
 ::: {.pub-box data-id="pub-r3-meds-dev"}
 Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. [@mcdermottMEDSDecentralizedExtensible2024]
@@ -1363,8 +1363,8 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 <style>
 .reveal .slides section{overflow:visible!important}
 .grid9 { position:absolute; top:0; left:0; width:100%; height:100%; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:1fr 1fr 1fr; gap:0; pointer-events:none; }
-.grid9 div { display:flex; align-items:stretch; justify-content:center; min-height:0; }
-.grid9 img { width:100%; height:100%; object-fit:contain; display:block; }
+.grid9 div { display:flex; align-items:stretch; justify-content:center; min-height:0; overflow:visible; }
+.grid9 img { width:100%; height:100%; object-fit:contain; transform:scale(1.25, 1.10); transform-origin:center; display:block; }
 </style>
 
 <div class="grid9">
