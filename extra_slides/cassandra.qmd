@@ -1,5 +1,27 @@
 # Extra slides for {{<var r1_label>}}
 
+## Alarm Strategy and Decision Curve Analysis
+
+- CASHEWS+ reduces alarm burden maintaining precision using **alarm strategies**^[Work with master student Daniela Zuluaga Lotero].
+<!-- - Regulate alarm frequency with grace period, persistence, and silencing (preventing alarm fatigue). -->
+
+::: {.fragment }
+- Decision curve analysis^[[@vancalsterReportingInterpretingDecision2018]]: **how much harm  am I willing to accept?**
+  <img src="figures/cass/fig5.svg" width="100%" class="no-dark">
+:::
+
+
+::: {.notes}
+- So how can we integrate this model into the clinical routine? We have to look at alarm systems.
+- We can regulate the alarm frequency with a combination of a grace period, persistence, and silencing to prevent alarm fatigue. With this approach, we can achieve around 2 alarms per day on a 100-bed ward.
+-  But which recall do we want? 
+- Decision curve analysis including harm-to-benefit ratios  for optimal alarm strategies per recall bin using CASHEWS+. This hinges on how much harm (intervention/diagnostics/probes) am I willing to accept. The top alarm reflecting the threshold probability interval is shown above the dashed red line. 
+- This is a way in which clinicians can make informed decisions about the optimal alarm strategy based on their willingness to accept false positives and available resources.
+
+- Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
+- Net benefit is calculated as a weighted combination of true and false positives
+:::
+
 ## Model Interpretation Grouped by Modality
 
 <!-- <div style="text-align: center; margin-top: -5em;">

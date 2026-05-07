@@ -1,7 +1,15 @@
 ---
 title: "Benchmark to Bedside"
 subtitle: 'Building Modular Multimodal Machine Learning Infrastructure for Healthcare at Scale   <br>
- <span class="title-slide-bottom-block"><img src="figures/slides_link_trans.svg" style="height:5em;vertical-align:middle;"> <br> <span class="title-slide-scan-text">Scan for responsive slides</span> <br> <img src="images/logos/logos_defense.svg" width="20%"></span>'
+ <span class="title-slide-bottom-block" style="position:relative; display:block; min-height:6em;">
+   <div style="position:absolute; inset:0; width:100%; overflow:hidden; z-index:0; pointer-events:none;">
+    <img src="resources/people_slide.svg" alt="People slide" style="width:40%; display:block; margin:0 auto;">
+   </div>
+   <div style="position:absolute; left:0; right:0; bottom:0; z-index:1; text-align:center; margin-top:-5em;">
+ <img src="images/logos/logos_defense.svg" style="width:20%; max-width:14em; display:inline-block;">
+   </div>
+ </span>'
+ 
 author: 'Robin P. van de Water'
 date: today
 title-slide-attributes:
@@ -17,12 +25,14 @@ filters:
   - editable
 format:
   revealjs:
+    slide-number: c
+    template-partials:
+      - resources/title-slide.html
     margin: 0.05
     auto-animate-easing: ease-in-out
     auto-animate-unmatched: false
     auto-animate-duration: 0.8
     theme: serif
-    slide-number: true
     fontsize: 1.5em
     chalkboard: false
     preview-links: auto
@@ -42,8 +52,10 @@ revealjs-plugins:
 --- 
 
 
-# Counting Exercise 
-{{< include "resources/people_slide.qmd" >}}
+# Counting Exercise {auto-animate="true"}
+<div style="position:absolute; left:0; right:0; top:55%; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:0.2em; pointer-events:none;">
+  <img src="resources/people_slide.svg" alt="People slide" style="width:80%; display:block; margin:0 auto; ">
+</div>
 ::: {.fragment}
 <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700;">
 Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.^[[@rossettiRealtimeSurveillanceSystem2025]]
@@ -84,7 +96,7 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 ::: 
 
 
-# ML for Health in a Nutshell {data-section-title="ML for Health in a Nutshell ⚕️" auto-animate=true}
+# ML for Health in a Nutshell {data-section-title="ML for Health in a Nutshell ⚕️"}
 <!-- ![](figures/motivation/ml_for_health.svg){fig-cap="World Health Organization" height=25em .no-dark} -->
 <div style="position: relative; display: inline-block;">
   <img src="figures/motivation/ml_for_health.svg" style="height:25em; display:block;" class="no-dark">
@@ -297,6 +309,11 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 :::
 
 
+## {data-section-title="{{< var section_t1 >}}"}
+<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; font-size:2.2em; font-weight:700;">
+  ⚡ {{< var p1_label >}}
+</div>
+
 # Multi-ward Multi-modal Early Warning Systems 🛏️ {data-section-title="{{< var section_t1 >}}"}
 **​⚡​ {{< var p1_label >}}**: Retrospective, observational, data does not accurately capture the state of the patient.
 
@@ -451,19 +468,21 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 ---
 
 ## Clinical ASsist Heuristic Early Warning System+
-<div style="position: relative; text-align: center; margin-top: 5em;">
+
+- Use open-source framework for **training and model selection**.
+<div style="position: relative; text-align: center; margin-top: 2.5em;">
 ![](figures/cass/cass_model_training.svg){fig-cap="" width=100% .no-dark}
 </div>
 <img src="figures/cass/cashews_logo.svg" width=100% class="no-dark" style="position:absolute; top:53%; left:85%; width:13%; z-index:1;">
 <img src="figures/yaib/yaib_logo.svg" width=100% class="no-dark" style="position:absolute; top:57%; left:35%; width:15%; z-index:1;">
 
- <div class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:20%; left:50%; width:100%; height:60%; background:white; z-index:1;"></div> 
+ <div class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:20%; left:52%; width:100%; height:55%; background:white; z-index:1;"></div> 
 
 <div style="position: relative; top: 3em;">
-- Use open-source framework for **training and model selection**.
 
 ::: {.fragment .fade-in fragment-index="1"}
 - Use optimal model outputs with **alarm mechanics** to reduce **alarm burden (alarms/patient/day)** while maintaining precision.
+- **Decision curve analysis** allows harm-to-benefit to drive selection for the optimal alarm to implement.  
 :::
 </div>
 ::: {.notes}
@@ -500,11 +519,11 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 <div style="position: relative; top: -2.5em;">
 ::: {.fragment .fade-in fragment-index="2"}
-- Dynamic baseline: REWS^[[@vanderstamWearablePatchBased2023]] threshold-based wearable score.
--  CASHEWS and wearable data improve performance.
+- Dynamic baseline: REWS^[[@vanderstamWearablePatchBased2023]].
+- CASHEWS(+) significantly improves discrimination performance.
 :::
 ::: {.fragment .fade-in fragment-index="3"}
-- Lead time performance has little drop-off.
+- **Lead time** performance has little drop-off.
 :::
 </div>
 
@@ -516,7 +535,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 - We also compare this with a baseline of the Remote Early Warning Score (REWS), which is a threshold-based wearable score.
 - Looking at the lead time performance, we see that there is little drop-off in performance as we move further away from the clinical detection of the complication, which suggests that there are indicators of deterioration that can be detected well in advance of clinical recognition.
 - Boxplots of AUROC and (d) boxplots of AUPRC of CASHEWS+ for varying lead times prior to clinical detection. The last hour was set to be positive, while all subsequent time windows were removed from training and evaluation.
-- The key implication is that predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.
+- **The key implication is that due to the filling this missing data gap, we can do predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.**
 :::
 
 
@@ -534,27 +553,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 <!-- <div style="position:absolute; top:0%; left:0%; width:100%; height:60%; background:white; z-index:0;"></div> -->
 
-## Alarm Strategy and Decision Curve Analysis
 
-- CASHEWS+ reduces alarm burden maintaining precision using **alarm strategies**^[Work with master student Daniela Zuluaga Lotero].
-<!-- - Regulate alarm frequency with grace period, persistence, and silencing (preventing alarm fatigue). -->
-
-::: {.fragment }
-- Decision curve analysis^[[@vancalsterReportingInterpretingDecision2018]]: **how much harm  am I willing to accept?**
-  <img src="figures/cass/fig5.svg" width="100%" class="no-dark">
-:::
-
-
-::: {.notes}
-- So how can we integrate this model into the clinical routine? We have to look at alarm systems.
-- We can regulate the alarm frequency with a combination of a grace period, persistence, and silencing to prevent alarm fatigue. With this approach, we can achieve around 2 alarms per day on a 100-bed ward.
--  But which recall do we want? 
-- Decision curve analysis including harm-to-benefit ratios  for optimal alarm strategies per recall bin using CASHEWS+. This hinges on how much harm (intervention/diagnostics/probes) am I willing to accept. The top alarm reflecting the threshold probability interval is shown above the dashed red line. 
-- This is a way in which clinicians can make informed decisions about the optimal alarm strategy based on their willingness to accept false positives and available resources.
-- **Now that we've discussed a specific clinical use case of ML lets see if others can reproduce these results and build on them.**
-- Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
-- Net benefit is calculated as a weighted combination of true and false positives
-:::
 
 
 <!-- ## Performance Analysis
@@ -582,6 +581,15 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 ::: -->
 
+
+## {data-section-title="{{< var section_t2 >}}"}
+<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; font-size:2.2em; font-weight:700;">
+  ⚡ {{< var p2_label >}}
+</div>
+
+::: {.notes}
+- **Now that we've discussed a specific clinical use case of ML lets see if others can reproduce these results and build on them.**
+:::
 
 # Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t2 >}}"}
 
@@ -780,6 +788,7 @@ Outcome:
 - Using YAIB, we can easily compare generalization across datasets and transfer learning approaches for mortality prediction. Each row corresponds to a model trained on a dataset, and the columns correspond to the evaluation performance.
 - Some datasets are more similar to others. The European datasets are different from the US datasets. However, eICU, which consists of data from 208 US hospitals is more generalizable than the other datasets, which are from single hospitals.
 - Finetuning on the "difficult" HiRID dataset can improve performance with only a fraction of the data, suggesting that pretraining on a large, generalizable dataset can help overcome some of the challenges of dataset shift and improve generalization to new settings.
+- **The key point is that without a framework like YAIB, it would be difficult to enable this important reproducible research across datasets.**
 :::
 
 <!-- ::: {.fragment}
@@ -814,6 +823,14 @@ AUPRC:
 <!-- ## Conclusion
 - True reproducibility in clinical ML requires more than just code release; it demands modular, flexible, and standardized pipelines that can adapt to the complexities of real-world data and research needs.
 - YAIB: 96 GitHub stars; 44 citations; Adaption across community ^[[@shenDataAdditionDilemma2024a,@santosImprovingRepresentationLearning2025,@rockenschaubImpactMultiInstitutionDatasets2024,@fuentesPrivacyPreservingDatasetCombination2025]] -->
+
+## {data-section-title="{{< var section_t3 >}}"}
+<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; font-size:2.2em; font-weight:700;">
+  ⚡ {{< var p3_label >}}
+</div>
+::: {.notes}
+**Now that we've looked at structured open-access ICU data let's see how we can enable this  reproducible research across healthcare systems with more complex data and models.** 
+:::
 
 # Framework for Foundational Health AI 🏗️ {data-section-title="{{< var section_t3 >}}"}
 
@@ -1115,7 +1132,7 @@ Grouping by task:
 <div class="fragment fade-out" data-fragment-index="2"
       style="position:absolute; top:48%; left:0%; width:100%; height:100%; background:white; z-index:2;"></div>
 ::: {.tiny-text}
-**  Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).**
+**Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).**
 :::
 <!-- - Supported the development of SOTA models for EHR data ^[[@pangCEHRXGPTScalableMultiTask2025;@fallahpourEHRMambaGeneralizableScalable2024a; @rencFoundationModelElectronic2025]]. -->
 <!-- - 21 institutions
@@ -1152,27 +1169,31 @@ We require: -->
 <img src="figures/connecting_topics.svg" width="100%" class="no-dark">
 </div>
 :::
+<div style="margin-top: -1em;">
 ::: {.columns .discussion-pillars}
 
 ::: {.column width="33%"}
 ::: { .pub-box .pub-box--pillar1 }
 <!-- **{{< var section_t1 >}}** -->
+<!-- → Alarm strategies key to **clinical utility**. -->
 
 → Continuous wearable data **nearly doubles AUPRC**.
 
 → **Predictive surveillance** can be extended to the ward.
+→ Main ML expert for **largest surgical wearable-enabled** prospective cohort.
 
-→ Alarm strategies key to **clinical utility**.
+
 :::
 :::
 
 ::: {.column width="33%"}
 ::: {.fragment .pub-box .pub-box--pillar2 data-fragment-index="2"}
 <!-- **{{< var section_t2 >}}** -->
-
 → Experimental setup often matters **more than model choice**.
 
-→ Multi-center framework for reproducible ML4H (44 cit., GH 96 ⭐).
+→ Harmonizing data can provide **off-the-shelf** tunable models.
+
+→ Multi-center framework for **reproducible ML4H** (44 cit., GH 97 ⭐).
 
 :::
 :::
@@ -1186,7 +1207,10 @@ We require: -->
 
 → Created 4 Dataset, OMOP, FHIR ETLs and 3 tools.
 
-→ Benchmarking 9 datasets across 11 tasks.
+<!-- → Benchmarking 9 datasets across 11 tasks. -->
+→ Expanded MEDS-DEV; 9 datasets
+
+→ **Adoption** across the community (87 agg. cit.; 113 GH followers).
 :::
 :::
 :::
@@ -1199,7 +1223,7 @@ We require: -->
 <!-- ::: {.fragment .fade-in}
 {{< include includes/statement.qmd >}}
 ::: -->
-
+</div>
 ::: {.notes}
 - Let's summarize the key takeaways from this thesis:
 - For the first pillar, we found that continuous wearable data can nearly double the AUPRC for surgical site infection prediction, and that predictive surveillance can be used beyond the ICU into the ward. We also found that alarm strategies are key to clinical utility.
@@ -1297,7 +1321,6 @@ We require: -->
 
 ---
 
-{{< include "resources/people_slide_green.qmd" >}}
 
 
 ::: {.notes}
@@ -1335,6 +1358,29 @@ We require: -->
 In my thesis we focus on 1 in particularly while respecting and complementing the other objectives; of which the latter 3 and 4 are most important.
 - https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2024/0509/Documents/Carl%20LEITNER.pdf 
 ::: -->
+
+```{=html}
+<style>
+.reveal .slides section{overflow:visible!important}
+.grid9 { position:absolute; top:0; left:0; width:100%; height:100%; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:1fr 1fr 1fr; gap:0; pointer-events:none; }
+.grid9 div { display:flex; align-items:stretch; justify-content:center; min-height:0; }
+.grid9 img { width:100%; height:100%; object-fit:contain; display:block; }
+</style>
+
+<div class="grid9">
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+  <div><img src="resources/people_slide.svg" alt="People slide"></div>
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+  <div class="fragment" data-fragment-index="1"><img src="resources/people_slide.svg" alt="People slide"></div>
+</div>
+```
 
 # Acknowledgements {data-background-image="figures/backgrounds/cover_image_thesis_wide.png" data-background-size="cover" data-background-position="center" data-background-opacity="0.15"}
 **All friends, colleagues, mentors, collaborators, reviewers, and family who supported me.**
