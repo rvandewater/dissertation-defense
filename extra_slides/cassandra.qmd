@@ -1,4 +1,19 @@
-# Extra slides for {{<var r1_label>}}
+# {data-section-title="{{< var section_t1 >}} Extra Slides"}
+<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; font-size:2.2em; font-weight:700;">
+  Extra Slides: {{< var section_t1 >}} 
+</div>
+
+## Cohort Selection
+
+<div style="text-align: center; ">
+![](figures/cass/selection_diagram.svg){fig-cap="Cohort Selection Diagram" width="70%" class="no-dark"}
+</div>
+
+## Pipeline
+
+<div style="text-align: center; ">
+![](figures/cass/pipeline_diagram.svg){fig-cap="Pipeline Diagram" width="100%" class="no-dark"}
+</div>
 
 ## Alarm Strategy and Decision Curve Analysis
 
@@ -22,10 +37,20 @@
 - Net benefit is calculated as a weighted combination of true and false positives
 :::
 
+## Warning system example
+
+<div style="text-align: center; ">
+  <img src="figures/cass/warning_system_cassandra.svg" width="70%" class="no-dark">
+</div>
+
+## Model Comparison
+<div style="text-align: center; ">
+  <img src="figures/cass/fig3.svg" height="100%" class="no-dark">
+</div>
+
 ## Model Interpretation Grouped by Modality
 
 <!-- <div style="text-align: center; margin-top: -5em;">
-
   <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
 </div> -->
 Fold-averaged, normalized, grouped model attributions according to Shapley values^[[@lundbergUnifiedApproachInterpreting2017a]]:
@@ -34,6 +59,7 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 </div>
 
 - Clinician: subtle physiological indicate early autonomic stress.
+- Wearables: core temperature, HRV features, and PPG embeddings are top contributors.
 
 ::: {.notes}
 - Taking the common Shapley value approach for model interpretation, we can look at the importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance.
@@ -139,3 +165,16 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 | Staffing & Resources   | High                                            | Lower, different patterns                             |
 | Anomaly Detection | Early, rapid response possible                  | Often delayed, higher advanced complication rates              |
 
+## Feature Count Ablation
+<div style="text-align: center; ">
+  ![](figures/cass/feature_number_ablation.svg){fig-cap="Feature Ablation" width="50%" class="no-dark"}
+</div>
+
+## Model Comparison
+<div style="text-align: center; ">
+  <img src="figures/cass/model_comparison.svg" width="50%" class="no-dark">
+</div>
+
+## Embeddings Notes
+
+![]

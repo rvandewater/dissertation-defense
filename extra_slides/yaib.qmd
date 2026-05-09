@@ -34,6 +34,21 @@
 - UML type diagrams of the main components and their interactions.
 ::: 
 
+## ReciPies Example
+<div style="text-align: center;">
+  ![](figures/yaib/recipies_code_snippet.svg){fig-cap="ReciPies Example" width=100% .no-dark}
+</div>
+
+## Dataset Characteristics
+<div style="text-align: center;">
+  ![](figures/yaib/yaib_dataset_characteristics.png){fig-cap="YAIB Task Table" width=60% .no-dark}
+</div>
+
+## Related Work
+<div style="text-align: center">
+![](figures/yaib/yaib_related_work.png){fig-cap="YAIB Related Work" width=50% .no-dark}
+</div>
+
 ## Datasets and Tasks
 
 Four publicly available ICU datasets:
@@ -58,7 +73,7 @@ Four publicly available ICU datasets:
 **Note:** The related work is non-exhaustive.
 :::
 
-::: {.small-text}
+::: {.tiny-text}
 | **No** | **Task**         | **Frequency**       | **Type** | **Related Work**                                                                                                                                                                                                 |
 |--------|------------------|---------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1      | Mortality        | Once per stay*     | C        | [@bakerContinuousAutomaticMortality2020; @luMachineLearningBased2022a; @medicEvidencebasedClinicalDecision2019; @sharmaMortalityPredictionICU2017; @syedApplicationMachineLearning2021a]                        |
@@ -114,4 +129,23 @@ AUPRC:
 - **Diagonal**: Internal validation (same dataset)
 :::
 
-:::
+## Classification performance
+<div style="text-align: center;">
+![](figures/yaib/yaib_classification_performance.png){fig-cap="Classification Performance" width=70% .no-dark}
+</div>
+
+## Regression performance
+![](figures/yaib/yaib_regression_performance.png){fig-cap="Regression Performance" width=100% .no-dark}
+
+## Mortality Leakage Experiment
+![](figures/yaib/yaib_mortality_leakage.png){fig-cap="Mortality Leakage Experiment" width=100% .no-dark}
+
+## Static Experiment
+![](figures/yaib/yaib_static_experiment.png){fig-cap="Static Experiment" width=100% .no-dark}
+
+## Sepsis Cohort
+<div style="text-align: center;">
+![](figures/yaib/yaib_sepsis_AUROC_grouped.svg){caption="Sepsis Definitions auroc" width=50% .no-dark}
+</div>
+
+![](figures/yaib/yaib_sepsis_cohorts.png){fig-cap="Sepsis Cohort" width=100% .no-dark}

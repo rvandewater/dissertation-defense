@@ -39,7 +39,7 @@ Axel Winter, Bjarne Pfitzner, **Robin P. van de Water**, Lara Faraj, Christoph R
 **Robin van de Water**, Hendrik Nils Aurel Schmidt, Paul Elbers, Patrick Thoral, Bert Arnrich, and Patrick Rockenschaub. "Yet Another ICU Benchmark: A Flexible Multi-Center Framework for Clinical ML". doi: 10.48550/arXiv.2306.05109. [@vandewaterAnotherICUBenchmark2024a]
 :::
 ::: {.pub-box .pub-box--pillar3 data-id="pub-r3-meds-working-group"}
-**MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". 2024. [@medsworkinggroupMedicalEventData2024]
+**MEDS Working Group**: (alphabetized) Bert Arnrich, Edward Choi, Jason A. Fries, Matthew B. A. McDermott, Jungwoo Oh, Tom J. Pollard, Nigam Shah, Ethan Steinberg, Michael Wornow, **Robin van de Water**. "Medical Event Data Standard (MEDS): Facilitating Machine Learning for Health". 2024. [@vandewaterMedicalEventData2024]
 :::
 ::: {.pub-box .pub-box--pillar3 data-id="pub-r3-meds-dev"}
 Matthew B. A. McDermott, Aleksia Kolo, Chao Pang, Edward Choi, Ethan Steinberg, Hyewon Jeong, Jack Gallifant, Jason Alan Fries, Jeffrey N. Chiang, Jungwoo Oh, Justin Xu, Kamilė Stankevičiūtė, Kiril Vadimovic Klein, Mikkel Fruelund Odgaard, Nassim Oufattole, Patrick Rockenschaub, Pawel Renc, **Robin van de Water**, Shalmali Joshi, Simon Austin Lee, Teya Bergamaschi, Tom Pollard, Vincent Jeanselme, Nigam Shah, Michael Wornow, Aparajita Kashyap, Xinzhou Jiang, Yanwei Li, Young Sang Choi, Yuta Kobayashi, and Ryan King. [@mcdermottMEDSDecentralizedExtensible2024]

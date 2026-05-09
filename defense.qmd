@@ -64,8 +64,9 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 :::
 
 ::: {.notes}
-- I’d like you to take a look and estimate how many people you think are on this slide. Just get a number in mind.
-- You probably didn’t have enough time to count—so I’ll tell you. There are 84 people on this slide.
+
+- You might have been wondering why there are all these little icons of people on this slide.
+-  There are 84 people on this slide to be exact; 84 lives.
 - In a recent trial of an AI early warning system in New York City in two health systems, it was estimated that in one year, an estimated 84 people who might have died, didn’t.
 - This is how important AI in healthcare can be: it has the potential to save lives by predicting and preventing adverse outcomes.
 - This is the promise of machine learning in healthcare: to use data to predict and prevent adverse outcomes, and ultimately save lives.
@@ -889,7 +890,7 @@ How can we **enable reproducible AI** research across healthcare systems?
 ::: { .incremental}
 - OMOP ^[[@hripcsakObservationalHealthData2015]], PCORnet ^[[@collinsPCORnetTurningDream2014]], FHIR^[[@benderHL7FHIRAgile2013]], and i2b2^[[@murphyServingEnterpriseInformatics2010]].
 - Have enabled **observational studies** and **health data exchange** ^[[@callahan2021using; @suchardComprehensiveComparativeEffectiveness2019]].
-- But they are not designed for **high-parameter AI research**.
+- But, they are not designed for **high-parameter AI research**.
 :::
 
 ::: {.notes}
@@ -1039,7 +1040,7 @@ Grouping by dataset and model:
 </div>
 
 <div  style="text-align: center;  margin-top: -1.5em;">
-Grouping by task:
+Grouping by task and model:
   <img src="figures/meds/meds_dev/aggregated/auroc_by_task_samples.svg" width="100%" class="no-dark">
 </div>
 :::
@@ -1081,10 +1082,10 @@ Grouping by task:
 
 :::
 
-## Linear Probing
+## What Can We Do With Foundation Models?
 - Train **FMs**^[[@pangFoMoHClinicallyMeaningful2025]], CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]], on entire MSHS (5.5M patients).
 - Embed a variety of **patient representations** until prediction time.
-- Train a **linear classifier** on top of frozen foundation model representations.
+- **Linear probing**: train a **linear classifier** on top of frozen FM representations.
 - Effect of **sample size** on performance:
 
 <div data-id="ms-logo-box" style="position:absolute; right:-3%; top:77%; width:12%; text-align:right;">
@@ -1165,7 +1166,7 @@ We require: -->
 
 
 ::: {.centered}
-<div style="text-align: center; margin-top: -1em;">
+<div style="text-align: center; margin-top: -1.5em;">
 <img src="figures/connecting_topics.svg" width="100%" class="no-dark">
 </div>
 :::
@@ -1179,6 +1180,8 @@ We require: -->
 
 → Continuous wearable data **nearly doubles AUPRC**.
 
+→ Multi-modality provides **physiological insights**.
+
 → **Predictive surveillance** can be extended to the ward.
 → Main ML expert for **largest surgical wearable-enabled** prospective cohort.
 
@@ -1191,7 +1194,7 @@ We require: -->
 <!-- **{{< var section_t2 >}}** -->
 → Experimental setup often matters **more than model choice**.
 
-→ Harmonizing data can provide **off-the-shelf** tunable models.
+→ Harmonizing data provides **external validation** and **off-the-shelf** tunable models.
 
 → Multi-center framework for **reproducible ML4H** (44 cit., GH 97 ⭐).
 
@@ -1208,14 +1211,14 @@ We require: -->
 → Created 4 Dataset, OMOP, FHIR ETLs and 3 tools.
 
 <!-- → Benchmarking 9 datasets across 11 tasks. -->
-→ Expanded MEDS-DEV; 9 datasets
+→ MEDS-DEV: Scaled **cross-institutional** benchmarks.
 
 → **Adoption** across the community (87 agg. cit.; 113 GH followers).
 :::
 :::
 :::
-<div class="fragment fade-out" data-fragment-index="2" style="position:absolute; top:7%; left:23%; width:100%; height:45%; background:white;"></div>
-<div class="fragment fade-out" data-fragment-index="3" style="position:absolute; top:7%; left:60%; width:100%; height:45%; background:white;"></div>
+<div class="fragment fade-out" data-fragment-index="2" style="position:absolute; top:5.5%; left:23%; width:100%; height:44%; background:white;"></div>
+<div class="fragment fade-out" data-fragment-index="3" style="position:absolute; top:7%; left:60%; width:100%; height:43%; background:white;"></div>
 
 <!-- ::: {.fragment}
 **Healthcare ML requires prospective data collection, experimental infrastructure, and institutional commitment to reproducibility.
@@ -1255,7 +1258,7 @@ We require: -->
 ::: {.card-row .card-row--stack}
 ![](icons/danger.svg){height=3em .light-only}
 
-**Potential for harmful use (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
+**Need for oversight (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
 :::
 :::
 
@@ -1324,7 +1327,9 @@ We require: -->
 
 
 ::: {.notes}
-- I hope together, we can continue to create more reproducible research and build better tools to enable the development of better AI models for healthcare, which can ultimately lead to better patient outcomes and more saved lives.
+Coming back to the those 84 patients that we started with, we can see that this could just be the beginning of AI in healthcare. By closing the reproducibility gap, we can enable more collaborative research across institutions and datasets. This should lead to  prolonged patient lives through trustworthy and equitable healthcare AI for the many.
+<!-- 
+I hope together, we can continue to create more reproducible research and build better tools to enable the development of better AI models for healthcare, which can ultimately lead to better patient outcomes and more saved lives. -->
 
 
 :::
@@ -1361,7 +1366,9 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 
 ```{=html}
 <style>
-.reveal .slides section{overflow:visible!important}
+.reveal .slides section:has(.grid9){overflow:visible!important}
+.reveal .slides section:has(#refs){overflow-y:auto!important}
+.reveal .slides section:has(#refs) #refs{max-height:100%;overflow-y:auto}
 .grid9 { position:absolute; top:0; left:0; width:100%; height:100%; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:1fr 1fr 1fr; gap:0; pointer-events:none; }
 .grid9 div { display:flex; align-items:stretch; justify-content:center; min-height:0; overflow:visible; }
 .grid9 img { width:100%; height:100%; object-fit:contain; transform:scale(1.25, 1.10); transform-origin:center; display:block; }
@@ -1390,8 +1397,8 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 ::: {.column width="25%"}
 HPI:
 
-- Comittee: Christoph Lippert, Lothar Wieler, Felix Naumann, Gerard de Melo
-- Executive assistents: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Schroeder, Lena Kaese.
+- Comittee: Christoph Lippert, Lothar Wieler, Felix Naumann, Gerard de Melo, Bernhard Renard
+- Executive assistants: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Schroeder, Lena Kaese.
 - Students: Hendrik Schmidt, Daniela Zuluaga Lotero, Youssef Mecky
 :::
 ::: {.column width="25%"}
