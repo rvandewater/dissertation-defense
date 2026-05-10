@@ -1,4 +1,7 @@
-# Extra slides for {{<var r3_label>}}
+# {data-section-title="{{< var section_t3 >}} Extra Slides"}
+<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; font-size:2.2em; font-weight:700;">
+  Extra Slides: {{< var section_t3 >}} 
+</div>
 
 ## Representations
 - Analyze the **learned representations** of foundation models to understand what they capture and how they differ across tasks and datasets.
@@ -53,10 +56,53 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
 :::
 
 
+## MEDS FM Timeline
+<div style="text-align: center;">
+  ![](figures/meds/meds_timeline.png){fig-cap="MEDS FM Timeline" width=100% .no-dark}
+</div>
 
-<!-- ## Limitations and Challenges
+## MEDS Modelling
+<div style="text-align: center;">
+  ![](figures/meds/meds_modelling.png){fig-cap="MEDS Modelling" width=80% .no-dark}
+</div>
 
-**Technical Limitations:**
+
+## Sequence Lengths 
+<div style="text-align: center;">
+  ![](figures/meds/stats/sequence_length_all_datasets.svg){fig-cap="Sequence Lengths" width=40% .no-dark}
+</div>
+
+## Tokenizer Comparison
+<div style="text-align: center;">
+  ![](figures/meds/tokenizer/vocab_counts_tokenizer_medical_center_comparison.svg){fig-cap="Tokenizer Comparison" width=80% .no-dark}
+</div>
+
+## Zipf's Law in EHR Data
+<div style="text-align: center;">
+![](figures/meds/stats/zipfs_law_comparison.svg)
+{fig-cap="Zipf's Law in EHR Data" width=80% .no-dark}
+</div>
+
+## HarmonizEHR Embeddings
+
+<div style="text-align: center;">
+  ![](figures/meds/harmonizehr/harmonizehr_code_concept_tsne.svg){fig-cap="HarmonizEHR Embeddings" width=60% .no-dark}
+</div>
+
+
+
+## MEDS-Inspect
+<div style="text-align: center;">
+  ![](figures/meds/meds_inspect/meds_inspect_overview.png){fig-cap="MEDS-Inspect" width=50% .no-dark}
+</div>
+
+## MEDS-Inspect Subject Timeline
+<div style="text-align: center;">
+  ![](figures/meds/meds_inspect/meds_inspect_subject_timeline.png){fig-cap="MEDS-Inspect" width=80% .no-dark}
+</div>
+
+
+<!-- **Technical Limitations:**
 
 1. **Schema Rigidity:** MEDS works well for structured EHR data but struggles with:
    - Freetext clinical notes (requires separate NLP pipeline)
@@ -71,8 +117,7 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
 3. **Model Generalization:**
    - MEDS enables standardized evaluation but doesn't solve fundamental domain shift
    - Model trained at Hospital A often performs poorly at Hospital B
-   - Site-specific fine-tuning often necessary -->
-
+   - Site-specific fine-tuning often necessary  -->
 
 
 

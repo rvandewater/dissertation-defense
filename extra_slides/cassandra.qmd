@@ -53,7 +53,8 @@
 <!-- <div style="text-align: center; margin-top: -5em;">
   <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
 </div> -->
-Fold-averaged, normalized, grouped model attributions according to Shapley values^[[@lundbergUnifiedApproachInterpreting2017a]]:
+Fold-averaged, normalized, grouped model attributions according to Shapley values^
+[[@lundbergUnifiedApproachInterpreting2017a]]:
 <div style="text-align: center; ">
   <img src="figures/cass/shap_contribution.svg" width="80%" class="no-dark">
 </div>
@@ -68,6 +69,13 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 - However, wearable modalities are a close second with core temperature, HRV features, and RR interval features being the top single contributors and the PPG embeddings accounting for a large portion of the overall contribution.
 
 :::
+
+## Model Explainability Subgrouped by Modality
+
+<div style="text-align: center; ">
+  <img src="figures/cass/dim_red_violin.svg" width="60%" class="no-dark">
+</div>
+<!-- ![](figures/cass/dim_red_violin.svg){fig-cap="Model Explainability by Modality" width="80%" class="no-dark"} -->
 
 ## Alarm Strategy and Decision Curve Analysis
 
@@ -124,37 +132,6 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 
 **Result:** Our prospective CASSANDRA study found that hybrid monitoring (ICU + GW wearables) significantly improves early detection of postoperative complications, which retrospective analyses failed to capture.
 
-## The Wearable Integration Problem
-
-**Modalities Collected:**
-
-:::: columns
-::: {.column width="50%"}
-**Traditional:**
-- Demographic data
-- Preoperative labs
-- Operative details
-- ICU parameters
-
-**Clinical notes:**
-- Assessed via NLP embeddings 
-- Medications analyzed for patterns
-:::
-::: {.column width="50%"}
-**Wearable (Novel):**
-- ECG (electrocardiogram)
-- PPG (photoplethysmography)
-- Temperature
-- Respiration rate
-- Heart rate variability
-
-*Data Rate:*
-- ICU: ~1 measurement per patient per variable per hour
-- Wearables: ~100 measurements per variable per hour
-:::
-::::
-
-**Challenge:** Fusing extremely heterogeneous data at different frequencies and granularities.
 
 ## The Clinical Deployment Gap
 
@@ -177,4 +154,23 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 
 ## Embeddings Notes
 
-![]
+![](figures/cass/notes_composite.svg){fig-cap="Embeddings" width="80%" class="no-dark"}
+
+## Embeddings Medications
+
+![](figures/cass/meds_composite.svg){fig-cap="Medication Embeddings" width="80%" class="no-dark"}
+
+## Intake distribution
+<div style="text-align: center; ">
+  <img src="figures/cass/intake_distribution_stratified_age_bin.svg" width="60%" class="no-dark">
+</div>
+<div style="text-align: center; margin-top: -2em;">
+  <img src="figures/cass/intake_distribution_stratified_organ_system.svg" width="60%" class="no-dark">
+</div>
+<div style="text-align: center; margin-top: -2em;">
+  <img src="figures/cass/intake_distribution_stratified_complication.svg" width="60%" class="no-dark">
+</div>
+
+<!-- ![](figures/cass/intake_distribution_stratified_age_bin.svg){fig-cap="Intake Distribution by Age Bin" width="80%" class="no-dark"}
+![](figures/cass/intake_distribution_stratified_complication.svg){fig-cap="Intake Distribution by Complication" width="80%" class="no-dark"}
+![](figures/cass/intake_distribution_stratified_organ_system.svg){fig-cap="Intake Distribution by Organ System" width="80%" class="no-dark"} -->

@@ -1242,7 +1242,7 @@ We require: -->
 ::: {.card-row}
 ![](icons/people_split.svg){height=3em .light-only}
 
-**Models may amplify existing racial, gender, and socioeconomic biases.**^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
+**Amplification of existing racial, gender, and socioeconomic biases.**^[[@borgesdonascimentoBarriersFacilitatorsUtilizing2023]]
 :::
 :::
 
@@ -1254,11 +1254,19 @@ We require: -->
 :::
 :::
 
-::: {.fragment fragment-index=3}
+<!-- ::: {.fragment fragment-index=3}
 ::: {.card-row .card-row--stack}
 ![](icons/danger.svg){height=3em .light-only}
 
 **Need for oversight (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
+:::
+::: -->
+
+::: {.fragment fragment-index=3}
+::: {.card-row .card-row--stack}
+![](icons/danger.svg){height=3em .light-only}
+
+**Need for regulatory oversight against misuse.**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
 :::
 :::
 
@@ -1266,7 +1274,7 @@ We require: -->
 ::: {.card-row .card-row--stack}
 ![](icons/neural_net_monochrome.svg){height=3em .light-only}
 
-**(Large) AI models have sizeable environmental impact.**^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
+**(Large) AI models have environmental impact and are "black boxes".**^[[@hosseiniSocialenvironmentalImpactPerspective2025]]
 :::
 :::
 ::: {.notes}
@@ -1327,7 +1335,7 @@ We require: -->
 
 
 ::: {.notes}
-Coming back to the those 84 patients that we started with, we can see that this could just be the beginning of AI in healthcare. By closing the reproducibility gap, we can enable more collaborative research across institutions and datasets. This should lead to  prolonged patient lives through trustworthy and equitable healthcare AI for the many.
+Coming back to the those 84 patients that we started with, we can see that this could just be the beginning of AI in healthcare. By closing the reproducibility gap, we can enable scientist to build upon each others work rather than each starting from scratch. This should lead to  prolonged patient lives through trustworthy and equitable healthcare AI for the many.
 <!-- 
 I hope together, we can continue to create more reproducible research and build better tools to enable the development of better AI models for healthcare, which can ultimately lead to better patient outcomes and more saved lives. -->
 
@@ -1496,7 +1504,7 @@ Healthcare ML can improve outcomes when built on solid infrastructure, rigorous 
 ::: {#refs}
 :::
 
-
+{{< include extra_slides/motivation.qmd >}}
 {{< include extra_slides/cassandra.qmd >}}
 {{< include extra_slides/yaib.qmd >}}
 {{< include extra_slides/meds.qmd >}}
