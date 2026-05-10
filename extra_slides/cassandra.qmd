@@ -53,13 +53,12 @@
 <!-- <div style="text-align: center; margin-top: -5em;">
   <img src="figures/cass/shap_vals.svg" width="100%" class="no-dark">
 </div> -->
-Fold-averaged, normalized, grouped model attributions according to Shapley values^
-[[@lundbergUnifiedApproachInterpreting2017a]]:
+Fold-averaged, normalized, grouped model attributions according to Shapley values^[[@lundbergUnifiedApproachInterpreting2017a]]:
 <div style="text-align: center; ">
   <img src="figures/cass/shap_contribution.svg" width="80%" class="no-dark">
 </div>
 
-- Clinician: subtle physiological indicate early autonomic stress.
+- Clinician: subtle physiological changes indicate **early autonomic stress and neurocardiovascular dysregulation**.
 - Wearables: core temperature, HRV features, and PPG embeddings are top contributors.
 
 ::: {.notes}

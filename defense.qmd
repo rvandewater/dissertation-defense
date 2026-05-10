@@ -97,7 +97,7 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 ::: 
 
 
-# ML for Health in a Nutshell {data-section-title="ML for Health in a Nutshell ⚕️"}
+# ML/AI for Health in a Nutshell {data-section-title="ML for Health in a Nutshell ⚕️"}
 <!-- ![](figures/motivation/ml_for_health.svg){fig-cap="World Health Organization" height=25em .no-dark} -->
 <div style="position: relative; display: inline-block;">
   <img src="figures/motivation/ml_for_health.svg" style="height:25em; display:block;" class="no-dark">
@@ -117,7 +117,7 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 :::
 
 
-## The Promise of Machine Learning in Healthcare
+## The Promise and Reality of AI in Healthcare
 ArXiv papers with **AI and health keywords** in title/abstract and FDA-approved **AI medical devices** ^[[@healthArtificialIntelligenceEnabledMedicalTue03/10/2026-09:05]]:
 <div style="margin-top: -1.2em;">
 ![](figures/motivation/ml_health_trend_fda.svg){fig-cap="EHR Data Structure" width=100%}
@@ -160,7 +160,7 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 
   
 <!-- - <span style="color: #0095D1">Advance the implementation of national digital health strategies</span> -->
-::: {.callout-warning title="Central Challenge" style="font-size: 1.5em;"}
+::: {.callout-warning style="font-size: 1.5em;" appearance="simple" }
 **Few AI/ML models have been successfully deployed in clinical practice.**^[[@apellExplainingSlowAdoption2026] [@henzlerHealthcareProfessionalsPerspectives2025]]
 :::
 
@@ -189,7 +189,7 @@ Main barriers to translation:
 :::
 :::
 ::: {.fragment .fade-in}
-*Out of scope: ​⚡​ ** {{< var p4_label >}}**^[[@vancalsterThereNoSuch2023]] *
+*Out of scope: ​⚡​ ** {{< var p4_label >}}**^[[@vancalsterThereNoSuch2023]] and ​⚡​**$P_5$ Financial incentives**^[[@abramoffScalingAdoptionMedical2024]] *
 :::
 
 ::: {.notes}
@@ -669,22 +669,22 @@ Can we create a framework for **reliably reproducing scientific results** of cli
 ::: {.column width="70%"}
 Problems:
 
-- Medical research is **inherently** complex
-- One size fits-all always **impossible**
-- Hardcoded ≠ **reproducible**
+- Medical research is **inherently** complex.
+- One size fits-all always **impossible**.
+- Hardcoded ≠ **reproducible**.
 
 ::: {.fragment data-fragment-index="2"}
 Goals:
 
-- **Modular** setup maintaining reproducibility
-- **Extensibility** across experiment lifecycle
-- **Out-of-the-box** support: datasets, tasks, models
+- **Modular** setup maintaining reproducibility.
+- **Extensibility** across experiment lifecycle.
+- **Out-of-the-box** support: datasets, tasks, models.
 :::
 ::: {.fragment data-fragment-index="3"}
 Outcome:
 
-- **ReciPies**^[[@van_de_Water2026]{.my-work}]: Modular ML preprocessing framework 
-- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]{.my-work}]: framework for reproducible prediction experiments across datasets.
+- **ReciPies**^[[@van_de_Water2026]{.my-work}]: Declare, execute, and share ML preprocessing pipelines.
+- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]{.my-work}]: Reproducible prediction experiments across (open-access) datasets.
 :::
 :::
 ::: {.column width="30%"}
@@ -1192,7 +1192,7 @@ We require: -->
 
 → Continuous wearable data **nearly doubles AUPRC**.
 
-→ Multi-modality provides **physiological insights**.
+→ Wearables provides **physiological insights**.
 
 → **Predictive surveillance** can be extended to the ward.
 → First author for **largest surgical wearable-enabled** prospective cohort.
@@ -1206,7 +1206,7 @@ We require: -->
 <!-- **{{< var section_t2 >}}** -->
 → Experimental setup often matters **more than model choice**.
 
-→ Harmonizing data provides **external validation** and **off-the-shelf** tunable models.
+→ Harmonizing data provides **external validation** and **fine-tunable models**.
 
 → Multi-center framework for **reproducible ML4H** (44 cit., GH 97 ⭐).
 
