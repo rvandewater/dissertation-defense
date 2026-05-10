@@ -53,7 +53,7 @@ revealjs-plugins:
 
 
 # Counting Exercise {auto-animate="true"}
-<div style="position:absolute; left:0; right:0; top:55%; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:0.2em; pointer-events:none;">
+<div style="position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:0.2em; pointer-events:none;">
   <img src="resources/people_slide.svg" alt="People slide" style="width:80%; display:block; margin:0 auto; ">
 </div>
 ::: {.fragment}
@@ -65,7 +65,7 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 
 ::: {.notes}
 
-- You might have been wondering why there are all these little icons of people on this slide.
+- You might have been wondering why the title slide contains all these icons of people.
 -  There are 84 people on this slide to be exact; 84 lives.
 - In a recent trial of an AI early warning system in New York City in two health systems, it was estimated that in one year, an estimated 84 people who might have died, didn’t.
 - This is how important AI in healthcare can be: it has the potential to save lives by predicting and preventing adverse outcomes.
@@ -171,7 +171,7 @@ Main barriers to translation:
 ::: {.card-row .card-row--stack}
 ![](icons/eye.svg){height=2em .light-only}
 
-⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">{{< var p1_label >}}</span> ^[[@agnielBiasesElectronicHealth2018]]
+⚡ <span data-id="problem-incomplete-shared" style="display:inline-block; font-weight:700;">{{< var p1_label >}}</span>^[[@agnielBiasesElectronicHealth2018]]
 :::
 :::
 ::: {.fragment .fade-in}
@@ -215,7 +215,7 @@ Main barriers to translation:
 
 ::: {.fragment .fade-in}
 
-::: {.slide-card .slide-card--muted}
+::: {.slide-card}
 ::: {.column width="80%"}
 UN WHO Global Strategy on Digital Health Objectives (1/4):
 
@@ -484,7 +484,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 <div style="position: relative; top: 3em;">
 
 ::: {.fragment .fade-in fragment-index="1"}
-- Use optimal model outputs with **alarm mechanics** to reduce **alarm burden (alarms/patient/day)** while maintaining precision.
+- Use optimal model outputs with **alarm mechanics** to reduce **alarm burden (alarms/patient/day)** while maintaining precision.^[Work with master thesis student Daniela Zuluaga Lotero].
 - **Decision curve analysis:** harm-to-benefit ratio drives alarm selection.  
 :::
 </div>
@@ -1088,7 +1088,7 @@ Grouping by task and model:
 :::
 
 ## What Can We Do With Foundation Models?
-- Train **FMs**^[[@pangFoMoHClinicallyMeaningful2025]], CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]], on entire MSHS (5.5M patients).
+- Train SOTA **FMs**^[[@pangFoMoHClinicallyMeaningful2025]], CEHR-XGPT^[[@pangCEHRXGPTScalableMultiTask2025]] and MOTOR^[[@steinbergMOTORTimetoEventFoundation2023a]], on entire MSHS (5.5M patients).
 - Embed a variety of **patient representations** until prediction time.
 - **Linear probing**: train a **linear classifier** on top of frozen FM representations.
 - Effect of **sample size** on performance:
@@ -1126,9 +1126,12 @@ Grouping by task and model:
 - For lower sample set sizes, we see that the linear classifier on top of the foundation model representations can outperform traditional machine learning models, suggesting that the foundation model representations capture useful information for downstream tasks even with limited data.
 - The performance gap decreases as we get more samples as can be expected, but there is still a slight boost compared to the baselines
 - This suggests that the foundation model representations can provide a useful starting point for downstream tasks, even when finetuning is not feasible due to computational constraints or limited data.
+Extra:
+
+- This may reflect differences in pretraining strategies, as MOTOR is explicitly optimized for representation learning (e.g., time-to-event prediction), whereas CEHR-XGPT is trained using nexttoken prediction.
 :::
 
-## Impact of the MEDS Ecosystem
+## MEDS: Community Adoption
 
 <div style="text-align: center;">
   <img src="figures/meds/meds_adoption.png" width="100%" class="no-dark">
@@ -1426,7 +1429,7 @@ HPI:
 ::: {.column width="25%"}
 HPI:
 
-- All people in the Digital Health - Connected Healthcare/Machine Learning groups
+- All people in the Digital Health - Connected Healthcare/Machine Learning groups and the Digital Health Cluster
 
 Charité:
 

@@ -67,10 +67,20 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
 </div>
 
 
-## Sequence Lengths 
+## Sequence Lengths of Events in EHR Data
+::: {.columns}
+::: {.column width="50%"}
 <div style="text-align: center;">
-  ![](figures/meds/stats/sequence_length_all_datasets.svg){fig-cap="Sequence Lengths" width=40% .no-dark}
+  ![](figures/meds/stats/sequence_length_a.svg){fig-cap="Sequence Lengths" width=100% .no-dark}
 </div>
+:::
+::: {.column width="50%"}
+<div style="text-align: center;">
+  ![](figures/meds/stats/sequence_length_all_datasets_b.svg){fig-cap="Sequence Lengths" width=100% .no-dark}
+</div>
+:::
+:::
+
 
 ## Tokenizer Comparison
 <div style="text-align: center;">
@@ -101,7 +111,15 @@ The translation gap in healthcare ML can be reframed as a failure to achieve the
   ![](figures/meds/meds_inspect/meds_inspect_subject_timeline.png){fig-cap="MEDS-Inspect" width=80% .no-dark}
 </div>
 
-
+## Differences Between MOTOR and CEHR‑X‑GPT
+| Aspect                     | MOTOR                                      | CEHR‑X‑GPT                                                              |
+| -------------------------- | ------------------------------------------ | ----------------------------------------------------------------------- |
+| Primary training objective | Time‑to‑event forecasting over intervals   | Next‑token prediction + TD + TTE on time tokens                         |
+| Main use in paper          | Representation learning (linear probing)   | Representation, zero‑shot prediction, synthetic EHR generation          |
+| Fine‑tuning                | Reported to add little over linear probing | Fine‑tuning gives large gains over linear probing on several tasks      |
+| Input domains              | Includes measurements, observations        | Excludes measurements/observations so far                               |
+| Zero‑shot prediction       | Not supported in this comparison           | Strong zero‑shot performance on multiple risk tasks                     |
+| Synthetic data             | Not evaluated                              | Generates large‑scale synthetic OMOP EHR with good utility and low risk |
 <!-- **Technical Limitations:**
 
 1. **Schema Rigidity:** MEDS works well for structured EHR data but struggles with:
