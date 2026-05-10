@@ -189,6 +189,7 @@ div.reveal div.slides section.quarto-title-block .subtitle {
 .reveal .slide-card {
   border: 2px solid var(--slide-card-border);
   border-radius: 10px;
+  border-width: 2px;
   padding: 0.7em;
   min-height: 3em;
   background: var(--slide-card-bg);
@@ -197,6 +198,7 @@ div.reveal div.slides section.quarto-title-block .subtitle {
 .reveal .slide-card--muted {
   border-radius: 8px;
   padding: 0.7em 0.9em;
+  border-width: 2px;
   min-height: auto;
   background: var(--slide-card-bg-muted);
 }
@@ -223,6 +225,7 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   align-items: center;
   gap: 0.4em;
   padding: 0.15em 0.45em 0.15em 0.35em;
+  border-width: 2px;
 }
 
 .reveal .card-row--top {

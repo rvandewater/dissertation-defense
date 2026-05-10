@@ -1,6 +1,6 @@
 version: 1.2
 
-p1_label: "$P_1$: Incomplete observations"
+p1_label: "$P_1$: Incomplete patient state"
 p2_label: "$P_2$: Research reproducibility"
 p3_label: "$P_3$: Lack of robust infrastructure"
 p4_label: "$P_4$: Ethical and regulatory hurdles"
