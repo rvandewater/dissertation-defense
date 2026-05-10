@@ -521,7 +521,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 <div style="position: relative; top: -2.5em;">
 ::: {.fragment .fade-in fragment-index="2"}
 - Dynamic baseline: REWS^[[@vanderstamWearablePatchBased2023]].
-- CASHEWS(+) significantly improves discrimination performance.
+- CASHEWS(+) significantly improves **discrimination performanc**e.
 :::
 ::: {.fragment .fade-in fragment-index="3"}
 - **Lead time** performance has little drop-off.
@@ -661,13 +661,12 @@ Can we create a framework for **reliably reproducing scientific results** of cli
 
 ::: columns
 ::: {.column width="70%"}
-::: {.fragment data-fragment-index="1"}
 Problems:
 
 - Medical research is **inherently** complex
 - One size fits-all always **impossible**
 - Hardcoded ≠ **reproducible**
-:::
+
 ::: {.fragment data-fragment-index="2"}
 Goals:
 
@@ -679,7 +678,7 @@ Goals:
 Outcome:
 
 - **ReciPies**^[[@van_de_Water2026]{.my-work}]: Modular ML preprocessing framework 
-- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]{.my-work}]: framework for reproducible ICU prediction experiments across datasets.
+- **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]{.my-work}]: framework for reproducible prediction experiments across datasets.
 :::
 :::
 ::: {.column width="30%"}
@@ -1183,7 +1182,7 @@ We require: -->
 → Multi-modality provides **physiological insights**.
 
 → **Predictive surveillance** can be extended to the ward.
-→ Main ML expert for **largest surgical wearable-enabled** prospective cohort.
+→ First author for **largest surgical wearable-enabled** prospective cohort.
 
 
 :::
