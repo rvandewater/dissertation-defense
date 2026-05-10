@@ -1249,7 +1249,7 @@ We require: -->
 ::: {.card-row .card-row--stack}
 ![](icons/check.svg){height=3em .light-only}
 
-**Need validation strategies and randomized trials before deployment.**^[[@wongExternalValidationWidely2021a]]
+**Need validation strategies and randomized trials before deployment.**^[[@wongExternalValidationWidely2021a; ]]
 :::
 :::
 
@@ -1263,9 +1263,9 @@ We require: -->
 
 ::: {.fragment fragment-index=3}
 ::: {.card-row .card-row--stack}
-![](icons/danger.svg){height=3em .light-only}
+![](icons/causal.svg){height=3em .light-only}
 
-**Need for regulatory oversight against misuse.**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
+**Need for causal approaches to improve theoretical validity.** ^[[@joshiAIInterventionImproving2025b]]
 :::
 :::
 
@@ -1279,7 +1279,9 @@ We require: -->
 ::: {.notes}
 - Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated because they are trained on historical data that reflects these biases.
 - Validation strategies and randomized controlled trials are needed to demonstrate clinical utility and safety before deployment. We might not be able to take shortcuts here, even though rcts are expensive and time-consuming, because of the potential for harm if models are deployed without proper validation.
-- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.). There are already examples of this happening, and this is why legislation should push for transparency and accountability in the development and deployment of AI models in healthcare.
+- Working backward from the end goal of positively impacting clinically relevant outcomes using AI, leads to considerations of causality in model development and validation, and subsequently a better development pipeline. Healthcare AI should be “actionable,” and the change in actions induced by AI should improve outcomes. Quantifying the effect of changes in actions on outcomes is causal inference. 
+- Randomized Controlled Trial (RCT) emulation / Target Trials	Algorithmically emulates randomized studies from observational data	Drug efficacy estimation
+- Propensity Score Matching	Balances treatment/control groups on observed confounders	Comparing surgical vs. medical interventions 
 - (Large) AI models can have sizeable environmental impact. We see this in the training of large language models, and this is something that we need to be mindful of as we develop and deploy AI models in healthcare. We should strive to develop simpler models where possible as this can even lead to an improved physiological understanding as we saw in the first contribution. 
 :::
 

@@ -17,6 +17,16 @@
 :::
 
 
+## AI Mixed Success
+
+![](figures/motivation/news_articles_ai_problems.png){fig-cap="AI Mixed Success in Healthcare" width=100% .no-dark}
+- **Need for oversight (e.g., insurance discrimination, surveillance).**^[[@gaffneyHealthCareUSA2025; @jangOopsInterdisciplinaryStories2025]]
+^[Adapted from slide deck by Benjamin Glicksberg (Mount Sinai)]
+
+::: {.notes}
+- Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.). There are already examples of this happening, and this is why legislation should push for transparency and accountability in the development and deployment of AI models in healthcare.
+:::
+
 ## Not All AI Tools are Clinically Validated
 
 ::: {.columns}
@@ -27,6 +37,9 @@
 
 
 :::
+
+
+
 ::: {.column width="50%"}
 
 ![](figures/motivation/not_all_ai_health_tools_clinically_validated_fig2.svg){fig-cap="Not All AI Tools Are Clinically Validated" width=100% .no-dark}
@@ -34,3 +47,15 @@
 :::
 
 :::
+
+## Causal Effects of AI Interventions
+
+![](figures/motivation/causal_effects_ai.png){fig-cap="Causal Effects of AI Interventions" width=100% .no-dark}^[[@joshiAIInterventionImproving2025b]]
+
+## Stakeholder Incentives and Monitoring Gaps
+
+- **AI model vendors:** Driven to show ROI and avoid bad press; monitoring resources are inconsistent.
+- **Hospitals/health systems:** Value efficiency, cost, and safety; ROI is hard to quantify and infra is uneven.
+- **Clinicians:** Care about outcomes but have limited time and support for monitoring.
+- **AI researchers/architects:** Interested in long-term performance, but funding and incentives favor publications.
+- **Patients:** Most affected, yet lack information and avenues to act. ^[[@vanamsterdam2025missing]]
