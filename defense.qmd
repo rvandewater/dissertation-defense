@@ -510,7 +510,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 <div style="position: relative; top: 3em;">
 
 ::: {.fragment .fade-in fragment-index="1"}
-- Use optimal model outputs with **alarm mechanics** to reduce **alarm burden (alarms/patient/day)** while maintaining precision.^[Work with master thesis student Daniela Zuluaga Lotero].
+- Use optimal model outputs with **alarm mechanics** to reduce **alarm burden (alarms/patient/day)** while maintaining precision.^[Work with master thesis student Daniela Zuluaga Lotero]
 - **Decision curve analysis:** harm-to-benefit ratio drives alarm selection.  
 :::
 </div>
@@ -1101,7 +1101,7 @@ Define standardized **predicates** for tasks and have drop-in definitions for ea
 
 ::: {.column width="50%"}
 ::: {.fragment}
-<div  style="text-align: center;  margin-top: -0.75em;">
+<div  style="text-align: center;  margin-top: -0.40em;">
 Grouping by dataset and model:
 
   <img src="figures/meds/meds_dev/aggregated/auroc_by_dataset_samples.svg" width="100%" class="no-dark">
@@ -1503,36 +1503,40 @@ In my thesis we focus on 1 in particularly while respecting and complementing th
 ::: {.small-text}
 ::: {.columns}
 ::: {.column width="25%"}
-HPI:
+**HPI:**
 
 - Comittee: Christoph Lippert, Lothar Wieler, Felix Naumann, Gerard de Melo, Bernhard Renard
 - Executive assistants: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Schroeder, Lena Kaese.
 - Students: Hendrik Schmidt, Daniela Zuluaga Lotero, Youssef Mecky
 :::
 ::: {.column width="25%"}
-HPI:
+**HPI:**
 
 - All people in the Digital Health - Connected Healthcare/Machine Learning groups and the Digital Health Cluster
 
-Charité:
+**Charité:**
 
 - Max M. Maurer
 - Axel Winter
 - Daniela Zuluaga Lotero
 :::
 ::: {.column width="25%"}
-Mentors and Collaborators:
+**Mentors and Collaborators:**
 
 - Patrick Rockenschaub (Medical University of Vienna)
 - Matthew McDermott (Columbia University)
 - Eugenia Alleva (Mount Sinai)
-- Jason Fries (Stanford)
+<!-- - Jason Fries (Stanford) -->
+- Thomas Sutter (ETH Zurich)
 :::
 ::: {.column width="25%"}
-Reviewers:
+**Reviewers:**
 
 - Padhraic Smyth (UC Irvine)
 - Mykola Pechenizkiy (TU Eindhoven)
+
+*I am sure I forgot people here..*
+
 :::
 :::
 :::
@@ -1557,7 +1561,7 @@ View the slides.</a>
   <a href="https://xkcd.com/1403/" target="_blank" style="font-size: 0.5em; text-align: center;">Source: https://xkcd.com/1403/</a>
 </div>
 <div style="text-align: center; margin-top: -1em;">
-![](images/logos/logos_defense.svg){width=100% .no-dark}
+![](images/logos/logos_defense.svg){width=80% .no-dark}
 </div>
 :::
 
