@@ -37,7 +37,9 @@ In *Data science at the singularity*, Donoho defines three characteristics that 
 :::: -->
 
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 The translation gap in healthcare ML can be reframed as a failure to achieve the "data science singularity" as defined by Donoho. To reach this state, we need to ensure that data is widely available and standardized, that code is shared and can be re-executed by others, and that we adopt challenge problems to drive methodological research. My thesis addresses these needs through the development of tools and frameworks that promote reproducibility, clinical relevance, and scalable infrastructure for healthcare machine learning research.
+:::
 :::
 
 

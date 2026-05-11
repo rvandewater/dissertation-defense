@@ -53,24 +53,28 @@ revealjs-plugins:
 
 
 # Counting Exercise {auto-animate="true"}
-<div style="position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; align-items:center; gap:0.2em; pointer-events:none;">
-  <img src="resources/people_slide.svg" alt="People slide" style="width:80%; display:block; margin:0 auto; ">
+<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.2em; pointer-events:none;">
+  <img src="resources/people_slide.svg" alt="People slide" style="width:100%; display:block; margin:0 auto; ">
 </div>
 ::: {.fragment}
-<div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700;">
+<div style="position:absolute; top:45%; left:50%; transform:translate(-50%, -50%); z-index:5; width:min(90%, 30em); sans-serif; font-size: 1.5em; text-align: center; padding: 1em; border-radius: 10px; background-color: rgba(172, 172, 172, 0.95); font-weight: 700;">
 Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.^[[@rossettiRealtimeSurveillanceSystem2025]]
 <!-- font-family: 'Optima'; Real-time surveillance system for patient deterioration: a pragmatic cluster-randomized controlled trial ^[[@rossettiRealtimeSurveillanceSystem2025]] -->
 </div>
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 
-- You might have been wondering why the title slide contains all these icons of people.
--  There are 84 people on this slide to be exact; 84 lives.
+- 84 people, 84 lives are pictured on this slide.
+
 - In a recent trial of an AI early warning system in New York City in two health systems, it was estimated that in one year, an estimated 84 people who might have died, didn’t.
 - This is how important AI in healthcare can be: it has the potential to save lives by predicting and preventing adverse outcomes.
 - This is the promise of machine learning in healthcare: to use data to predict and prevent adverse outcomes, and ultimately save lives.
+
 - Across 60,893 hospital encounters, the intervention group experienced a 35.6% reduction in instantaneous in-hospital mortality risk (AHR  0.64; 95%CI 0.53–0.78; P < 0.0001) and an 11.2% shorter length of stay (IRR  0.91; 95%CI 0.90–0.93; P < 0.0001) compared to usual care.
+
+:::
 :::
 
 <!-- 
@@ -87,6 +91,7 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Patients generate digital footprints of their health journey when they visit care providers.
 - These footprints are often stored in electronic health records (EHRs), which contain a wealth of information about patients' medical history, diagnoses, treatments, and outcomes.
 - It's a complex, heterogeneous, and often messy collection of structured codes (diagnoses, labs, medications) and unstructured text (clinical notes).
@@ -94,6 +99,7 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 - This complexity is both a challenge and an opportunity for machine learning in healthcare. 
 
 - The richness of EHR data allows for powerful predictive models, but also requires careful handling to ensure reproducibility and clinical relevance.
+:::
 ::: 
 
 
@@ -110,10 +116,12 @@ Eighty-four (84) lives were saved by one AI-enabled warning system in one trial.
 </div>
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - So let's first look at the basics of machine learning in healthcare.
 - Hospitals, clinics, and healthcare systems generate vast amounts of data, including electronic health records (EHRs), medical imaging, and physiological signals.
 - Machine learning can be used on parts of this data to predict patient outcomes, assist in diagnosis, and optimize treatment plans.
 - The essence is often predicting or diagnosing something about a patient at time T so that we can intervene at time T+1 to improve outcomes.
+:::
 :::
 
 
@@ -131,10 +139,12 @@ HEALTH_PATTERN = r"(?ix)\b(health(care)?|medical|clinical|patients?|hospital|dis
 </div>
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 
 - The amount of research on machine learning in health has been growing rapidly, reflecting the increasing interest and potential of this field as shown here from the ArXiv preprint server with ML and health keywords in the title or abstract. Total amount of papers: 3,008,410.
 - However, despite this growth in research, the translation of ML4H research into clinical practice is limited as can be seen from the relatively small number of FDA-approved AI/ML-enabled medical devices. 
 - 76% of the 331 FDA devices approved in 2025 is in radiology, which is has a long history of using machine learning for image analysis, but other areas of healthcare are still underrepresented in terms of AI-enabled devices.
+:::
 :::
 <!-- > "Despite significant advances in machine learning capabilities, few AI systems have been successfully deployed into clinical practice. Key barriers include reproducibility challenges, generalization failures, and lack of standardized evaluation frameworks." -->
 
@@ -193,11 +203,13 @@ Main barriers to translation:
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - There is something of a translation gap in ML in healthcare: despite the promise of machine learning research, new datasets, and advances in methodology few models have been successfully deployed in clinical practice.
 - **{{< var p1_label >}}**: Retrospective data may not capture the real-time information that is needed for prediction.
 - **{{< var p2_label >}}**: Different papers report different performance for the same task due to variations in datasets, preprocessing, and evaluation.
 - **{{< var p3_label >}}**: Each institution has to build their health AI from scratch, making it hard to share research results and build on each other's work.
 - **{{< var p4_label >}}**: I will not go into detail today.
+:::
 :::
 
 ## Research Contribution per Challenge {auto-animate=true}
@@ -232,6 +244,7 @@ architecture."* ^[[@marianoGlobalStrategyDigital2020]]
 
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 My thesis is structured around three main contributions:
 
 -  We conducted a prospective cohort study, which collects data from surgical patients in the general ward and integrates wearable device data to improve early warning systems for postoperative complications.
@@ -239,6 +252,7 @@ My thesis is structured around three main contributions:
 - I contributed to the development of the MEDS framework, which provides a standardized data format and tools for scalable machine learning research across healthcare institutions.
 - Thesis Statement: The overarching thesis is that healthcare machine learning requires rich data, reusable model components, and an extensive validation ecosystem to bridge the gap between research and clinical practice.
 - This aligns well with the WHO's global strategy on digital health, which emphasizes the importance of open standards and collaboration in this field.
+:::
 :::
 
 ## Research Contributions in Pillars {auto-animate=true auto-animate-id="pub-flow"}
@@ -301,14 +315,18 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Here you can find the publications that correspond to each of the three main contributions I will talk about today organized by research pillar.
+:::
 :::
 
 
 {{< include extra_slides/publications.qmd >}}
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - These are all the publications that I have contributed to until now. You can find them on the slides in the footer and they should link to the corresponding work.
+:::
 :::
 
 
@@ -336,7 +354,7 @@ Matthew B. A. McDermott, Justin Xu, Teya S. Bergamaschi, Hyewon Jeong, Simon A. 
 ::: {.fragment .card-row .card-row--stack .fade-in fragment-index="3"}
 ![](icons/alert.svg){fig-cap="" height=2em .no-dark}
 
-**Up to 25%** experience life-threatening adverse events^[[@downeyImpactInhospitalPostoperative2023; @muallaImpactPostoperativeComplications2021; @baumMortalityComplicationsFollowing2019a]].
+**Up to 25%** experience life-threatening adverse events, often **on the ward**^[[@downeyImpactInhospitalPostoperative2023; @muallaImpactPostoperativeComplications2021; @baumMortalityComplicationsFollowing2019a]].
 :::
 
 ::: {.fragment .card-row .card-row--stack .fade-in fragment-index="4"}
@@ -347,6 +365,7 @@ Ward monitoring insufficient for **subtle condition changes**^[[@roppeltArtifici
 
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - The first contribution is related to the limitation of retrospective data in capturing real-time state information. This leads to models that don't capture the full complexity of the patient journey. This is reflected in the case of surgery rehabilitation.
 - Surgery is a major part of healthcare, with more than 300 million surgical procedures performed annually worldwide
 - Surgery is also a major driver of healthcare costs, with approximately one-third of hospital costs being surgery-related.
@@ -354,6 +373,7 @@ Ward monitoring insufficient for **subtle condition changes**^[[@roppeltArtifici
 - But, preceding physiological patterns are often subtle, nonspecific, and time-varying, with substantial heterogeneity between patients → hard to detect on ward, where most postoperative patients rehabilitate.
 - Why not just monitor patients in the ICU? → expensive and can lead to complications like infections, delirium, and deconditioning.
 
+:::
 :::
 
 <!-- ## Surgery Rehabilitation
@@ -378,8 +398,10 @@ Ward monitoring insufficient for **subtle condition changes**^[[@roppeltArtifici
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - So why not just monitor patients in the ICU?
 - ICU stays are expensive and can lead to complications like infections, delirium, and deconditioning.
+:::
 :::
 
 --- -->
@@ -421,6 +443,7 @@ Can we leverage **continuous data from wearable devices** to improve warning sys
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - What could be a solution? **Hybrid ward with minimally intrusive wearables**
 - With the experimental surgery group at Charite, we conducted a prospective cohort study in a hybrid ward setting, where regular care was provided and continuous, data from wearable devices was collected through informed consent.
 - Corsano band: Photoplethysmogram (PPG) Sensor (HR/BP), Acceleration, oxygen saturation, Respiration Rate
@@ -429,6 +452,7 @@ Can we leverage **continuous data from wearable devices** to improve warning sys
 - Left: Timeline of the perioperative patient journey in surgical patients. 
 - This is largest reported cohort to investigate continuous, telemetric vital sign analysis in the field of surgical care.
 - Right: Prospective data curation by endpoint labeling and data extraction from hospital data information systems.
+:::
 :::
 
 
@@ -454,6 +478,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - This figure shows our end-to-end multimodal prediction pipeline, from raw data to dynamic risk predictions.
 - We start with multiple data sources: wearable and physiologic signals, body temperature, medications, clinical notes, labs, ICU vitals and observations, plus baseline patient characteristics.
 - Each modality is preprocessed with methods matched to its type, including MiniRocket embeddings, HRV feature extraction, multilingual text embeddings, and clinical harmonization and aggregation.
@@ -466,6 +491,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
  - Unstructured clinical text data, including clinical notes, medication orders, and fluid administration records, were embedded using a pre-trained multilingual JinAI model²⁷, from which standard natural language processing (NLP) features were derived. High-resolution physiological signals derived from patient wearables on the general ward, specifically photoplethysmography (PPG) and continuous body temperature measurement, were processed using the MINIROCKET embedding model. 
  - Heart rate variability (HRV) features were extracted from both time- and frequency-domain representations. Missing values were imputed, and statistical descriptors—including skewness, entropy, standard deviation, minimum, and maximum—were computed. To capture temporal dependencies, features from preceding time steps were incorporated. 
  - All data streams were aggregated into 30-minute time segments, each containing 7,280 distinct model features. Multi-modal feature fusion and endpoint alignment resulted in segmented clinical trajectories evaluated at a 9-hour prediction horizon.  -->
+:::
 :::
 
 ---
@@ -489,11 +515,13 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 :::
 </div>
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Multiple model architectures, encompassing classical machine learning (ML) and Deep Learning (DL), were trained and evaluated using cross-validation and hyperparameter optimization. 
 - Model selection was based on predictive performance and computational efficiency, with LightGBM identified as the most favorable trade-off. 
 - The optimal model was evaluated by performing domain ablation and feature importance analysis with Shapley explanations. 
 - Based upon continuous model outputs, an actional alarm system including specific alarming frameworks was evaluated. The slope coefficient and persistence quantify the increase in the probability of sounding an alarm. 
 - An 8-hour silencing period is implemented to prevent alarm fatigue.
+:::
 :::
 
 ## How well does it work?
@@ -536,6 +564,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Metrics: areas under the receiver operating characteristic (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) 
 - First: the static baseline model that aggregate the data until the start of the surgery, then directly after the surgery and directly after the ICU stay. Static models using only preoperative and ICU data performed near chance level.
 - Then the dynamic, longitudinal model that aggregates the data in 30-minute time windows. Where we have CASHEWS without wearable data and CASHEWS+ with wearable data. These models had much more predictive power for identifying surgical site infections.
@@ -543,6 +572,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 - Looking at the lead time performance, we see that there is little drop-off in performance as we move further away from the clinical detection of the complication, which suggests that there are indicators of deterioration that can be detected well in advance of clinical recognition.
 - Boxplots of AUROC and (d) boxplots of AUPRC of CASHEWS+ for varying lead times prior to clinical detection. The last hour was set to be positive, while all subsequent time windows were removed from training and evaluation.
 - **The key implication is that due to the filling this missing data gap, we can do predictive surveillance can be extended beyond the ICU into general wards, where many actionable postoperative complications actually emerge.**
+:::
 :::
 
 
@@ -554,7 +584,9 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 </div>
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 (a) Boxplots of areas under the receiver operating characteristic curve (AUROC) and (b) boxplots of patient-level areas under the precision–recall curve (AUPRC) for prediction performance of models after ablation of individual modalities. (c) AUROC and (d) AUPRC boxplots after addition of wearable-derived signal features (e) Receiver operating curve and (f) precision-recall curves comparing CASHEWS, CASHEWS+, and the remote early warning score (REWS). 
+:::
 :::
 -->
 
@@ -574,6 +606,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - The strongest gains came from continuous, high-resolution wearable data, nearly doubling AUPRC versus models without sensor integration.
 ::: -->
 
@@ -583,8 +616,10 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 
 - Future semi-autonomous surgical ward with continuous telemonitoring and AI-assisted risk prioritization.
 :::
+:::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 
 ::: -->
 
@@ -595,7 +630,10 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 </div>
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - **Now that we've looked at a specific clinical use case of ML lets see how easy it is for others can reproduce these results and build on them.**
+:::
+:::
 :::
 
 # Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t2 >}}"}
@@ -654,6 +692,7 @@ Can we create a framework for **reliably reproducing scientific results** of cli
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - That leads me to the second contribution, which is about enabling reproducible research in  clinical machine learning.
 - The reproducibility crisis in clinical machine learning is a significant barrier to scientific progress and clinical translation.
 -  **Datasets** (private datasets or different public datasets) and splits
@@ -662,11 +701,12 @@ Can we create a framework for **reliably reproducing scientific results** of cli
 -  **Evaluation metrics**
 - **Code not published, incomplete, not reusable or adaptable.** 
 :::
+:::
 
 ## Considerations for Reproducible Clinical ML Research
 
 ::: columns
-::: {.column width="70%"}
+::: {.column width="75%"}
 Problems:
 
 - Medical research is **inherently** complex.
@@ -687,7 +727,7 @@ Outcome:
 - **Yet Another ICU Benchmark (YAIB)**^[[@vandewaterAnotherICUBenchmark2024a]{.my-work}]: Reproducible prediction experiments across (open-access) datasets.
 :::
 :::
-::: {.column width="30%"}
+::: {.column width="25%"}
 ::: {.fragment data-fragment-index="3"}
 ![](figures/yaib/recipies_logo.svg){fig-cap="ReciPies Logo" width=100%}
 ![](figures/yaib/YAIB_logo.svg){fig-cap="YAIB Logo" width=100%}
@@ -697,12 +737,14 @@ Outcome:
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - So what are the considerations that we need to take into account when designing a framework for reproducible clinical machine learning research?
 - First, we need to acknowledge that medical research is inherently complex, and that one size fits all solutions are often impossible. This means that we need to design a framework that is modular and extensible, allowing researchers to adapt it to their specific needs while maintaining reproducibility.
 - Second, we need to ensure that the framework provides customization and extension and that there is out-of-the-box support for common datasets, tasks, and models.
 - To address these considerations, we developed two tools: ReciPies, a modular ML preprocessing framework, that allows you to declare preprocessing steps
 - Yet Another ICU Benchmark (YAIB), a framework for reproducible ICU prediction experiments across 5 existing datasets and 5 common tasks.
 - Open-access Intensive Care Unit (ICU) data has become popular for applications, models, and benchmarks in ML for health, but comparing approaches often remains difficult
+:::
 :::
 
 <!-- Modular ML preprocessing framework -->
@@ -749,6 +791,7 @@ Outcome:
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - To demonstrate the need of a common reference point for reproducible research, we can look at the task of sepsis prediction, which is a common task in clinical machine learning.
 - Sepsis is a body's extreme response to an infection, which can lead to tissue damage, organ failure, and death. 
 - However, there are different definitions of sepsis that have been proposed in the literature, and these definitions can significantly alter the resulting performance metrics of models trained to predict sepsis.
@@ -756,6 +799,7 @@ Outcome:
 - For clinicians this means that selecting the right model for their setting is difficult without a common reference point.
 - This underlines the need for a framework that can test the effect of different definitions, preprocessing choices, and datasets on model performance in a reproducible way.
 
+:::
 :::
 ---
 
@@ -791,10 +835,12 @@ Outcome:
   <img src="figures/yaib/yaib_logo.svg" style="width:100%;" class="no-dark">
 </div>
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Using YAIB, we can easily compare generalization across datasets and transfer learning approaches for mortality prediction. Each row corresponds to a model trained on a dataset, and the columns correspond to the evaluation performance.
 - Some datasets are more similar to others. The European datasets are different from the US datasets. However, eICU, which consists of data from 208 US hospitals is more generalizable than the other datasets, which are from single hospitals.
 - Finetuning on the "difficult" HiRID dataset can improve performance with only a fraction of the data, suggesting that pretraining on a large, generalizable dataset can help overcome some of the challenges of dataset shift and improve generalization to new settings.
 - **The key point is that without a framework like YAIB, it would be difficult to enable this important reproducible research across datasets.**
+:::
 :::
 
 <!-- ::: {.fragment}
@@ -835,7 +881,9 @@ AUPRC:
   ⚡ {{< var p3_label >}}
 </div>
 ::: {.notes}
+::: {style="font-size:0.7em"}
 **Now that we've looked at structured open-access ICU data let's see how we can enable this  reproducible research across healthcare systems with more complex data and models.** 
+:::
 :::
 
 # Framework for Foundational Health AI 🏗️ {data-section-title="{{< var section_t3 >}}"}
@@ -876,6 +924,7 @@ How can we **enable reproducible AI** research across healthcare systems?
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Unfortunately,health data is not always like the structured, clean, and well-labeled open-access ICU datasets that we just discussed. 
 - Luckily, with the advent of Large Language Models, we now have high-parameter AI "foundation models", that are trained on partially structured large-scale EHR data, such as entire health systems, with the objective to predict the next token.
 - However, with the increasing complexity of models and data, comparing results across settings becomes increasingly important, but more difficult. 
@@ -883,6 +932,7 @@ How can we **enable reproducible AI** research across healthcare systems?
 - This leads us to the question of how can we enable reproducible AI research across healthcare systems?
 - Well, with a new data standard and ecosystem for health AI research, which we call the Medical Event Data Standard (MEDS).
 - Donoho highlights the term of frictionless reproducibility for data science which highlights the growing need for robust infrastructure to support reproducible research across healthcare systems.
+:::
 :::
 ## Data Standards in Healthcare
 <div style="text-align: center;">
@@ -899,10 +949,12 @@ How can we **enable reproducible AI** research across healthcare systems?
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - I know that researchers are eager to create new data standards and frameworks, that might already exist as evident in this comic. 
 - There are existing data standards in healthcare, such as OMOP, PCORnet, FHIR, and i2b2, have been instrumental in enabling observational studies and health data exchange. 
 - They are Disease-specific cohorts and specific manual featurization of engineered features 
 - But, they are generally not suitable to train over a general-purpose representation of the entire EHR
+:::
 :::
 
 ## The Medical Event Data Standard (MEDS)
@@ -933,6 +985,7 @@ How can we **enable reproducible AI** research across healthcare systems?
 ::: -->
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 We wanted to create a framework that is
 
 1. ML-first: Optimized for ML tasks, not observational research.
@@ -942,6 +995,7 @@ We wanted to create a framework that is
 
 - We created the Medical Event Data Standard (MEDS), a flexible, event-based data standard optimized for machine learning research in healthcare.
 
+:::
 :::
 
 
@@ -997,6 +1051,7 @@ Define standardized **predicates** for tasks and have drop-in definitions for ea
 
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - We can use MEDS to enable decentralized external validation across datasets and institutions.
 - Reproducible benchmarking is **critical** for scientific progress, but sharing raw patient data across institutions is often not possible due to privacy concerns.
 - The solution is to define standardized predicates for tasks and have drop-in definitions for each dataset, which allows for benchmarking across datasets without sharing raw patient data.
@@ -1007,6 +1062,7 @@ Define standardized **predicates** for tasks and have drop-in definitions for ea
 - 3 models: MEDS-Tab, CEHR-BERT, GenHPF: a tabular transformer, a BERT-based model for EHR data, and a general healthcare foundation model.
 
 
+:::
 :::
 
 ---
@@ -1058,12 +1114,14 @@ Grouping by task and model:
 :::
 </div>
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - If we then benchmark each task across sites and models, we get an enormous amount of results.
 - Each point on the left represents a model trained and evaluated at a specific site, with the same task definition
 - Some models incompatible with some datasets/tasks.
 - The spread of points across sites for the same model and task highlights the variability in performance due to differences in data and implementation, underscoring the need for standardized benchmarking.
 - The overall performance trends across models and tasks can be compared, but the variability emphasizes that results from one site may not generalize to others without careful validation.
 - This highlights once again the importance of easy reproducibility and standardized benchmarking frameworks to understand what actually drives model performance across different settings.
+:::
 :::
 
 
@@ -1079,12 +1137,14 @@ Grouping by task and model:
 </div>
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - So let's look at doing this on a health system level, where we use the entire Mount Sinai Health System dataset of 12 million patients across different medical centers around New York City. 
 - This dataset is already in OMOP format, and we use the OMOP ETL I developed to convert it to MEDS. Leaving behind the legacy imported patients that have not correctly been imported into OMOP, we have 6.8 million patients and a total of 3.5 billion events in the dataset.
 - The MEDS ecosystem then enables the use of different tools and of foundation model training for this dataset and the open-access datasets and other health systems
 - Here, we will be looking at foundation model training and using the frozen embeddings for linear probing as a case study of how the MEDS ecosystem
 - This can enable a wide range of applications, such as downstream clinical prediction systems to serve specialties in the health systems.
 
+:::
 :::
 
 ## What Can We Do With Foundation Models?
@@ -1120,6 +1180,7 @@ Grouping by task and model:
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - I trained state-of-the-art foundation models on the entire MSHS dataset, and then we used the frozen embeddings to train a linear classifier on top of the foundation model representations for a range of downstream clinical prediction tasks.
 - The performance of the linear classifier on top of the frozen foundation model representations can be compared to traditional machine learning models trained on the same tasks, and this can help us understand the value of the foundation model representations for downstream tasks.
 - Cheaper than finetuning, and can be used as a quick benchmark for the quality of the foundation model representations for downstream tasks.
@@ -1129,6 +1190,7 @@ Grouping by task and model:
 Extra:
 
 - This may reflect differences in pretraining strategies, as MOTOR is explicitly optimized for representation learning (e.g., time-to-event prediction), whereas CEHR-XGPT is trained using nexttoken prediction.
+:::
 :::
 
 ## MEDS: Community Adoption
@@ -1161,6 +1223,7 @@ We require: -->
 :::  -->
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - So what is the impact of the MEDS ecosystem?
 - It is used in at least 21 institutions, has supported the development of state-of-the-art models for EHR data, and has been used in over 27 academic papers and preprints across 17 datasets and 12 AI algorithms.
 - It has also enabled a reduction of lines of code up to 70% for some projects
@@ -1168,12 +1231,15 @@ We require: -->
 
 
 :::
+:::
 ## {data-section-title="{{Discussion and Impact}}"}
 <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; font-size:2.2em; font-weight:700;">
   Discussion and Impact
 </div>
 ::: {.notes}
+::: {style="font-size:0.7em"}
 **Let's summarize the key takeaways from my contributions:**
+:::
 :::
 
 # Discussion and Impact
@@ -1243,11 +1309,13 @@ We require: -->
 ::: -->
 </div>
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Let's summarize the key takeaways from this thesis:
 - For the first pillar, we found that continuous wearable data can nearly double the AUPRC for surgical site infection prediction, and that predictive surveillance can be used beyond the ICU into the ward. We also found that alarm strategies are key to clinical utility.
 - For the second pillar, we found that the experimental setup often matters more than the choice of model, and we developed a multi-center framework for reproducible ML4H benchmarking that has been widely adopted in the community.
 - For the third pillar, we developed the MEDS ecosystem, which enables reproducible AI research across health systems, and I, personally, created 4 dataset, OMOP, and FHIR ETLs and 3 tools, and benchmarked 9 datasets across 11 tasks.
 - Overall, we see different scales of impact here, and we need to recognize that these scales all influence each other. For example, improvements in foundation modelling can inform the development of better early warning systems. And, simultaneously, collecting prospective data can inform the development of better multi-modal foundation models. 
+:::
 :::
 
 
@@ -1293,12 +1361,14 @@ We require: -->
 :::
 :::
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Models may amplify existing (historical) racial, gender, and socioeconomic biases if not carefully validated because they are trained on historical data that reflects these biases.
 - Validation strategies and randomized controlled trials are needed to demonstrate clinical utility and safety before deployment. We might not be able to take shortcuts here, even though rcts are expensive and time-consuming, because of the potential for harm if models are deployed without proper validation.
 - Working backward from the end goal of positively impacting clinically relevant outcomes using AI, leads to considerations of causality in model development and validation, and subsequently a better development pipeline. Healthcare AI should be “actionable,” and the change in actions induced by AI should improve outcomes. Quantifying the effect of changes in actions on outcomes is causal inference. 
 - Randomized Controlled Trial (RCT) emulation / Target Trials	Algorithmically emulates randomized studies from observational data	Drug efficacy estimation
 - Propensity Score Matching	Balances treatment/control groups on observed confounders	Comparing surgical vs. medical interventions 
 - (Large) AI models can have sizeable environmental impact. We see this in the training of large language models, and this is something that we need to be mindful of as we develop and deploy AI models in healthcare. We should strive to develop simpler models where possible as this can even lead to an improved physiological understanding as we saw in the first contribution. 
+:::
 :::
 
 
@@ -1339,6 +1409,7 @@ We require: -->
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - Multi-modal: Clinical Notes, Pathology, Radiology, Genomics, Wearables, etc. I am currently working on expanding my FMs to pathology as this is widely available in MSHS.
 - Health data is different from text used in LLMs, because different health systems have different data generating processes and different patient populations. So, understanding the generalizability of foundation models in health is an important area of research.
 - Scaling up: how does performance improve with more data, compute, and model size? Understanding scaling laws in health AI can inform the development of more efficient and effective models.
@@ -1346,17 +1417,20 @@ We require: -->
 - Finally, we can develop representations that combat fragmentation across different healthcare providers (GP and specialists), which can lead to better continuity of care and better patient outcomes.
 
 :::
+:::
 
 ---
 
 
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 Coming back to the those 84 patients that we started with, we can see that this could just be the beginning of AI in healthcare. By closing the reproducibility gap, we can enable scientist to build upon each others work rather than each starting from scratch. This should lead to  prolonged patient lives through trustworthy and equitable healthcare AI for the many.
 <!-- 
 I hope together, we can continue to create more reproducible research and build better tools to enable the development of better AI models for healthcare, which can ultimately lead to better patient outcomes and more saved lives. -->
 
 
+:::
 :::
 <!--
 ## United Nations WHO Digital Health Objectives
@@ -1385,6 +1459,7 @@ I hope together, we can continue to create more reproducible research and build 
 
 :::
 ::: {.notes}
+::: {style="font-size:0.7em"}
 In my thesis we focus on 1 in particularly while respecting and complementing the other objectives; of which the latter 3 and 4 are most important.
 - https://www.itu.int/en/ITU-T/Workshops-and-Seminars/2024/0509/Documents/Carl%20LEITNER.pdf 
 ::: -->
@@ -1425,6 +1500,7 @@ HPI:
 - Comittee: Christoph Lippert, Lothar Wieler, Felix Naumann, Gerard de Melo, Bernhard Renard
 - Executive assistants: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Schroeder, Lena Kaese.
 - Students: Hendrik Schmidt, Daniela Zuluaga Lotero, Youssef Mecky
+:::
 :::
 ::: {.column width="25%"}
 HPI:
@@ -1491,7 +1567,9 @@ Read the thesis.</a>
 :::
 
 ::: {.notes}
+::: {style="font-size:0.7em"}
 - With that, I want to thank all the people who supported me during this journey and all people that are present here today.
+:::
 :::
 <!-- The field of machine learning for healthcare stands at an inflection point. We have:
 - ✓ Demonstrated predictive capability (models work in controlled settings)

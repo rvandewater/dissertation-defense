@@ -21,8 +21,10 @@
   <img src="figures/yaib/recipies_logo.svg" style="width:100%;" class="no-dark">
 </div>
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 - Ideally, clinical experts inject their clinical domain knowledge of the respective dataset into the dataset and task definitions
 - ML researchers can then focus on the modeling and evaluation, while being able to easily reproduce results across datasets and preprocessing choices.
+:::
 :::
 
 ## ReciPies: A Simple Modular Preprocessing Framework for ML Research {auto-animate="true"}
@@ -33,8 +35,10 @@
 </div>
 
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 - ReciPies is a modular preprocessing framework that allows researchers to define and execute data transformation
 - UML type diagrams of the main components and their interactions.
+:::
 ::: 
 
 ## ReciPies Example
@@ -73,7 +77,9 @@ Four publicly available ICU datasets:
 ## Prediction Task Overview {data-scale="0.1"}
 
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 **Note:** The related work is non-exhaustive.
+:::
 :::
 
 ::: {.tiny-text}

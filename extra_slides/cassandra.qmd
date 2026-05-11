@@ -9,6 +9,13 @@
 ![](figures/cass/selection_diagram.svg){fig-cap="Cohort Selection Diagram" width="70%" class="no-dark"}
 </div>
 
+## Cohort Characteristics
+
+<div style="text-align: center; ">
+![](figures/cass/cohort_table_cassandra.png){fig-cap="Cohort Table" width="65%" class="no-dark"}
+</div>
+
+
 ## Pipeline
 
 <div style="text-align: center; ">
@@ -27,6 +34,7 @@
 
 
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 - So how can we integrate this model into the clinical routine? We have to look at alarm systems.
 - We can regulate the alarm frequency with a combination of a grace period, persistence, and silencing to prevent alarm fatigue. With this approach, we can achieve around 2 alarms per day on a 100-bed ward.
 -  But which recall do we want? 
@@ -35,6 +43,7 @@
 
 - Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
 - Net benefit is calculated as a weighted combination of true and false positives
+:::
 :::
 
 ## Warning system example
@@ -62,11 +71,13 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 - Wearables: core temperature, HRV features, and PPG embeddings are top contributors.
 
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 - Taking the common Shapley value approach for model interpretation, we can look at the importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance.
 - Importance ranking of modalities and their specific sub-features after normalization to laboratory values as the modality of highest importance
 - A clinical interpretation of this is that subtle physiological changes are indicators of early autonomic stress, loss of physiological complexity, and impending decompensation or precursors to the surgical site infection.
 - However, wearable modalities are a close second with core temperature, HRV features, and RR interval features being the top single contributors and the PPG embeddings accounting for a large portion of the overall contribution.
 
+:::
 :::
 
 ## Model Explainability Subgrouped by Modality
@@ -106,6 +117,7 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 
 
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 - So how can we integrate this model into the clinical routine? We have to look at alarm systems.
 - On the left we can see the Alarm burden quantified as alarms per patient per day (y-axis) across all recall levels (x-axis) for REWS-based alerts, raw ML predictions using a static threshold 
 - Here we can see that with a significant decrease in alarm burden, the CASHEWS+ strategy maintains the high precision of the raw ML predictions.
@@ -114,6 +126,7 @@ Fold-averaged, normalized, grouped model attributions according to Shapley value
 - This is a way in which clinicians can make informed decisions about the optimal alarm strategy based on their willingness to accept false positives and available resources.
 - **Now that we've discussed a specific clinical use case of ML lets see if others can reproduce these results and build on them.**
 - Alert persistence, defined as repeated threshold crossings within a sliding time window, was set to three alerts within the preceding 6 h. Following activation, each alarm was automatically silenced for 8 hours, corresponding to one nursing shift13. A grace period of 48 h — defined as the interval during which alerts preceding a complication were considered true positives — was selected based on the observed lead time in the cohort (51 hours; IQR 9.5–103.0).
+:::
 :::
 
 

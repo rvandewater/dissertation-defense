@@ -24,7 +24,9 @@
 ^[Adapted from slide deck by Benjamin Glicksberg (Mount Sinai)]
 
 ::: {.notes}
+::: {style="font-size:var(--speaker-notes-font-size)"}
 - Can be used for harmful purposes (e.g., insurance discrimination, surveillance, etc.). There are already examples of this happening, and this is why legislation should push for transparency and accountability in the development and deployment of AI models in healthcare.
+:::
 :::
 
 ## Not All AI Tools are Clinically Validated
