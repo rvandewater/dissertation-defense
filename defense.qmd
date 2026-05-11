@@ -469,7 +469,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 ![](figures/cass/cass_study_curation.svg){fig-cap="From burden to monitoring gap" width=100%}
 </div> -->
 <div style="position: relative; text-align: center; margin-top: -1.5em;">
-![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=90% .no-dark}^[[@vandewaterContinuousMultimodalAI2025] {.my-work}]
+![](figures/cass/cass_pipeline_multimodal.svg){fig-cap="" width=90% .no-dark}^[[@vandewaterContinuousMultimodalAI2025]{.my-work}]
 </div>
 
 
@@ -557,7 +557,7 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 → **Lead time** performance has little drop-off.
 :::
 ::: {.fragment .fade-in fragment-index="4"}
-→  Monitoring **at the right time** extends AI-assisted surveillance to resource-constrained **wards**.
+**💡 Monitoring at the right time extends AI-assisted surveillance to resource-constrained wards.**
 :::
 
 </div>
@@ -630,11 +630,14 @@ style="position:absolute; top:71%; left:0%; width:100%; height:100%; background:
 </div>
 
 ::: {.notes}
+
 ::: {style="font-size:0.7em"}
+
 - **Now that we've looked at a specific clinical use case of ML lets see how easy it is for others can reproduce these results and build on them.**
 :::
+
 :::
-:::
+
 
 # Enabling Reproducible Prediction Experiments 🧪 {data-section-title="{{< var section_t2 >}}"}
 
@@ -834,6 +837,10 @@ Outcome:
 <div data-id="recipies-logo-box" style="position:absolute; right:2%; top:80%; width:12%; text-align:right;">
   <img src="figures/yaib/yaib_logo.svg" style="width:100%;" class="no-dark">
 </div>
+::: {.fragment}
+**💡 Reproducible, harmonized benchmarking enables wide-ranging prediction experiments.**
+:::
+
 ::: {.notes}
 ::: {style="font-size:0.7em"}
 - Using YAIB, we can easily compare generalization across datasets and transfer learning approaches for mortality prediction. Each row corresponds to a model trained on a dataset, and the columns correspond to the evaluation performance.
@@ -1194,9 +1201,8 @@ Extra:
 :::
 
 ## MEDS: Community Adoption
-
 <div style="text-align: center;">
-  <img src="figures/meds/meds_adoption.png" width="100%" class="no-dark">
+  <img src="figures/meds/meds_adoption.png" width="95%" class="no-dark">
 </div>
 <div class="fragment fade-out" data-fragment-index="1"
       style="position:absolute; top:10%; left:63%; width:100%; height:100%; background:white; z-index:2;"></div>
@@ -1205,6 +1211,8 @@ Extra:
 ::: {.tiny-text}
 **Adapted from McDermott et al. "MEDS: An Emerging Data Standard and Ecosystem for Health AI Research" Accepted to NEJM AI (2026), to appear in vol:3, iss:6 (2026).**
 :::
+**💡 MEDS seems to meet Health AI community's needs.
+**
 <!-- - Supported the development of SOTA models for EHR data ^[[@pangCEHRXGPTScalableMultiTask2025;@fallahpourEHRMambaGeneralizableScalable2024a; @rencFoundationModelElectronic2025]]. -->
 <!-- - 21 institutions
 - $>$ 27 academic papers and preprints
@@ -1501,7 +1509,6 @@ HPI:
 - Executive assistants: Edit Tatar, Cornelia Philippson, Katharina Lorenz-Schroeder, Lena Kaese.
 - Students: Hendrik Schmidt, Daniela Zuluaga Lotero, Youssef Mecky
 :::
-:::
 ::: {.column width="25%"}
 HPI:
 
@@ -1567,9 +1574,12 @@ Read the thesis.</a>
 :::
 
 ::: {.notes}
+
 ::: {style="font-size:0.7em"}
+
 - With that, I want to thank all the people who supported me during this journey and all people that are present here today.
 :::
+
 :::
 <!-- The field of machine learning for healthcare stands at an inflection point. We have:
 - ✓ Demonstrated predictive capability (models work in controlled settings)
